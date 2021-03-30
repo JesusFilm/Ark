@@ -1,7 +1,7 @@
 /**
  * this is the main configuration file of your bit workspace.
  * for full documentation, please see: https://harmony-docs.bit.dev/workspace/configurations
- **/ {
+ **/{
   "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
   /**
    * main configuration of the Bit workspace.
@@ -10,11 +10,11 @@
     /**
      * the name of the component workspace. used for development purposes.
      **/
-    "name": "Jesus Film Project Base Components",
+    "name": "Common Component System",
     /**
      * set the icon to be shown on the Bit server.
      **/
-    "icon": "https://static.bit.dev/bit-logo.svg",
+    "icon": "https://avatars.githubusercontent.com/u/81537670?s=200&v=4",
     /**
      * default directory for all components in workspace.
      **/
@@ -31,14 +31,22 @@
     /**
      * choose the package manager for Bit to use. you can choose between 'yarn', 'pnpm'
      */
-    "packageManager": "teambit.dependencies/yarn",
+    "packageManager": "teambit.dependencies/pnpm",
     "policy": {
-      "dependencies": {},
+      "dependencies": {
+        "@testing-library/react": "11.2.5",
+        "chai": "4.3.4"
+      },
       "peerDependencies": {
         "react": "16.13.1",
         "react-dom": "16.13.1"
       }
-    }
+    },
+    "packageManagerArgs": [],
+    "devFilePatterns": [
+      "**/*.spec.ts"
+    ],
+    "strictPeerDependencies": true
   },
   /**
    * workspace variants allow to set different subsets of configuration for components in your workspace.
@@ -50,7 +58,12 @@
      * "*" is a special rule which applied on all components in the workspace.
      **/
     "*": {
-      "teambit.react/react": {}
+      /**
+       * uncomment to apply the react environment on all components.
+       **/
+      "teambit.react/react": {
+        "typescript": true
+      }
     }
   }
 }
