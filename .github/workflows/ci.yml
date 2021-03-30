@@ -30,9 +30,9 @@ jobs:
         run: bit install
       - name: Bit build
         run: |
-          bit -v && bit import
           bit status
           bit build
+        # bit -v && bit import
   test:
     runs-on: ubuntu-latest
     env:
@@ -58,9 +58,9 @@ jobs:
         run: bit install
       - name: Bit test
         run: |
-          bit -v && bit import
           bit status
           bit test
+        # bit -v && bit import
   export:
     needs: [build, test]
     runs-on: ubuntu-latest
