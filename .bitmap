@@ -2,16 +2,10 @@
 
 {
     "hero": {
-        "scope": "",
-        "version": "",
+        "scope": "jesus-film.base",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/hero",
-        "nextVersion": {
-            "version": "patch",
-            "message": "",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/elements/hero"
     },
     "version": "1.0.45"
 }
