@@ -35,10 +35,6 @@ jobs:
         with:
           version: 5.18.9
           run_install: true
-      - name: Install latest Bit version
-        run: |
-          pnpm bvm -- install
-          pnpm bvm -- remove --all --keep-latest-versions 1
       - name: add bvm bin folder to path
         run: echo "$HOME/bin" >> $GITHUB_PATH
       - name: Set up bit config
@@ -82,10 +78,6 @@ jobs:
         with:
           version: 5.18.9
           run_install: true
-      - name: Install latest Bit version
-        run: |
-          pnpm bvm -- install
-          pnpm bvm -- remove --all --keep-latest-versions 1
       - name: add bvm bin folder to path
         run: echo "$HOME/bin" >> $GITHUB_PATH
       - name: Set up bit config
