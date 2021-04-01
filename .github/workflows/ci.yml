@@ -24,12 +24,20 @@ jobs:
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-${{ hashFiles('**/package.json') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
+      - name: Cache installed bit versions
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-bit-versions
+        with:
+          path: ~/.bvm
       - uses: pnpm/action-setup@v1.2.1
         with:
           version: 5.18.9
           run_install: true
       - name: Install latest Bit version
-        run: pnpm bvm-install
+        run: |
+          pnpm bvm -- install
+          pnpm bvm -- remove --all --keep-latest-versions 1
       - name: add bvm bin folder to path
         run: echo "$HOME/bin" >> $GITHUB_PATH
       - name: Set up bit config
@@ -62,12 +70,20 @@ jobs:
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-${{ hashFiles('**/package.json') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
+      - name: Cache installed bit versions
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-bit-versions
+        with:
+          path: ~/.bvm
       - uses: pnpm/action-setup@v1.2.1
         with:
           version: 5.18.9
           run_install: true
       - name: Install latest Bit version
-        run: pnpm bvm-install
+        run: |
+          pnpm bvm -- install
+          pnpm bvm -- remove --all --keep-latest-versions 1
       - name: add bvm bin folder to path
         run: echo "$HOME/bin" >> $GITHUB_PATH
       - name: Set up bit config

@@ -27,7 +27,7 @@
   },
   "scripts": {
     "test": "jest .",
-    "bvm-install": "bvm install"
+    "bvm": "bvm"
   },
   "repository": {
     "type": "git",
