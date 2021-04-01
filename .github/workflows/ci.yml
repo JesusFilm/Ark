@@ -5,34 +5,6 @@ on:
   pull_request:
     branches: [main]
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    env:
-      BIT_TOKEN: ${{ secrets.BIT_TOKEN }}
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js 12
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-      - name: Install Bit Version Manager
-        run: npm i -g @teambit/bvm
-      - name: Install latest Bit version
-        run: bvm install
-      - name: add bvm bin folder to path
-        run: echo "$HOME/bin" >> $GITHUB_PATH
-      - name: Set up bit config
-        run: |
-          bit config set analytics_reporting false
-          bit config set anonymous_reporting false
-          bit config set user.token $BIT_TOKEN
-      - name: Install packages using bit
-        run: bit install
-      - name: Bit build
-        run: |
-          bit status
-          bit build
-        # bit -v && bit import
   test:
     runs-on: ubuntu-latest
     env:
@@ -60,9 +32,8 @@ jobs:
         run: |
           bit status
           bit test
-        # bit -v && bit import
   export:
-    needs: [build, test]
+    needs: [test]
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '--skip-ci') && github.event_name == 'push'"
     env:

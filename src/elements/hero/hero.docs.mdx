@@ -1,0 +1,23 @@
+---
+labels: ["react", "typescript", "ui", "hero"]
+description: "A Hero component."
+---
+
+import { Hero } from "./hero";
+
+## Usage Guidelines
+
+- Call To Action button will only be displayed if action is a string and onClick props are provided
+- If action is a component then onClick prop will be ignored
+
+## Using the hero component
+
+```js live
+<Hero
+  src="https://www.jesusfilm.org/content/dam/jesusfilm/homepage/hero/jesus-broadcast-easter.png"
+  title="Send People Jesus this Easter"
+  subtitle="Help share the hope of Jesus through TV and Radio Broadcasts!"
+  action="Give them Jesus"
+  onClick={() => alert("button clicked")}
+/>
+```
