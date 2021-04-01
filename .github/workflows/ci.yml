@@ -30,6 +30,7 @@ jobs:
           cache-name: cache-bit-versions
         with:
           path: ~/.bvm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}
       - uses: pnpm/action-setup@v1.2.1
         with:
           version: 5.18.9
@@ -76,6 +77,7 @@ jobs:
           cache-name: cache-bit-versions
         with:
           path: ~/.bvm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}
       - uses: pnpm/action-setup@v1.2.1
         with:
           version: 5.18.9
