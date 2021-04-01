@@ -15,6 +15,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
+      - name: add bvm bin folder to path
+        run: echo "$HOME/bin" >> $GITHUB_PATH
       - name: Cache pnpm modules
         uses: actions/cache@v2
         env:
@@ -35,8 +37,6 @@ jobs:
         with:
           version: 5.18.9
           run_install: true
-      - name: add bvm bin folder to path
-        run: echo "$HOME/bin" >> $GITHUB_PATH
       - name: Set up bit config
         run: |
           bit config set analytics_reporting false
@@ -58,6 +58,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
+      - name: add bvm bin folder to path
+        run: echo "$HOME/bin" >> $GITHUB_PATH
       - name: Cache pnpm modules
         uses: actions/cache@v2
         env:
@@ -78,8 +80,6 @@ jobs:
         with:
           version: 5.18.9
           run_install: true
-      - name: add bvm bin folder to path
-        run: echo "$HOME/bin" >> $GITHUB_PATH
       - name: Set up bit config
         run: |
           bit config set analytics_reporting false
