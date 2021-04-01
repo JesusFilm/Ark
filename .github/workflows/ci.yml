@@ -1,4 +1,4 @@
-name: Bit build
+name: Bit CI
 on:
   push:
     branches: [main]
@@ -15,17 +15,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - name: Install Bit Version Manager
-        run: npm i -g @teambit/bvm
-      - name: Install latest Bit version
-        run: bvm install
-      - name: add bvm bin folder to path
-        run: echo "$HOME/bin" >> $GITHUB_PATH
-      - name: Set up bit config
-        run: |
-          bit config set analytics_reporting false
-          bit config set anonymous_reporting false
-          bit config set user.token $BIT_TOKEN
       - name: Cache pnpm modules
         uses: actions/cache@v2
         env:
@@ -39,6 +28,15 @@ jobs:
         with:
           version: 5.18.9
           run_install: true
+      - name: Install latest Bit version
+        run: pnpm bvm-install
+      - name: add bvm bin folder to path
+        run: echo "$HOME/bin" >> $GITHUB_PATH
+      - name: Set up bit config
+        run: |
+          bit config set analytics_reporting false
+          bit config set anonymous_reporting false
+          bit config set user.token $BIT_TOKEN
       - name: Bit test
         run: |
           bit status
@@ -55,17 +53,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - name: Install Bit Version Manager
-        run: npm i -g @teambit/bvm
-      - name: Install latest Bit version
-        run: bvm install
-      - name: add bvm bin folder to path
-        run: echo "$HOME/bin" >> $GITHUB_PATH
-      - name: Set up bit config
-        run: |
-          bit config set analytics_reporting false
-          bit config set anonymous_reporting false
-          bit config set user.token $BIT_TOKEN
       - name: Cache pnpm modules
         uses: actions/cache@v2
         env:
@@ -79,6 +66,15 @@ jobs:
         with:
           version: 5.18.9
           run_install: true
+      - name: Install latest Bit version
+        run: pnpm bvm-install
+      - name: add bvm bin folder to path
+        run: echo "$HOME/bin" >> $GITHUB_PATH
+      - name: Set up bit config
+        run: |
+          bit config set analytics_reporting false
+          bit config set anonymous_reporting false
+          bit config set user.token $BIT_TOKEN
       - name: Hard-tag pending components
         run: bit tag --persist
       - name: Export components
