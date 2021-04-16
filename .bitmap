@@ -13,11 +13,29 @@
         "mainFile": "index.ts",
         "rootDir": "jesus-film.base/author-list"
     },
+    "card": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/card"
+    },
     "hero": {
         "scope": "jesus-film.base",
         "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "src/elements/hero"
+    },
+    "jesus-film-theme-provider": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/providers/jesusFilmThemeProvider"
+    },
+    "voke-theme-provider": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/providers/vokeThemeProvider"
     },
     "version": "1.0.45"
 }
