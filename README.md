@@ -63,7 +63,7 @@ We use [Bit](https://github.com/teambit/bit) to contain and expose components fr
 
 ### Theme
 
-All shared styles, colors, sizes, fonts, and css variables, belong here.  
+All shared styles, colors, sizes, fonts, and css variables, belong here.
 [Theme-provider](https://bit.dev/teambit/base-ui/theme/theme-provider) applies all of these styles at the root of your app, and different apps may implement their own unique theme.
 
 ### Constants
@@ -76,7 +76,7 @@ Components controlling the position of elements in the document. (Grid, breakpoi
 
 ### Atoms
 
-Generic building blocks for any front end application.  
+Generic building blocks for any front end application.
 These components are 'vanilla', meaning they should not contain content (like texts or icons) and no specific styles. This is because different designs could look entirely different, so any styles in the base component could lead to a 'CSS Specificity War'. So, add the bare minimum of css here and keep these components purely logical!
 
 ### Utils
