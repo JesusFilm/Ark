@@ -1,7 +1,7 @@
 /*
  This is where your workspace and Bit extensions used by it, are configured.
  https://harmony-docs.bit.dev/workspace/configurations
- */ {
+ */{
   "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
   // Configurations for the workspace.
   "teambit.workspace/workspace": {
@@ -16,7 +16,9 @@
   "teambit.dependencies/dependency-resolver": {
     "packageManager": "teambit.dependencies/pnpm",
     "packageManagerArgs": [],
-    "devFilePatterns": ["**/*.spec.ts"],
+    "devFilePatterns": [
+      "**/*.spec.ts"
+    ],
     "strictPeerDependencies": true
   },
   /*
