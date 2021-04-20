@@ -1,8 +1,10 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import Avatar from '@material-ui/core/Avatar';
-import { makeStyles } from '@material-ui/core/styles';
+import {
+  Grid,
+  makeStyles,
+  Typography,
+  Avatar,
+} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,7 +41,8 @@ export type AuthorCardProps = {
 
 export function AuthorCard({ name, description, src, onClick }: AuthorCardProps) {
   const classes = useStyles();
-  const initials = name ? name.match(/(\b\S)?/g).join("").match(/(^\S|\S$)?/g).join("").toUpperCase() : ""
+  const initials = name ? name.match(/(\b\S)?/g).join("").match(/(^\S|\S$)?/g).join("").toUpperCase() : "";
+
   return (
     <div className={classes.root} onClick={() => onClick()}>
       <Grid

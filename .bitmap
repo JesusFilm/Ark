@@ -7,6 +7,12 @@
         "mainFile": "index.ts",
         "rootDir": "jesus-film.base/author-card"
     },
+    "author-list": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "jesus-film.base/author-list"
+    },
     "hero": {
         "scope": "jesus-film.base",
         "version": "0.0.1",
