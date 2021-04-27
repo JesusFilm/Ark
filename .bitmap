@@ -5,37 +5,31 @@
         "scope": "",
         "version": "",
         "mainFile": "index.ts",
-        "rootDir": "jesus-film.base/author-card"
+        "rootDir": "jesus-film.ark/elements/authorCard"
     },
     "author-list": {
         "scope": "",
         "version": "",
         "mainFile": "index.ts",
-        "rootDir": "jesus-film.base/author-list"
+        "rootDir": "jesus-film.ark/elements/authorList"
     },
-    "card": {
+    "hero": {
         "scope": "",
         "version": "",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/card"
-    },
-    "hero": {
-        "scope": "jesus-film.base",
-        "version": "0.0.1",
-        "mainFile": "index.ts",
-        "rootDir": "src/elements/hero"
+        "rootDir": "jesus-film.ark/elements/hero"
     },
     "jesus-film-theme-provider": {
         "scope": "",
         "version": "",
         "mainFile": "index.ts",
-        "rootDir": "src/providers/jesusFilmThemeProvider"
+        "rootDir": "jesus-film.ark/providers/jesusFilmThemeProvider"
     },
     "voke-theme-provider": {
         "scope": "",
         "version": "",
         "mainFile": "index.ts",
-        "rootDir": "src/providers/vokeThemeProvider"
+        "rootDir": "jesus-film.ark/providers/vokeThemeProvider"
     },
     "version": "1.0.66"
 }
