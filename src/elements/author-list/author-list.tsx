@@ -1,3 +1,4 @@
+import React from 'react'
 import { GridList, GridListTile } from '@material-ui/core'
 import { AuthorCardProps, AuthorCard } from '@jesus-film/ark.elements.author-card'
 

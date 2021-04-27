@@ -1,3 +1,4 @@
+import React from 'react'
 import { CssBaseline, ThemeProvider } from '@material-ui/core'
 import { Helmet } from 'react-helmet'
 import theme from './theme'

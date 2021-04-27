@@ -1,3 +1,4 @@
+import React from 'react'
 import { Button, Typography } from '@material-ui/core'
 import { Hero, HeroProps } from './hero'
 

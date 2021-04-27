@@ -1,3 +1,4 @@
+import React from 'react'
 import { AuthorList } from './author-list'
 
 export const BasicAuthorList = () => (

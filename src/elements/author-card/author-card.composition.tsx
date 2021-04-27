@@ -1,3 +1,4 @@
+import React from 'react'
 import { AuthorCard } from './author-card'
 
 export const MinimalAuthorCard = () => (
