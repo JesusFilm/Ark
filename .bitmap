@@ -37,5 +37,5 @@
         "mainFile": "index.ts",
         "rootDir": "src/providers/vokeThemeProvider"
     },
-    "version": "1.0.45"
+    "version": "1.0.66"
 }

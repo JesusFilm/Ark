@@ -35,7 +35,7 @@ jobs:
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}
       - uses: pnpm/action-setup@v1.2.1
         with:
-          version: 5.18.9
+          version: 6.2.1
           run_install: true
       - name: Set up bit config
         run: |
@@ -78,7 +78,7 @@ jobs:
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}
       - uses: pnpm/action-setup@v1.2.1
         with:
-          version: 5.18.9
+          version: 6.2.1
           run_install: true
       - name: Set up bit config
         run: |
