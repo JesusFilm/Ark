@@ -2,10 +2,9 @@
   "name": "jesus-film.ark",
   "version": "1.0.0",
   "description": "",
-  "dependencies": {
+  "peerDependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
-    "core-js": "^3.11.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0"
@@ -26,6 +25,7 @@
     "@types/react-router-dom": "^5.1.7",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
+    "core-js": "^3.11.0",
     "eslint": "^7.25.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
@@ -39,7 +39,7 @@
   "scripts": {
     "test": "jest .",
     "postinstall": "bvm install && bvm remove --all --keep-latest-versions 1 && bit link",
-    "lint": "eslint ."
+    "lint": "tsc --noEmit && eslint ."
   },
   "repository": {
     "type": "git",

@@ -47,7 +47,7 @@ export const Hero = ({ src, title, subtitle, action, onClick }: HeroProps) => {
   return (
     <Box
       className={classes.background}
-      style={src && { backgroundImage: `url(${src})` }}
+      style={src ? { backgroundImage: `url(${src})` } : undefined}
     >
       <Box className={classes.box}>
         <Container maxWidth="sm">
@@ -79,7 +79,7 @@ export const Hero = ({ src, title, subtitle, action, onClick }: HeroProps) => {
                 {typeof action === 'string'
                   ? (
                   <Button
-                    onClick={() => onClick()}
+                    onClick={() => onClick?.()}
                     variant="contained"
                     color="primary"
                     size="large"
