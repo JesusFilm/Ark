@@ -54,8 +54,8 @@ We use [Bit](https://github.com/teambit/bit) to contain and expose components fr
 
 ## Creating components
 
-- bit create react-component elements/AuthorList
-- bit show elements/AuthorList
+- bit create react-component post-card
+- bit show post-card
 - bit start
 - bit test
 
@@ -91,3 +91,4 @@ Pure logic components and helpers. (no visual components)
 4. Install all packages and import all components: `bbit install`
 5. Run the Workspace UI to explore the Evangalist components: `bbit start` and go to https://localhost:3000
 6. Enjoy!
+

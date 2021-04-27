@@ -37,6 +37,12 @@
             "email": "tataihono.nikora@gmail.com"
         }
     },
+    "post-card": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/post-card"
+    },
     "providers/jesus-film-theme-provider": {
         "scope": "",
         "version": "",
