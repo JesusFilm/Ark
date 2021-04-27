@@ -1,1 +1,1 @@
-export { VokeFilmThemeProvider } from './voke-theme-provider'
+export { VokeThemeProvider } from './voke-theme-provider'
