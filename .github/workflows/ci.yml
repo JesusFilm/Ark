@@ -7,12 +7,16 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
+    env:
+      BIT_TOKEN: ${{ secrets.BIT_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 15
         uses: actions/setup-node@v1
         with:
           node-version: 15.x
+      - name: add bvm bin folder to path
+        run: echo "$HOME/bin" >> $GITHUB_PATH
       - name: Cache pnpm modules
         uses: actions/cache@v2
         env:
@@ -22,6 +26,13 @@ jobs:
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-${{ hashFiles('**/package.json') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
+      - name: Cache installed bit versions
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-bit-versions
+        with:
+          path: ~/.bvm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}
       - uses: pnpm/action-setup@v2.0.1
         with:
           version: 6.2.1
