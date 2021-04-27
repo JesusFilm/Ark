@@ -1,10 +1,14 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { BasicJesusFilmThemeProvider } from "./jesusFilmThemeProvider.composition";
+import { JesusFilmThemeProvider } from "./jesusFilmThemeProvider";
 
 describe("jesusFilmThemeProvider", () => {
   it("should render the component", () => {
-    const { getByText } = render(<BasicJesusFilmThemeProvider />);
+    const { getByText } = render(
+      <JesusFilmThemeProvider>
+        hello from JesusFilmThemeProvider
+      </JesusFilmThemeProvider>
+    );
     expect(getByText("hello from JesusFilmThemeProvider")).toBeDefined();
   });
 });

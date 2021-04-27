@@ -1,2 +1,2 @@
-export { AuthorList } from './author-list';
-export type { AuthorListProps } from './author-list';
+export { AuthorList } from './authorList';
+export type { AuthorListProps } from './authorList';

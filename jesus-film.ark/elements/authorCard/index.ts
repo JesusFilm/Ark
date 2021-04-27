@@ -1,2 +1,2 @@
-export { AuthorCard } from './author-card';
-export type { AuthorCardProps } from './author-card';
+export { AuthorCard } from './authorCard';
+export type { AuthorCardProps } from './authorCard';
