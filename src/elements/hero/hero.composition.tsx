@@ -1,10 +1,10 @@
-import { Button, Typography } from "@material-ui/core";
-import React from "react";
-import { Hero, HeroProps } from "./hero";
+import { Button, Typography } from '@material-ui/core'
+import React from 'react'
+import { Hero, HeroProps } from './hero'
 
 export const BasicHero = (props: Partial<HeroProps>) => {
-  return <Hero title="Welcome to jesusfilm.org" {...props} />;
-};
+  return <Hero title="Welcome to jesusfilm.org" {...props} />
+}
 
 export const HeroWithAction = (props: Partial<HeroProps>) => {
   return (
@@ -13,11 +13,11 @@ export const HeroWithAction = (props: Partial<HeroProps>) => {
       title="Send People Jesus this Easter"
       subtitle="Help share the hope of Jesus through TV and Radio Broadcasts!"
       action="Give them Jesus"
-      onClick={() => alert("button clicked")}
+      onClick={() => alert('button clicked')}
       {...props}
     />
-  );
-};
+  )
+}
 
 export const CustomHero = (props: Partial<HeroProps>) => {
   return (
@@ -39,12 +39,12 @@ export const CustomHero = (props: Partial<HeroProps>) => {
         <Button
           variant="outlined"
           color="secondary"
-          onClick={props.onClick || (() => alert("button clicked"))}
+          onClick={props.onClick || (() => alert('button clicked'))}
         >
           Download the Free Voke App
         </Button>
       }
       {...props}
     />
-  );
-};
+  )
+}

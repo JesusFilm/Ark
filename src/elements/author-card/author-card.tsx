@@ -1,27 +1,27 @@
-import React from "react";
-import { Grid, makeStyles, Typography, Avatar } from "@material-ui/core";
+import React from 'react'
+import { Grid, makeStyles, Typography, Avatar } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   name: {
-    textTransform: "uppercase",
-    [theme.breakpoints.down("sm")]: {
-      textAlign: "center",
-    },
+    textTransform: 'uppercase',
+    [theme.breakpoints.down('sm')]: {
+      textAlign: 'center'
+    }
   },
   description: {
-    [theme.breakpoints.down("sm")]: {
-      textAlign: "center",
-    },
+    [theme.breakpoints.down('sm')]: {
+      textAlign: 'center'
+    }
   },
   image: {
     width: 100,
     height: 100,
-    fontSize: 30,
-  },
-}));
+    fontSize: 30
+  }
+}))
 
 export type AuthorCardProps = {
   /** author name */
@@ -34,21 +34,21 @@ export type AuthorCardProps = {
   onClick?: () => void;
 };
 
-export function AuthorCard({
+export function AuthorCard ({
   name,
   description,
   src,
-  onClick,
+  onClick
 }: AuthorCardProps) {
-  const classes = useStyles();
+  const classes = useStyles()
   const initials = name
     ? name
-        .match(/(\b\S)?/g)
-        .join("")
-        .match(/(^\S|\S$)?/g)
-        .join("")
-        .toUpperCase()
-    : "";
+      .match(/(\b\S)?/g)
+      .join('')
+      .match(/(^\S|\S$)?/g)
+      .join('')
+      .toUpperCase()
+    : ''
 
   return (
     <div className={classes.root} onClick={() => onClick?.()}>
@@ -82,5 +82,5 @@ export function AuthorCard({
         </Grid>
       </Grid>
     </div>
-  );
+  )
 }

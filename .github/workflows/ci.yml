@@ -5,6 +5,30 @@ on:
   pull_request:
     branches: [main]
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 15
+        uses: actions/setup-node@v1
+        with:
+          node-version: 15.x
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-pnpm-modules
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.2.1
+          run_install: true
+      - name: lint
+        run: |
+          pnpm lint
   test:
     runs-on: ubuntu-latest
     env:
@@ -47,7 +71,7 @@ jobs:
           bit status
           bit test
   export:
-    needs: [test]
+    needs: [test, lint]
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '--skip-ci') && github.event_name == 'push'"
     env:

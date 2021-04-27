@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode } from 'react'
 import {
   Box,
   Button,
@@ -6,8 +6,8 @@ import {
   createStyles,
   Grid,
   makeStyles,
-  Typography,
-} from "@material-ui/core";
+  Typography
+} from '@material-ui/core'
 
 export type HeroProps = {
   title: string | ReactNode;
@@ -24,26 +24,26 @@ const useStyles = makeStyles((theme) =>
   createStyles({
     background: {
       backgroundColor: theme.palette.primary.main,
-      backgroundPosition: "center center",
-      backgroundSize: "cover",
-      color: theme.palette.primary.contrastText,
+      backgroundPosition: 'center center',
+      backgroundSize: 'cover',
+      color: theme.palette.primary.contrastText
     },
     box: {
-      background: "linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5))",
-      padding: theme.spacing(2),
+      background: 'linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5))',
+      padding: theme.spacing(2)
     },
     grid: {
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      textAlign: "center",
-      minHeight: 550,
-    },
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center',
+      minHeight: 550
+    }
   })
-);
+)
 
 export const Hero = ({ src, title, subtitle, action, onClick }: HeroProps) => {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <Box
       className={classes.background}
@@ -53,26 +53,31 @@ export const Hero = ({ src, title, subtitle, action, onClick }: HeroProps) => {
         <Container maxWidth="sm">
           <Grid container spacing={2} className={classes.grid}>
             <Grid item>
-              {typeof title === "string" ? (
+              {typeof title === 'string'
+                ? (
                 <Typography variant="h2">{title}</Typography>
-              ) : (
-                title
-              )}
+                  )
+                : (
+                    title
+                  )}
             </Grid>
             {subtitle && (
               <Grid item>
-                {typeof subtitle === "string" ? (
+                {typeof subtitle === 'string'
+                  ? (
                   <Typography variant="h5" gutterBottom>
                     {subtitle}
                   </Typography>
-                ) : (
-                  subtitle
-                )}
+                    )
+                  : (
+                      subtitle
+                    )}
               </Grid>
             )}
-            {action && (typeof action !== "string" || onClick) && (
+            {action && (typeof action !== 'string' || onClick) && (
               <Grid item>
-                {typeof action === "string" ? (
+                {typeof action === 'string'
+                  ? (
                   <Button
                     onClick={() => onClick()}
                     variant="contained"
@@ -81,14 +86,15 @@ export const Hero = ({ src, title, subtitle, action, onClick }: HeroProps) => {
                   >
                     {action}
                   </Button>
-                ) : (
-                  action
-                )}
+                    )
+                  : (
+                      action
+                    )}
               </Grid>
             )}
           </Grid>
         </Container>
       </Box>
     </Box>
-  );
-};
+  )
+}
