@@ -1,36 +1,31 @@
-import React from 'react';
-import {
-  Grid,
-  makeStyles,
-  Typography,
-  Avatar,
-} from "@material-ui/core";
+import React from "react";
+import { Grid, makeStyles, Typography, Avatar } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
   name: {
-    textTransform: 'uppercase',
-    [theme.breakpoints.down('sm')]: {
+    textTransform: "uppercase",
+    [theme.breakpoints.down("sm")]: {
       textAlign: "center",
     },
   },
   description: {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down("sm")]: {
       textAlign: "center",
     },
   },
   image: {
     width: 100,
     height: 100,
-    fontSize: 30
+    fontSize: 30,
   },
 }));
 
 export type AuthorCardProps = {
   /** author name */
-  name: string
+  name: string;
   /** author bio */
   description: string;
   /** Background image source url */
@@ -39,12 +34,24 @@ export type AuthorCardProps = {
   onClick?: () => void;
 };
 
-export function AuthorCard({ name, description, src, onClick }: AuthorCardProps) {
+export function AuthorCard({
+  name,
+  description,
+  src,
+  onClick,
+}: AuthorCardProps) {
   const classes = useStyles();
-  const initials = name ? name.match(/(\b\S)?/g).join("").match(/(^\S|\S$)?/g).join("").toUpperCase() : "";
+  const initials = name
+    ? name
+        .match(/(\b\S)?/g)
+        .join("")
+        .match(/(^\S|\S$)?/g)
+        .join("")
+        .toUpperCase()
+    : "";
 
   return (
-    <div className={classes.root} onClick={() => onClick()}>
+    <div className={classes.root} onClick={() => onClick?.()}>
       <Grid
         container
         direction="row"
@@ -53,13 +60,17 @@ export function AuthorCard({ name, description, src, onClick }: AuthorCardProps)
         spacing={2}
       >
         <Grid item>
-          <Avatar alt={name} src={src} className={classes.image} >
+          <Avatar alt={name} src={src} className={classes.image}>
             {initials}
           </Avatar>
         </Grid>
         <Grid item md container direction="column" spacing={2}>
           <Grid item>
-            <Typography variant="h5" color="textSecondary" className={classes.name}>
+            <Typography
+              variant="h5"
+              color="textSecondary"
+              className={classes.name}
+            >
               {name}
             </Typography>
           </Grid>

@@ -1,10 +1,10 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { MinimalAuthorCard } from "./authorCard.composition";
+import { BasicAuthorList } from "./author-list.composition";
 
-describe("AuthorCard", () => {
+describe("author-list", () => {
   it("should render with the correct text", () => {
-    const { getByText } = render(<MinimalAuthorCard />);
+    const { getByText } = render(<BasicAuthorList />);
     const rendered = getByText("Tez Brooks");
     expect(rendered).toBeTruthy();
   });

@@ -1,10 +1,10 @@
 import React from "react";
 import { GridList, GridListTile } from "@material-ui/core";
-import { AuthorCardProps, AuthorCard } from "../authorCard";
+import { AuthorCardProps, AuthorCard } from "@jesus-film/ark.elements.author-card";
 
 export type AuthorListProps = {
   /** authors */
-  authors: AuthorCardProps[] | [];
+  authors: AuthorCardProps[];
 };
 
 export function AuthorList({ authors }: AuthorListProps) {

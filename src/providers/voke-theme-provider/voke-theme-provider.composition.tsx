@@ -1,7 +1,7 @@
 import { Box } from "@material-ui/core";
 import React from "react";
-import { HeroWithAction } from "../../elements/hero/hero.composition";
-import { VokeThemeProvider } from "./vokeThemeProvider";
+import { HeroWithAction } from "@jesus-film/ark.elements.hero/hero.composition";
+import { VokeThemeProvider } from "./voke-theme-provider";
 
 export const Hero = () => {
   return (
@@ -9,5 +9,4 @@ export const Hero = () => {
       <HeroWithAction />
     </VokeThemeProvider>
   );
-};
 };

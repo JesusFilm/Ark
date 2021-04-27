@@ -54,8 +54,8 @@ We use [Bit](https://github.com/teambit/bit) to contain and expose components fr
 
 ## Creating components
 
-- bit create react-component authorList
-- bit show authorList
+- bit create react-component elements/AuthorList
+- bit show elements/AuthorList
 - bit start
 - bit test
 

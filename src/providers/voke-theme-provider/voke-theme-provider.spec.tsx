@@ -1,8 +1,8 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { VokeThemeProvider } from "./vokeThemeProvider.composition";
+import { VokeThemeProvider } from "./voke-theme-provider";
 
-describe("VokeThemeProvider", () => {
+describe("voke-theme-provider", () => {
   it("should render the component", () => {
     const { getByText } = render(
       <VokeThemeProvider>hello from VokeThemeProvider</VokeThemeProvider>
