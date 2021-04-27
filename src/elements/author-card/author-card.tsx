@@ -1,4 +1,3 @@
-import React from 'react'
 import { Grid, makeStyles, Typography, Avatar } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({

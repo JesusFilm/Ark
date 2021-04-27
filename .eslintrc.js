@@ -17,7 +17,8 @@ module.exports = {
   plugins: ['react', '@typescript-eslint', 'jest'],
   rules: {
     'no-use-before-define': 'off',
-    '@typescript-eslint/no-use-before-define': ['error']
+    '@typescript-eslint/no-use-before-define': ['error'],
+    'react/react-in-jsx-scope': 'off'
   },
   settings: {
     react: {

@@ -1,5 +1,4 @@
 import { Button, Typography } from '@material-ui/core'
-import React from 'react'
 import { Hero, HeroProps } from './hero'
 
 export const BasicHero = (props: Partial<HeroProps>) => {
