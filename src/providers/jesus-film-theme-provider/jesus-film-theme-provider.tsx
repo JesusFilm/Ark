@@ -1,7 +1,7 @@
-import { CssBaseline, ThemeProvider } from "@material-ui/core";
-import React from "react";
-import { Helmet } from "react-helmet";
-import theme from "./theme";
+import { CssBaseline, ThemeProvider } from '@material-ui/core'
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import theme from './theme'
 
 export interface JesusFilmThemeProviderProps
   extends React.HTMLAttributes<HTMLDivElement> {}
@@ -22,5 +22,5 @@ export const JesusFilmThemeProvider = ({
       </Helmet>
       {children}
     </ThemeProvider>
-  );
-};
+  )
+}

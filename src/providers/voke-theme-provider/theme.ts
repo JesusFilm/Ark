@@ -1,4 +1,4 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles'
 
 const theme = createMuiTheme({
   typography: {
@@ -19,13 +19,13 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       main: '#44C8E8',
-      contrastText: '#fff',
+      contrastText: '#fff'
     },
     secondary: {
-      main: '#fa8232',
+      main: '#fa8232'
     },
     background: {
-      paper: "#fcfbf9",
+      paper: '#fcfbf9',
       default: 'rgba(148, 188, 217, 0.1)'
     }
   },
@@ -37,7 +37,6 @@ const theme = createMuiTheme({
       }
     }
   }
-});
+})
 
-
-export default theme;
+export default theme

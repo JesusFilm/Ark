@@ -41,6 +41,24 @@ We use [Bit](https://github.com/teambit/bit) to contain and expose components fr
 - Exposed ["Evangelist" marketing components] on bit.dev.
 - Exposed [base-ui components on bit.dev](https://bit.dev/teambit/base-ui).
 
+## Getting Started
+
+- Clone this repo
+- Follow install directions https://harmony-docs.bit.dev/getting-started/installing-bit
+- `bit login`
+- `bit config get user.token`
+- cp .env.sample .env.local
+- Copy/paste user token in .env.local
+- source .env.local
+- bit install
+
+## Creating components
+
+- bit create react-component elements/AuthorList
+- bit show elements/AuthorList
+- bit start
+- bit test
+
 ## Structure:
 
 ### Theme

@@ -3,15 +3,11 @@
  https://harmony-docs.bit.dev/workspace/configurations
  */ {
   "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
-  // Configurations for the workspace.
   "teambit.workspace/workspace": {
-    // The workspace name -  will be displayed in the Workspace UI.
-    "name": "Common Component System",
-    // The workspace icon -  will be displayed in the Workspace UI.
+    "name": "Jesus Film Project - Ark",
     "icon": "https://play-lh.googleusercontent.com/jrQZ_vJNYS_VAS28z1EpqzVzF83cMN5Xz4frnqV0v0ZjGTV9nKZlNnlLE2SKrWRNLfY=s180-rw",
-    // The default directory for all components in the workspace.
     "defaultDirectory": "{scope}/{name}",
-    "defaultScope": "jesus-film.base"
+    "defaultScope": "jesus-film.ark"
   },
   "teambit.dependencies/dependency-resolver": {
     "packageManager": "teambit.dependencies/pnpm",

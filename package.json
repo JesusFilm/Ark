@@ -1,5 +1,5 @@
 {
-  "name": "common-component-system",
+  "name": "jesus-film.ark",
   "version": "1.0.0",
   "description": "",
   "dependencies": {
@@ -23,11 +23,22 @@
     "@types/node": "^12.20.7",
     "@types/react": "^16.14.5",
     "@types/react-router-dom": "^5.1.7",
-    "jest": "^26.6.3"
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.23.2",
+    "jest": "^26.6.3",
+    "typescript": "^4.2.4"
   },
   "scripts": {
     "test": "jest .",
-    "postinstall": "bvm install && bvm remove --all --keep-latest-versions 1 && bit link"
+    "postinstall": "bvm install && bvm remove --all --keep-latest-versions 1 && bit link",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",

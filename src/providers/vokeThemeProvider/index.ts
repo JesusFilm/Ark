@@ -1,1 +1,0 @@
-export { JesusFilmThemeProvider } from './jesusFilmThemeProvider';
