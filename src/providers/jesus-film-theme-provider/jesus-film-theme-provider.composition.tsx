@@ -1,11 +1,11 @@
+import { Typography } from '@material-ui/core'
 import React from 'react'
-import { HeroWithAction } from '@jesus-film/ark.elements.hero/hero.composition'
 import { JesusFilmThemeProvider } from './jesus-film-theme-provider'
 
-export const Hero = () => {
+export const BasicJesusFilmThemeProvider = () => {
   return (
     <JesusFilmThemeProvider>
-      <HeroWithAction />
+      <Typography>Hello World</Typography>
     </JesusFilmThemeProvider>
   )
 }

@@ -1,11 +1,11 @@
+import { Typography } from '@material-ui/core'
 import React from 'react'
-import { HeroWithAction } from '@jesus-film/ark.elements.hero/hero.composition'
 import { VokeThemeProvider } from './voke-theme-provider'
 
-export const Hero = () => {
+export const BasicVokeThemeProvider = () => {
   return (
     <VokeThemeProvider>
-      <HeroWithAction />
+      <Typography>Hello World</Typography>
     </VokeThemeProvider>
   )
 }

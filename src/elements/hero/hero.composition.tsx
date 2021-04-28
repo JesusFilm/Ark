@@ -6,7 +6,7 @@ export const BasicHero = (props: Partial<HeroProps>) => {
   return <Hero title="Welcome to jesusfilm.org" {...props} />
 }
 
-export const HeroWithAction = (props: Partial<HeroProps>) => {
+export const CompleteHero = (props: Partial<HeroProps>) => {
   return (
     <Hero
       src="https://www.jesusfilm.org/content/dam/jesusfilm/homepage/hero/jesus-broadcast-easter.png"

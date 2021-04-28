@@ -80,7 +80,7 @@ jobs:
       - name: Bit test
         run: |
           bit status
-          bit test
+          bit build
   export:
     needs: [test, lint]
     runs-on: ubuntu-latest
