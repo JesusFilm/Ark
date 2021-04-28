@@ -27,11 +27,6 @@
       }
     },
   },
-  /*
-      The 'Variant' extension enables a cascading, CSS-like, selection of components in the workspace configuration.
-      It provides order and simplicity to the way we apply rules and settings to large number of independent components - all in a single workspace.
-      https://harmony-docs.bit.dev/workspace/cascading-rules
-     */
   "teambit.workspace/variants": {
     "*": {
       "teambit.react/react": {}

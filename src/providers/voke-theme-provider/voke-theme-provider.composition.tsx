@@ -1,11 +1,11 @@
 import React from 'react'
-import { HeroWithAction } from '@jesus-film/ark.elements.hero/hero.composition'
+import { CompleteHero } from '@jesus-film/ark.elements.hero/hero.composition'
 import { VokeThemeProvider } from './voke-theme-provider'
 
-export const Hero = () => {
+export const BasicVokeThemeProvider = () => {
   return (
     <VokeThemeProvider>
-      <HeroWithAction />
+      <CompleteHero />
     </VokeThemeProvider>
   )
 }
