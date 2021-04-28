@@ -37,7 +37,7 @@
             "email": "tataihono.nikora@gmail.com"
         }
     },
-    "post-card": {
+    "elements/post-card": {
         "scope": "",
         "version": "",
         "mainFile": "index.ts",
