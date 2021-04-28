@@ -1,3 +1,4 @@
+import React from 'react'
 import { Grid, makeStyles, Typography, Avatar } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
@@ -41,13 +42,11 @@ export function AuthorCard ({
 }: AuthorCardProps) {
   const classes = useStyles()
   const initials = name
-    ? name
-      .match(/(\b\S)?/g)
-      .join('')
-      .match(/(^\S|\S$)?/g)
-      .join('')
-      .toUpperCase()
-    : ''
+    .match(/(\b\S)?/g)
+    ?.join('')
+    ?.match(/(^\S|\S$)?/g)
+    ?.join('')
+    ?.toUpperCase() || ''
 
   return (
     <div className={classes.root} onClick={() => onClick?.()}>

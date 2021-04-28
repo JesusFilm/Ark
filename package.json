@@ -22,6 +22,7 @@
     "@types/jest": "^26.0.23",
     "@types/node": "^12.20.10",
     "@types/react": "^17.0.4",
+    "@types/react-helmet": "^6.1.1",
     "@types/react-router-dom": "^5.1.7",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
@@ -38,16 +39,16 @@
   "scripts": {
     "test": "jest .",
     "postinstall": "bvm install && bvm remove --all --keep-latest-versions 1 && bit link",
-    "lint": "eslint ."
+    "lint": "tsc --noEmit && eslint ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JesusFilm/common-component-system.git"
+    "url": "git+https://github.com/JesusFilm/Ark.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/JesusFilm/common-component-system/issues"
+    "url": "https://github.com/JesusFilm/Ark/issues"
   },
-  "homepage": "https://github.com/JesusFilm/common-component-system#readme"
+  "homepage": "https://github.com/JesusFilm/Ark#readme"
 }

@@ -13,13 +13,20 @@
     "packageManager": "teambit.dependencies/pnpm",
     "packageManagerArgs": [],
     "devFilePatterns": ["**/*.spec.ts"],
-    "strictPeerDependencies": true
+    "strictPeerDependencies": true,
+    "policy": {
+      "dependencies": {
+        "core-js": "^3.11.0",
+      },
+      "peerDependencies": {
+        "@material-ui/core": "^4.11.3",
+        "@material-ui/icons": "^4.11.2",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-helmet": "^6.1.0"
+      }
+    },
   },
-  /*
-      The 'Variant' extension enables a cascading, CSS-like, selection of components in the workspace configuration.
-      It provides order and simplicity to the way we apply rules and settings to large number of independent components - all in a single workspace.
-      https://harmony-docs.bit.dev/workspace/cascading-rules
-     */
   "teambit.workspace/variants": {
     "*": {
       "teambit.react/react": {}

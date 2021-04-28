@@ -1,10 +1,11 @@
+import React from 'react'
 import { fireEvent, render } from '@testing-library/react'
-import { HeroWithAction, CustomHero } from './hero.composition'
+import { CompleteHero, CustomHero } from './hero.composition'
 
 describe('hero', () => {
   it('component should render', () => {
     const handleClick = jest.fn()
-    const { getByText } = render(<HeroWithAction onClick={handleClick} />)
+    const { getByText } = render(<CompleteHero onClick={handleClick} />)
 
     expect(getByText('Send People Jesus this Easter')).toBeDefined()
     expect(
