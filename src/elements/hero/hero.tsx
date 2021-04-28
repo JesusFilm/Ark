@@ -28,8 +28,9 @@ const useStyles = makeStyles((theme) =>
       backgroundSize: 'cover',
       color: theme.palette.primary.contrastText
     },
-    backgroundOverlay: {
-      background: 'linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5))'
+    box: {
+      background: 'linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5))',
+      padding: theme.spacing(2)
     },
     grid: {
       flexDirection: 'column',
