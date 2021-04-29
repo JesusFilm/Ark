@@ -1,3 +1,6 @@
 module.exports = {
-  setupFilesAfterEnv: ['<rootDir>/__test__/setup.ts']
+  collectCoverageFrom: [
+    '**/*.{ts,tsx}',
+    '!**/*.composition.{ts,tsx}'
+  ]
 }

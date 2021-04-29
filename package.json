@@ -37,7 +37,7 @@
     "typescript": "^4.2.4"
   },
   "scripts": {
-    "test": "jest .",
+    "test": "jest . --coverage",
     "postinstall": "bvm install && bvm remove --all --keep-latest-versions 1 && bit link",
     "lint": "tsc --noEmit && eslint ."
   },

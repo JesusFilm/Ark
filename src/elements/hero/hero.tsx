@@ -46,6 +46,7 @@ export const Hero = ({ src, title, subtitle, action, onClick }: HeroProps) => {
   const classes = useStyles()
   return (
     <Box
+      data-testid="heroBackground"
       className={classes.background}
       style={src ? { backgroundImage: `url(${src})` } : undefined}
     >
@@ -79,7 +80,7 @@ export const Hero = ({ src, title, subtitle, action, onClick }: HeroProps) => {
                 {typeof action === 'string'
                   ? (
                   <Button
-                    onClick={() => onClick?.()}
+                    onClick={() => onClick()}
                     variant="contained"
                     color="primary"
                     size="large"
