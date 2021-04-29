@@ -1,6 +1,7 @@
 import React from 'react'
 import { fireEvent, render } from '@testing-library/react'
 import { CompleteHero, CustomHero } from './hero.composition'
+import { Hero } from './hero'
 
 describe('hero', () => {
   it('component should render', () => {
@@ -31,5 +32,10 @@ describe('hero', () => {
     ).toBeDefined()
     fireEvent.click(getByText('Download the Free Voke App'))
     expect(handleClick).toHaveBeenCalled()
+  })
+
+  it('should have a default background', () => {
+    const { getByTestId } = render(<Hero title="abc" />)
+    expect(window.getComputedStyle(getByTestId('heroBackground')).backgroundColor).toEqual('rgb(63, 81, 181)')
   })
 })
