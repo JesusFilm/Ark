@@ -1,18 +1,20 @@
 import React from 'react'
-import { AuthorCard } from './author-card'
+import { AuthorCard, AuthorCardProps } from './author-card'
 
-export const BasicAuthorCard = () => (
+export const BasicAuthorCard = (props: Partial<AuthorCardProps>) => (
   <AuthorCard
     name="Tez Brooks"
     description="Award winning author, screenwriter and international speaker"
+    {...props}
   />
 )
 
-export const CompleteAuthorCard = () => (
+export const CompleteAuthorCard = (props: Partial<AuthorCardProps>) => (
   <AuthorCard
     name="Tez Brooks"
     description="Award winning author, screenwriter and international speaker"
     src="https://www.jesusfilm.org/content/dam/jesusfilm/avatars/tezg.jpg"
     onClick={() => alert('yoyoyo')}
+    {...props}
   />
 )

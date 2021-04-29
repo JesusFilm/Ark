@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, makeStyles, Typography, Avatar } from '@material-ui/core'
+import { Grid, makeStyles, Typography, Avatar, Box } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,15 +41,10 @@ export function AuthorCard ({
   onClick
 }: AuthorCardProps) {
   const classes = useStyles()
-  const initials = name
-    .match(/(\b\S)?/g)
-    ?.join('')
-    ?.match(/(^\S|\S$)?/g)
-    ?.join('')
-    ?.toUpperCase() || ''
+  const initials = name.split(' ').map((n) => n[0]).join('').toUpperCase()
 
   return (
-    <div className={classes.root} onClick={() => onClick?.()}>
+    <Box className={classes.root} onClick={() => onClick?.()}>
       <Grid
         container
         direction="row"
@@ -79,6 +74,6 @@ export function AuthorCard ({
           </Grid>
         </Grid>
       </Grid>
-    </div>
+    </Box>
   )
 }
