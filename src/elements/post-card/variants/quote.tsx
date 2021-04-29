@@ -24,6 +24,8 @@ export type QuoteProps = {
   excerpt: string;
   /** published_at string */
   publishedAt: string;
+  /** Variant Style */
+  style: 'quote'
 };
 
 export function Quote ({

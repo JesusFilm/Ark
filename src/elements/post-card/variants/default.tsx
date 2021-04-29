@@ -26,6 +26,8 @@ export type DefaultProps = {
   excerpt?: string;
   /** Image source url */
   src?: string;
+  /** Variant Style */
+  style: 'default'
 };
 
 export function Default ({

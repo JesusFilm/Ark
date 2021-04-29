@@ -19,6 +19,8 @@ export type PremiereProps = {
   excerpt?: string;
   /** Image source url */
   src?: string;
+  /** Variant Style */
+  style: 'premiere'
 };
 
 export function Premiere ({

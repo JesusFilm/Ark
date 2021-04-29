@@ -22,6 +22,8 @@ export type ItemProps = {
   author?: string;
   /** Image source url */
   src?: string;
+  /** Variant Style */
+  style: 'item'
 };
 
 export function Item ({

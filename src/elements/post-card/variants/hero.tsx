@@ -34,6 +34,8 @@ export type HeroProps = {
   src?: string;
   /** Callback when button is clicked */
   onClick?: () => void;
+  /** Variant Style */
+  style: 'hero'
 };
 
 export function Hero ({
