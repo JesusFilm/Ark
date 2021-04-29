@@ -7,7 +7,17 @@ export const HeroPostCard = (props: Partial<PostCardProps>) => (
     title="His Shoes Led to Learning About Christianity"
     excerpt="The call to prayer eminated from Omar's Lips - an eerie sound, out of place in the park. Omar and a group of 15 men bowed in sync."
     category="Following Jesus"
-    onClick={() => alert('clicked')}
+    onClick={(props.style === 'hero' && props.onClick) || (() => alert('clicked'))}
+    style="hero"
+  />
+)
+
+export const HeroPostCardNoImage = (props: Partial<PostCardProps>) => (
+  <PostCard
+    title="His Shoes Led to Learning About Christianity"
+    excerpt="The call to prayer eminated from Omar's Lips - an eerie sound, out of place in the park. Omar and a group of 15 men bowed in sync."
+    category="Following Jesus"
+    onClick={(props.style === 'hero' && props.onClick) || (() => alert('clicked'))}
     style="hero"
   />
 )

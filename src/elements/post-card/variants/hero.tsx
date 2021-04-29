@@ -49,6 +49,7 @@ export function Hero ({
 
   return (
     <Box
+      data-testid="heroVariantBackground"
       className={src ? classes.heroBackground : ''}
       style={src ? { backgroundImage: `url(${src})` } : {}}
     >
@@ -65,7 +66,6 @@ export function Hero ({
             sm={12}
             md={9}
             lg={6}
-            spacing={2}
           >
             <Container maxWidth="sm">
               <Grid
