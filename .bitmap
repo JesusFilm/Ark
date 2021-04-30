@@ -37,6 +37,24 @@
             "email": "tataihono.nikora@gmail.com"
         }
     },
+    "elements/jesus-film-brandmark": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/jesus-film-brandmark"
+    },
+    "elements/jesus-film-symbol": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/jesus-film-symbol"
+    },
+    "envs/react": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/envs/react"
+    },
     "providers/jesus-film-theme-provider": {
         "scope": "",
         "version": "",
