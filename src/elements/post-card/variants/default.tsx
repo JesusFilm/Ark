@@ -5,6 +5,7 @@ import {
   Typography,
   Container
 } from '@material-ui/core'
+import { TimeAgo } from '@jesus-film/ark.elements.time-ago'
 
 const useStyles = makeStyles((theme) => ({
   image: {
@@ -20,8 +21,10 @@ export type DefaultProps = {
   title: string;
   /** category */
   category: string;
+  /** locale */
+  locale?: 'ar' | 'be' | 'bg' | 'bn_IN' | 'ca' | 'cs' | 'da' | 'de' | 'el' | 'en_short' | 'en_US' | 'es' | 'eu' | 'fa' | 'fi' | 'fr' | 'gl' | 'he' | 'hi_IN' | 'hu' | 'id_ID' | 'it' | 'ja' | 'ka' | 'ko' | 'ml' | 'my' | 'nb_NO' | 'nl' | 'nn_NO' | 'oc' | 'pl' | 'pt_BR' | 'ro' | 'ru' | 'sq' | 'sr' | 'sv' | 'ta' | 'th' | 'tk' | 'tr' | 'uk' | 'vi' | 'zh_CN' | 'zh_TW'
   /** publishedAt */
-  publishedAt: string;
+  publishedAt: Date;
   /** post excerpt */
   excerpt?: string;
   /** Image source url */
@@ -35,7 +38,8 @@ export function Default ({
   excerpt,
   category,
   publishedAt,
-  src
+  src,
+  locale = 'en_US'
 }: DefaultProps) {
   const classes = useStyles()
   return (
@@ -60,7 +64,7 @@ export function Default ({
           <Typography variant="body1">{excerpt}</Typography>
         </Grid>
         <Grid item>
-          <Typography variant="body2">{publishedAt}</Typography>
+          <TimeAgo publishedAt={publishedAt} locale={locale} />
         </Grid>
       </Grid>
     </Container>

@@ -67,5 +67,11 @@
             "email": "tataihono.nikora@gmail.com"
         }
     },
-    "version": "1.0.67"
+    "elements/time-ago": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/time-ago"
+    },
+    "version": "1.0.68"
 }
