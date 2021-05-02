@@ -1,6 +1,7 @@
 [![bit components](https://img.shields.io/badge/dynamic/json.svg?color=6e3991&label=bit%20components&query=payload.totalComponents&url=https://api.bit.dev/scope/bit/base-ui?UseCache=1)](https://bit.dev/bit/base-ui)
 <a href="https://opensource.org/licenses/MIT"><img alt="MIT" src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
 <a href="#contributing"><img alt="prs" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
+<a href="https://app.fossa.com/projects/git%2Bgithub.com%2FJesusFilm%2FArk?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FJesusFilm%2FArk.svg?type=shield"/></a>
 
 # Base component design system for Jesus Film
 
@@ -91,3 +92,7 @@ Pure logic components and helpers. (no visual components)
 4. Install all packages and import all components: `bbit install`
 5. Run the Workspace UI to explore the Evangalist components: `bbit start` and go to https://localhost:3000
 6. Enjoy!
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FJesusFilm%2FArk.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FJesusFilm%2FArk?ref=badge_large)
