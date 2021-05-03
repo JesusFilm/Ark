@@ -4,6 +4,7 @@ import {
   makeStyles,
   Typography
 } from '@material-ui/core'
+import { TimeAgo, TimeAgoProps } from '@jesus-film/ark.elements.time-ago'
 
 const useStyles = makeStyles((theme) => ({
   quote: {
@@ -22,8 +23,6 @@ export type QuoteProps = {
   title: string;
   /** excerpt  */
   excerpt: string;
-  /** published_at string */
-  publishedAt: string;
   /** Variant Style */
   style: 'quote'
 };
@@ -31,8 +30,9 @@ export type QuoteProps = {
 export function Quote ({
   title,
   excerpt,
-  publishedAt
-}: QuoteProps) {
+  datetime,
+  locale
+}: QuoteProps & TimeAgoProps) {
   const classes = useStyles()
 
   return (
@@ -53,7 +53,7 @@ export function Quote ({
         </Grid>
         <Grid item>
           <Typography variant="body2">
-            {publishedAt}
+            <TimeAgo datetime={datetime} locale={locale} />
           </Typography>
         </Grid>
       </Grid>

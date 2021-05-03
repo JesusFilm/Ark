@@ -1,22 +1,23 @@
 import React from 'react'
-import TimeAgoDefault from 'timeago-react'
+import TimeAgoLibrary from 'timeago-react'
+import { register } from 'timeago.js'
+import * as locales from 'timeago.js/lib/lang/index.js'
+Object.keys(locales).forEach(locale => {
+  register(locale, locales[locale])
+})
 
 export type TimeAgoProps = {
   /** locale */
   locale?: 'ar' | 'be' | 'bg' | 'bn_IN' | 'ca' | 'cs' | 'da' | 'de' | 'el' | 'en_short' | 'en_US' | 'es' | 'eu' | 'fa' | 'fi' | 'fr' | 'gl' | 'he' | 'hi_IN' | 'hu' | 'id_ID' | 'it' | 'ja' | 'ka' | 'ko' | 'ml' | 'my' | 'nb_NO' | 'nl' | 'nn_NO' | 'oc' | 'pl' | 'pt_BR' | 'ro' | 'ru' | 'sq' | 'sr' | 'sv' | 'ta' | 'th' | 'tk' | 'tr' | 'uk' | 'vi' | 'zh_CN' | 'zh_TW'
-  /** publishedAt */
-  publishedAt: Date;
+  /** datetime */
+  datetime: Date;
 };
 
-export function TimeAgo ({ publishedAt, locale = 'en_US' }: TimeAgoProps) {
-  if (locale === 'en_US') {
-    return <TimeAgoDefault datetime={publishedAt} />
-  } else {
-    const LocalizedTimeAgo = React.lazy(() => import(`./locales/${locale}`))
-    return (
-      <React.Suspense fallback={<TimeAgoDefault datetime={publishedAt} />}>
-        <LocalizedTimeAgo publishedAt={publishedAt} />
-      </React.Suspense>
-    )
-  }
+export function TimeAgo ({
+  datetime,
+  locale = 'en_US'
+}: TimeAgoProps) {
+  return (
+    <TimeAgoLibrary datetime={datetime} locale={locale} />
+  )
 }

@@ -1,14 +1,11 @@
 import React from 'react'
 import { TimeAgo } from './time-ago'
 
-export const EnTimeAgo = () => (
+const d = new Date()
+d.setDate(d.getDate() - 5)
+
+export const BasicTimeAgo = () => (
   <TimeAgo
-    publishedAt={new Date('2021-04-30T11:30:00.000+02:00')}
+    datetime={d}
     locale='en_US' />
 )
-
-// export const ViTimeAgo = () => (
-//   <TimeAgo
-//     publishedAt={new Date('2021-04-30T11:30:00.000+02:00')}
-//     locale='vi' />
-// )

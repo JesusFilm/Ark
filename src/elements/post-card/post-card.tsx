@@ -11,8 +11,9 @@ import {
   Default,
   DefaultProps
 } from './variants'
+import { TimeAgoProps } from '@jesus-film/ark.elements.time-ago'
 
-export type PostCardProps = HeroProps | PremiereProps | ItemProps | QuoteProps | DefaultProps
+export type PostCardProps = HeroProps | PremiereProps | ItemProps | QuoteProps & TimeAgoProps | DefaultProps & TimeAgoProps
 
 export function PostCard (PostCardProps: PostCardProps) {
   switch (PostCardProps.style) {
