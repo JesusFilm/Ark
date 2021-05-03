@@ -27,6 +27,6 @@ export function JesusFilmSymbol ({ variant = 'red', ...rest }: JesusFilmSymbolPr
   }
 
   return (
-    <img src={source} {...rest} />
+    <img src={source} {...rest} aria-label="jesus-film-symbol" />
   )
 }
