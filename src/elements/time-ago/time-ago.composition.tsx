@@ -5,7 +5,11 @@ const d = new Date()
 d.setDate(d.getDate() - 5)
 
 export const BasicTimeAgo = () => (
+  <TimeAgo datetime={d} />
+)
+
+export const Bn_INTimeAgo = () => (
   <TimeAgo
     datetime={d}
-    locale='en_US' />
+    locale='bn_IN' />
 )
