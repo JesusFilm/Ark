@@ -6,7 +6,7 @@
   "teambit.workspace/workspace": {
     "name": "Jesus Film Project - Ark",
     "icon": "https://play-lh.googleusercontent.com/jrQZ_vJNYS_VAS28z1EpqzVzF83cMN5Xz4frnqV0v0ZjGTV9nKZlNnlLE2SKrWRNLfY=s180-rw",
-    "defaultDirectory": "src/elements/{name}",
+    "defaultDirectory": "src/{name}",
     "defaultScope": "jesus-film.ark"
   },
   "teambit.dependencies/dependency-resolver": {
