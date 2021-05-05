@@ -25,6 +25,12 @@
             "email": "tataihono.nikora@gmail.com"
         }
     },
+    "elements/banner": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "ark/elements/banner"
+    },
     "elements/hero": {
         "scope": "",
         "version": "",

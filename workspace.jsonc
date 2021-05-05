@@ -1,7 +1,7 @@
 /*
  This is where your workspace and Bit extensions used by it, are configured.
  https://harmony-docs.bit.dev/workspace/configurations
- */ {
+ */{
   "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
   "teambit.workspace/workspace": {
     "name": "Jesus Film Project - Ark",
@@ -12,11 +12,13 @@
   "teambit.dependencies/dependency-resolver": {
     "packageManager": "teambit.dependencies/pnpm",
     "packageManagerArgs": [],
-    "devFilePatterns": ["**/*.spec.ts"],
+    "devFilePatterns": [
+      "**/*.spec.ts"
+    ],
     "strictPeerDependencies": true,
     "policy": {
       "dependencies": {
-        "core-js": "^3.11.0",
+        "core-js": "^3.11.0"
       },
       "peerDependencies": {
         "@material-ui/core": "^4.11.3",
@@ -25,7 +27,7 @@
         "react-dom": "^17.0.2",
         "react-helmet": "^6.1.0"
       }
-    },
+    }
   },
   "teambit.workspace/variants": {
     "*": {
