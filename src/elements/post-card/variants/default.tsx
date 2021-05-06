@@ -17,17 +17,17 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export type DefaultProps = {
-  /** post title */
+  /** Post title */
   title: string;
-  /** category */
+  /** Category */
   category: string;
-  /** post excerpt */
+  /** Post excerpt */
   excerpt?: string;
   /** Image source url */
   src?: string;
-  /** Variant Style */
-  style: 'default',
-};
+  /** Variant style */
+  variant: 'default',
+} & TimeAgoProps;
 
 export function Default ({
   title,
@@ -36,7 +36,7 @@ export function Default ({
   datetime,
   src,
   locale
-}: DefaultProps & TimeAgoProps) {
+}: DefaultProps) {
   const classes = useStyles()
   return (
     <Container maxWidth="xs">
@@ -47,18 +47,22 @@ export function Default ({
         justify="flex-start"
         spacing={1}
       >
-        <Grid item>
-          <img src={src} className={classes.image} />
-        </Grid>
+        {src && 
+          <Grid item>
+            <img src={src} className={classes.image} />
+          </Grid>
+        }
         <Grid item>
           <Typography variant="h6" className={classes.category}>{category}</Typography>
         </Grid>
         <Grid item>
           <Typography variant="h3">{title}</Typography>
         </Grid>
-        <Grid item>
-          <Typography variant="body1">{excerpt}</Typography>
-        </Grid>
+        {excerpt && 
+          <Grid item>
+            <Typography variant="body1">{excerpt}</Typography>
+          </Grid>
+        }
         <Grid item>
           <TimeAgo datetime={datetime} locale={locale} />
         </Grid>

@@ -16,14 +16,14 @@ const useStyles = makeStyles(() => ({
 }))
 
 export type ItemProps = {
-  /** post title */
+  /** Post title */
   title: string;
   /** author name */
   author?: string;
   /** Image source url */
   src?: string;
-  /** Variant Style */
-  style: 'item'
+  /** Variant style */
+  variant: 'item'
 };
 
 export function Item ({
@@ -61,9 +61,11 @@ export function Item ({
           <Grid item>
             <Typography variant="subtitle1">{title}</Typography>
           </Grid>
-          <Grid item>
-            <Typography variant="body2" className={classes.author}>{author}</Typography>
-          </Grid>
+          {author && 
+            <Grid item>
+              <Typography variant="body2" className={classes.author}>{author}</Typography>
+            </Grid>
+          }
         </Grid>
       </Grid>
     </Container>

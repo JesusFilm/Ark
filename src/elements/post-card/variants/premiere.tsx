@@ -13,14 +13,14 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export type PremiereProps = {
-  /** post title */
+  /** Post title */
   title: string;
-  /** post excerpt */
+  /** Post excerpt */
   excerpt?: string;
   /** Image source url */
   src?: string;
-  /** Variant Style */
-  style: 'premiere'
+  /** Variant style */
+  variant: 'premiere'
 };
 
 export function Premiere ({
@@ -39,15 +39,19 @@ export function Premiere ({
         justify="center"
         spacing={1}
       >
-        <Grid item>
-          <img src={src} className={classes.image} />
-        </Grid>
+        {src && 
+          <Grid item>
+            <img src={src} className={classes.image} />
+          </Grid>
+        }
         <Grid item>
           <Typography variant="subtitle1" align="center">{title}</Typography>
         </Grid>
-        <Grid item>
-          <Typography variant="body2" align="center">{excerpt}</Typography>
-        </Grid>
+        {excerpt && 
+          <Grid item>
+            <Typography variant="body2" align="center">{excerpt}</Typography>
+          </Grid>
+        }
       </Grid>
     </Container>
   )

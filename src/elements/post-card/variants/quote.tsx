@@ -19,20 +19,20 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export type QuoteProps = {
-  /** post title */
+  /** Post title */
   title: string;
   /** excerpt  */
   excerpt: string;
-  /** Variant Style */
-  style: 'quote'
-};
+  /** Variant style */
+  variant: 'quote'
+} & TimeAgoProps;
 
 export function Quote ({
   title,
   excerpt,
   datetime,
   locale
-}: QuoteProps & TimeAgoProps) {
+}: QuoteProps) {
   const classes = useStyles()
 
   return (

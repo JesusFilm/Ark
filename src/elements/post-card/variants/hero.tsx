@@ -20,22 +20,26 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '80vh',
     paddingTop: theme.spacing(6),
     paddingBottom: theme.spacing(8)
+  },
+  noImage: {
+    paddingTop: theme.spacing(6),
+    paddingBottom: theme.spacing(8)
   }
 }))
 
 export type HeroProps = {
-  /** post title */
+  /** Post title */
   title: string;
-  /** post category */
+  /** Post category */
   category?: string;
-  /** post excerpt */
+  /** Post excerpt */
   excerpt?: string;
   /** Image source url */
   src?: string;
   /** Callback when button is clicked */
   onClick?: () => void;
-  /** Variant Style */
-  style: 'hero'
+  /** Variant style */
+  variant: 'hero'
 };
 
 export function Hero ({
@@ -50,7 +54,7 @@ export function Hero ({
   return (
     <Box
       data-testid="heroVariantBackground"
-      className={src ? classes.heroBackground : ''}
+      className={src ? classes.heroBackground : classes.noImage}
       style={src ? { backgroundImage: `url(${src})` } : {}}
     >
       <Box className={src ? classes.heroDarken : ''}>
@@ -74,15 +78,19 @@ export function Hero ({
                 alignItems="center"
                 spacing={2}
               >
-                <Grid item>
-                  <Typography variant="h5">{category}</Typography>
-                </Grid>
+                {category && 
+                  <Grid item>
+                    <Typography variant="h5">{category}</Typography>
+                  </Grid>
+                }
                 <Grid item>
                   <Typography variant="h2">{title}</Typography>
                 </Grid>
-                <Grid item>
-                  <Typography variant="body1">{excerpt}</Typography>
-                </Grid>
+                {excerpt && 
+                  <Grid item>
+                    <Typography variant="body1">{excerpt}</Typography>
+                  </Grid>
+                }
                 {onClick && (
                   <Grid item>
                     <Button
