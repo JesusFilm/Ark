@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       justifyContent: 'center'
     }
-  },
+  }
 }))
 
 export type AuthorListProps = {
@@ -16,9 +16,9 @@ export type AuthorListProps = {
 };
 
 export function AuthorList ({ authors }: AuthorListProps) {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
-    <Grid 
+    <Grid
       container
       className={classes.align}
       alignItems="center"

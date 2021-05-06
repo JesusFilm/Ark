@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => ({
   wrap: {
     [theme.breakpoints.up('sm')]: {
       flexWrap: 'nowrap'
-    }  
+    }
   },
   name: {
     textTransform: 'uppercase',
@@ -43,7 +43,13 @@ export function AuthorCard ({
   onClick
 }: AuthorCardProps) {
   const classes = useStyles()
-  const initials = name.split(' ').map((n) => n[0]).join('').toUpperCase()
+  const initials = name
+    .match(/(\b\S)?/g)
+    ?.join('')
+    ?.match(/(^\S|\S$)?/g)
+    ?.join('')
+    ?.toUpperCase() || ''
+  console.log('initials :>> ', initials)
 
   return (
     <Box onClick={() => onClick?.()}>
