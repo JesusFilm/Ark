@@ -43,13 +43,7 @@ export function AuthorCard ({
   onClick
 }: AuthorCardProps) {
   const classes = useStyles()
-  const initials = name
-    .match(/(\b\S)?/g)
-    ?.join('')
-    ?.match(/(^\S|\S$)?/g)
-    ?.join('')
-    ?.toUpperCase() || ''
-  console.log('initials :>> ', initials)
+  const initials = name.split(' ').map((n) => n[0]).join('').toUpperCase()
 
   return (
     <Box onClick={() => onClick?.()}>
