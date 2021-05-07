@@ -78,7 +78,7 @@ export function Hero ({
                 alignItems="center"
                 spacing={2}
               >
-                {category && 
+                {category &&
                   <Grid item>
                     <Typography variant="h5">{category}</Typography>
                   </Grid>
@@ -86,7 +86,7 @@ export function Hero ({
                 <Grid item>
                   <Typography variant="h2">{title}</Typography>
                 </Grid>
-                {excerpt && 
+                {excerpt &&
                   <Grid item>
                     <Typography variant="body1">{excerpt}</Typography>
                   </Grid>
@@ -94,7 +94,7 @@ export function Hero ({
                 {onClick && (
                   <Grid item>
                     <Button
-                      onClick={() => onClick?.()}
+                      onClick={onClick}
                       variant="contained"
                       color="primary"
                       size="large"

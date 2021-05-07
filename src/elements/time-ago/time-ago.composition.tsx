@@ -8,7 +8,7 @@ export const BasicTimeAgo = () => (
   <TimeAgo datetime={d} />
 )
 
-export const Bn_INTimeAgo = () => (
+export const BnTimeAgo = () => (
   <TimeAgo
     datetime={d}
     locale='bn_IN' />

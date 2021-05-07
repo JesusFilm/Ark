@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { BasicTimeAgo, Bn_INTimeAgo } from './time-ago.composition'
+import { BasicTimeAgo, BnTimeAgo } from './time-ago.composition'
 
 describe('time-ago', () => {
   it('should render with the correct text', () => {
@@ -9,7 +9,7 @@ describe('time-ago', () => {
     expect(rendered).toBeTruthy()
   })
   it('should render with the correct locale', () => {
-    const { getByText } = render(<Bn_INTimeAgo />)
+    const { getByText } = render(<BnTimeAgo />)
     const rendered = getByText('5 এর দিন আগে')
     expect(rendered).toBeTruthy()
   })
