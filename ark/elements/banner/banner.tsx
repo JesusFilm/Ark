@@ -8,7 +8,7 @@ export function Banner (props:BannerProps) {
   switch (props.variant) {
     case 'phone':
       return <Phone {...props} />
-    case 'default':
+    case 'primary':
       return <Primary {...props} />
   }
 }
