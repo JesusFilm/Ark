@@ -6,17 +6,14 @@
   "teambit.workspace/workspace": {
     "name": "Jesus Film Project - Ark",
     "icon": "https://play-lh.googleusercontent.com/jrQZ_vJNYS_VAS28z1EpqzVzF83cMN5Xz4frnqV0v0ZjGTV9nKZlNnlLE2SKrWRNLfY=s180-rw",
-    "defaultDirectory": "{scope}/{name}",
+    "defaultDirectory": "src/{name}",
     "defaultScope": "jesus-film.ark"
   },
   "teambit.dependencies/dependency-resolver": {
     "packageManager": "teambit.dependencies/pnpm",
-    "packageManagerArgs": [],
-    "devFilePatterns": ["**/*.spec.ts"],
-    "strictPeerDependencies": true,
     "policy": {
       "dependencies": {
-        "core-js": "^3.11.0",
+        "core-js": "^3.11.0"
       },
       "peerDependencies": {
         "@material-ui/core": "^4.11.3",
@@ -26,10 +23,16 @@
         "react-helmet": "^6.1.0"
       }
     },
+    "packageManagerArgs": [],
+    "devFilePatterns": ["**/*.spec.ts"],
+    "strictPeerDependencies": true
   },
   "teambit.workspace/variants": {
+    "src/envs/react": {
+      "teambit.harmony/aspect": {}
+    },
     "*": {
-      "teambit.react/react": {}
+      "jesus-film.ark/envs/react": {}
     }
   }
 }
