@@ -1,5 +1,6 @@
 <a href="https://opensource.org/licenses/MIT"><img alt="MIT" src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
 <a href="#contributing"><img alt="prs" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
+<a href="https://app.fossa.com/projects/git%2Bgithub.com%2FJesusFilm%2FArk?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FJesusFilm%2FArk.svg?type=shield"/></a>
 
 # Base component design system for Jesus Film
 
@@ -74,3 +75,6 @@ These components are 'vanilla', meaning they should not contain content (like te
 ### Utils
 
 Pure logic components and helpers. (no visual components)
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FJesusFilm%2FArk.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FJesusFilm%2FArk?ref=badge_large)
