@@ -11,11 +11,6 @@
   },
   "teambit.dependencies/dependency-resolver": {
     "packageManager": "teambit.dependencies/pnpm",
-    "packageManagerArgs": [],
-    "devFilePatterns": [
-      "**/*.spec.ts"
-    ],
-    "strictPeerDependencies": true,
     "policy": {
       "dependencies": {
         "core-js": "^3.11.0"
@@ -27,7 +22,10 @@
         "react-dom": "^17.0.2",
         "react-helmet": "^6.1.0"
       }
-    }
+    },
+    "packageManagerArgs": [],
+    "devFilePatterns": ["**/*.spec.ts"],
+    "strictPeerDependencies": true
   },
   "teambit.workspace/variants": {
     "src/envs/react": {

@@ -2,17 +2,19 @@ import React from 'react'
 import { Grid, makeStyles, Typography, Avatar, Box } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1
+  wrap: {
+    [theme.breakpoints.up('sm')]: {
+      flexWrap: 'nowrap'
+    }
   },
   name: {
     textTransform: 'uppercase',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('xs')]: {
       textAlign: 'center'
     }
   },
   description: {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('xs')]: {
       textAlign: 'center'
     }
   },
@@ -44,12 +46,13 @@ export function AuthorCard ({
   const initials = name.split(' ').map((n) => n[0]).join('').toUpperCase()
 
   return (
-    <Box className={classes.root} onClick={() => onClick?.()}>
+    <Box onClick={() => onClick?.()}>
       <Grid
         container
         direction="row"
         justify="center"
         alignItems="center"
+        className={classes.wrap}
         spacing={2}
       >
         <Grid item>

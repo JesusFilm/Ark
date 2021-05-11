@@ -2,28 +2,16 @@
 
 {
     "elements/author-card": {
-        "scope": "",
-        "version": "",
+        "scope": "jesus-film.ark",
+        "version": "0.0.2",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/author-card",
-        "nextVersion": {
-            "version": "patch",
-            "message": "",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/elements/author-card"
     },
     "elements/author-list": {
-        "scope": "",
-        "version": "",
+        "scope": "jesus-film.ark",
+        "version": "0.0.2",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/author-list",
-        "nextVersion": {
-            "version": "patch",
-            "message": "",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/elements/author-list"
     },
     "elements/banner": {
         "scope": "",
@@ -32,16 +20,28 @@
         "rootDir": "ark/elements/banner"
     },
     "elements/hero": {
-        "scope": "",
-        "version": "",
+        "scope": "jesus-film.ark",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/hero",
-        "nextVersion": {
-            "version": "patch",
-            "message": "",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/elements/hero"
+    },
+    "elements/jesus-film-brandmark": {
+        "scope": "jesus-film.ark",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/jesus-film-brandmark"
+    },
+    "elements/jesus-film-symbol": {
+        "scope": "jesus-film.ark",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/jesus-film-symbol"
+    },
+    "envs/react": {
+        "scope": "jesus-film.ark",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "src/envs/react"
     },
     "elements/jesus-film-brandmark": {
         "scope": "",
@@ -62,28 +62,16 @@
         "rootDir": "src/envs/react"
     },
     "providers/jesus-film-theme-provider": {
-        "scope": "",
-        "version": "",
+        "scope": "jesus-film.ark",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "src/providers/jesus-film-theme-provider",
-        "nextVersion": {
-            "version": "patch",
-            "message": "",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/providers/jesus-film-theme-provider"
     },
     "providers/voke-theme-provider": {
-        "scope": "",
-        "version": "",
+        "scope": "jesus-film.ark",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "src/providers/voke-theme-provider",
-        "nextVersion": {
-            "version": "patch",
-            "message": "",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/providers/voke-theme-provider"
     },
-    "version": "1.0.67"
+    "version": "1.0.78"
 }
