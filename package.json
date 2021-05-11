@@ -39,7 +39,7 @@
   },
   "scripts": {
     "test": "jest . --coverage",
-    "postinstall": "bvm install && bvm remove --all --keep-latest-versions 1 && bit link",
+    "postinstall": "bvm install && bvm remove --all --keep-latest-versions 1 && bit link && bit import",
     "lint": "tsc --noEmit && eslint ."
   },
   "repository": {
