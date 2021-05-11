@@ -1,7 +1,7 @@
 /*
  This is where your workspace and Bit extensions used by it, are configured.
  https://harmony-docs.bit.dev/workspace/configurations
- */{
+ */ {
   "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
   "teambit.workspace/workspace": {
     "name": "Jesus Film Project - Ark",

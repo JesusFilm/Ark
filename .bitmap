@@ -17,7 +17,7 @@
         "scope": "",
         "version": "",
         "mainFile": "index.ts",
-        "rootDir": "ark/elements/banner"
+        "rootDir": "src/elements/banner"
     },
     "elements/hero": {
         "scope": "jesus-film.ark",
@@ -40,24 +40,6 @@
     "envs/react": {
         "scope": "jesus-film.ark",
         "version": "0.0.1",
-        "mainFile": "index.ts",
-        "rootDir": "src/envs/react"
-    },
-    "elements/jesus-film-brandmark": {
-        "scope": "",
-        "version": "",
-        "mainFile": "index.ts",
-        "rootDir": "src/elements/jesus-film-brandmark"
-    },
-    "elements/jesus-film-symbol": {
-        "scope": "",
-        "version": "",
-        "mainFile": "index.ts",
-        "rootDir": "src/elements/jesus-film-symbol"
-    },
-    "envs/react": {
-        "scope": "",
-        "version": "",
         "mainFile": "index.ts",
         "rootDir": "src/envs/react"
     },
