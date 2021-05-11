@@ -5,13 +5,25 @@
         "scope": "jesus-film.ark",
         "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/author-card"
+        "rootDir": "src/elements/author-card",
+        "nextVersion": {
+            "version": "patch",
+            "message": "",
+            "username": "Tataihono Nikora",
+            "email": "tataihono.nikora@gmail.com"
+        }
     },
     "elements/author-list": {
         "scope": "jesus-film.ark",
         "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/author-list"
+        "rootDir": "src/elements/author-list",
+        "nextVersion": {
+            "version": "patch",
+            "message": " (bump dependencies versions)",
+            "username": "Tataihono Nikora",
+            "email": "tataihono.nikora@gmail.com"
+        }
     },
     "elements/hero": {
         "scope": "jesus-film.ark",
