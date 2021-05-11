@@ -38,6 +38,8 @@ export type HeroProps = {
   src?: string;
   /** Callback when button is clicked */
   onClick?: () => void;
+  /** Text of button */
+  buttonText?: string;
   /** Variant style */
   variant: 'hero'
 };
@@ -47,7 +49,8 @@ export function Hero ({
   category,
   excerpt,
   src,
-  onClick
+  onClick,
+  buttonText = 'Read Story'
 }: HeroProps) {
   const classes = useStyles()
 
@@ -99,7 +102,7 @@ export function Hero ({
                       color="primary"
                       size="large"
                     >
-                      Read Story
+                      {buttonText}
                     </Button>
                   </Grid>
                 )}

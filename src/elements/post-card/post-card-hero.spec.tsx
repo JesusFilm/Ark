@@ -2,14 +2,14 @@ import React from 'react'
 import { fireEvent, render } from '@testing-library/react'
 import {
   HeroPostCard,
-  HeroPostCardNoImage,
+  HeroPostCardNoImage
 } from './post-card.composition'
 
 describe('post-card-hero', () => {
   it('hero variant should be clickable', () => {
     const handleClick = jest.fn()
     const { getByText } = render(<HeroPostCard onClick={handleClick} variant="hero" />)
-    fireEvent.click(getByText('Read Story'))
+    fireEvent.click(getByText('Read Everything'))
     expect(handleClick).toHaveBeenCalled()
   })
 

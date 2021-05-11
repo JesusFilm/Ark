@@ -9,6 +9,7 @@ export const HeroPostCard = (props: Partial<PostCardProps>) => (
     category="Following Jesus"
     onClick={(props.variant === 'hero' && props.onClick) || (() => alert('clicked'))}
     variant="hero"
+    buttonText="Read Everything"
   />
 )
 
