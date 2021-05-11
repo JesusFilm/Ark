@@ -4,7 +4,7 @@ import { JesusFilmThemeProvider } from '@jesus-film/ark.providers.jesus-film-the
 import JesusBreakingBread from './assets/jesus-breaking-bread.jpg'
 import FollowingJesus from './assets/following-jesus.jpg'
 
-export const bannerPhone = (props: Partial<BannerProps>) => (
+export const BannerWithPhone = (props: Partial<BannerProps>) => (
   <JesusFilmThemeProvider>
     <Banner
       title="Turning technology into powerful ministry opportunities."
@@ -19,7 +19,7 @@ export const bannerPhone = (props: Partial<BannerProps>) => (
   </JesusFilmThemeProvider>
 )
 
-export const bannerPrimary = (props: Partial<BannerProps>) => (
+export const BasicBanner = (props: Partial<BannerProps>) => (
   <JesusFilmThemeProvider>
     <Banner
       title="Turning technology into powerful ministry opportunities."
