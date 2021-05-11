@@ -75,6 +75,7 @@ jobs:
           bit config set analytics_reporting false
           bit config set anonymous_reporting false
           bit config set user.token $BIT_TOKEN
+          bit import
       - name: Bit build
         run: |
           bit status
@@ -116,6 +117,7 @@ jobs:
           bit config set analytics_reporting false
           bit config set anonymous_reporting false
           bit config set user.token $BIT_TOKEN
+          bit import
       - name: Bit test
         run: |
           pnpm test
