@@ -21,8 +21,9 @@ export function AuthorList ({ authors }: AuthorListProps) {
     <Grid
       container
       className={classes.align}
-      alignItems="center"
-      spacing={4}>
+      alignItems='center'
+      spacing={4}
+    >
       {authors.map((author, i) => (
         <Grid item key={`${i}-author`}>
           <AuthorCard {...author} />

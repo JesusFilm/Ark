@@ -35,6 +35,6 @@ export function JesusFilmBrandmark ({ variant = 'red', ...rest }: JesusFilmBrand
   }
 
   return (
-    <img src={source} {...rest} aria-label="jesus-film-brandmark" />
+    <img src={source} {...rest} aria-label='jesus-film-brandmark' />
   )
 }

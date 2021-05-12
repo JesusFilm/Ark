@@ -46,17 +46,17 @@ export const Hero = ({ src, title, subtitle, action, onClick }: HeroProps) => {
   const classes = useStyles()
   return (
     <Box
-      data-testid="heroBackground"
+      data-testid='heroBackground'
       className={classes.background}
       style={src ? { backgroundImage: `url(${src})` } : undefined}
     >
       <Box className={classes.box}>
-        <Container maxWidth="sm">
+        <Container maxWidth='sm'>
           <Grid container spacing={2} className={classes.grid}>
             <Grid item>
               {typeof title === 'string'
                 ? (
-                <Typography variant="h2">{title}</Typography>
+                  <Typography variant='h2'>{title}</Typography>
                   )
                 : (
                     title
@@ -66,9 +66,9 @@ export const Hero = ({ src, title, subtitle, action, onClick }: HeroProps) => {
               <Grid item>
                 {typeof subtitle === 'string'
                   ? (
-                  <Typography variant="h5" gutterBottom>
-                    {subtitle}
-                  </Typography>
+                    <Typography variant='h5' gutterBottom>
+                      {subtitle}
+                    </Typography>
                     )
                   : (
                       subtitle
@@ -79,14 +79,14 @@ export const Hero = ({ src, title, subtitle, action, onClick }: HeroProps) => {
               <Grid item>
                 {typeof action === 'string'
                   ? (
-                  <Button
-                    onClick={() => onClick()}
-                    variant="contained"
-                    color="primary"
-                    size="large"
-                  >
-                    {action}
-                  </Button>
+                    <Button
+                      onClick={() => onClick()}
+                      variant='contained'
+                      color='primary'
+                      size='large'
+                    >
+                      {action}
+                    </Button>
                     )
                   : (
                       action
