@@ -53,9 +53,9 @@ export function AuthorCard({
     <Box onClick={() => onClick?.()}>
       <Grid
         container
-        direction='row'
-        justify='center'
-        alignItems='center'
+        direction="row"
+        justify="center"
+        alignItems="center"
         className={classes.wrap}
         spacing={2}>
         <Grid item>
@@ -63,7 +63,7 @@ export function AuthorCard({
             {initials}
           </Avatar>
         </Grid>
-        <Grid item md container direction='column' spacing={2}>
+        <Grid item md container direction="column" spacing={2}>
           <Grid item>
             <Typography
               variant="h5"
@@ -73,7 +73,7 @@ export function AuthorCard({
             </Typography>
           </Grid>
           <Grid item>
-            <Typography variant='body1' className={classes.description}>
+            <Typography variant="body1" className={classes.description}>
               {description}
             </Typography>
           </Grid>

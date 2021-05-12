@@ -46,11 +46,11 @@ export const Hero = ({ src, title, subtitle, action, onClick }: HeroProps) => {
   const classes = useStyles()
   return (
     <Box
-      data-testid='heroBackground'
+      data-testid="heroBackground"
       className={classes.background}
       style={src ? { backgroundImage: `url(${src})` } : undefined}>
       <Box className={classes.box}>
-        <Container maxWidth='sm'>
+        <Container maxWidth="sm">
           <Grid container spacing={2} className={classes.grid}>
             <Grid item>
               {typeof title === 'string' ? (

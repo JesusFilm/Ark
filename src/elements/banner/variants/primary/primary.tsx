@@ -1,4 +1,12 @@
-import { Box, createStyles, makeStyles, Typography, useTheme, useMediaQuery, Container } from '@material-ui/core'
+import {
+  Box,
+  createStyles,
+  makeStyles,
+  Typography,
+  useTheme,
+  useMediaQuery,
+  Container
+} from '@material-ui/core'
 import React, { ReactNode } from 'react'
 
 export type PrimaryProps = {
@@ -8,13 +16,13 @@ export type PrimaryProps = {
   description: string
   /** a text of the source of the image to be rendered in as the background image. */
   backgroundSrc: string
-   /** reactNode that have content entered in. */
+  /** reactNode that have content entered in. */
   children?: ReactNode
   /** a text to be rendered in the component as the footer. */
   footer: string
   /** a text to set the variant. */
   variant: 'primary'
-};
+}
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -78,22 +86,43 @@ const useStyles = makeStyles((theme) =>
   })
 )
 
-export function Primary ({ title, description, backgroundSrc, children, footer }: PrimaryProps) {
+export function Primary({
+  title,
+  description,
+  backgroundSrc,
+  children,
+  footer
+}: PrimaryProps) {
   const classes = useStyles()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('sm'))
 
   return (
-    <Box className={classes.box} data-testid='primaryBanner'>
-      <Container className={classes.container} maxWidth='md' style={{ backgroundImage: `url(${backgroundSrc})` }}>
-        <Container maxWidth='sm'>
-          <Typography variant={matches ? 'h5' : 'h4'} style={{ fontWeight: 'bold' }} gutterBottom>{title}</Typography>
+    <Box className={classes.box} data-testid="primaryBanner">
+      <Container
+        className={classes.container}
+        maxWidth="md"
+        style={{ backgroundImage: `url(${backgroundSrc})` }}>
+        <Container maxWidth="sm">
+          <Typography
+            variant={matches ? 'h5' : 'h4'}
+            style={{ fontWeight: 'bold' }}
+            gutterBottom>
+            {title}
+          </Typography>
         </Container>
-        <Container maxWidth='xs'>
-          <Typography variant='body2' className={classes.descPadding}>{description}</Typography>
+        <Container maxWidth="xs">
+          <Typography variant="body2" className={classes.descPadding}>
+            {description}
+          </Typography>
         </Container>
         {children}
-        <Typography style={{ fontWeight: 'bold' }} variant={matches ? 'h4' : 'h3'} color='primary'>{footer}</Typography>
+        <Typography
+          style={{ fontWeight: 'bold' }}
+          variant={matches ? 'h4' : 'h3'}
+          color="primary">
+          {footer}
+        </Typography>
       </Container>
     </Box>
   )

@@ -4,7 +4,7 @@ import { Primary, PrimaryProps } from './variants/primary'
 
 export type BannerProps = PrimaryProps | PhoneProps
 
-export function Banner (props:BannerProps) {
+export function Banner(props: BannerProps) {
   switch (props.variant) {
     case 'phone':
       return <Phone {...props} />
