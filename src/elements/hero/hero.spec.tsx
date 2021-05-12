@@ -35,7 +35,7 @@ describe('hero', () => {
   })
 
   it('should have a default background', () => {
-    const { getByTestId } = render(<Hero title="abc" />)
+    const { getByTestId } = render(<Hero title='abc' />)
     expect(window.getComputedStyle(getByTestId('heroBackground')).backgroundColor).toEqual('rgb(63, 81, 181)')
   })
 })
