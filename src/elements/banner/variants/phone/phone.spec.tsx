@@ -3,6 +3,7 @@ import { render } from '@testing-library/react'
 import { Phone } from './phone'
 import JesusBreakingBread from '../../assets/jesus-breaking-bread.jpg'
 import FollowingJesus from '../../assets/following-jesus.jpg'
+import matchMediaMock from '../../../../../jest/util/match-media-mock'
 
 describe('phone', () => {
   it('should show googleButton and appleButton', () => {
@@ -34,5 +35,73 @@ describe('phone', () => {
     )
     expect(queryByRole('img', { name: 'google button' })).not.toBeTruthy()
     expect(queryByRole('img', { name: 'apple button' })).not.toBeTruthy()
+  })
+
+  it('should show title as h4', () => {
+    const { getByText } = render(
+      <Phone
+        title="Turning technology into powerful ministry opportunities."
+        description="Reach the unreached on iOS and Android. With our free apps, watch, download and share our films in more than 1,800 languages."
+        backgroundSrc={JesusBreakingBread}
+        frameImgSrc={FollowingJesus}
+        footer="Until everyone sees Jesus"
+        variant="phone"
+      />
+    )
+    expect(
+      getByText('Turning technology into powerful ministry opportunities.')
+        .tagName
+    ).toEqual('H4')
+  })
+
+  it('should show footer as h3', () => {
+    const { getByText } = render(
+      <Phone
+        title="Turning technology into powerful ministry opportunities."
+        description="Reach the unreached on iOS and Android. With our free apps, watch, download and share our films in more than 1,800 languages."
+        backgroundSrc={JesusBreakingBread}
+        frameImgSrc={FollowingJesus}
+        footer="Until everyone sees Jesus"
+        variant="phone"
+      />
+    )
+    expect(getByText('Until everyone sees Jesus').tagName).toEqual('H3')
+  })
+
+  describe('sm down', () => {
+    beforeEach(() => {
+      matchMediaMock({ width: '959px' })
+    })
+
+    it('should show title as h5', () => {
+      const { getByText } = render(
+        <Phone
+          title="Turning technology into powerful ministry opportunities."
+          description="Reach the unreached on iOS and Android. With our free apps, watch, download and share our films in more than 1,800 languages."
+          backgroundSrc={JesusBreakingBread}
+          frameImgSrc={FollowingJesus}
+          footer="Until everyone sees Jesus"
+          variant="phone"
+        />
+      )
+      expect(
+        getByText('Turning technology into powerful ministry opportunities.')
+          .tagName
+      ).toEqual('H5')
+    })
+
+    it('should show footer as h4', () => {
+      const { getByText } = render(
+        <Phone
+          title="Turning technology into powerful ministry opportunities."
+          description="Reach the unreached on iOS and Android. With our free apps, watch, download and share our films in more than 1,800 languages."
+          backgroundSrc={JesusBreakingBread}
+          frameImgSrc={FollowingJesus}
+          footer="Until everyone sees Jesus"
+          variant="phone"
+        />
+      )
+      expect(getByText('Until everyone sees Jesus').tagName).toEqual('H4')
+    })
   })
 })
