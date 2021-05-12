@@ -1,13 +1,9 @@
 import React from 'react'
 import { JesusFilmBrandmark } from './jesus-film-brandmark'
 
-export const BasicJesusFilmBrandmark = () => (
-  <JesusFilmBrandmark />
-)
+export const BasicJesusFilmBrandmark = () => <JesusFilmBrandmark />
 
-export const RedJesusFilmBrandmark = () => (
-  <JesusFilmBrandmark variant='red' />
-)
+export const RedJesusFilmBrandmark = () => <JesusFilmBrandmark variant="red" />
 
 export const CoolGrayJesusFilmBrandmark = () => (
   <JesusFilmBrandmark variant='cool-gray' />

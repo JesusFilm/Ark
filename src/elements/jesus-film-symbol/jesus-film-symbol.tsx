@@ -8,7 +8,10 @@ export type JesusFilmSymbolProps = {
   variant?: 'red' | 'cool-gray' | 'warm-white' | 'white'
 } & ImgHTMLAttributes<HTMLImageElement>
 
-export function JesusFilmSymbol ({ variant = 'red', ...rest }: JesusFilmSymbolProps) {
+export function JesusFilmSymbol({
+  variant = 'red',
+  ...rest
+}: JesusFilmSymbolProps) {
   let source: string
 
   switch (variant) {
@@ -26,7 +29,5 @@ export function JesusFilmSymbol ({ variant = 'red', ...rest }: JesusFilmSymbolPr
       break
   }
 
-  return (
-    <img src={source} {...rest} aria-label='jesus-film-symbol' />
-  )
+  return <img src={source} {...rest} aria-label="jesus-film-symbol" />
 }
