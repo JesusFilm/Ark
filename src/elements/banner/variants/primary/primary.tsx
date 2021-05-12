@@ -84,7 +84,7 @@ export function Primary ({ title, description, backgroundSrc, children, footer }
   const matches = useMediaQuery(theme.breakpoints.down('sm'))
 
   return (
-    <Box className={classes.box}>
+      <Box className={classes.box} data-testid="primaryBanner">
       {<Container className={classes.container} maxWidth="md" style={ { backgroundImage: `url(${backgroundSrc})` } }>
         <Container maxWidth="sm">
           <Typography variant={matches ? 'h5' : 'h4'} style={{ fontWeight: 'bold' }}gutterBottom>{title}</Typography>

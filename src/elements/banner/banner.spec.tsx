@@ -1,9 +1,14 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { BasicBanner } from './banner.composition'
+import { BannerAsPhone, BannerAsPrimary } from './banner.composition'
 
-it('should render with the correct text', () => {
-  const { getByText } = render(<BasicBanner />)
-  const rendered = getByText('hello from Banner')
-  expect(rendered).toBeTruthy()
+describe('banner', () => {
+  it('should show primaryBanner', () => {
+    const { getByTestId } = render(<BannerAsPrimary />)
+    expect(getByTestId('primaryBanner')).toBeTruthy()
+  })
+  it('should show phoneBanner', () => {
+    const { getByTestId } = render(<BannerAsPhone />)
+    expect(getByTestId('phoneBanner')).toBeTruthy()
+  })
 })
