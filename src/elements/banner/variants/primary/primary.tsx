@@ -84,17 +84,17 @@ export function Primary ({ title, description, backgroundSrc, children, footer }
   const matches = useMediaQuery(theme.breakpoints.down('sm'))
 
   return (
-      <Box className={classes.box} data-testid="primaryBanner">
-      {<Container className={classes.container} maxWidth="md" style={ { backgroundImage: `url(${backgroundSrc})` } }>
-        <Container maxWidth="sm">
-          <Typography variant={matches ? 'h5' : 'h4'} style={{ fontWeight: 'bold' }}gutterBottom>{title}</Typography>
+    <Box className={classes.box} data-testid='primaryBanner'>
+      <Container className={classes.container} maxWidth='md' style={{ backgroundImage: `url(${backgroundSrc})` }}>
+        <Container maxWidth='sm'>
+          <Typography variant={matches ? 'h5' : 'h4'} style={{ fontWeight: 'bold' }} gutterBottom>{title}</Typography>
         </Container>
-        <Container maxWidth="xs">
-          <Typography variant="body2" className={classes.descPadding}>{description}</Typography>
+        <Container maxWidth='xs'>
+          <Typography variant='body2' className={classes.descPadding}>{description}</Typography>
         </Container>
         {children}
-        <Typography style={{ fontWeight: 'bold' }} variant={matches ? 'h4' : 'h3'} color="primary">{footer}</Typography>
-      </Container>}
+        <Typography style={{ fontWeight: 'bold' }} variant={matches ? 'h4' : 'h3'} color='primary'>{footer}</Typography>
+      </Container>
     </Box>
   )
 }

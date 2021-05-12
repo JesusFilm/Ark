@@ -91,26 +91,30 @@ export function Phone ({ title, description, backgroundSrc, footer, frameImgSrc,
   const matches = useMediaQuery(theme.breakpoints.down('sm'))
 
   return (
-    <Box className={classes.box} data-testid="phoneBanner">
-      <Container className={classes.container} maxWidth="md" style={ { backgroundImage: `url(${backgroundSrc})` } }>
-        <Container maxWidth="sm">
-        <Typography variant={matches ? 'h5' : 'h4'} style={{ fontWeight: 'bold' }}gutterBottom>{title}</Typography>
+    <Box className={classes.box} data-testid='phoneBanner'>
+      <Container className={classes.container} maxWidth='md' style={{ backgroundImage: `url(${backgroundSrc})` }}>
+        <Container maxWidth='sm'>
+          <Typography variant={matches ? 'h5' : 'h4'} style={{ fontWeight: 'bold' }} gutterBottom>{title}</Typography>
         </Container>
-        <Container maxWidth="xs">
-        <Typography variant="body2" className={classes.descPadding}>{description}</Typography>
+        <Container maxWidth='xs'>
+          <Typography variant='body2' className={classes.descPadding}>{description}</Typography>
         </Container>
-        <div className={classes.frame} style={ { backgroundImage: `url(${frame})` } }>
-          <div className={classes.frameImg} style={ { backgroundImage: `url(${frameImgSrc})` } } />
+        <div className={classes.frame} style={{ backgroundImage: `url(${frame})` }}>
+          <div className={classes.frameImg} style={{ backgroundImage: `url(${frameImgSrc})` }} />
         </div>
         <Box pt={2}>
-          {androidAppStoreHref && <a href={androidAppStoreHref}>
-            <img className={classes.button} src={googleButton} alt='google button' />
-          </a>}
-          {iosAppStoreHref && <a href={iosAppStoreHref}>
-            <img className={[classes.button, classes.appleButton].join(' ')} src={appleButton} alt='apple button'/>
-          </a>}
+          {androidAppStoreHref && (
+            <a href={androidAppStoreHref}>
+              <img className={classes.button} src={googleButton} alt='google button' />
+            </a>
+          )}
+          {iosAppStoreHref && (
+            <a href={iosAppStoreHref}>
+              <img className={[classes.button, classes.appleButton].join(' ')} src={appleButton} alt='apple button' />
+            </a>
+          )}
         </Box>
-        <Typography style={{ fontWeight: 'bold' }} variant={matches ? 'h4' : 'h3'} color="primary">{footer}</Typography>
+        <Typography style={{ fontWeight: 'bold' }} variant={matches ? 'h4' : 'h3'} color='primary'>{footer}</Typography>
       </Container>
     </Box>
   )
