@@ -27,51 +27,53 @@ const useStyles = makeStyles((theme) => ({
 
 export type AuthorCardProps = {
   /** author name */
-  name: string;
+  name: string
   /** author bio */
-  description: string;
+  description: string
   /** Background image source url */
-  src?: string;
+  src?: string
   /** Callback when button is clicked */
-  onClick?: () => void;
-};
+  onClick?: () => void
+}
 
-export function AuthorCard ({
+export function AuthorCard({
   name,
   description,
   src,
   onClick
 }: AuthorCardProps) {
   const classes = useStyles()
-  const initials = name.split(' ').map((n) => n[0]).join('').toUpperCase()
+  const initials = name
+    .split(' ')
+    .map((n) => n[0])
+    .join('')
+    .toUpperCase()
 
   return (
     <Box onClick={() => onClick?.()}>
       <Grid
         container
-        direction='row'
-        justify='center'
-        alignItems='center'
+        direction="row"
+        justify="center"
+        alignItems="center"
         className={classes.wrap}
-        spacing={2}
-      >
+        spacing={2}>
         <Grid item>
           <Avatar alt={name} src={src} className={classes.image}>
             {initials}
           </Avatar>
         </Grid>
-        <Grid item md container direction='column' spacing={2}>
+        <Grid item md container direction="column" spacing={2}>
           <Grid item>
             <Typography
-              variant='h5'
-              color='textSecondary'
-              className={classes.name}
-            >
+              variant="h5"
+              color="textSecondary"
+              className={classes.name}>
               {name}
             </Typography>
           </Grid>
           <Grid item>
-            <Typography variant='body1' className={classes.description}>
+            <Typography variant="body1" className={classes.description}>
               {description}
             </Typography>
           </Grid>
