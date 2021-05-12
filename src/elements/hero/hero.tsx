@@ -10,15 +10,15 @@ import {
 } from '@material-ui/core'
 
 export type HeroProps = {
-  title: string | ReactNode;
-  subtitle?: string | ReactNode;
+  title: string | ReactNode
+  subtitle?: string | ReactNode
   /** Background image source url */
-  src?: string;
+  src?: string
   /** Text for button (if onClick not present button will not be displayed, if a reactNode is provided, onClick will be ignored) */
-  action?: string | ReactNode;
+  action?: string | ReactNode
   /** Callback when button is clicked (if action not present button will not be displayed) */
-  onClick?: () => void;
-};
+  onClick?: () => void
+}
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -46,51 +46,43 @@ export const Hero = ({ src, title, subtitle, action, onClick }: HeroProps) => {
   const classes = useStyles()
   return (
     <Box
-      data-testid='heroBackground'
+      data-testid="heroBackground"
       className={classes.background}
-      style={src ? { backgroundImage: `url(${src})` } : undefined}
-    >
+      style={src ? { backgroundImage: `url(${src})` } : undefined}>
       <Box className={classes.box}>
-        <Container maxWidth='sm'>
+        <Container maxWidth="sm">
           <Grid container spacing={2} className={classes.grid}>
             <Grid item>
-              {typeof title === 'string'
-                ? (
-                  <Typography variant='h2'>{title}</Typography>
-                  )
-                : (
-                    title
-                  )}
+              {typeof title === 'string' ? (
+                <Typography variant="h2">{title}</Typography>
+              ) : (
+                title
+              )}
             </Grid>
             {subtitle && (
               <Grid item>
-                {typeof subtitle === 'string'
-                  ? (
-                    <Typography variant='h5' gutterBottom>
-                      {subtitle}
-                    </Typography>
-                    )
-                  : (
-                      subtitle
-                    )}
+                {typeof subtitle === 'string' ? (
+                  <Typography variant="h5" gutterBottom>
+                    {subtitle}
+                  </Typography>
+                ) : (
+                  subtitle
+                )}
               </Grid>
             )}
             {action && (typeof action !== 'string' || onClick) && (
               <Grid item>
-                {typeof action === 'string'
-                  ? (
-                    <Button
-                      onClick={() => onClick()}
-                      variant='contained'
-                      color='primary'
-                      size='large'
-                    >
-                      {action}
-                    </Button>
-                    )
-                  : (
-                      action
-                    )}
+                {typeof action === 'string' ? (
+                  <Button
+                    onClick={() => onClick()}
+                    variant="contained"
+                    color="primary"
+                    size="large">
+                    {action}
+                  </Button>
+                ) : (
+                  action
+                )}
               </Grid>
             )}
           </Grid>

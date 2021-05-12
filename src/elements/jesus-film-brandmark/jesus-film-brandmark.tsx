@@ -7,10 +7,19 @@ import WarmWhite from './assets/warm-white.png'
 import White from './assets/white.png'
 
 export type JesusFilmBrandmarkProps = {
-  variant?: 'red' | 'cool-gray' | 'red-cool-gray' | 'red-warm-gray' | 'warm-white' | 'white'
+  variant?:
+    | 'red'
+    | 'cool-gray'
+    | 'red-cool-gray'
+    | 'red-warm-gray'
+    | 'warm-white'
+    | 'white'
 } & ImgHTMLAttributes<HTMLImageElement>
 
-export function JesusFilmBrandmark ({ variant = 'red', ...rest }: JesusFilmBrandmarkProps) {
+export function JesusFilmBrandmark({
+  variant = 'red',
+  ...rest
+}: JesusFilmBrandmarkProps) {
   let source: string
 
   switch (variant) {
@@ -34,7 +43,5 @@ export function JesusFilmBrandmark ({ variant = 'red', ...rest }: JesusFilmBrand
       break
   }
 
-  return (
-    <img src={source} {...rest} aria-label='jesus-film-brandmark' />
-  )
+  return <img src={source} {...rest} aria-label="jesus-film-brandmark" />
 }
