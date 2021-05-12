@@ -4,7 +4,7 @@ import { BasicAuthorCard } from './author-card.composition'
 
 describe('author-card', () => {
   it('should render with the correct text', () => {
-    const { getByText } = render(<BasicAuthorCard name="roger smith" />)
+    const { getByText } = render(<BasicAuthorCard name='roger smith' />)
     const element = getByText('roger smith')
     expect(element).toBeDefined()
     fireEvent.click(element)
