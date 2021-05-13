@@ -40,7 +40,8 @@ const useStyles = makeStyles((theme) =>
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      textAlign: 'center'
+      textAlign: 'center',
+      padding: theme.spacing(10, 0)
     },
     frame: {
       backgroundPosition: 'center',
@@ -80,8 +81,7 @@ const useStyles = makeStyles((theme) =>
     },
     box: {
       textAlign: 'center',
-      backgroundColor: theme.palette.background.paper,
-      padding: theme.spacing(10, 0)
+      backgroundColor: theme.palette.background.paper
     }
   })
 )

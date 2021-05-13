@@ -9,8 +9,8 @@ import {
 } from '@material-ui/core'
 import React from 'react'
 import frame from './assets/frame.svg'
-import appleButton from './assets/appleButton.svg'
-import googleButton from './assets/googleButton.png'
+import appleButton from './assets/apple-button.svg'
+import googleButton from './assets/google-button.png'
 
 export type PhoneProps = {
   /** a text to be rendered in the component as the title. */
@@ -47,7 +47,8 @@ const useStyles = makeStyles((theme) =>
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      textAlign: 'center'
+      textAlign: 'center',
+      padding: theme.spacing(10, 0)
     },
     frame: {
       backgroundPosition: 'center',
@@ -87,8 +88,7 @@ const useStyles = makeStyles((theme) =>
     },
     box: {
       textAlign: 'center',
-      backgroundColor: theme.palette.background.paper,
-      padding: theme.spacing(10, 0)
+      backgroundColor: theme.palette.background.paper
     }
   })
 )
