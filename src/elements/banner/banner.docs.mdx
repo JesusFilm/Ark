@@ -1,22 +1,24 @@
 ---
-description: 'A Banner component.'
-labels: ['label1', 'label2', 'label3']
+labels: ["react", "typescript", "banner"]
+description: "A Banner for promotional content."
 ---
 
-import { Banner } from './banner';
+import { Banner } from "./banner";
 
-## React Component for rendering text
+## A Banner for promotional content
 
-A basic div that renders some text
+Phone screen variant to allow for quick phone mockups. Allow for most parts to be replaced by custom components.
 
 ### Component usage
-```js
-<Banner text="hello from Banner" />
-```
-
-### Using props to customize the text
 
 Modify the text to see it change live:
+
 ```js live
-<Banner text="hello from Banner" />
+<Banner
+  title="On The Journey"
+  description="Know Jesus Today!"
+  backgroundSrc="https://source.unsplash.com/random/1920x1080"
+  footer="For everyone"
+  py={20}
+/>
 ```

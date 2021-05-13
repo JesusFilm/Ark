@@ -42,30 +42,48 @@ describe('banner', () => {
   })
 
   it('should render title', () => {
-    const { queryByRole } = render(<BasicBanner />)
+    const { rerender, queryByRole } = render(<BasicBanner />)
     expect(
       queryByRole('heading', {
         name: 'Turning technology into powerful ministry opportunities.'
       }).tagName
     ).toEqual('H3')
+    rerender(<BasicBanner title={<h1>my custom title</h1>} />)
+    expect(
+      queryByRole('heading', {
+        name: 'my custom title'
+      }).tagName
+    ).toEqual('H1')
   })
 
   it('should render description', () => {
-    const { queryByRole } = render(<BasicBanner />)
+    const { rerender, queryByRole } = render(<BasicBanner />)
     expect(
       queryByRole('heading', {
         name: 'Reach the unreached on iOS and Android. With our free apps, watch, download and share our films in more than 1,800 languages.'
       }).tagName
     ).toEqual('H6')
+    rerender(<BasicBanner description={<h1>my custom description</h1>} />)
+    expect(
+      queryByRole('heading', {
+        name: 'my custom description'
+      }).tagName
+    ).toEqual('H1')
   })
 
   it('should render footer', () => {
-    const { queryByRole } = render(<BasicBanner />)
+    const { rerender, queryByRole } = render(<BasicBanner />)
     expect(
       queryByRole('heading', {
         name: 'Until everyone sees Jesus'
       }).tagName
     ).toEqual('H2')
+    rerender(<BasicBanner footer={<h1>my custom footer</h1>} />)
+    expect(
+      queryByRole('heading', {
+        name: 'my custom footer'
+      }).tagName
+    ).toEqual('H1')
   })
 
   it('should render children', () => {

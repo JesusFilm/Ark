@@ -12,21 +12,23 @@ import appleButton from './assets/apple-button.svg'
 import googleButton from './assets/google-button.svg'
 
 export type BannerProps = {
-  /** a text to be rendered in the component as the title. */
-  title: string
-  /** a text to be rendered in the component as the description. */
-  description: string
-  /** a text to be rendered in the component as the footer. */
-  footer: string
-  /** a text of the source of the image to be rendered in as the background image. */
+  /** title as string or component (strings are wrapped in Typography component) */
+  title: ReactNode
+  /** description as string or component (strings are wrapped in Typography component) */
+  description: ReactNode
+  /** footer as string or component (strings are wrapped in Typography component) */
+  footer: ReactNode
+  /** background image URL. */
   backgroundSrc: string
-  /** reactNode that have content entered in. */
+  /** amount of padding around children. */
+  py?: number
+  /** content for center of banner */
   children?: ReactNode
-  /** a text of the source of the image to be rendered in as phone of the phone */
+  /** phone screen image URL */
   phoneImgSrc?: string
-  /** a URL to redirect the user to when clicking on the Apple iOS App Store Button */
+  /** a URL to redirect the user to when clicking on the Apple iOS App Store Bbtton */
   appleAppStoreHref?: string
-  /** a URL to redirect the user to when clicking on the Google Play App Store Button */
+  /** a URL to redirect the user to when clicking on the Google Play App Store button */
   googleAppStoreHref?: string
 }
 
@@ -74,6 +76,7 @@ export function Banner({
   description,
   backgroundSrc,
   footer,
+  py,
   children,
   phoneImgSrc,
   appleAppStoreHref,
@@ -90,16 +93,24 @@ export function Banner({
         data-testid="bannerContainer">
         <Container maxWidth="md">
           <Box py={2}>
-            <Typography variant="h3" style={{ fontWeight: 'bold' }}>
-              {title}
-            </Typography>
+            {typeof title === 'string' ? (
+              <Typography variant="h3" style={{ fontWeight: 'bold' }}>
+                {title}
+              </Typography>
+            ) : (
+              title
+            )}
           </Box>
           <Box py={2}>
             <Container maxWidth="xs">
-              <Typography variant="h6">{description}</Typography>
+              {typeof description === 'string' ? (
+                <Typography variant="h6">{description}</Typography>
+              ) : (
+                description
+              )}
             </Container>
           </Box>
-          {children && <Box py={2}>{children}</Box>}
+          {(children || py) && <Box py={py}>{children}</Box>}
           {phoneImgSrc && (
             <Box py={2}>
               <Box>
@@ -118,7 +129,10 @@ export function Banner({
               <Grid container spacing={2} justify="center">
                 {googleAppStoreHref && (
                   <Grid item>
-                    <a href={googleAppStoreHref}>
+                    <a
+                      href={googleAppStoreHref}
+                      target="_blank"
+                      rel="noopener noreferrer">
                       <img
                         className={classes.button}
                         src={googleButton}
@@ -129,7 +143,10 @@ export function Banner({
                 )}
                 {appleAppStoreHref && (
                   <Grid item>
-                    <a href={appleAppStoreHref}>
+                    <a
+                      href={appleAppStoreHref}
+                      target="_blank"
+                      rel="noopener noreferrer">
                       <img
                         className={classes.button}
                         src={appleButton}
@@ -142,12 +159,16 @@ export function Banner({
             </Box>
           )}
           <Box py={2}>
-            <Typography
-              style={{ fontWeight: 'bold' }}
-              variant="h2"
-              color="primary">
-              {footer}
-            </Typography>
+            {typeof footer === 'string' ? (
+              <Typography
+                style={{ fontWeight: 'bold' }}
+                variant="h2"
+                color="primary">
+                {footer}
+              </Typography>
+            ) : (
+              footer
+            )}
           </Box>
         </Container>
       </Container>
