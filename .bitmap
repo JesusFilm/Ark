@@ -17,7 +17,13 @@
         "scope": "",
         "version": "",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/banner"
+        "rootDir": "src/elements/banner",
+        "nextVersion": {
+            "version": "patch",
+            "message": "",
+            "username": "Tataihono Nikora",
+            "email": "tataihono.nikora@gmail.com"
+        }
     },
     "elements/hero": {
         "scope": "jesus-film.ark",
