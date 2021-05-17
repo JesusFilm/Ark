@@ -61,7 +61,7 @@ export function Item ({
           <Grid item>
             <Typography variant="subtitle1">{title}</Typography>
           </Grid>
-          {author && 
+          {author &&
             <Grid item>
               <Typography variant="body2" className={classes.author}>{author}</Typography>
             </Grid>

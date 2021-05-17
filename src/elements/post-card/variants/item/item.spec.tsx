@@ -3,8 +3,8 @@ import { render } from '@testing-library/react'
 import {
   ItemPostCardNoImage,
   ItemPostCardNoImageNoAuthor,
-  ItemPostCard,
-} from './post-card.composition'
+  ItemPostCard
+} from '../../post-card.composition'
 
 describe('post-card-item', () => {
   it('item no image variant should render', () => {

@@ -1,8 +1,8 @@
 import React from 'react'
-import { fireEvent, render } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import {
-  QuotePostCard,
-} from './post-card.composition'
+  QuotePostCard
+} from '../../post-card.composition'
 
 describe('post-card-quote', () => {
   it('quote variant should render', () => {

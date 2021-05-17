@@ -3,7 +3,7 @@ import { fireEvent, render } from '@testing-library/react'
 import {
   HeroPostCard,
   HeroPostCardNoImage
-} from './post-card.composition'
+} from '../../post-card.composition'
 
 describe('post-card-hero', () => {
   it('hero variant should be clickable', () => {

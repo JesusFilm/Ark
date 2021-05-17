@@ -47,7 +47,7 @@ export function Default ({
         justify="flex-start"
         spacing={1}
       >
-        {src && 
+        {src &&
           <Grid item>
             <img src={src} className={classes.image} />
           </Grid>
@@ -58,7 +58,7 @@ export function Default ({
         <Grid item>
           <Typography variant="h3">{title}</Typography>
         </Grid>
-        {excerpt && 
+        {excerpt &&
           <Grid item>
             <Typography variant="body1">{excerpt}</Typography>
           </Grid>
