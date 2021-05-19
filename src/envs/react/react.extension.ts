@@ -6,7 +6,7 @@ import webpackConfig from './webpack/webpack.config'
 export class ReactExtension {
   static dependencies: Aspect[] = [EnvsAspect, ReactAspect]
 
-  static async provider ([envs, react]: [EnvsMain, ReactMain]) {
+  static async provider([envs, react]: [EnvsMain, ReactMain]) {
     const reactEnv = react.compose([
       react.overrideDevServerConfig(webpackConfig),
       react.overridePreviewConfig(webpackConfig)
