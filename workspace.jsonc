@@ -28,7 +28,10 @@
     "strictPeerDependencies": true
   },
   "teambit.workspace/variants": {
-    "src/envs/react": {
+    "src/envs/*": {
+      "teambit.harmony/aspect": {}
+    },
+    "src/util/*": {
       "teambit.harmony/aspect": {}
     },
     "*": {
