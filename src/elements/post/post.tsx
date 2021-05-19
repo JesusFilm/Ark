@@ -1,21 +1,21 @@
 import React from 'react'
-import { AuthorCardProps, AuthorCard } from '@jesus-film/ark.elements.author-card'
+import {
+  AuthorCardProps,
+  AuthorCard
+} from '@jesus-film/ark.elements.author-card'
 import { TimeAgo, TimeAgoProps } from '@jesus-film/ark.elements.time-ago'
+import { Typography } from '@material-ui/core'
 
 type Category = {
-  uri: string;
-  name: string;
-};
+  uri: string
+  name: string
+}
 
 export type PostProps = {
   /**
    * Title of post
    */
   title: string
-  /**
-   * Featured image of post
-   */
-  coverImage?: string
   /**
    * Post author
    */
@@ -28,28 +28,44 @@ export type PostProps = {
    * Main body of post
    */
   body: string
-} & TimeAgoProps;
+  /**
+   * Brief text description
+   */
+  excerpt: string
+} & TimeAgoProps
 
-export function Post ({ title, coverImage, datetime, locale, author, categories = [], body }: PostProps) {
+export function Post({
+  title,
+  excerpt,
+  datetime,
+  locale,
+  author,
+  categories = [],
+  body
+}: PostProps) {
   return (
     <div>
-      {title}
-      {
-        categories.map(category => (
-          category.name
-        ))
-      }
-      <div>
-        {coverImage && coverImage}
-      </div>
-      <div>
+      <Typography variant="h2" color="textSecondary" align="center">
+        {title}
+      </Typography>
+      <Typography variant="h6" align="center">
+        By {author.name}
+      </Typography>
+      <Typography variant="h4" align="center" gutterBottom>
+        {excerpt}
+      </Typography>
+      <Typography variant="body2" align="center">
+        Published under &nbsp;
+        {categories.map((category, i) => (
+          <span key={i}>
+            <a href={category.uri}>{category.name}</a>
+            &nbsp;
+          </span>
+        ))}
         <TimeAgo datetime={datetime} locale={locale} />
-      </div>
-      <div>
-        <AuthorCard {...author} />
-      </div>
-      <div dangerouslySetInnerHTML={{ __html: body }}>
-      </div>
+      </Typography>
+      <div dangerouslySetInnerHTML={{ __html: body }} />
+      <AuthorCard {...author} />
     </div>
   )
 }
