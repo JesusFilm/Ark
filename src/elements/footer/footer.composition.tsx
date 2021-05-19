@@ -61,3 +61,5 @@ export const BasicFooter = () => (
     ]}
   />
 )
+
+export const EmptyFooter = () => <Footer />

@@ -77,9 +77,9 @@ const useStyles = makeStyles((theme) => ({
 
 export type FooterProps = {
   /**
-   * a text to be rendered in the component.
+   * menus to display side by side.
    */
-  menus: {
+  menus?: {
     id: string
     name?: string
     menuItems: {
@@ -93,7 +93,7 @@ export function Footer({ menus }: FooterProps) {
 
   return (
     <Grid container spacing={2}>
-      {menus.map((menu) => (
+      {menus?.map((menu) => (
         <Grid item key={menu.id} xs>
           <List subheader={<ListSubheader>{menu.name}</ListSubheader>}>
             {convertToTree(menu.menuItems.nodes).map((node) => (
@@ -130,7 +130,7 @@ export function Footer({ menus }: FooterProps) {
             <ListItemText
               primary={
                 <Typography className={classes.about}>
-                  Copyright &copy; 1995-{new Date().getFullYear()}.
+                  <span>Copyright &copy; 1995-{new Date().getFullYear()}.</span>
                   <br />
                   Jesus Film Project&reg;.
                   <br />
