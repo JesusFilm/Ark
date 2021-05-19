@@ -56,7 +56,7 @@ export function Hero ({
 
   return (
     <Box
-      data-testid="heroVariantBackground"
+      data-testid="heroVariant"
       className={src ? classes.heroBackground : classes.noImage}
       style={src ? { backgroundImage: `url(${src})` } : {}}
     >

@@ -42,6 +42,7 @@ export function Quote ({
         alignItems="flex-start"
         justify="flex-start"
         spacing={1}
+        data-testid="quoteVariant"
       >
         <Grid item>
           <Typography variant="h2" className={classes.quote}>{excerpt}</Typography>

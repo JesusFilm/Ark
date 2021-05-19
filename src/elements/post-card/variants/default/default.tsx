@@ -39,7 +39,7 @@ export function Default ({
 }: DefaultProps) {
   const classes = useStyles()
   return (
-    <Container maxWidth="xs">
+    <Container maxWidth="xs" data-testid="defaultVariant">
       <Grid
         container
         direction="column"

@@ -16,14 +16,14 @@ describe('post-card-hero', () => {
   it('hero variant should display bg image', () => {
     const handleClick = jest.fn()
     const { getByTestId } = render(<HeroPostCard onClick={handleClick} variant="hero" />)
-    expect(window.getComputedStyle(getByTestId('heroVariantBackground')).backgroundSize).toEqual('cover')
-    expect(window.getComputedStyle(getByTestId('heroVariantBackground')).backgroundImage).toEqual('url(https://www.jesusfilm.org/content/dam/jesusfilm/homepage/hero/hero-omn21.png)')
+    expect(window.getComputedStyle(getByTestId('heroVariant')).backgroundSize).toEqual('cover')
+    expect(window.getComputedStyle(getByTestId('heroVariant')).backgroundImage).toEqual('url(https://www.jesusfilm.org/content/dam/jesusfilm/homepage/hero/hero-omn21.png)')
   })
 
   it('hero variant not display bg img if nothing is passed', () => {
     const handleClick = jest.fn()
     const { getByTestId } = render(<HeroPostCardNoImage onClick={handleClick} variant="hero" />)
-    expect(window.getComputedStyle(getByTestId('heroVariantBackground')).backgroundSize).toBeFalsy()
-    expect(window.getComputedStyle(getByTestId('heroVariantBackground')).backgroundImage).toBeFalsy()
+    expect(window.getComputedStyle(getByTestId('heroVariant')).backgroundSize).toBeFalsy()
+    expect(window.getComputedStyle(getByTestId('heroVariant')).backgroundImage).toBeFalsy()
   })
 })

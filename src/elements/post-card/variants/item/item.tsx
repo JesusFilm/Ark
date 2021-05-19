@@ -34,7 +34,7 @@ export function Item ({
   const classes = useStyles()
 
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="sm" data-testid="itemVariant">
       <Grid
         container
         direction="row"

@@ -31,7 +31,7 @@ export function Premiere ({
   const classes = useStyles()
 
   return (
-    <Container maxWidth="xs">
+    <Container maxWidth="xs" data-testid="premiereVariant">
       <Grid
         container
         direction="column"
@@ -39,7 +39,7 @@ export function Premiere ({
         justify="center"
         spacing={1}
       >
-        {src && 
+        {src &&
           <Grid item>
             <img src={src} className={classes.image} />
           </Grid>
@@ -47,7 +47,7 @@ export function Premiere ({
         <Grid item>
           <Typography variant="subtitle1" align="center">{title}</Typography>
         </Grid>
-        {excerpt && 
+        {excerpt &&
           <Grid item>
             <Typography variant="body2" align="center">{excerpt}</Typography>
           </Grid>
