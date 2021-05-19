@@ -7,7 +7,9 @@ import { TimeAgo, TimeAgoProps } from '@jesus-film/ark.elements.time-ago'
 import { Typography } from '@material-ui/core'
 
 type Category = {
-  uri: string
+  /** Callback when category is clicked */
+  onClick?: () => void
+  /** Category name */
   name: string
 }
 
@@ -57,8 +59,8 @@ export function Post({
       <Typography variant="body2" align="center">
         Published under &nbsp;
         {categories.map((category, i) => (
-          <span key={i}>
-            <a href={category.uri}>{category.name}</a>
+          <span key={i} onClick={() => category.onClick?.()}>
+            {category.name}
             &nbsp;
           </span>
         ))}

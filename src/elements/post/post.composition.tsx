@@ -16,7 +16,7 @@ export const BasicPost = () => (
     categories={[
       {
         name: 'Following Jesus',
-        uri: 'https://google.com/following'
+        onClick: () => alert('Following Jesus')
       }
     ]}
     body={postBody}
