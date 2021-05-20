@@ -31,7 +31,6 @@ specifiers:
   eslint-plugin-prettier: ^3.4.0
   eslint-plugin-promise: ^4.3.1
   eslint-plugin-react: ^7.23.2
-  file-loader: ^6.2.0
   jest: ^26.6.3
   prettier: 2.3.0
   prettier-config-standard: ^4.0.0
@@ -39,15 +38,16 @@ specifiers:
   react-dom: ^17.0.2
   react-helmet: ^6.1.0
   typescript: ^4.2.4
+  url-loader: ^4.1.1
 
 dependencies:
   '@material-ui/core': 4.11.4_66bdaeef25d361b247c0275abcb49c54
   '@material-ui/icons': 4.11.2_b159f5d7b20dc708dd4bbab723096803
   core-js: 3.11.0
-  file-loader: 6.2.0
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-helmet: 6.1.0_react@17.0.2
+  url-loader: 4.1.1
 
 devDependencies:
   '@babel/core': 7.13.16
@@ -3551,16 +3551,6 @@ packages:
       flat-cache: 3.0.4
     dev: true
 
-  /file-loader/6.2.0:
-    resolution: {integrity: sha512-qo3glqyTa61Ytg4u73GultjHGjdRyig3tG6lPtyX/jOEJvHif9uB0/OCI2Kif6ctF3caQTW2G5gym21oAsI4pw==}
-    engines: {node: '>= 10.13.0'}
-    peerDependencies:
-      webpack: ^4.0.0 || ^5.0.0
-    dependencies:
-      loader-utils: 2.0.0
-      schema-utils: 3.0.0
-    dev: false
-
   /fill-range/4.0.0:
     resolution: {integrity: sha1-1USBHUKPmOsGpj3EAtJAPDKMOPc=}
     engines: {node: '>=0.10.0'}
@@ -5090,14 +5080,12 @@ packages:
   /mime-db/1.47.0:
     resolution: {integrity: sha512-QBmA/G2y+IfeS4oktet3qRZ+P5kPhCKRXxXnQEudYqUaEioAU1/Lq2us3D/t1Jfo4hE9REQPrbB7K5sOczJVIw==}
     engines: {node: '>= 0.6'}
-    dev: true
 
   /mime-types/2.1.30:
     resolution: {integrity: sha512-crmjA4bLtR8m9qLpHvgxSChT+XoSlZi8J4n/aIdn3z92e/U47Z0V/yl+Wh9W046GgFVAmoNR/fmdbZYcSSIUeg==}
     engines: {node: '>= 0.6'}
     dependencies:
       mime-db: 1.47.0
-    dev: true
 
   /mimic-fn/2.1.0:
     resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}
@@ -6692,6 +6680,21 @@ packages:
     resolution: {integrity: sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=}
     deprecated: Please see https://github.com/lydell/urix#deprecated
     dev: true
+
+  /url-loader/4.1.1:
+    resolution: {integrity: sha512-3BTV812+AVHHOJQO8O5MkWgZ5aosP7GnROJwvzLS9hWDj00lZ6Z0wNak423Lp9PBZN05N+Jk/N5Si8jRAlGyWA==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      file-loader: '*'
+      webpack: ^4.0.0 || ^5.0.0
+    peerDependenciesMeta:
+      file-loader:
+        optional: true
+    dependencies:
+      loader-utils: 2.0.0
+      mime-types: 2.1.30
+      schema-utils: 3.0.0
+    dev: false
 
   /use/3.1.1:
     resolution: {integrity: sha512-cwESVXlO3url9YWlFW/TA9cshCEhtu7IKJ/p5soJ/gGpj7vbvFrAY/eIioQ6Dw23KjZhYgiIo8HOs1nQ2vr/oQ==}
