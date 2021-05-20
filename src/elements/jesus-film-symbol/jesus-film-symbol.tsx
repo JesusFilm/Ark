@@ -1,8 +1,4 @@
 import React, { ImgHTMLAttributes } from 'react'
-import Red from './assets/red.png'
-import CoolGray from './assets/cool-gray.png'
-import WarmWhite from './assets/warm-white.png'
-import White from './assets/white.png'
 
 export type JesusFilmSymbolProps = {
   variant?: 'red' | 'cool-gray' | 'warm-white' | 'white'
@@ -16,16 +12,16 @@ export function JesusFilmSymbol({
 
   switch (variant) {
     case 'red':
-      source = Red
+      source = require('./assets/red.png')
       break
     case 'cool-gray':
-      source = CoolGray
+      source = require('./assets/cool-gray.png')
       break
     case 'warm-white':
-      source = WarmWhite
+      source = require('./assets/warm-white.png')
       break
     case 'white':
-      source = White
+      source = require('./assets/white.png')
       break
   }
 
