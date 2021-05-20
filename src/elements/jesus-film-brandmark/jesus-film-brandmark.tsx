@@ -1,4 +1,10 @@
 import React, { ImgHTMLAttributes } from 'react'
+import Red from './assets/red.png'
+import CoolGray from './assets/cool-gray.png'
+import RedCoolGray from './assets/red-cool-gray.png'
+import RedWarmGray from './assets/red-warm-gray.png'
+import WarmWhite from './assets/warm-white.png'
+import White from './assets/white.png'
 
 export type JesusFilmBrandmarkProps = {
   variant?:
@@ -18,22 +24,22 @@ export function JesusFilmBrandmark({
 
   switch (variant) {
     case 'red':
-      source = require('./assets/red.png')
+      source = Red
       break
     case 'cool-gray':
-      source = require('./assets/cool-gray.png')
+      source = CoolGray
       break
     case 'red-cool-gray':
-      source = require('./assets/red-cool-gray.png')
+      source = RedCoolGray
       break
     case 'red-warm-gray':
-      source = require('./assets/red-warm-gray.png')
+      source = RedWarmGray
       break
     case 'warm-white':
-      source = require('./assets/warm-white.png')
+      source = WarmWhite
       break
     case 'white':
-      source = require('./assets/white.png')
+      source = White
       break
   }
 
