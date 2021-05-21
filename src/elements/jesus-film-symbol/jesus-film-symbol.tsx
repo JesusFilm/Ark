@@ -9,9 +9,9 @@ import White from './assets/white.png'
 import WhiteText from './assets/white-text.svg'
 
 export type JesusFilmSymbolProps = {
-  /** logo primary color */
+  /** symbol primary color */
   variant?: 'red' | 'cool-gray' | 'warm-white' | 'white'
-  /** show Jesus text on logo */
+  /** show Jesus text on symbol */
   text?: boolean
 } & ImgHTMLAttributes<HTMLImageElement>
 
