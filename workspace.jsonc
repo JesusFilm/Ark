@@ -13,9 +13,7 @@
     "packageManager": "teambit.dependencies/pnpm",
     "policy": {
       "dependencies": {
-        "core-js": "^3.11.0",
-        "timeago-react": "3.0.2",
-        "timeago.js": "4.0.2"
+        "core-js": "^3.11.0"
       },
       "peerDependencies": {
         "@material-ui/core": "^4.11.3",

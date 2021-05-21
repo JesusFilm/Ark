@@ -1,23 +1,22 @@
 import React from 'react'
-import TimeAgoLibrary from 'timeago-react'
-import { register } from 'timeago.js'
-import * as locales from 'timeago.js/lib/lang/index.js'
-Object.keys(locales).forEach(locale => {
-  register(locale, locales[locale])
-})
+import { formatDistance } from 'date-fns'
+import { eo, enUS, enGB, ru } from 'date-fns/locale'
+const locales = { enUS, enGB, eo, ru }
 
 export type TimeAgoProps = {
   /** locale */
-  locale?: 'ar' | 'be' | 'bg' | 'bn_IN' | 'ca' | 'cs' | 'da' | 'de' | 'el' | 'en_short' | 'en_US' | 'es' | 'eu' | 'fa' | 'fi' | 'fr' | 'gl' | 'he' | 'hi_IN' | 'hu' | 'id_ID' | 'it' | 'ja' | 'ka' | 'ko' | 'ml' | 'my' | 'nb_NO' | 'nl' | 'nn_NO' | 'oc' | 'pl' | 'pt_BR' | 'ro' | 'ru' | 'sq' | 'sr' | 'sv' | 'ta' | 'th' | 'tk' | 'tr' | 'uk' | 'vi' | 'zh_CN' | 'zh_TW'
+  locale?: 'enUS' | 'enGB' | 'eo' | 'ru'
   /** datetime */
   datetime: Date;
 };
 
 export function TimeAgo ({
   datetime,
-  locale = 'en_US'
+  locale = 'enUS'
 }: TimeAgoProps) {
   return (
-    <TimeAgoLibrary datetime={datetime} locale={locale} />
+    <span>{
+      formatDistance(datetime, new Date(), { addSuffix: true, locale: locales[locale] })
+    }</span>
   )
 }

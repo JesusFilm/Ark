@@ -19,6 +19,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^4.22.0
   '@typescript-eslint/parser': ^4.22.0
   core-js: ^3.11.0
+  date-fns: ^2.21.3
   eslint: ^7.25.0
   eslint-config-standard: ^16.0.2
   eslint-plugin-import: ^2.22.1
@@ -31,20 +32,17 @@ specifiers:
   react: ^17.0.2
   react-dom: ^17.0.2
   react-helmet: ^6.1.0
-  timeago-react: ^3.0.0
-  timeago.js: ^4.0.0
   typescript: ^4.2.4
 
 dependencies:
   '@material-ui/core': 4.11.4_66bdaeef25d361b247c0275abcb49c54
   '@material-ui/icons': 4.11.2_b159f5d7b20dc708dd4bbab723096803
   core-js: 3.11.2
+  date-fns: 2.21.3
   file-loader: 6.2.0
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-helmet: 6.1.0_react@17.0.2
-  timeago-react: 3.0.2_react@17.0.2
-  timeago.js: 4.0.2
 
 devDependencies:
   '@babel/core': 7.13.16
@@ -2975,6 +2973,11 @@ packages:
     resolution: {integrity: sha512-X3bf2iTPgCAQp9wvjOQytnf5vO5rESYRXlPIVcgSbtT5OTScPcsf9eZU+B/YIkKAtYr5WeCii58BgATrNitlWg==}
     engines: {node: '>=0.11'}
     dev: true
+
+  /date-fns/2.21.3:
+    resolution: {integrity: sha512-HeYdzCaFflc1i4tGbj7JKMjM4cKGYoyxwcIIkHzNgCkX8xXDNJDZXgDDVchIWpN4eQc3lH37WarduXFZJOtxfw==}
+    engines: {node: '>=0.11'}
+    dev: false
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
@@ -6495,19 +6498,6 @@ packages:
     resolution: {integrity: sha512-H7oLPV0P7+jgvrk+6mwwwBDmxTaxnu9HMXmloNLXwnNO0ZxZ31Orah2n8lU1eMPvsaowP2CX+USCgyovXfdOFQ==}
     engines: {node: '>=8'}
     dev: true
-
-  /timeago-react/3.0.2_react@17.0.2:
-    resolution: {integrity: sha512-K+NqoRcE13xv7lrmHtZmy7G+yXF8ZxmuwRK/EGKyT1chpI3zmV6YnB5o9+slnOCq1dXuQJknr/hWjINyP7C9LA==}
-    peerDependencies:
-      react: ^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
-    dependencies:
-      react: 17.0.2
-      timeago.js: 4.0.2
-    dev: false
-
-  /timeago.js/4.0.2:
-    resolution: {integrity: sha512-a7wPxPdVlQL7lqvitHGGRsofhdwtkoSXPGATFuSOA2i1ZNQEPLrGnj68vOp2sOJTCFAQVXPeNMX/GctBaO9L2w==}
-    dev: false
 
   /tiny-warning/1.0.3:
     resolution: {integrity: sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==}

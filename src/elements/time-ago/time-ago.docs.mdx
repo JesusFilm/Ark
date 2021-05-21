@@ -11,11 +11,13 @@ Accepts a date object and optional locale and returns a human readable time ago 
 
 Code Snippet:
 ```js
-<TimeAgoLibrary datetime={datetime} locale={locale} />
+const d = new Date()
+d.setDate(d.getDate() - 5)
+<TimeAgo datetime={d} locale='ru' />
 ```
 
 
 Live Playground:
 ```js live
-<TimeAgoLibrary datetime={datetime} locale={locale} />
+<TimeAgo datetime={new Date()} locale='enUS' />
 ```
