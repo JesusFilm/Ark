@@ -95,7 +95,10 @@ export function Footer({ menus }: FooterProps) {
     <Grid container spacing={2}>
       {menus?.map((menu) => (
         <Grid item key={menu.id} xs>
-          <List subheader={<ListSubheader>{menu.name}</ListSubheader>}>
+          <List
+            subheader={
+              <ListSubheader disableSticky>{menu.name}</ListSubheader>
+            }>
             {convertToTree(menu.menuItems.nodes).map((node) => (
               <ListItem key={node.id} node={node} />
             ))}
@@ -103,7 +106,7 @@ export function Footer({ menus }: FooterProps) {
         </Grid>
       ))}
       <Grid item xs>
-        <List subheader={<ListSubheader>About</ListSubheader>}>
+        <List subheader={<ListSubheader disableSticky>About</ListSubheader>}>
           <MaterialListItem>
             <ListItemText
               primary={
