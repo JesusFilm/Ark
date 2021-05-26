@@ -29,13 +29,25 @@
         "scope": "jesus-film.ark",
         "version": "0.0.2",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/jesus-film-symbol"
+        "rootDir": "src/elements/jesus-film-symbol",
+        "nextVersion": {
+            "version": "patch",
+            "message": "",
+            "username": "Tataihono Nikora",
+            "email": "tataihono.nikora@gmail.com"
+        }
     },
     "envs/react": {
         "scope": "jesus-film.ark",
         "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "src/envs/react"
+    },
+    "elements/jesus-film-graphic-seal": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/jesus-film-graphic-seal"
     },
     "providers/jesus-film-theme-provider": {
         "scope": "jesus-film.ark",
