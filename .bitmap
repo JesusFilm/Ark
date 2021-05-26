@@ -25,29 +25,23 @@
         "mainFile": "index.ts",
         "rootDir": "src/elements/jesus-film-brandmark"
     },
+    "elements/jesus-film-graphic-seal": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/jesus-film-graphic-seal"
+    },
     "elements/jesus-film-symbol": {
         "scope": "jesus-film.ark",
-        "version": "0.0.2",
+        "version": "0.0.3",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/jesus-film-symbol",
-        "nextVersion": {
-            "version": "patch",
-            "message": "",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/elements/jesus-film-symbol"
     },
     "envs/react": {
         "scope": "jesus-film.ark",
         "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "src/envs/react"
-    },
-    "elements/jesus-film-graphic-seal": {
-        "scope": "",
-        "version": "",
-        "mainFile": "index.ts",
-        "rootDir": "src/elements/jesus-film-graphic-seal"
     },
     "providers/jesus-film-theme-provider": {
         "scope": "jesus-film.ark",
