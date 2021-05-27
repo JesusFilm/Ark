@@ -6,7 +6,7 @@ export default {
   module: {
     rules: [
       {
-        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/],
         loader: require.resolve('url-loader'),
         options: {
           limit: imageInlineSizeLimit,
