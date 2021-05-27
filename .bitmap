@@ -79,6 +79,12 @@
             "email": "tataihono.nikora@gmail.com"
         }
     },
+    "elements/subscribe-card": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/subscribe-card"
+    },
     "envs/react": {
         "scope": "jesus-film.ark",
         "version": "0.0.2",
