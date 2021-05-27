@@ -39,8 +39,7 @@ export const CustomHero = (props: Partial<HeroProps>) => {
         <Button
           variant="outlined"
           color="secondary"
-          onClick={props.onClick || (() => alert('button clicked'))}
-        >
+          onClick={props.onClick || (() => alert('button clicked'))}>
           Download the Free Voke App
         </Button>
       }

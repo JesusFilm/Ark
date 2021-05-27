@@ -2,17 +2,19 @@ import React from 'react'
 import { Grid, makeStyles, Typography, Avatar, Box } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1
+  wrap: {
+    [theme.breakpoints.up('sm')]: {
+      flexWrap: 'nowrap'
+    }
   },
   name: {
     textTransform: 'uppercase',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('xs')]: {
       textAlign: 'center'
     }
   },
   description: {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('xs')]: {
       textAlign: 'center'
     }
   },
@@ -25,33 +27,37 @@ const useStyles = makeStyles((theme) => ({
 
 export type AuthorCardProps = {
   /** author name */
-  name: string;
+  name: string
   /** author bio */
-  description: string;
+  description: string
   /** Background image source url */
-  src?: string;
+  src?: string
   /** Callback when button is clicked */
-  onClick?: () => void;
-};
+  onClick?: () => void
+}
 
-export function AuthorCard ({
+export function AuthorCard({
   name,
   description,
   src,
   onClick
 }: AuthorCardProps) {
   const classes = useStyles()
-  const initials = name.split(' ').map((n) => n[0]).join('').toUpperCase()
+  const initials = name
+    .split(' ')
+    .map((n) => n[0])
+    .join('')
+    .toUpperCase()
 
   return (
-    <Box className={classes.root} onClick={() => onClick?.()}>
+    <Box onClick={() => onClick?.()}>
       <Grid
         container
         direction="row"
         justify="center"
         alignItems="center"
-        spacing={2}
-      >
+        className={classes.wrap}
+        spacing={2}>
         <Grid item>
           <Avatar alt={name} src={src} className={classes.image}>
             {initials}
@@ -62,8 +68,7 @@ export function AuthorCard ({
             <Typography
               variant="h5"
               color="textSecondary"
-              className={classes.name}
-            >
+              className={classes.name}>
               {name}
             </Typography>
           </Grid>

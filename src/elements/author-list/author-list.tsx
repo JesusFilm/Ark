@@ -1,20 +1,32 @@
 import React from 'react'
-import { GridList, GridListTile } from '@material-ui/core'
-import { AuthorCardProps, AuthorCard } from '@jesus-film/ark.elements.author-card'
+import { Grid, makeStyles } from '@material-ui/core'
+import {
+  AuthorCardProps,
+  AuthorCard
+} from '@jesus-film/ark.elements.author-card'
+
+const useStyles = makeStyles((theme) => ({
+  align: {
+    [theme.breakpoints.down('xs')]: {
+      justifyContent: 'center'
+    }
+  }
+}))
 
 export type AuthorListProps = {
   /** authors */
-  authors: AuthorCardProps[];
-};
+  authors: AuthorCardProps[]
+}
 
-export function AuthorList ({ authors }: AuthorListProps) {
+export function AuthorList({ authors }: AuthorListProps) {
+  const classes = useStyles()
   return (
-    <GridList cellHeight={200} cols={1}>
+    <Grid container className={classes.align} alignItems="center" spacing={4}>
       {authors.map((author, i) => (
-        <GridListTile key={`${i}-author`} cols={1}>
+        <Grid item key={`${i}-author`}>
           <AuthorCard {...author} />
-        </GridListTile>
+        </Grid>
       ))}
-    </GridList>
+    </Grid>
   )
 }
