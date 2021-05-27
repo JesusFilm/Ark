@@ -11,6 +11,7 @@ specifiers:
   '@material-ui/icons': ^4.11.2
   '@material-ui/lab': ^4.0.0-alpha.58
   '@teambit/bvm': ^0.0.20
+  '@testing-library/dom': ^7.31.0
   '@testing-library/react': ^11.2.6
   '@testing-library/user-event': ^13.1.9
   '@types/jest': ^26.0.23
@@ -66,8 +67,9 @@ devDependencies:
   '@babel/runtime': 7.13.17
   '@jest/core': 26.6.3
   '@teambit/bvm': 0.0.20_react-dom@17.0.2+react@17.0.2
+  '@testing-library/dom': 7.31.0
   '@testing-library/react': 11.2.6_react-dom@17.0.2+react@17.0.2
-  '@testing-library/user-event': 13.1.9
+  '@testing-library/user-event': 13.1.9_@testing-library+dom@7.31.0
   '@types/jest': 26.0.23
   '@types/node': 12.20.10
   '@types/react': 17.0.4
@@ -1153,10 +1155,10 @@ packages:
       - supports-color
     dev: true
 
-  /@babel/runtime-corejs3/7.13.17:
-    resolution: {integrity: sha512-RGXINY1YvduBlGrP+vHjJqd/nK7JVpfM4rmZLGMx77WoL3sMrhheA0qxii9VNn1VHnxJLEyxmvCB+Wqc+x/FMw==}
+  /@babel/runtime-corejs3/7.14.0:
+    resolution: {integrity: sha512-0R0HTZWHLk6G8jIk0FtoX+AatCtKnswS98VhXwGImFc759PJRp4Tru0PQYZofyijTFUr+gT8Mu7sgXVJLQ0ceg==}
     dependencies:
-      core-js-pure: 3.11.0
+      core-js-pure: 3.13.0
       regenerator-runtime: 0.13.7
     dev: true
 
@@ -1855,6 +1857,20 @@ packages:
       pretty-format: 26.6.2
     dev: true
 
+  /@testing-library/dom/7.31.0:
+    resolution: {integrity: sha512-0X7ACg4YvTRDFMIuTOEj6B4NpN7i3F/4j5igOcTI5NC5J+N4TribNdErCHOZF1LBWhhcyfwxelVwvoYNMUXTOA==}
+    engines: {node: '>=10'}
+    dependencies:
+      '@babel/code-frame': 7.12.13
+      '@babel/runtime': 7.14.0
+      '@types/aria-query': 4.2.1
+      aria-query: 4.2.2
+      chalk: 4.1.1
+      dom-accessibility-api: 0.5.4
+      lz-string: 1.4.4
+      pretty-format: 26.6.2
+    dev: true
+
   /@testing-library/react/11.2.6_react-dom@17.0.2+react@17.0.2:
     resolution: {integrity: sha512-TXMCg0jT8xmuU8BkKMtp8l7Z50Ykew5WNX8UoIKTaLFwKkP2+1YDhOLA2Ga3wY4x29jyntk7EWfum0kjlYiSjQ==}
     engines: {node: '>=10'}
@@ -1868,13 +1884,14 @@ packages:
       react-dom: 17.0.2_react@17.0.2
     dev: true
 
-  /@testing-library/user-event/13.1.9:
+  /@testing-library/user-event/13.1.9_@testing-library+dom@7.31.0:
     resolution: {integrity: sha512-NZr0zL2TMOs2qk+dNlqrAdbaRW5dAmYwd1yuQ4r7HpkVEOj0MWuUjDWwKhcLd/atdBy8ZSMHSKp+kXSQe47ezg==}
     engines: {node: '>=10', npm: '>=6'}
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
     dependencies:
       '@babel/runtime': 7.14.0
+      '@testing-library/dom': 7.31.0
     dev: true
 
   /@types/aria-query/4.2.1:
@@ -2243,8 +2260,8 @@ packages:
     resolution: {integrity: sha512-o/HelwhuKpTj/frsOsbNLNgnNGVIFsVP/SW2BSF14gVl7kAfMOJ6/8wUAUvG1R1NHKrfG+2sHZTu0yauT1qBrA==}
     engines: {node: '>=6.0'}
     dependencies:
-      '@babel/runtime': 7.13.17
-      '@babel/runtime-corejs3': 7.13.17
+      '@babel/runtime': 7.14.0
+      '@babel/runtime-corejs3': 7.14.0
     dev: true
 
   /arr-diff/4.0.0:
@@ -2827,8 +2844,8 @@ packages:
       semver: 7.0.0
     dev: true
 
-  /core-js-pure/3.11.0:
-    resolution: {integrity: sha512-PxEiQGjzC+5qbvE7ZIs5Zn6BynNeZO9zHhrrWmkRff2SZLq0CE/H5LuZOJHhmOQ8L38+eMzEHAmPYWrUtDfuDQ==}
+  /core-js-pure/3.13.0:
+    resolution: {integrity: sha512-7VTvXbsMxROvzPAVczLgfizR8CyYnvWPrb1eGrtlZAJfjQWEHLofVfCKljLHdpazTfpaziRORwUH/kfGDKvpdA==}
     requiresBuild: true
     dev: true
 
