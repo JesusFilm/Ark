@@ -27,6 +27,6 @@ it('should allow submission of valid email', async () => {
     )
   )
   expect(getByRole('alert', { name: 'Success' }).textContent).toEqual(
-    "You've successfully subscribed using your email: test@example.com."
+    "You've successfully subscribed: test@example.com."
   )
 })
