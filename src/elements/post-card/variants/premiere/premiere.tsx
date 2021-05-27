@@ -1,10 +1,5 @@
 import React from 'react'
-import {
-  Grid,
-  makeStyles,
-  Typography,
-  Container
-} from '@material-ui/core'
+import { Grid, makeStyles, Typography, Container } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   image: {
@@ -14,20 +9,16 @@ const useStyles = makeStyles((theme) => ({
 
 export type PremiereProps = {
   /** Post title */
-  title: string;
+  title: string
   /** Post excerpt */
-  excerpt?: string;
+  excerpt?: string
   /** Image source url */
-  src?: string;
+  src?: string
   /** Variant style */
   variant: 'premiere'
-};
+}
 
-export function Premiere ({
-  title,
-  excerpt,
-  src
-}: PremiereProps) {
+export function Premiere({ title, excerpt, src }: PremiereProps) {
   const classes = useStyles()
 
   return (
@@ -37,21 +28,24 @@ export function Premiere ({
         direction="column"
         alignItems="center"
         justify="center"
-        spacing={1}
-      >
-        {src &&
+        spacing={1}>
+        {src && (
           <Grid item>
             <img src={src} className={classes.image} />
           </Grid>
-        }
+        )}
         <Grid item>
-          <Typography variant="subtitle1" align="center">{title}</Typography>
+          <Typography variant="subtitle1" align="center">
+            {title}
+          </Typography>
         </Grid>
-        {excerpt &&
+        {excerpt && (
           <Grid item>
-            <Typography variant="body2" align="center">{excerpt}</Typography>
+            <Typography variant="body2" align="center">
+              {excerpt}
+            </Typography>
           </Grid>
-        }
+        )}
       </Grid>
     </Container>
   )

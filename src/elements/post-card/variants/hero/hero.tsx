@@ -29,22 +29,22 @@ const useStyles = makeStyles((theme) => ({
 
 export type HeroProps = {
   /** Post title */
-  title: string;
+  title: string
   /** Post category */
-  category?: string;
+  category?: string
   /** Post excerpt */
-  excerpt?: string;
+  excerpt?: string
   /** Image source url */
-  src?: string;
+  src?: string
   /** Callback when button is clicked */
-  onClick?: () => void;
+  onClick?: () => void
   /** Text of button */
-  buttonText?: string;
+  buttonText?: string
   /** Variant style */
   variant: 'hero'
-};
+}
 
-export function Hero ({
+export function Hero({
   title,
   category,
   excerpt,
@@ -58,50 +58,37 @@ export function Hero ({
     <Box
       data-testid="heroVariant"
       className={src ? classes.heroBackground : classes.noImage}
-      style={src ? { backgroundImage: `url(${src})` } : {}}
-    >
+      style={src ? { backgroundImage: `url(${src})` } : {}}>
       <Box className={src ? classes.heroDarken : ''}>
         <Grid
           container
           direction="row"
           alignItems="flex-start"
           justify="flex-start"
-          spacing={2}
-        >
-          <Grid
-            item
-            sm={12}
-            md={9}
-            lg={6}
-          >
+          spacing={2}>
+          <Grid item sm={12} md={9} lg={6}>
             <Container maxWidth="sm">
-              <Grid
-                container
-                direction="row"
-                alignItems="center"
-                spacing={2}
-              >
-                {category &&
+              <Grid container direction="row" alignItems="center" spacing={2}>
+                {category && (
                   <Grid item>
                     <Typography variant="h5">{category}</Typography>
                   </Grid>
-                }
+                )}
                 <Grid item>
                   <Typography variant="h2">{title}</Typography>
                 </Grid>
-                {excerpt &&
+                {excerpt && (
                   <Grid item>
                     <Typography variant="body1">{excerpt}</Typography>
                   </Grid>
-                }
+                )}
                 {onClick && (
                   <Grid item>
                     <Button
                       onClick={onClick}
                       variant="contained"
                       color="primary"
-                      size="large"
-                    >
+                      size="large">
                       {buttonText}
                     </Button>
                   </Grid>

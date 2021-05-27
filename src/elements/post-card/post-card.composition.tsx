@@ -83,7 +83,7 @@ export const DefaultPostCard = (props: Partial<DefaultProps>) => (
     category="Following Jesus"
     excerpt="The call to prayer eminated from Omar's Lips - an eerie sound, out of place in the park. Omar and a group of 15 men bowed in sync."
     datetime={new Date('2021-04-30T11:30:00.000+02:00')}
-    locale='ru'
+    locale="ru"
     variant="default"
     {...props}
   />

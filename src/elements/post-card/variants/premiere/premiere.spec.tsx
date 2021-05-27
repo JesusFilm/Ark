@@ -1,8 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import {
-  PremierePostCard
-} from '../../post-card.composition'
+import { PremierePostCard } from '../../post-card.composition'
 
 describe('post-card-premiere', () => {
   it('premiere variant should render', () => {

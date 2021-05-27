@@ -7,16 +7,16 @@ export type TimeAgoProps = {
   /** locale */
   locale?: 'enUS' | 'enGB' | 'eo' | 'ru'
   /** datetime */
-  datetime: Date;
-};
+  datetime: Date
+}
 
-export function TimeAgo ({
-  datetime,
-  locale = 'enUS'
-}: TimeAgoProps) {
+export function TimeAgo({ datetime, locale = 'enUS' }: TimeAgoProps) {
   return (
-    <span>{
-      formatDistance(datetime, new Date(), { addSuffix: true, locale: locales[locale] })
-    }</span>
+    <span>
+      {formatDistance(datetime, new Date(), {
+        addSuffix: true,
+        locale: locales[locale]
+      })}
+    </span>
   )
 }

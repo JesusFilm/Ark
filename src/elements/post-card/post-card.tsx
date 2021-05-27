@@ -12,9 +12,14 @@ import {
   DefaultProps
 } from './variants'
 
-export type PostCardProps = HeroProps | PremiereProps | ItemProps | QuoteProps | DefaultProps
+export type PostCardProps =
+  | HeroProps
+  | PremiereProps
+  | ItemProps
+  | QuoteProps
+  | DefaultProps
 
-export function PostCard (PostCardProps: PostCardProps) {
+export function PostCard(PostCardProps: PostCardProps) {
   switch (PostCardProps.variant) {
     case 'hero':
       return <Hero {...PostCardProps} />

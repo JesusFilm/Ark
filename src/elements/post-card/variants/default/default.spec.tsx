@@ -1,8 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import {
-  DefaultPostCard
-} from '../../post-card.composition'
+import { DefaultPostCard } from '../../post-card.composition'
 
 describe('post-card-default', () => {
   it('default variant should render', () => {

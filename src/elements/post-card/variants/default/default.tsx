@@ -1,10 +1,5 @@
 import React from 'react'
-import {
-  Grid,
-  makeStyles,
-  Typography,
-  Container
-} from '@material-ui/core'
+import { Grid, makeStyles, Typography, Container } from '@material-ui/core'
 import { TimeAgo, TimeAgoProps } from '@jesus-film/ark.elements.time-ago'
 
 const useStyles = makeStyles((theme) => ({
@@ -18,18 +13,18 @@ const useStyles = makeStyles((theme) => ({
 
 export type DefaultProps = {
   /** Post title */
-  title: string;
+  title: string
   /** Category */
-  category: string;
+  category: string
   /** Post excerpt */
-  excerpt?: string;
+  excerpt?: string
   /** Image source url */
-  src?: string;
+  src?: string
   /** Variant style */
-  variant: 'default',
-} & TimeAgoProps;
+  variant: 'default'
+} & TimeAgoProps
 
-export function Default ({
+export function Default({
   title,
   excerpt,
   category,
@@ -45,24 +40,25 @@ export function Default ({
         direction="column"
         alignItems="flex-start"
         justify="flex-start"
-        spacing={1}
-      >
-        {src &&
+        spacing={1}>
+        {src && (
           <Grid item>
             <img src={src} className={classes.image} />
           </Grid>
-        }
+        )}
         <Grid item>
-          <Typography variant="h6" className={classes.category}>{category}</Typography>
+          <Typography variant="h6" className={classes.category}>
+            {category}
+          </Typography>
         </Grid>
         <Grid item>
           <Typography variant="h3">{title}</Typography>
         </Grid>
-        {excerpt &&
+        {excerpt && (
           <Grid item>
             <Typography variant="body1">{excerpt}</Typography>
           </Grid>
-        }
+        )}
         <Grid item>
           <TimeAgo datetime={datetime} locale={locale} />
         </Grid>
