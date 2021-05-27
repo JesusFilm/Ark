@@ -47,7 +47,13 @@
         "scope": "",
         "version": "",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/subscribe-card"
+        "rootDir": "src/elements/subscribe-card",
+        "nextVersion": {
+            "version": "patch",
+            "message": "",
+            "username": "Tataihono Nikora",
+            "email": "tataihono.nikora@gmail.com"
+        }
     },
     "envs/react": {
         "scope": "jesus-film.ark",
