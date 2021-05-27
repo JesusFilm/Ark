@@ -55,12 +55,6 @@
         "mainFile": "index.ts",
         "rootDir": "src/envs/react"
     },
-    "elements/jesus-film-graphic-seal": {
-        "scope": "",
-        "version": "",
-        "mainFile": "index.ts",
-        "rootDir": "src/elements/jesus-film-graphic-seal"
-    },
     "providers/jesus-film-theme-provider": {
         "scope": "jesus-film.ark",
         "version": "0.0.3",
