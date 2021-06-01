@@ -11,3 +11,14 @@ export const BasicSubscribeCard = () => (
     />
   </JesusFilmThemeProvider>
 )
+
+export const BannerSubscribeCard = () => (
+  <JesusFilmThemeProvider>
+    <SubscribeCard
+      onSubmit={({ email }) => {
+        alert(`emailAddress: ${email}`)
+      }}
+      variant="banner"
+    />
+  </JesusFilmThemeProvider>
+)
