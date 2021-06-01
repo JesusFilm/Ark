@@ -13,7 +13,7 @@ import {
 import { Alert } from '@material-ui/lab'
 import { Formik, FormikHelpers } from 'formik'
 import * as yup from 'yup'
-import { JesusFilmGraphicSeal } from '../jesus-film-graphic-seal'
+import { JesusFilmGraphicSeal } from '@jesus-film/ark.elements.jesus-film-graphic-seal'
 import classNames from 'classnames'
 import Background from './assets/background.jpg'
 
