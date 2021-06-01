@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core'
 import React from 'react'
 import Background from './assets/background.png'
-import { JesusFilmSymbol } from '../jesus-film-symbol'
+import { JesusFilmSymbol } from '@jesus-film/ark.elements.jesus-film-symbol'
 
 const useStyles = makeStyles((theme) => ({
   box: {
