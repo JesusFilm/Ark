@@ -55,6 +55,18 @@
         "mainFile": "index.ts",
         "rootDir": "src/elements/jesus-film-symbol"
     },
+    "elements/post-card": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/post-card"
+    },
+    "elements/time-ago": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/time-ago"
+    },
     "envs/react": {
         "scope": "jesus-film.ark",
         "version": "0.0.4",
