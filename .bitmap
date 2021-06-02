@@ -49,6 +49,18 @@
         "mainFile": "index.ts",
         "rootDir": "src/envs/react"
     },
+    "providers/i18n-provider": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/providers/i18n-provider",
+        "nextVersion": {
+            "version": "patch",
+            "message": "",
+            "username": "Tataihono Nikora",
+            "email": "tataihono.nikora@gmail.com"
+        }
+    },
     "providers/jesus-film-theme-provider": {
         "scope": "jesus-film.ark",
         "version": "0.0.4",
