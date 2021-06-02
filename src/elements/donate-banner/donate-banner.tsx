@@ -9,6 +9,7 @@ import {
 import React from 'react'
 import Background from './assets/background.png'
 import { JesusFilmSymbol } from '@jesus-film/ark.elements.jesus-film-symbol'
+import { useTranslation } from 'react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   box: {
@@ -37,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
 
 export function DonateBanner() {
   const classes = useStyles()
+  const { t } = useTranslation()
   return (
     <Box className={classes.box} py={2}>
       <Container>
@@ -46,7 +48,7 @@ export function DonateBanner() {
           </Grid>
           <Grid item className={classes.gridItemTypography}>
             <Typography variant="h5" component="h2">
-              Reach People Digitally with the Hope of Jesus!
+              {t('Reach People Digitally with the Hope of Jesus!')}
             </Typography>
           </Grid>
           <Grid item>
@@ -58,7 +60,7 @@ export function DonateBanner() {
               target="_blank"
               disableElevation
               fullWidth>
-              Donate
+              {t('Donate')}
             </Button>
           </Grid>
         </Grid>
