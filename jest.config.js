@@ -6,5 +6,5 @@ module.exports = {
     '\\.(ts|tsx|js|jsx)$': 'babel-jest'
   },
   automock: false,
-  setupFilesAfterEnv: ['./setupTests.js']
+  setupFilesAfterEnv: ['<rootDir>/jest/setupTests.js']
 }

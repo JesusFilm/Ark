@@ -45,7 +45,6 @@ describe('i18nProvider', () => {
       getByText('When people encounter Jesus, everything changes')
     ).toBeTruthy()
     fireEvent.click(getByRole('button', { name: 'German' }))
-    await waitFor(() => expect(fetchMock.mock.calls.length).toBeGreaterThan(0))
     await waitFor(() =>
       expect(
         getByText('Wenn Menschen Jesus begegnen, ändert sich alles')
