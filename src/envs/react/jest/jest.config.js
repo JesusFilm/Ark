@@ -2,10 +2,11 @@ module.exports = {
   // "roots": [
   //   "<rootDir>/src"
   // ],
-  // "collectCoverageFrom": [
-  //   "src/**/*.{js,jsx,ts,tsx}",
-  //   "!src/**/*.d.ts"
-  // ],
+  collectCoverageFrom: [
+    'src/**/*.{js,jsx,ts,tsx}',
+    '!src/**/*.d.ts',
+    '!src/**/*.composition.tsx'
+  ],
   automock: false,
   setupFiles: [require.resolve('react-app-polyfill/jsdom')],
   setupFilesAfterEnv: [require.resolve('./setupTests.js')],
