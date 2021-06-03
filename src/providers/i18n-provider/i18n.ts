@@ -16,7 +16,6 @@ i18next
       escapeValue: false
     },
     react: {
-      wait: true,
       useSuspense: false
     },
     backend: {

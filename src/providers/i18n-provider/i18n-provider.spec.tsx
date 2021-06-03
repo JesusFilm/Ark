@@ -9,7 +9,7 @@ import { BasicI18nProvider } from './i18n-provider.composition'
 describe('i18nProvider', () => {
   beforeEach(() => {
     fetchMock.mockIf(/^https:\/\/jesusfilm\.github\.io.*$/, async (req) => {
-      if (req.url.endsWith('en/translation.json')) {
+      if (req.url.endsWith('/Ark/locales/en/translation.json')) {
         return {
           body: JSON.stringify({
             'When people encounter Jesus, everything changes':
@@ -19,7 +19,7 @@ describe('i18nProvider', () => {
           })
         }
       }
-      if (req.url.endsWith('de/translation.json')) {
+      if (req.url.endsWith('/Ark/locales/de/translation.json')) {
         return {
           body: JSON.stringify({
             'When people encounter Jesus, everything changes':
@@ -45,11 +45,6 @@ describe('i18nProvider', () => {
       getByText('When people encounter Jesus, everything changes')
     ).toBeTruthy()
     fireEvent.click(getByRole('button', { name: 'German' }))
-    console.log(
-      await (
-        await global.fetch('https://jesusfilm.github.io/en/translation.json')
-      ).text()
-    )
     await waitFor(() => expect(fetchMock.mock.calls.length).toBeGreaterThan(0))
     await waitFor(() =>
       expect(
