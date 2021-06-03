@@ -4,6 +4,9 @@ import { BasicPost } from './post.composition'
 
 it('should render with the correct text', () => {
   const { getByText } = render(<BasicPost />)
-  const rendered = getByText('hello from Post')
-  expect(rendered).toBeTruthy()
+  expect(
+    getByText(
+      "This parable further explains why God's kingdom would make room for those from outside of Israel."
+    )
+  ).toBeDefined()
 })

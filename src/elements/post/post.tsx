@@ -1,8 +1,5 @@
 import React from 'react'
-import {
-  AuthorCardProps,
-  AuthorCard
-} from '@jesus-film/ark.elements.author-card'
+import { AuthorCard } from '@jesus-film/ark.elements.author-card'
 import { TimeAgo, TimeAgoProps } from '@jesus-film/ark.elements.time-ago'
 import { Typography } from '@material-ui/core'
 
@@ -64,6 +61,9 @@ export type PostProps = {
    * Brief text description
    */
   excerpt: string
+  /**
+   * Date
+   */
   date: string
 } & TimeAgoProps
 
