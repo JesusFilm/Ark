@@ -1,8 +1,5 @@
 import React from 'react'
 import fetchMock from 'jest-fetch-mock'
-fetchMock.enableMocks()
-
-/* eslint-disable import/first */
 import { fireEvent, render, waitFor } from '@testing-library/react'
 import { BasicI18nProvider } from './i18n-provider.composition'
 

@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import { I18nProvider } from './i18n-provider'
+import { I18nProvider } from '.'
 import { useTranslation } from 'react-i18next'
 import { Box, Button, Grid, Typography } from '@material-ui/core'
 
