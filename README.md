@@ -78,3 +78,46 @@ Pure logic components and helpers. (no visual components)
 
 ## License
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FJesusFilm%2FArk.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FJesusFilm%2FArk?ref=badge_large)
+
+
+## Block Query Example
+
+http://54.204.85.23/wp-admin/admin.php?page=graphiql-ide&query=query%20BlockQuery%20%7B%0A%20%20post(id%3A%20%22cG9zdDozMA%3D%3D%22)%20%7B%0A%20%20%20%20author%20%7B%0A%20%20%20%20%20%20node%20%7B%0A%20%20%20%20%20%20%20%20avatar%20%7B%0A%20%20%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20blocks%20%7B%0A%20%20%20%20%20%20...%20on%20CoreParagraphBlock%20%7B%0A%20%20%20%20%20%20%20%20attributes%20%7B%0A%20%20%20%20%20%20%20%20%20%20...%20on%20CoreParagraphBlockAttributes%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20content%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20...%20on%20CoreImageBlock%20%7B%0A%20%20%20%20%20%20%20%20dynamicContent%0A%20%20%20%20%20%20%20%20originalContent%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&operationName=BlockQuery
+```
+query BlockQuery {
+  post(id: "cG9zdDozMA==") {
+    author {
+      node {
+        avatar {
+          url
+        }
+        name
+      }
+    }
+    blocks {
+      ... on CoreParagraphBlock {
+        attributes {
+          ... on CoreParagraphBlockAttributes {
+            content
+          }
+        }
+        name
+      }
+      ... on CoreImageBlock {
+        name
+        attributes {
+          ... on CoreImageBlockAttributes {
+            id
+            href
+            title
+            url
+            alt
+            anchor
+            align
+          }
+        }
+      }
+    }
+  }
+}
+```

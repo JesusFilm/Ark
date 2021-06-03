@@ -8,9 +8,39 @@ import { Typography } from '@material-ui/core'
 
 type Category = {
   /** Callback when category is clicked */
-  onClick?: () => void
+  categoryId: string
   /** Category name */
   name: string
+}
+
+type Categories = {
+  /** Category name */
+  nodes: Category[]
+}
+
+type Avatar = {
+  url: string
+}
+
+type Author = {
+  /** Avatar */
+  avatar: Avatar
+  /** Category name */
+  name: string
+}
+
+type AuthorNode = {
+  /** Avatar */
+  node: Author
+}
+
+type ParagraphAttributes = {
+  content: string
+}
+
+type Block = {
+  name?: string
+  attributes?: ParagraphAttributes
 }
 
 export type PostProps = {
@@ -21,29 +51,30 @@ export type PostProps = {
   /**
    * Post author
    */
-  author: AuthorCardProps
+  author: AuthorNode
   /**
-   * List of categories
+   * NodeList of categories
    */
-  categories: Category[]
+  categories: Categories
   /**
    * Main body of post
    */
-  body: string
+  blocks: Block[]
   /**
    * Brief text description
    */
   excerpt: string
+  date: string
 } & TimeAgoProps
 
 export function Post({
   title,
   excerpt,
-  datetime,
+  date,
   locale,
   author,
-  categories = [],
-  body
+  categories,
+  blocks
 }: PostProps) {
   return (
     <div>
@@ -51,23 +82,34 @@ export function Post({
         {title}
       </Typography>
       <Typography variant="h6" align="center">
-        By {author.name}
+        By {author.node.name}
       </Typography>
       <Typography variant="h4" align="center" gutterBottom>
-        {excerpt}
+        <p dangerouslySetInnerHTML={{ __html: excerpt }} />
       </Typography>
       <Typography variant="body2" align="center">
         Published under &nbsp;
-        {categories.map((category, i) => (
-          <span key={i} onClick={() => category.onClick?.()}>
+        {categories.nodes.map((category) => (
+          <span key={category.categoryId}>
             {category.name}
             &nbsp;
           </span>
         ))}
-        <TimeAgo datetime={datetime} locale={locale} />
+        <TimeAgo datetime={new Date(date)} locale={locale} />
       </Typography>
-      <div dangerouslySetInnerHTML={{ __html: body }} />
-      <AuthorCard {...author} />
+      {blocks.map((block, i) => (
+        <span
+          key={`${i}-block`}
+          dangerouslySetInnerHTML={
+            block.name &&
+            block.name === 'core/paragraph' &&
+            block.attributes.content
+              ? { __html: block.attributes.content }
+              : { __html: '<br />' }
+          }
+        />
+      ))}
+      <AuthorCard name={author.node.name} src={author.node.avatar.url} />
     </div>
   )
 }

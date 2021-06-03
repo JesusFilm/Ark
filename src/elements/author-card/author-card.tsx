@@ -29,7 +29,7 @@ export type AuthorCardProps = {
   /** author name */
   name: string
   /** author bio */
-  description: string
+  description?: string
   /** Background image source url */
   src?: string
   /** Callback when button is clicked */
