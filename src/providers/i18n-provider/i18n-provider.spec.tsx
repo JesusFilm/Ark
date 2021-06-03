@@ -43,12 +43,18 @@ describe('i18nProvider', () => {
     const { getByText, getByRole } = render(<BasicI18nProvider />)
     expect(
       getByText('When people encounter Jesus, everything changes')
-    ).toBeTruthy()
+    ).toBeInTheDocument()
     fireEvent.click(getByRole('button', { name: 'German' }))
     await waitFor(() =>
       expect(
         getByText('Wenn Menschen Jesus begegnen, ändert sich alles')
-      ).toBeTruthy()
+      ).toBeInTheDocument()
+    )
+    fireEvent.click(getByRole('button', { name: 'French' }))
+    await waitFor(() =>
+      expect(
+        getByText('When people encounter Jesus, everything changes')
+      ).toBeInTheDocument()
     )
   })
 })
