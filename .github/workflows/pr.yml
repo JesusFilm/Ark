@@ -78,6 +78,7 @@ jobs:
       - name: Bit build
         run: |
           bit status
+          bit compile
           bit build
   test:
     runs-on: ubuntu-latest
