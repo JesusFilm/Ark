@@ -6,7 +6,9 @@ export class ReactExtension {
   static dependencies: Aspect[] = [EnvsAspect, ReactAspect]
 
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
-    const reactEnv = react.compose([])
+    const reactEnv = react.compose([
+      react.overrideJestConfig(require.resolve('./jest/jest.config'))
+    ])
 
     envs.registerEnv(reactEnv)
 
