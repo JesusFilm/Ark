@@ -3,171 +3,87 @@
 {
     "elements/author-card": {
         "scope": "jesus-film.ark",
-        "version": "0.0.5",
+        "version": "0.0.6",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/author-card",
-        "nextVersion": {
-            "version": "patch",
-            "message": " (bump dependencies versions)",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/elements/author-card"
     },
     "elements/author-list": {
         "scope": "jesus-film.ark",
-        "version": "0.0.5",
+        "version": "0.0.6",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/author-list",
-        "nextVersion": {
-            "version": "patch",
-            "message": " (bump dependencies versions)",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/elements/author-list"
     },
     "elements/footer": {
         "scope": "jesus-film.ark",
-        "version": "0.0.2",
+        "version": "0.0.3",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/footer",
-        "nextVersion": {
-            "version": "patch",
-            "message": " (bump dependencies versions)",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/elements/footer"
     },
     "elements/hero": {
         "scope": "jesus-film.ark",
-        "version": "0.0.4",
+        "version": "0.0.5",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/hero",
-        "nextVersion": {
-            "version": "patch",
-            "message": " (bump dependencies versions)",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/elements/hero"
     },
     "elements/jesus-film-brandmark": {
         "scope": "jesus-film.ark",
-        "version": "0.0.4",
+        "version": "0.0.5",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/jesus-film-brandmark",
-        "nextVersion": {
-            "version": "patch",
-            "message": " (bump dependencies versions)",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/elements/jesus-film-brandmark"
     },
     "elements/jesus-film-graphic-seal": {
         "scope": "jesus-film.ark",
-        "version": "0.0.2",
+        "version": "0.0.3",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/jesus-film-graphic-seal",
-        "nextVersion": {
-            "version": "patch",
-            "message": " (bump dependencies versions)",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/elements/jesus-film-graphic-seal"
     },
     "elements/jesus-film-symbol": {
         "scope": "jesus-film.ark",
-        "version": "0.0.5",
+        "version": "0.0.6",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/jesus-film-symbol",
-        "nextVersion": {
-            "version": "patch",
-            "message": " (bump dependencies versions)",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/elements/jesus-film-symbol"
     },
     "elements/post-card": {
-        "scope": "",
-        "version": "",
+        "scope": "jesus-film.ark",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/post-card",
-        "nextVersion": {
-            "version": "patch",
-            "message": "",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/elements/post-card"
     },
     "elements/time-ago": {
-        "scope": "",
-        "version": "",
+        "scope": "jesus-film.ark",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/time-ago",
-        "nextVersion": {
-            "version": "patch",
-            "message": "",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/elements/time-ago"
     },
     "envs/react": {
         "scope": "jesus-film.ark",
-        "version": "0.0.4",
+        "version": "0.0.5",
         "mainFile": "index.ts",
-        "rootDir": "src/envs/react",
-        "nextVersion": {
-            "version": "patch",
-            "message": "",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/envs/react"
     },
     "providers/i18n-provider": {
-        "scope": "",
-        "version": "",
+        "scope": "jesus-film.ark",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "src/providers/i18n-provider",
-        "nextVersion": {
-            "version": "patch",
-            "message": " (bump dependencies versions)",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/providers/i18n-provider"
     },
     "providers/jesus-film-theme-provider": {
         "scope": "jesus-film.ark",
-        "version": "0.0.4",
+        "version": "0.0.5",
         "mainFile": "index.ts",
-        "rootDir": "src/providers/jesus-film-theme-provider",
-        "nextVersion": {
-            "version": "patch",
-            "message": " (bump dependencies versions)",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/providers/jesus-film-theme-provider"
     },
     "providers/voke-theme-provider": {
         "scope": "jesus-film.ark",
-        "version": "0.0.4",
+        "version": "0.0.5",
         "mainFile": "index.ts",
-        "rootDir": "src/providers/voke-theme-provider",
-        "nextVersion": {
-            "version": "patch",
-            "message": " (bump dependencies versions)",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/providers/voke-theme-provider"
     },
     "util/convert-to-tree": {
         "scope": "jesus-film.ark",
-        "version": "0.0.2",
+        "version": "0.0.3",
         "mainFile": "index.ts",
-        "rootDir": "src/util/convert-to-tree",
-        "nextVersion": {
-            "version": "patch",
-            "message": " (bump dependencies versions)",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/util/convert-to-tree"
     },
     "$schema-version": "14.9.0"
 }
