@@ -16,6 +16,7 @@ import * as yup from 'yup'
 import { JesusFilmGraphicSeal } from '@jesus-film/ark.elements.jesus-film-graphic-seal'
 import classNames from 'classnames'
 import Background from './assets/background.jpg'
+import { useTranslation } from 'react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   gridItemSymbol: {
@@ -80,6 +81,7 @@ export function SubscribeCard({
 }: SubscribeCardProps) {
   const classes = useStyles()
   const [subscriberEmail, setSubscriberEmail] = useState<string | undefined>()
+  const { t } = useTranslation('subscribe-card')
   return (
     <Container maxWidth={(variant === 'default' && 'xs') || undefined}>
       <Card variant="outlined">
@@ -101,25 +103,27 @@ export function SubscribeCard({
                 ) : (
                   <Grid item>
                     <Typography className={classes.subtitle}>
-                      Everyone, Everywhere
+                      {t('Everyone, Everywhere')}
                     </Typography>
                   </Grid>
                 )}
                 <Grid item>
                   <Typography variant="h3" className={classes.title}>
-                    Stories change lives
+                    {t('Stories change lives')}
                   </Typography>
                 </Grid>
                 <Grid item>
                   <Typography variant="h5">
-                    Join the Jesus Film Project's email newsletter to see how
-                    the story of Jesus changes everything.
+                    {t(
+                      "Join the Jesus Film Project's email newsletter to see how the story of Jesus changes everything."
+                    )}
                   </Typography>
                 </Grid>
                 <Grid item>
                   {subscriberEmail ? (
                     <Alert severity="success" aria-label="Success">
-                      You've successfully subscribed: <br />
+                      {t("You've successfully subscribed:")}
+                      <br />
                       <strong>{subscriberEmail}</strong>.
                     </Alert>
                   ) : (
@@ -137,13 +141,12 @@ export function SubscribeCard({
                         handleBlur,
                         handleChange,
                         handleSubmit,
-                        isSubmitting,
-                        isValid
+                        isSubmitting
                       }) => (
                         <form onSubmit={handleSubmit}>
                           <TextField
                             inputProps={{ 'aria-label': 'Email' }}
-                            label="Your Email Address"
+                            label={t('Your Email Address')}
                             variant="outlined"
                             fullWidth
                             value={values.email}
@@ -171,7 +174,7 @@ export function SubscribeCard({
                             size="large"
                             disabled={isSubmitting}
                             type="submit">
-                            Subscribe
+                            {t('Subscribe')}
                           </Button>
                         </form>
                       )}
