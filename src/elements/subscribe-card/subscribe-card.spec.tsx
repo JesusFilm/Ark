@@ -29,7 +29,7 @@ describe('subscribeCard', () => {
       )
     )
     expect(getByRole('alert', { name: 'Success' }).textContent).toEqual(
-      "You've successfully subscribed: test@example.com."
+      "You've successfully subscribed:test@example.com."
     )
   })
 
@@ -57,7 +57,7 @@ describe('subscribeCard', () => {
       )
     )
     expect(getByRole('alert', { name: 'Success' }).textContent).toEqual(
-      "You've successfully subscribed: test@example.com."
+      "You've successfully subscribed:test@example.com."
     )
   })
 })
