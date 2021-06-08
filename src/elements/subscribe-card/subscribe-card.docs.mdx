@@ -1,0 +1,18 @@
+---
+description: "A Card encouraging visitors to subscribe."
+labels: ["react", "typescript", "subscribe-card"]
+---
+
+import { SubscribeCard } from "./subscribe-card";
+
+This card should be used to promote subscription to our newsletter.
+
+Live Playground:
+
+```js live
+<SubscribeCard
+  onSubmit={({ email }) => {
+    alert(`emailAddress: ${email}`);
+  }}
+/>
+```
