@@ -86,16 +86,10 @@
         "rootDir": "src/elements/post-card"
     },
     "elements/subscribe-card": {
-        "scope": "",
-        "version": "",
+        "scope": "jesus-film.ark",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/subscribe-card",
-        "nextVersion": {
-            "version": "patch",
-            "message": "",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/elements/subscribe-card"
     },
     "elements/time-ago": {
         "scope": "jesus-film.ark",
