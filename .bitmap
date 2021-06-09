@@ -43,6 +43,12 @@
         "mainFile": "index.ts",
         "rootDir": "src/elements/jesus-film-symbol"
     },
+    "elements/navigation": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/navigation"
+    },
     "elements/post-card": {
         "scope": "jesus-film.ark",
         "version": "0.0.1",
