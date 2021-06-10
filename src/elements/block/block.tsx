@@ -33,7 +33,5 @@ export function Block(BlockProps: BlockProps) {
       return <CoreList {...BlockProps} />
     case 'core/gallery':
       return <CoreGallery {...BlockProps} />
-    case undefined:
-      return <br />
   }
 }
