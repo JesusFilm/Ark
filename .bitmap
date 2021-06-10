@@ -13,11 +13,11 @@
         "mainFile": "index.ts",
         "rootDir": "src/elements/author-list"
     },
-    "elements/donate-banner": {
+    "elements/donate": {
         "scope": "",
         "version": "",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/donate-banner",
+        "rootDir": "src/elements/donate",
         "nextVersion": {
             "version": "patch",
             "message": "",

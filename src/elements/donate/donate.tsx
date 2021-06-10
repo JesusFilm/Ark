@@ -1,6 +1,6 @@
 import {
   Box,
-  Button,
+  Button as MuiButton,
   Container,
   Grid,
   makeStyles,
@@ -36,10 +36,30 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export function DonateBanner() {
+export type DonateProps = {
+  variant?: 'default' | 'button'
+}
+
+export function Donate({ variant = 'default' }: DonateProps) {
   const classes = useStyles()
   const { t } = useTranslation()
-  return (
+
+  const Button = () => (
+    <MuiButton
+      size="large"
+      variant="contained"
+      className={classes.button}
+      href="https://www.jesusfilm.org/how-to-help/ways-to-donate/give-now.html?amount=&frequency=single&campaign=NXWJPO&designation=2592320&thankYouRedirect=https:%2F%2Fwww.jesusfilm.org%2Fspecial%2Fthank-you.html"
+      target="_blank"
+      disableElevation
+      fullWidth>
+      {t('Donate')}
+    </MuiButton>
+  )
+
+  return variant === 'button' ? (
+    <Button />
+  ) : (
     <Box className={classes.box} py={2}>
       <Container>
         <Grid container spacing={3} className={classes.gridContainer}>
@@ -52,16 +72,7 @@ export function DonateBanner() {
             </Typography>
           </Grid>
           <Grid item>
-            <Button
-              size="large"
-              variant="contained"
-              className={classes.button}
-              href="https://www.jesusfilm.org/how-to-help/ways-to-donate/give-now.html?amount=&frequency=single&campaign=NXWJPO&designation=2592320&thankYouRedirect=https:%2F%2Fwww.jesusfilm.org%2Fspecial%2Fthank-you.html"
-              target="_blank"
-              disableElevation
-              fullWidth>
-              {t('Donate')}
-            </Button>
+            <Button />
           </Grid>
         </Grid>
       </Container>
