@@ -47,7 +47,7 @@ The main purpose of this repository is to continue evolving Ark, making it faste
 
 ### 4. Push it
 
-1. Run `bit tag elments/my-new-component --soft` to soft tag your new component
+1. Run `bit tag elements/my-new-component --soft` to soft tag your new component
 2. `git add -A && git commit -m "My message"` (replacing My message with a commit message, such as Fix header logo on Android) to stage and commit your changes
 3. `git push origin the-name-of-my-branch`
 4. Go to the [ark repo](https://github.com/JesusFilm/Ark) and you should see recently pushed branches.
@@ -77,4 +77,5 @@ These components are 'vanilla', meaning they should not contain content (like te
 Pure logic components and helpers. (no visual components)
 
 ## License
+
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FJesusFilm%2FArk.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FJesusFilm%2FArk?ref=badge_large)
