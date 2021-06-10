@@ -1,9 +1,37 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import { BasicBlock } from './block.composition';
+import React from 'react'
+import { render, screen } from '@testing-library/react'
+import {
+  ParagraphBlock,
+  ImageBlock,
+  HeadingBlock,
+  ListBlock,
+  GalleryBlock
+} from './block.composition'
 
-it('should render with the correct text', () => {
-  const { getByText } = render(<BasicBlock />);
-  const rendered = getByText('hello from Block');
-  expect(rendered).toBeTruthy();
-});
+describe('block', () => {
+  it('should render paragraph', () => {
+    render(<ParagraphBlock />)
+    const paragraphVariant = screen.getByTestId('paragraphVariant')
+    expect(paragraphVariant).toBeTruthy()
+  })
+  it('should render image', () => {
+    render(<ImageBlock />)
+    const imageVariant = screen.getByTestId('imageVariant')
+    expect(imageVariant).toBeTruthy()
+  })
+  it('should render heading', () => {
+    render(<HeadingBlock />)
+    const headingVariant = screen.getByTestId('headingVariant')
+    expect(headingVariant).toBeTruthy()
+  })
+  it('should render list', () => {
+    render(<ListBlock />)
+    const listVariant = screen.getByTestId('listVariant')
+    expect(listVariant).toBeTruthy()
+  })
+  it('should render gallery', () => {
+    render(<GalleryBlock />)
+    const galleryVariant = screen.getByTestId('galleryVariant')
+    expect(galleryVariant).toBeTruthy()
+  })
+})

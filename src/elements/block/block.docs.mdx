@@ -5,18 +5,46 @@ labels: ['label1', 'label2', 'label3']
 
 import { Block } from './block';
 
-## React Component for rendering text
+## React Component that displays relevant blocks based on block name
 
 A basic div that renders some text
 
 ### Component usage
 ```js
-<Block text="hello from Block" />
+<Block {...{
+    attributes: {
+      content:
+        "When people talk about the ministry of Jesus, it's easy to focus on his miracles. Jesus performed some amazing feats that the world had never seen (and hasn’t seen since). But one of the most exciting things about His ministry was His teaching style."
+    },
+    name: 'core/paragraph'
+  },
+  {
+    name: 'core/list',
+    attributes: {
+      ordered: false,
+      values:
+        '<li>Where it is located in Scripture</li><li>Who was present for this teaching</li><li>Why it was given</li><li>What is the key verse</li>'
+    }
+  }} />
 ```
 
 ### Using props to customize the text
 
-Modify the text to see it change live:
+Modify the props to see it change live:
 ```js live
-<Block text="hello from Block" />
+<Block {...{
+    attributes: {
+      content:
+        "When people talk about the ministry of Jesus, it's easy to focus on his miracles. Jesus performed some amazing feats that the world had never seen (and hasn’t seen since). But one of the most exciting things about His ministry was His teaching style."
+    },
+    name: 'core/paragraph'
+  },
+  {
+    name: 'core/list',
+    attributes: {
+      ordered: false,
+      values:
+        '<li>Where it is located in Scripture</li><li>Who was present for this teaching</li><li>Why it was given</li><li>What is the key verse</li>'
+    }
+  }} />
 ```

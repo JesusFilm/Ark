@@ -20,5 +20,9 @@ export type CoreHeadingProps = {
 export function CoreHeading({
   attributes: { level, content }
 }: CoreHeadingProps) {
-  return <Typography variant={`h${level}`}>{content}</Typography>
+  return (
+    <Typography data-testid="headingVariant" variant={`h${level}`} gutterBottom>
+      {content}
+    </Typography>
+  )
 }

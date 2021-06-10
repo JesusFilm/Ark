@@ -18,9 +18,10 @@ export type CoreParagraphProps = {
 export function CoreParagraph({ attributes }: CoreParagraphProps) {
   return (
     <Typography
+      data-testid="paragraphVariant"
       variant="body1"
       dangerouslySetInnerHTML={{ __html: attributes.content }}
-      gutterBottom
+      paragraph
     />
   )
 }

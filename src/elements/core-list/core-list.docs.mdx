@@ -5,18 +5,31 @@ labels: ['label1', 'label2', 'label3']
 
 import { CoreList } from './core-list';
 
-## React Component for rendering text
+## Render list from wordpress list component
 
-A basic div that renders some text
 
 ### Component usage
 ```js
-<CoreList text="hello from CoreList" />
+<CoreList {...{
+    name: 'core/list',
+    attributes: {
+      ordered: false,
+      values:
+        '<li>Where it is located in Scripture</li><li>Who was present for this teaching</li><li>Why it was given</li><li>What is the key verse</li>'
+    }
+  }} />
 ```
 
 ### Using props to customize the text
 
 Modify the text to see it change live:
 ```js live
-<CoreList text="hello from CoreList" />
+<CoreList {...{
+    name: 'core/list',
+    attributes: {
+      ordered: false,
+      values:
+        '<li>Where it is located in Scripture</li><li>Who was present for this teaching</li><li>Why it was given</li><li>What is the key verse</li>'
+    }
+  }} />
 ```

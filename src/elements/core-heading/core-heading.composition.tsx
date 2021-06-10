@@ -1,6 +1,16 @@
-import React from 'react';
-import { CoreHeading } from './core-heading';
+import React from 'react'
+import { CoreHeading } from './core-heading'
 
 export const BasicCoreHeading = () => (
-  <CoreHeading text="hello from CoreHeading" />
-);
+  <CoreHeading
+    {...{
+      name: 'core/heading',
+      attributes: {
+        align: '',
+        textAlign: '',
+        content: 'The parables from Matthew',
+        level: 2
+      }
+    }}
+  />
+)

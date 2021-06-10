@@ -11,12 +11,34 @@ A basic div that renders some text
 
 ### Component usage
 ```js
-<CoreImage text="hello from CoreImage" />
+<CoreImage {...{
+      name: 'core/image',
+      attributes: {
+        id: 23,
+        href: '',
+        title: '',
+        url: 'http://54.204.85.23/wp-content/uploads/2020/12/1614778286060.jpg',
+        alt: '',
+        anchor: '',
+        align: ''
+      }
+    }} />
 ```
 
 ### Using props to customize the text
 
 Modify the text to see it change live:
 ```js live
-<CoreImage text="hello from CoreImage" />
+<CoreImage {...{
+      name: 'core/image',
+      attributes: {
+        id: 23,
+        href: '',
+        title: '',
+        url: 'http://54.204.85.23/wp-content/uploads/2020/12/1614778286060.jpg',
+        alt: '',
+        anchor: '',
+        align: ''
+      }
+    }} />
 ```

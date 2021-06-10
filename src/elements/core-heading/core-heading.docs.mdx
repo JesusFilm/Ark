@@ -5,18 +5,34 @@ labels: ['label1', 'label2', 'label3']
 
 import { CoreHeading } from './core-heading';
 
-## React Component for rendering text
+## Render Headings
 
-A basic div that renders some text
+Render an h2 heading
 
 ### Component usage
 ```js
-<CoreHeading text="hello from CoreHeading" />
+<CoreHeading {...{
+    name: 'core/heading',
+    attributes: {
+      align: '',
+      textAlign: '',
+      content: 'The parables from Matthew',
+      level: 2
+    }
+  }} />
 ```
 
 ### Using props to customize the text
 
 Modify the text to see it change live:
 ```js live
-<CoreHeading text="hello from CoreHeading" />
+<CoreHeading {...{
+    name: 'core/heading',
+    attributes: {
+      align: '',
+      textAlign: '',
+      content: 'The parables from Matthew',
+      level: 2
+    }
+  }} />
 ```

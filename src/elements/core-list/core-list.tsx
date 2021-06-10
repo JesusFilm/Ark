@@ -14,7 +14,7 @@ export type CoreListProps = {
   /** Content */
   attributes: Attributes
   /** Variant style */
-  name: 'core/paragraph'
+  name: 'core/list'
 }
 
 export function CoreList({ attributes: { ordered, values } }: CoreListProps) {
@@ -24,9 +24,8 @@ export function CoreList({ attributes: { ordered, values } }: CoreListProps) {
     .replace('<li>', '')
     .split('*-*')
 
-  console.log(list)
   return (
-    <List dense>
+    <List data-testid="listVariant" dense>
       {list.map((item, i) => (
         <ListItem key={i}>
           <ListItemText primary={ordered ? `${i + 1} ${item}` : item} />
