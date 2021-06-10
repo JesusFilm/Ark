@@ -1317,6 +1317,32 @@ const postQuery = {
           name: 'core/paragraph'
         },
         {
+          name: 'core/gallery',
+          attributes: {
+            align: '',
+            images: [
+              {
+                fullUrl:
+                  'http://54.204.85.23/wp-content/uploads/2021/03/1614778286060-2-scaled.jpg',
+                link: 'http://54.204.85.23/1614778286060-2/',
+                alt: 'man in woods'
+              },
+              {
+                fullUrl:
+                  'http://54.204.85.23/wp-content/uploads/2021/03/1542118249535-2-scaled.jpg',
+                link: 'http://54.204.85.23/1542118249535-2/',
+                alt: 'Jesus in boat'
+              },
+              {
+                fullUrl:
+                  'http://54.204.85.23/wp-content/uploads/2021/03/1615294462458-3-scaled.jpg',
+                link: 'http://54.204.85.23/1615294462458-3/',
+                alt: 'Jesus with 2 others'
+              }
+            ]
+          }
+        },
+        {
           attributes: {
             content:
               "He tells them, \"Imagine wanting to build a tower. Wouldn't you count the cost before you started so that you don't have to abandon the project halfway through? Or consider a king about to go to war. Doesn't he ponder the size of his army, and if he knows he can't win, doesn't he look to strike a deal?\""

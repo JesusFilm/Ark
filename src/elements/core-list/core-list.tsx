@@ -25,7 +25,7 @@ export function CoreList({ attributes: { ordered, values } }: CoreListProps) {
     .split('*-*')
 
   return (
-    <List data-testid="listVariant" dense>
+    <List data-testid="listVariant">
       {list.map((item, i) => (
         <ListItem key={i}>
           <ListItemText primary={ordered ? `${i + 1} ${item}` : item} />

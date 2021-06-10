@@ -71,7 +71,7 @@ export function Post({
       <Typography variant="h6" align="center">
         By {author.node.name}
       </Typography>
-      <Typography variant="body2" align="center">
+      <Typography variant="body2" align="center" gutterBottom>
         Published under &nbsp;
         {categories.nodes.map((category) => (
           <span key={category.categoryId}>

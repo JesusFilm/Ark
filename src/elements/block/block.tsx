@@ -9,12 +9,17 @@ import {
   CoreHeading,
   CoreHeadingProps
 } from '@jesus-film/ark.elements.core-heading'
+import {
+  CoreGallery,
+  CoreGalleryProps
+} from '@jesus-film/ark.elements.core-gallery'
 
 export type BlockProps =
   | CoreParagraphProps
   | CoreImageProps
   | CoreHeadingProps
   | CoreListProps
+  | CoreGalleryProps
 
 export function Block(BlockProps: BlockProps) {
   switch (BlockProps.name) {
@@ -26,6 +31,8 @@ export function Block(BlockProps: BlockProps) {
       return <CoreHeading {...BlockProps} />
     case 'core/list':
       return <CoreList {...BlockProps} />
+    case 'core/gallery':
+      return <CoreGallery {...BlockProps} />
     case undefined:
       return <br />
   }

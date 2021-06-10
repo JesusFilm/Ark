@@ -5,18 +5,70 @@ labels: ['label1', 'label2', 'label3']
 
 import { CoreGallery } from './core-gallery';
 
-## React Component for rendering text
+## React Component for rendering a gallery
 
-A basic div that renders some text
+A gallery component
 
 ### Component usage
 ```js
-<CoreGallery text="hello from CoreGallery" />
+<CoreGallery {...{
+    name: 'core/gallery',
+    attributes: {
+      align: '',
+      images: [
+        {
+          fullUrl:
+            'http://54.204.85.23/wp-content/uploads/2021/03/1614778286060-2-scaled.jpg',
+          link: 'http://54.204.85.23/1614778286060-2/',
+          alt: 'man in woods'
+        },
+        {
+          fullUrl:
+            'http://54.204.85.23/wp-content/uploads/2021/03/1542118249535-2-scaled.jpg',
+          link: 'http://54.204.85.23/1542118249535-2/',
+          alt: 'Jesus in boat'
+        },
+        {
+          fullUrl:
+            'http://54.204.85.23/wp-content/uploads/2021/03/1615294462458-3-scaled.jpg',
+          link: 'http://54.204.85.23/1615294462458-3/',
+          alt: 'Jesus with 2 others'
+        }
+      ]
+    }
+  }
+} />
 ```
 
 ### Using props to customize the text
 
 Modify the text to see it change live:
 ```js live
-<CoreGallery text="hello from CoreGallery" />
+<CoreGallery {...  {
+    name: 'core/gallery',
+    attributes: {
+      align: '',
+      images: [
+        {
+          fullUrl:
+            'http://54.204.85.23/wp-content/uploads/2021/03/1614778286060-2-scaled.jpg',
+          link: 'http://54.204.85.23/1614778286060-2/',
+          alt: 'man in woods'
+        },
+        {
+          fullUrl:
+            'http://54.204.85.23/wp-content/uploads/2021/03/1542118249535-2-scaled.jpg',
+          link: 'http://54.204.85.23/1542118249535-2/',
+          alt: 'Jesus in boat'
+        },
+        {
+          fullUrl:
+            'http://54.204.85.23/wp-content/uploads/2021/03/1615294462458-3-scaled.jpg',
+          link: 'http://54.204.85.23/1615294462458-3/',
+          alt: 'Jesus with 2 others'
+        }
+      ]
+    }
+  }
+} />
 ```

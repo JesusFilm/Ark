@@ -14,6 +14,7 @@ export const HeadingBlock = () => (
 export const ListBlock = () => (
   <Block {...blocks.filter((block) => block.name === 'core/list')[0]} />
 )
+
 export const GalleryBlock = () => (
   <Block {...blocks.filter((block) => block.name === 'core/gallery')[0]} />
 )
