@@ -13,6 +13,42 @@
         "mainFile": "index.ts",
         "rootDir": "src/elements/author-list"
     },
+    "elements/block": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/block"
+    },
+    "elements/core-gallery": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/core-gallery"
+    },
+    "elements/core-heading": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/core-heading"
+    },
+    "elements/core-image": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/core-image"
+    },
+    "elements/core-list": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/core-list"
+    },
+    "elements/core-paragraph": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/core-paragraph"
+    },
     "elements/footer": {
         "scope": "jesus-film.ark",
         "version": "0.0.3",

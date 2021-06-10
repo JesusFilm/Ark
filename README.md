@@ -117,7 +117,46 @@ query BlockQuery {
           }
         }
       }
+      name
+      ... on CoreListBlock {
+        attributes {
+          ordered
+          values
+        }
+      }
+      ... on CoreHeadingBlock {
+        attributes {
+          ... on CoreHeadingBlockAttributes {
+            align
+            textAlign
+            content
+            fontSize
+          }
+        }
+      }
+      ... on CoreGalleryBlock {
+        attributes {
+          ... on CoreGalleryBlockAttributes {
+            align
+            images {
+              fullUrl
+              link
+              alt
+            }
+            imageCrop
+            columns
+          }
+        }
+      }
     }
+    categories {
+      nodes {
+        categoryId
+        name
+      }
+    }
+    date
+    title
   }
 }
 ```
