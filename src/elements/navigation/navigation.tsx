@@ -1,5 +1,4 @@
 import { JesusFilmSymbol } from '@jesus-film/ark.elements.jesus-film-symbol'
-import convertToTree from '@jesus-film/ark.util.convert-to-tree'
 import {
   AppBar,
   Box,
@@ -8,22 +7,13 @@ import {
   Toolbar,
   Drawer,
   useScrollTrigger,
-  Grid,
-  ListSubheader,
-  ListItem as MaterialListItem,
-  useTheme,
-  Collapse,
-  List,
-  ListItemText,
   Divider
 } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 import React, { useState } from 'react'
-import { useTranslation } from 'react-i18next'
 import JesusFilmProjectText from './assets/jesus-film-project-text.svg'
-import ExpandLess from '@material-ui/icons/ExpandLess'
-import ExpandMore from '@material-ui/icons/ExpandMore'
-import { Donate } from '../donate'
+import { Donate } from '@jesus-film/ark.elements.donate'
+import { Menu, MenuProps } from '@jesus-film/ark.elements.menu'
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -57,66 +47,10 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-function ListItem({ node, level = 0 }: ListItemProp) {
-  const [open, setOpen] = useState(true)
-  const theme = useTheme()
-
-  const handleClick = () => {
-    setOpen(!open)
-  }
-
-  return (
-    <>
-      <MaterialListItem
-        button
-        component="a"
-        title={node.title}
-        target={node.target}
-        href={node.url}
-        onClick={node.children.length ? handleClick : null}
-        style={{ paddingLeft: theme.spacing(level * 2 + 2) }}>
-        <ListItemText primary={node.label} />
-        {node.children.length ? open ? <ExpandLess /> : <ExpandMore /> : null}
-      </MaterialListItem>
-
-      {node.children.length ? (
-        <Collapse in={open} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
-            {node.children.map((node) => (
-              <ListItem key={node.id} node={node} level={level + 1} />
-            ))}
-          </List>
-        </Collapse>
-      ) : null}
-    </>
-  )
-}
-
-interface Node {
-  id: string
-  parentId?: string
-  label?: string
-  target?: string
-  title?: string
-  url?: string
-}
-
-export type NavigationProps = {
-  /**
-   * menus to display side by side.
-   */
-  menus?: {
-    id: string
-    name?: string
-    menuItems: {
-      nodes: Node[]
-    }
-  }[]
-}
+export type NavigationProps = MenuProps & {}
 
 export function Navigation({ menus }: NavigationProps) {
   const classes = useStyles()
-  const { t } = useTranslation()
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0
@@ -160,20 +94,7 @@ export function Navigation({ menus }: NavigationProps) {
           <JesusFilmSymbol height={60} text />
         </Box>
         <Divider />
-        <Grid container spacing={2} direction="column">
-          {menus?.map((menu) => (
-            <Grid item key={menu.id} xs>
-              <List
-                subheader={
-                  <ListSubheader disableSticky>{menu.name}</ListSubheader>
-                }>
-                {convertToTree(menu.menuItems.nodes).map((node) => (
-                  <ListItem key={node.id} node={node} />
-                ))}
-              </List>
-            </Grid>
-          ))}
-        </Grid>
+        <Menu menus={menus} />
       </Drawer>
     </>
   )

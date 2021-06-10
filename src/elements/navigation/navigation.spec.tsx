@@ -1,9 +1,9 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import { BasicNavigation } from './navigation.composition';
+import React from 'react'
+import { render } from '@testing-library/react'
+import { BasicNavigation } from './navigation.composition'
 
 it('should render with the correct text', () => {
-  const { getByText } = render(<BasicNavigation />);
-  const rendered = getByText('hello from Navigation');
-  expect(rendered).toBeTruthy();
-});
+  const { getByText } = render(<BasicNavigation />)
+  const rendered = getByText('hello from Navigation')
+  expect(rendered).toBeTruthy()
+})
