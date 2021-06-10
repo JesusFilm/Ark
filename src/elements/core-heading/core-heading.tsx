@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography } from '@material-ui/core'
+import { Typography, TypographyVariant } from '@material-ui/core'
 
 type Attributes = {
   /** Heading size */
@@ -20,8 +20,10 @@ export type CoreHeadingProps = {
 export function CoreHeading({
   attributes: { level, content }
 }: CoreHeadingProps) {
+  const variant = `h${level}` as TypographyVariant
+
   return (
-    <Typography data-testid="headingVariant" variant={`h${level}`} gutterBottom>
+    <Typography data-testid="headingVariant" variant={variant} gutterBottom>
       {content}
     </Typography>
   )
