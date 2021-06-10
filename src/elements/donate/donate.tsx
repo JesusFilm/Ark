@@ -1,6 +1,7 @@
 import {
   Box,
   Button as MuiButton,
+  ButtonProps,
   Container,
   Grid,
   makeStyles,
@@ -44,7 +45,7 @@ export function Donate({ variant = 'default' }: DonateProps) {
   const classes = useStyles()
   const { t } = useTranslation()
 
-  const Button = () => (
+  const Button = (props: Partial<ButtonProps<'a'>>) => (
     <MuiButton
       size="large"
       variant="contained"
@@ -52,7 +53,7 @@ export function Donate({ variant = 'default' }: DonateProps) {
       href="https://www.jesusfilm.org/how-to-help/ways-to-donate/give-now.html?amount=&frequency=single&campaign=NXWJPO&designation=2592320&thankYouRedirect=https:%2F%2Fwww.jesusfilm.org%2Fspecial%2Fthank-you.html"
       target="_blank"
       disableElevation
-      fullWidth>
+      {...props}>
       {t('Donate')}
     </MuiButton>
   )
@@ -72,7 +73,7 @@ export function Donate({ variant = 'default' }: DonateProps) {
             </Typography>
           </Grid>
           <Grid item>
-            <Button />
+            <Button fullWidth />
           </Grid>
         </Grid>
       </Container>
