@@ -1,3 +1,4 @@
+import { JesusFilmThemeProvider } from '@jesus-film/ark.providers.jesus-film-theme-provider'
 import { Box, Typography } from '@material-ui/core'
 import React from 'react'
 import { Navigation } from './navigation'
@@ -50,7 +51,7 @@ const Text = () => {
 }
 
 export const BasicNavigation = () => (
-  <>
+  <JesusFilmThemeProvider>
     <Navigation
       menus={[
         {
@@ -117,5 +118,5 @@ export const BasicNavigation = () => (
       <Text />
       <Text />
     </Box>
-  </>
+  </JesusFilmThemeProvider>
 )

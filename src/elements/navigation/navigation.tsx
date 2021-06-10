@@ -3,7 +3,6 @@ import convertToTree from '@jesus-film/ark.util.convert-to-tree'
 import {
   AppBar,
   Box,
-  Button,
   IconButton,
   makeStyles,
   Toolbar,
@@ -21,10 +20,10 @@ import {
 import MenuIcon from '@material-ui/icons/Menu'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { JesusFilmBrandmark } from '../jesus-film-brandmark'
 import JesusFilmProjectText from './assets/jesus-film-project-text.svg'
 import ExpandLess from '@material-ui/icons/ExpandLess'
 import ExpandMore from '@material-ui/icons/ExpandMore'
+import { Donate } from '../donate'
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -148,7 +147,7 @@ export function Navigation({ menus }: NavigationProps) {
             <img src={JesusFilmProjectText} height={25} />
           </Box>
           <Box className={[classes.actions, classes.actionsRight].join(' ')}>
-            <Button color="inherit">{t('Donate')}</Button>
+            <Donate variant="button" />
           </Box>
         </Toolbar>
       </AppBar>
