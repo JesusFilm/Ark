@@ -1,22 +1,71 @@
 ---
 description: 'A Navigation component.'
-labels: ['label1', 'label2', 'label3']
+labels: ["react", "typescript", "navigation"]
 ---
 
 import { Navigation } from './navigation';
 
-## React Component for rendering text
+This navigation recieves a menus prop containing a collection of menus. This component will render those menus top to bottom.
 
-A basic div that renders some text
+### Live Playground
 
-### Component usage
-```js
-<Navigation text="hello from Navigation" />
-```
-
-### Using props to customize the text
-
-Modify the text to see it change live:
 ```js live
-<Navigation text="hello from Navigation" />
+<Navigation
+  menus={[
+    {
+      id: "sections",
+      name: "Sections",
+      menuItems: {
+        nodes: [
+          { id: "watch", label: "Watch" },
+          {
+            id: "strategies",
+            label: "Strategies",
+            parentId: "strategies-and-tools",
+          },
+          {
+            id: "resources",
+            label: "Resources",
+            parentId: "strategies-and-tools",
+          },
+          {
+            id: "go",
+            label: "Go",
+            parentId: "strategies-and-tools",
+          },
+          {
+            id: "store",
+            label: "Store",
+            parentId: "strategies-and-tools",
+          },
+          { id: "strategies-and-tools", label: "Strategies and Tools" },
+          { id: "blog", label: "Blog" },
+          { id: "how-to-help", label: "How to Help" },
+        ],
+      },
+    },
+    {
+      id: "apps",
+      name: "Apps",
+      menuItems: {
+        nodes: [
+          { id: "android", label: "Android" },
+          { id: "iphone", label: "iPhone" },
+        ],
+      },
+    },
+    {
+      id: "social",
+      name: "Social",
+      menuItems: {
+        nodes: [
+          { id: "Facebook", label: "Facebook" },
+          { id: "Twitter", label: "Twitter" },
+          { id: "Instagram", label: "Instagram" },
+          { id: "YouTube", label: "YouTube" },
+        ],
+      },
+    },
+  ]}
+/>
 ```

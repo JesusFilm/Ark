@@ -6,15 +6,15 @@ import {
   makeStyles,
   Toolbar,
   Drawer,
-  useScrollTrigger,
   Divider
 } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
+import useScrollTrigger from '@material-ui/core/useScrollTrigger'
 import React, { useState } from 'react'
 import JesusFilmProjectText from './assets/jesus-film-project-text.svg'
 import { Donate } from '@jesus-film/ark.elements.donate'
 import { Menu, MenuProps } from '@jesus-film/ark.elements.menu'
-
+import CloseIcon from '@material-ui/icons/Close'
 const useStyles = makeStyles((theme) => ({
   appBar: {
     backgroundColor: theme.palette.common.white
@@ -44,6 +44,10 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     minWidth: 400
+  },
+  heading: {
+    display: 'flex',
+    justifyContent: 'space-between'
   }
 }))
 
@@ -57,6 +61,10 @@ export function Navigation({ menus }: NavigationProps) {
   })
   const [open, setOpen] = useState(false)
 
+  const handleClose = () => {
+    setOpen(false)
+  }
+
   return (
     <>
       <Toolbar />
@@ -64,7 +72,8 @@ export function Navigation({ menus }: NavigationProps) {
         position="fixed"
         elevation={trigger ? 4 : 0}
         color="transparent"
-        className={classes.appBar}>
+        className={classes.appBar}
+        data-testid="AppBar">
         <Toolbar className={classes.toolbar}>
           <Box className={classes.actions}>
             <IconButton
@@ -88,10 +97,15 @@ export function Navigation({ menus }: NavigationProps) {
       <Drawer
         anchor="left"
         open={open}
-        onClose={() => setOpen(false)}
+        onClose={handleClose}
         classes={{ paper: classes.drawerPaper }}>
-        <Box m={2} textAlign="right">
-          <JesusFilmSymbol height={60} text />
+        <Box m={2} className={classes.heading}>
+          <JesusFilmSymbol height={48} text />
+          <Box>
+            <IconButton onClick={handleClose} aria-label="close">
+              <CloseIcon />
+            </IconButton>
+          </Box>
         </Box>
         <Divider />
         <Menu menus={menus} />
