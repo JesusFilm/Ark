@@ -12,13 +12,13 @@ import JesusFilmLogo from './assets/jesus-film-logo.svg'
 import CruLogo from './assets/cru-logo.svg'
 import { Menu, MenuProps } from '@jesus-film/ark.elements.menu'
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   about: {
     lineHeight: '2rem'
   }
 }))
 
-export type FooterProps = MenuProps & {}
+export type FooterProps = Pick<MenuProps, 'menus'>
 
 export function Footer({ menus }: FooterProps) {
   const classes = useStyles()

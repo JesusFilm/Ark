@@ -2,7 +2,7 @@ import '@testing-library/dom'
 import React from 'react'
 import { render, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { Navigation } from './navigation'
+import { Navigation } from '.'
 
 let mockTrigger = false
 jest.mock('@material-ui/core/useScrollTrigger', () =>

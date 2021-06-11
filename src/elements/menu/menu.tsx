@@ -77,7 +77,14 @@ export type MenuProps = {
       nodes: Node[]
     }
   }[]
+  /**
+   * children to show after the menus. Children should be Material-UI Grid item wrapped to support spacing.
+   */
   children?: ReactNode
+
+  /**
+   * Direction to display menus in.
+   */
   direction?: GridDirection
 }
 

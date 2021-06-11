@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export type NavigationProps = MenuProps & {}
+export type NavigationProps = Pick<MenuProps, 'menus'>
 
 export function Navigation({ menus }: NavigationProps) {
   const classes = useStyles()
