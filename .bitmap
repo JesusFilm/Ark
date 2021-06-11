@@ -14,16 +14,10 @@
         "rootDir": "src/elements/author-list"
     },
     "elements/donate": {
-        "scope": "",
-        "version": "",
+        "scope": "jesus-film.ark",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/donate",
-        "nextVersion": {
-            "version": "patch",
-            "message": "",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/elements/donate"
     },
     "elements/footer": {
         "scope": "jesus-film.ark",
