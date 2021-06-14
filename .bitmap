@@ -21,15 +21,9 @@
     },
     "elements/footer": {
         "scope": "jesus-film.ark",
-        "version": "0.0.3",
+        "version": "0.0.4",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/footer",
-        "nextVersion": {
-            "version": "patch",
-            "message": "",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/elements/footer"
     },
     "elements/hero": {
         "scope": "jesus-film.ark",
@@ -56,28 +50,16 @@
         "rootDir": "src/elements/jesus-film-symbol"
     },
     "elements/menu": {
-        "scope": "",
-        "version": "",
+        "scope": "jesus-film.ark",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/menu",
-        "nextVersion": {
-            "version": "patch",
-            "message": "",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/elements/menu"
     },
     "elements/navigation": {
-        "scope": "",
-        "version": "",
+        "scope": "jesus-film.ark",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/navigation",
-        "nextVersion": {
-            "version": "patch",
-            "message": "",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/elements/navigation"
     },
     "elements/post-card": {
         "scope": "jesus-film.ark",
