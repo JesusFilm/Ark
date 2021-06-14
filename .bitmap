@@ -23,7 +23,13 @@
         "scope": "jesus-film.ark",
         "version": "0.0.3",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/footer"
+        "rootDir": "src/elements/footer",
+        "nextVersion": {
+            "version": "patch",
+            "message": "",
+            "username": "Tataihono Nikora",
+            "email": "tataihono.nikora@gmail.com"
+        }
     },
     "elements/hero": {
         "scope": "jesus-film.ark",
