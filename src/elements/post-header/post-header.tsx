@@ -1,19 +1,38 @@
 import React, { createElement, ReactElement } from 'react'
-import { Container, Typography, makeStyles, Grid } from '@material-ui/core'
-import {
-  Trans,
-  useTranslation
-} from '.pnpm/react-i18next@11.10.0_i18next@20.3.1+react@17.0.2/node_modules/react-i18next'
+import { Box, Container, Typography, makeStyles, Grid } from '@material-ui/core'
+import { Trans, useTranslation } from 'react-i18next'
+import classNames from 'classNames'
 
 const useStyles = makeStyles((theme) => ({
+  boxFeaturedImage: {
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
+  },
+  boxFeaturedImageContainer: {
+    display: 'flex',
+    minHeight: '100vh',
+    alignItems: 'center',
+    background:
+      'linear-gradient(180deg, rgba(17, 17, 17, 0) 7.81%, #111111 95.93%)'
+  },
   container: {
     textAlign: 'center',
     padding: theme.spacing(7, 2)
+  },
+  containerFeaturedImage: {
+    margin: 0,
+    maxWidth: 800,
+    padding: theme.spacing(5, 5),
+    textAlign: 'left',
+    color: theme.palette.common.white
   },
   link: {
     color: theme.palette.text.primary,
     textDecoration: 'underline',
     cursor: 'pointer'
+  },
+  linkFeaturedImage: {
+    color: theme.palette.common.white
   }
 }))
 
@@ -31,25 +50,17 @@ export type PostHeaderProps = {
    */
   date?: string
   /**
-   * Connection between the NodeWithFeaturedImage type and the MediaItem type
+   * Url for featured image
    */
-  featuredImage?: {
-    node?: {
-      sourceUrl?: string
-    }
-  }
+  src?: string
   /**
    * Author Name
    */
-  author?: {
-    name?: string
-  }
+  author?: string
   /**
    * Category
    */
-  category?: {
-    name?: string
-  }
+  category?: string
   AuthorLink?: (
     props: React.DetailedHTMLProps<
       React.AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -68,7 +79,7 @@ export function PostHeader({
   title,
   excerpt,
   date,
-  featuredImage,
+  src,
   author,
   category,
   AuthorLink = (props) => createElement('a', props),
@@ -76,72 +87,94 @@ export function PostHeader({
 }: PostHeaderProps) {
   const { t } = useTranslation('post-header')
   const classes = useStyles()
-  const categoryName = category?.name
 
   return (
-    <Container maxWidth="sm" className={classes.container}>
-      <a />
-      <Grid container spacing={3}>
-        {title && (
-          <Grid item xs={12}>
-            <Typography variant="h3" component="h1">
-              {title}
-            </Typography>
+    <Box
+      style={src && { backgroundImage: `url(${src})` }}
+      className={classNames(src && classes.boxFeaturedImage)}
+      data-testid="featured-image">
+      <Box className={classNames(src && classes.boxFeaturedImageContainer)}>
+        <Container
+          maxWidth={(!src && 'sm') || false}
+          className={classNames(
+            classes.container,
+            src && classes.containerFeaturedImage
+          )}>
+          <Grid container spacing={3}>
+            {title && (
+              <Grid item xs={12}>
+                <Typography variant="h3" component="h1">
+                  {title}
+                </Typography>
+              </Grid>
+            )}
+            {excerpt && (
+              <Grid item xs={12}>
+                <Typography variant="h6" component="h2">
+                  {excerpt}
+                </Typography>
+              </Grid>
+            )}
+            {category && !date && (
+              <Grid item xs={12}>
+                <Typography variant="body2" data-testid="category">
+                  <Trans t={t}>
+                    Published under "
+                    <CategoryLink
+                      className={classNames(
+                        classes.link,
+                        src && classes.linkFeaturedImage
+                      )}>
+                      {{ category }}
+                    </CategoryLink>
+                    "
+                  </Trans>
+                </Typography>
+              </Grid>
+            )}
+            {category && date && (
+              <Grid item xs={12}>
+                <Typography variant="body2" data-testid="category-and-date">
+                  <Trans t={t} values={{ date, category }}>
+                    Published under "
+                    <CategoryLink
+                      className={classNames(
+                        classes.link,
+                        src && classes.linkFeaturedImage
+                      )}>
+                      {{ category }}
+                    </CategoryLink>
+                    " on {{ 'date, date': date }}
+                  </Trans>
+                </Typography>
+              </Grid>
+            )}
+            {!category && date && (
+              <Grid item xs={12}>
+                <Typography variant="body2" data-testid="date">
+                  {t('Published on {{date, date}}', { date })}
+                </Typography>
+              </Grid>
+            )}
+            {author && (
+              <Grid item xs={12}>
+                <Typography data-testid="author">
+                  <Trans t={t}>
+                    By{' '}
+                    <AuthorLink
+                      className={classNames(
+                        classes.link,
+                        src && classes.linkFeaturedImage
+                      )}>
+                      {{ author }}
+                    </AuthorLink>
+                  </Trans>
+                </Typography>
+              </Grid>
+            )}
           </Grid>
-        )}
-        {excerpt && (
-          <Grid item xs={12}>
-            <Typography variant="h6" component="h2">
-              {excerpt}
-            </Typography>
-          </Grid>
-        )}
-        {categoryName && !date && (
-          <Grid item xs={12}>
-            <Typography variant="body2" data-testid="category">
-              <Trans t={t}>
-                Published under "
-                <CategoryLink className={classes.link}>
-                  {{ categoryName }}
-                </CategoryLink>
-                "
-              </Trans>
-            </Typography>
-          </Grid>
-        )}
-        {categoryName && date && (
-          <Grid item xs={12}>
-            <Typography variant="body2" data-testid="category-and-date">
-              <Trans t={t} values={{ date, categoryName }}>
-                Published under "
-                <CategoryLink className={classes.link}>
-                  {{ categoryName }}
-                </CategoryLink>
-                " on {{ 'date, date': date }}
-              </Trans>
-            </Typography>
-          </Grid>
-        )}
-        {!categoryName && date && (
-          <Grid item xs={12}>
-            <Typography variant="body2" data-testid="date">
-              {t('Published on {{date, date}}', { date })}
-            </Typography>
-          </Grid>
-        )}
-        {author?.name && (
-          <Grid item xs={12}>
-            <Typography data-testid="author">
-              <Trans t={t}>
-                By{' '}
-                <AuthorLink className={classes.link}>
-                  {{ name: author.name }}
-                </AuthorLink>
-              </Trans>
-            </Typography>
-          </Grid>
-        )}
-      </Grid>
-    </Container>
+        </Container>
+      </Box>
+    </Box>
   )
 }

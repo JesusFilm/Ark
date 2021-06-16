@@ -10,8 +10,23 @@ export const BasicPostHeader = () => (
         title="Testing the Historical Reliability of the Old Testament"
         excerpt="If the Old testament is God-breathed words, if God has supernaturally superintended its transmission down through the ages, then the Old Testament should have no problem standing up to the tests that historians use to determine the reliability of ancient documents."
         date="2021-06-15T22:00:35.664Z"
-        category={{ name: 'Following Jesus' }}
-        author={{ name: 'Josh McDowell' }}
+        category="Following Jesus"
+        author="Josh McDowell"
+      />
+    </I18nProvider>
+  </JesusFilmThemeProvider>
+)
+
+export const FeaturedImagePostHeader = () => (
+  <JesusFilmThemeProvider>
+    <I18nProvider>
+      <PostHeader
+        src="https://source.unsplash.com/random/1920x1080"
+        title="Testing the Historical Reliability of the Old Testament"
+        excerpt="If the Old testament is God-breathed words, if God has supernaturally superintended its transmission down through the ages, then the Old Testament should have no problem standing up to the tests that historians use to determine the reliability of ancient documents."
+        date="2021-06-15T22:00:35.664Z"
+        category="Following Jesus"
+        author="Josh McDowell"
       />
     </I18nProvider>
   </JesusFilmThemeProvider>

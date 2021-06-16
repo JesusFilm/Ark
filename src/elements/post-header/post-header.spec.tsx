@@ -16,24 +16,16 @@ describe('post-header', () => {
 
   it('renders category', () => {
     const { queryByTestId, getByTestId, rerender } = render(
-      <PostHeader category={{ name: null }} />
+      <PostHeader category={null} />
     )
     expect(queryByTestId('category')).not.toBeInTheDocument()
-    rerender(
-      <PostHeader
-        category={{
-          name: 'Following Jesus'
-        }}
-      />
-    )
+    rerender(<PostHeader category="Following Jesus" />)
     expect(getByTestId('category').textContent).toEqual(
       'Published under "Following Jesus"'
     )
     rerender(
       <PostHeader
-        category={{
-          name: 'Following Jesus'
-        }}
+        category="Following Jesus"
         CategoryLink={(props) => (
           <a {...props} href="/following-jesus" data-testid="category-link" />
         )}
@@ -48,9 +40,7 @@ describe('post-header', () => {
     const { getByTestId, rerender } = render(
       <I18nProvider>
         <PostHeader
-          category={{
-            name: 'Following Jesus'
-          }}
+          category="Following Jesus"
           date="2021-06-15T22:00:35.664Z"
         />
       </I18nProvider>
@@ -60,9 +50,7 @@ describe('post-header', () => {
     )
     rerender(
       <PostHeader
-        category={{
-          name: 'Following Jesus'
-        }}
+        category="Following Jesus"
         CategoryLink={(props) => (
           <a {...props} href="/following-jesus" data-testid="category-link" />
         )}
@@ -76,7 +64,7 @@ describe('post-header', () => {
   it('renders date', () => {
     const { getByTestId, rerender } = render(
       <I18nProvider>
-        <PostHeader category={{ name: null }} date="2021-06-15T22:00:35.664Z" />
+        <PostHeader category={null} date="2021-06-15T22:00:35.664Z" />
       </I18nProvider>
     )
     expect(getByTestId('date')).toBeInTheDocument()
@@ -93,21 +81,13 @@ describe('post-header', () => {
   it('renders author', () => {
     const { getByTestId, queryByTestId, rerender } = render(<PostHeader />)
     expect(queryByTestId('author')).not.toBeInTheDocument()
-    rerender(<PostHeader author={{ name: null }} />)
+    rerender(<PostHeader author={null} />)
     expect(queryByTestId('author')).not.toBeInTheDocument()
-    rerender(
-      <PostHeader
-        author={{
-          name: 'Josh McDowell'
-        }}
-      />
-    )
+    rerender(<PostHeader author="Josh McDowell" />)
     expect(getByTestId('author').textContent).toEqual('By Josh McDowell')
     rerender(
       <PostHeader
-        author={{
-          name: 'Josh McDowell'
-        }}
+        author="Josh McDowell"
         AuthorLink={(props) => (
           <a {...props} href="/josh-mcdowell" data-testid="author-link" />
         )}
@@ -116,5 +96,38 @@ describe('post-header', () => {
     const authorLink = getByTestId('author-link')
     expect(authorLink.getAttribute('href')).toEqual('/josh-mcdowell')
     expect(authorLink.textContent).toEqual('Josh McDowell')
+  })
+
+  it('renders featured image', () => {
+    const { getByTestId, rerender } = render(
+      <PostHeader
+        src="https://source.unsplash.com/random/1920x1080"
+        category="Following Jesus"
+        CategoryLink={(props) => <a {...props} data-testid="category-link" />}
+        author="Bob Jones"
+        AuthorLink={(props) => <a {...props} data-testid="author-link" />}
+      />
+    )
+    expect(getComputedStyle(getByTestId('category-link')).color).toEqual(
+      'rgb(255, 255, 255)'
+    )
+    expect(getComputedStyle(getByTestId('author-link')).color).toEqual(
+      'rgb(255, 255, 255)'
+    )
+    expect(
+      getComputedStyle(getByTestId('featured-image')).backgroundImage
+    ).toEqual('url(https://source.unsplash.com/random/1920x1080)')
+    rerender(
+      <PostHeader
+        src="https://source.unsplash.com/random/1920x1080"
+        category="Following Jesus"
+        CategoryLink={(props) => <a {...props} data-testid="category-link" />}
+        date="2021-06-15T22:00:35.664Z"
+      />
+    )
+    expect(getByTestId('category-and-date')).toBeInTheDocument()
+    expect(getComputedStyle(getByTestId('category-link')).color).toEqual(
+      'rgb(255, 255, 255)'
+    )
   })
 })
