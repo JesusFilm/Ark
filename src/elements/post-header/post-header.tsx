@@ -1,7 +1,7 @@
 import React, { createElement, ReactElement } from 'react'
 import { Box, Container, Typography, makeStyles, Grid } from '@material-ui/core'
 import { Trans, useTranslation } from 'react-i18next'
-import classNames from 'classNames'
+import classNames from 'classnames'
 
 const useStyles = makeStyles((theme) => ({
   boxFeaturedImage: {
