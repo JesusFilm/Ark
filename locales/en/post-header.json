@@ -1,0 +1,6 @@
+{
+    "Published under \"<1>{{category}}</1>\"": "Published under \"<1>{{category}}</1>\"",
+    "Published under \"<1>{{category}}</1>\" on {{date, date}}": "Published under \"<1>{{category}}</1>\" on {{date, date}}",
+    "Published on {{date, date}}": "Published on {{date, date}}",
+    "By <2>{{author}}</2>": "By <2>{{author}}</2>"
+}
