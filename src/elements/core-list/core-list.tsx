@@ -28,7 +28,7 @@ export function CoreList({ attributes: { ordered, values } }: CoreListProps) {
     <List data-testid="listVariant">
       {list.map((item, i) => (
         <ListItem key={i}>
-          <ListItemText primary={ordered ? `${i + 1} ${item}` : item} />
+          <ListItemText primary={ordered ? `${i + 1}. ${item}` : `- ${item}`} />
         </ListItem>
       ))}
     </List>

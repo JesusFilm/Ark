@@ -6,6 +6,8 @@ type Attributes = {
   level: Number
   /** Heading content */
   content: string
+  /** align is sometimes supplied as an empty string from WP */
+  align: 'inherit' | 'left' | 'center' | 'right' | 'justify' | ''
 }
 
 export type CoreHeadingProps = {
@@ -18,12 +20,16 @@ export type CoreHeadingProps = {
 }
 
 export function CoreHeading({
-  attributes: { level, content }
+  attributes: { level, content, align }
 }: CoreHeadingProps) {
   const variant = `h${level}` as TypographyVariant
-
+  const normalized = align === '' ? 'inherit' : align
   return (
-    <Typography data-testid="headingVariant" variant={variant} gutterBottom>
+    <Typography
+      data-testid="headingVariant"
+      variant={variant}
+      gutterBottom
+      align={normalized}>
       {content}
     </Typography>
   )

@@ -7,7 +7,19 @@ export const BasicCoreHeading = () => (
       name: 'core/heading',
       attributes: {
         align: '',
-        textAlign: '',
+        content: 'The parables from Matthew',
+        level: 2
+      }
+    }}
+  />
+)
+
+export const LeftCoreHeading = () => (
+  <CoreHeading
+    {...{
+      name: 'core/heading',
+      attributes: {
+        align: 'left',
         content: 'The parables from Matthew',
         level: 2
       }

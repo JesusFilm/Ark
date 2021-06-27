@@ -10,6 +10,9 @@ const useStyles = makeStyles(() =>
   createStyles({
     image: {
       maxWidth: '100%'
+    },
+    grid: {
+      maxWidth: '960px'
     }
   })
 )
@@ -38,9 +41,13 @@ export type CoreGalleryProps = {
 export function CoreGallery({ attributes: { images } }: CoreGalleryProps) {
   const classes = useStyles()
   return (
-    <GridList data-testid="galleryVariant">
+    <GridList
+      data-testid="galleryVariant"
+      cellHeight={160}
+      cols={4}
+      className={classes.grid}>
       {images.map((image, i) => (
-        <GridListTile key={`${i}-image-gallery`}>
+        <GridListTile key={`${i}-image-gallery`} cols={2} rows={1}>
           <img src={image.fullUrl} alt={image.alt} className={classes.image} />
         </GridListTile>
       ))}

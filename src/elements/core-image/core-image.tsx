@@ -18,10 +18,6 @@ type Attributes = {
   title: string
   /** Id of image */
   id: Number
-  /** Url to link to */
-  href: string
-  /** alignment */
-  align: string
 }
 
 export type CoreImageProps = {
@@ -34,7 +30,7 @@ export type CoreImageProps = {
 }
 
 export function CoreImage({
-  attributes: { alt, url, title, id, href, align }
+  attributes: { alt, url, title, id }
 }: CoreImageProps) {
   const classes = useStyles()
   return (
@@ -42,7 +38,7 @@ export function CoreImage({
       data-testid="imageVariant"
       id={`${id}`}
       src={url}
-      alt={alt.length > 0 ? alt : title}
+      alt={alt}
       title={title}
       className={classes.image}
     />
