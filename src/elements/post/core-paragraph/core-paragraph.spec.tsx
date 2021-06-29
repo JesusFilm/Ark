@@ -8,10 +8,10 @@ it('renders the core paragraph', () => {
       block={{
         __typename: 'CoreParagraphBlock',
         attributes: {
-          content: 'custom string'
+          content: 'custom strings'
         }
       }}
     />
   )
-  expect(getByText('custom string')).toBeInTheDocument()
+  expect(getByText('custom strings')).toBeInTheDocument()
 })
