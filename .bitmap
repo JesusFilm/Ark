@@ -17,7 +17,13 @@
         "scope": "",
         "version": "",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/block"
+        "rootDir": "src/elements/block",
+        "nextVersion": {
+            "version": "patch",
+            "message": "",
+            "username": "John Geronimo",
+            "email": "johnageronimo1@gmail.com"
+        }
     },
     "elements/donate": {
         "scope": "jesus-film.ark",
@@ -55,12 +61,6 @@
         "mainFile": "index.ts",
         "rootDir": "src/elements/jesus-film-symbol"
     },
-    "elements/post": {
-        "scope": "",
-        "version": "",
-        "mainFile": "index.ts",
-        "rootDir": "src/elements/post"
-    },
     "elements/menu": {
         "scope": "jesus-film.ark",
         "version": "0.0.1",
@@ -72,6 +72,12 @@
         "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "src/elements/navigation"
+    },
+    "elements/post": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/post"
     },
     "elements/post-card": {
         "scope": "jesus-film.ark",
