@@ -4,18 +4,6 @@ import { Block, BlockProps } from '@jesus-film/ark.elements.block'
 import { Container } from '@material-ui/core'
 import { BasicPostHeader } from './header/header.composition'
 
-// type Category = {
-//   /** Callback when category is clicked */
-//   categoryId: string
-//   /** Category name */
-//   name: string
-// }
-
-// type Categories = {
-//   /** Category name */
-//   nodes: Category[]
-// }
-
 type Avatar = {
   url: string
 }

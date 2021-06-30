@@ -5,7 +5,8 @@ import {
   ImageBlock,
   HeadingBlock,
   ListBlock,
-  GalleryBlock
+  GalleryBlock,
+  QuoteBlock
 } from './block.composition'
 
 describe('block', () => {
@@ -33,5 +34,10 @@ describe('block', () => {
     render(<GalleryBlock />)
     const galleryVariant = screen.getByTestId('galleryVariant')
     expect(galleryVariant).toBeTruthy()
+  })
+  it('should render quotes', () => {
+    render(<QuoteBlock />)
+    const quoteVariant = screen.getByTestId('quoteVariant')
+    expect(quoteVariant).toBeTruthy()
   })
 })

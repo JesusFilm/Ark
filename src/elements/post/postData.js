@@ -84,6 +84,14 @@ const postQuery = {
           name: 'core/paragraph'
         },
         {
+          attributes: {
+            value:
+              '"But the evidence supporting those manuscripts pales in comparison to one of the most recognized and historically reliable works, which is Homer\'s "Iliad." There are more than 1,900 "Iliad" manuscripts in existence, and the earliest manuscript copy dates to 415 BC.1"',
+            citation: 'Citation for this quote goes here'
+          },
+          name: 'core/quote'
+        },
+        {
           name: 'core/heading',
           attributes: {
             align: 'left',
@@ -275,6 +283,14 @@ const postQuery = {
               'For a closer look at this parable, check out the post “<a href="https://www.jesusfilm.org/blog-and-stories/kingdom-god-mustard-seed.html">How Is the Kingdom of God Like a Mustard Seed?</a>"'
           },
           name: 'core/paragraph'
+        },
+        {
+          attributes: {
+            value:
+              '"Many people spend their lives trying to creat a lasting legacy on earth. They want to be remembered when they\'re gone. Yet, what ultimately matters most will not be what others say about your life but what God says."',
+            citation: 'Citation for this quote goes here'
+          },
+          name: 'core/quote'
         },
         {
           name: 'core/heading',

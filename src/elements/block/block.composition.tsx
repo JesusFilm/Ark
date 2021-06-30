@@ -18,3 +18,7 @@ export const ListBlock = () => (
 export const GalleryBlock = () => (
   <Block {...blocks.filter((block) => block.name === 'core/gallery')[0]} />
 )
+
+export const QuoteBlock = () => (
+  <Block {...blocks.filter((block) => block.name === 'core/quote')[0]} />
+)

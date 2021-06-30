@@ -1,5 +1,10 @@
 import React from 'react'
-import { Typography, TypographyVariant } from '@material-ui/core'
+import {
+  Box,
+  Container,
+  Typography,
+  TypographyVariant
+} from '@material-ui/core'
 
 type Attributes = {
   /** Heading size */
@@ -25,13 +30,17 @@ export function CoreHeading({
   const variant = `h${level}` as TypographyVariant
   const normalized = align === '' ? 'inherit' : align
   return (
-    <Typography
-      data-testid="headingVariant"
-      variant={variant}
-      gutterBottom
-      align={normalized}
-      style={{ paddingTop: '20px', paddingBottom: '10px' }}>
-      {content}
-    </Typography>
+    <Box pt={0.5} pb={0.5}>
+      <Container>
+        <Typography
+          data-testid="headingVariant"
+          variant={variant}
+          gutterBottom
+          align={normalized}
+          style={{ paddingTop: '20px', paddingBottom: '10px' }}>
+          {content}
+        </Typography>
+      </Container>
+    </Box>
   )
 }
