@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { CoreParagraph } from './core-paragraph'
+import { CoreParagraph } from '.'
 
 it('renders the core paragraph', () => {
   const { getByText } = render(
