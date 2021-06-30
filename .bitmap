@@ -19,9 +19,15 @@
         "mainFile": "index.ts",
         "rootDir": "src/elements/block"
     },
+    "elements/donate": {
+        "scope": "jesus-film.ark",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/donate"
+    },
     "elements/footer": {
         "scope": "jesus-film.ark",
-        "version": "0.0.3",
+        "version": "0.0.4",
         "mainFile": "index.ts",
         "rootDir": "src/elements/footer"
     },
@@ -55,11 +61,29 @@
         "mainFile": "index.ts",
         "rootDir": "src/elements/post"
     },
+    "elements/menu": {
+        "scope": "jesus-film.ark",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/menu"
+    },
+    "elements/navigation": {
+        "scope": "jesus-film.ark",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/navigation"
+    },
     "elements/post-card": {
         "scope": "jesus-film.ark",
         "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "src/elements/post-card"
+    },
+    "elements/post-header": {
+        "scope": "jesus-film.ark",
+        "version": "0.0.2",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/post-header"
     },
     "elements/subscribe-card": {
         "scope": "jesus-film.ark",
@@ -81,7 +105,7 @@
     },
     "providers/i18n-provider": {
         "scope": "jesus-film.ark",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "src/providers/i18n-provider"
     },

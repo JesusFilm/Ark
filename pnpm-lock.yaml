@@ -32,7 +32,7 @@ specifiers:
   camelcase: ^6.2.0
   classnames: ^2.3.1
   core-js: ^3.11.0
-  date-fns: ^2.21.3
+  date-fns: ^2.22.1
   eslint: ^7.25.0
   eslint-config-prettier: ^8.3.0
   eslint-config-prettier-standard: ^4.0.1
@@ -72,7 +72,7 @@ dependencies:
   '@material-ui/lab': 4.0.0-alpha.58_b159f5d7b20dc708dd4bbab723096803
   classnames: 2.3.1
   core-js: 3.11.2
-  date-fns: 2.21.3
+  date-fns: 2.22.1
   file-loader: 6.2.0
   formik: 2.2.9_react@17.0.2
   i18next: 20.3.1
@@ -3620,8 +3620,8 @@ packages:
     engines: {node: '>=0.11'}
     dev: true
 
-  /date-fns/2.21.3:
-    resolution: {integrity: sha512-HeYdzCaFflc1i4tGbj7JKMjM4cKGYoyxwcIIkHzNgCkX8xXDNJDZXgDDVchIWpN4eQc3lH37WarduXFZJOtxfw==}
+  /date-fns/2.22.1:
+    resolution: {integrity: sha512-yUFPQjrxEmIsMqlHhAhmxkuH769baF21Kk+nZwZGyrMoyLA+LugaQtC0+Tqf9CBUUULWwUJt6Q5ySI3LJDDCGg==}
     engines: {node: '>=0.11'}
     dev: false
 
