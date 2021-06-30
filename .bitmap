@@ -67,6 +67,12 @@
         "mainFile": "index.ts",
         "rootDir": "src/elements/post-card"
     },
+    "elements/post-core-heading": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/post-core-heading"
+    },
     "elements/post-header": {
         "scope": "jesus-film.ark",
         "version": "0.0.1",
