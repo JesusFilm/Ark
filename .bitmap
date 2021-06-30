@@ -89,7 +89,13 @@
         "scope": "jesus-film.ark",
         "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/post-card"
+        "rootDir": "src/elements/post-card",
+        "nextVersion": {
+            "version": "patch",
+            "message": "",
+            "username": "John Geronimo",
+            "email": "johnageronimo1@gmail.com"
+        }
     },
     "elements/subscribe-card": {
         "scope": "jesus-film.ark",

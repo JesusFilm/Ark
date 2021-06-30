@@ -2,6 +2,7 @@ import React from 'react'
 import { AuthorCard } from '@jesus-film/ark.elements.author-card'
 import { Block, BlockProps } from '@jesus-film/ark.elements.block'
 import { Container } from '@material-ui/core'
+// import Header from './header/header'
 
 type Category = {
   /** Callback when category is clicked */

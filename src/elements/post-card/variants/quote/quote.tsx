@@ -1,6 +1,5 @@
 import React from 'react'
 import { Grid, makeStyles, Typography } from '@material-ui/core'
-import { TimeAgo, TimeAgoProps } from '@jesus-film/ark.elements.time-ago'
 
 const useStyles = makeStyles((theme) => ({
   quote: {
@@ -21,9 +20,8 @@ export type QuoteProps = {
   excerpt: string
   /** Variant style */
   variant: 'quote'
-} & TimeAgoProps
-
-export function Quote({ title, excerpt, datetime, locale }: QuoteProps) {
+}
+export function Quote({ title, excerpt }: QuoteProps) {
   const classes = useStyles()
 
   return (
@@ -43,9 +41,9 @@ export function Quote({ title, excerpt, datetime, locale }: QuoteProps) {
         <Typography variant="body1">- {title}</Typography>
       </Grid>
       <Grid item>
-        <Typography variant="body2">
+        {/* <Typography variant="body2">
           <TimeAgo datetime={datetime} locale={locale} />
-        </Typography>
+        </Typography> */}
       </Grid>
     </Grid>
   )
