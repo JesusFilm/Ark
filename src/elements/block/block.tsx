@@ -1,18 +1,9 @@
 import React from 'react'
-import { CoreList, CoreListProps } from '@jesus-film/ark.elements.core-list'
-import { CoreImage, CoreImageProps } from '@jesus-film/ark.elements.core-image'
-import {
-  CoreParagraph,
-  CoreParagraphProps
-} from '@jesus-film/ark.elements.core-paragraph'
-import {
-  CoreHeading,
-  CoreHeadingProps
-} from '@jesus-film/ark.elements.core-heading'
-import {
-  CoreGallery,
-  CoreGalleryProps
-} from '@jesus-film/ark.elements.core-gallery'
+import { CoreList, CoreListProps } from './core-list'
+import { CoreImage, CoreImageProps } from './core-image'
+import { CoreParagraph, CoreParagraphProps } from './core-paragraph'
+import { CoreHeading, CoreHeadingProps } from './core-heading'
+import { CoreGallery, CoreGalleryProps } from './core-gallery'
 
 export type BlockProps =
   | CoreParagraphProps
