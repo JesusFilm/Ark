@@ -77,7 +77,13 @@
         "scope": "",
         "version": "",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/post/core-paragraph"
+        "rootDir": "src/elements/post/core-paragraph",
+        "nextVersion": {
+            "version": "patch",
+            "message": "",
+            "username": "John Geronimo",
+            "email": "johnageronimo1@gmail.com"
+        }
     },
     "elements/subscribe-card": {
         "scope": "jesus-film.ark",

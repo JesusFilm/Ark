@@ -47,11 +47,12 @@ The main purpose of this repository is to continue evolving Ark, making it faste
 
 ### 4. Push it
 
-1. Run `bit tag elements/my-new-component --soft` to soft tag your new component
-2. `git add -A && git commit -m "My message"` (replacing My message with a commit message, such as Fix header logo on Android) to stage and commit your changes
-3. `git push origin the-name-of-my-branch`
-4. Go to the [ark repo](https://github.com/JesusFilm/Ark) and you should see recently pushed branches.
-5. Create a PR for your recently pushed branch for review.
+1. Run `bit link --rewire` to correctly isolate component dependencies
+2. Run `bit tag elements/my-new-component --soft` to soft tag your new component
+3. `git add -A && git commit -m "My message"` (replacing My message with a commit message, such as Fix header logo on Android) to stage and commit your changes
+4. `git push origin the-name-of-my-branch`
+5. Go to the [ark repo](https://github.com/JesusFilm/Ark) and you should see recently pushed branches.
+6. Create a PR for your recently pushed branch for review.
 
 ## Namespaces
 
