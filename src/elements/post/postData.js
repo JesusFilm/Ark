@@ -44,7 +44,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: 'The parables from Matthew',
-            level: 2
+            level: 5
           }
         },
         {
@@ -59,7 +59,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '1. The Parables of New Cloth and New Wineskins',
-            level: 3
+            level: 5
           }
         },
         {
@@ -88,7 +88,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '2. The Parable of the Lamp Stand',
-            level: 3
+            level: 5
           }
         },
         {
@@ -136,7 +136,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '3. The Parable of the Wise and Foolish Builders',
-            level: 3
+            level: 5
           }
         },
         {
@@ -172,7 +172,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '4. The Parable of the Sower',
-            level: 3
+            level: 5
           }
         },
         {
@@ -216,7 +216,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '5. The Parable of the Weeds',
-            level: 3
+            level: 5
           }
         },
         {
@@ -252,7 +252,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '6. The Parable of the Mustard Seed',
-            level: 3
+            level: 5
           }
         },
         {
@@ -281,7 +281,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '7. The Parable of the Leaven',
-            level: 3
+            level: 5
           }
         },
         {
@@ -310,7 +310,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '8. The Parables of the Hidden Treasure and the Pearl',
-            level: 3
+            level: 5
           }
         },
         {
@@ -339,7 +339,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '9. The Parable of the Net',
-            level: 3
+            level: 5
           }
         },
         {
@@ -361,7 +361,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '10. The Parable of the Homeowner',
-            level: 3
+            level: 5
           }
         },
         {
@@ -383,7 +383,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '11. The Parable of the Wandering Sheep',
-            level: 3
+            level: 5
           }
         },
         {
@@ -426,7 +426,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '12. The Parable of the Unmerciful Servant',
-            level: 3
+            level: 5
           }
         },
         {
@@ -462,7 +462,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '13. The Parable of the Workers in the Vineyard',
-            level: 3
+            level: 5
           }
         },
         {
@@ -505,7 +505,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '14. The Parable of the Two Sons',
-            level: 3
+            level: 5
           }
         },
         {
@@ -541,7 +541,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '15. The Parable of the Tenants',
-            level: 3
+            level: 5
           }
         },
         {
@@ -591,7 +591,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '16. The Parable of the Wedding Banquet',
-            level: 3
+            level: 5
           }
         },
         {
@@ -634,7 +634,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '17. The Parable of the Fig Tree',
-            level: 3
+            level: 5
           }
         },
         {
@@ -663,7 +663,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '18. The Parable of the Ten Virgins',
-            level: 3
+            level: 5
           }
         },
         {
@@ -706,7 +706,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '19. The Parable of the Talents',
-            level: 3
+            level: 5
           }
         },
         {
@@ -749,7 +749,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '20. The Parable of the Sheep and the Goats',
-            level: 3
+            level: 5
           }
         },
         {
@@ -830,7 +830,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '21. The Parable of the Growing Seed',
-            level: 3
+            level: 5
           }
         },
         {
@@ -852,7 +852,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '22. The Parable of the Returning Owner',
-            level: 3
+            level: 5
           }
         },
         {
@@ -910,7 +910,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '23. The Parable of the Moneylender',
-            level: 3
+            level: 5
           }
         },
         {
@@ -946,7 +946,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '24. The Parable of the Rich Fool',
-            level: 3
+            level: 5
           }
         },
         {
@@ -989,7 +989,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '25. The Parable of the Watchful Servants',
-            level: 3
+            level: 5
           }
         },
         {
@@ -1011,7 +1011,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '26. The Parable of the Wise and Foolish Servants',
-            level: 3
+            level: 5
           }
         },
         {
@@ -1047,7 +1047,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '27. The Parable of the Unfruitful Fig Tree',
-            level: 3
+            level: 5
           }
         },
         {
@@ -1076,7 +1076,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '28. The Parable of the Master and the Servant',
-            level: 3
+            level: 5
           }
         },
         {
@@ -1105,7 +1105,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '29. The Parable of the Good Samaritan',
-            level: 3
+            level: 5
           }
         },
         {
@@ -1148,7 +1148,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '30. The Parable of the Friend Seeking Bread',
-            level: 3
+            level: 5
           }
         },
         {
@@ -1177,7 +1177,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '31. The Parable of the Place of Honor',
-            level: 3
+            level: 5
           }
         },
         {
@@ -1220,7 +1220,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '32. The Parable of the Great Banquet',
-            level: 3
+            level: 5
           }
         },
         {
@@ -1263,7 +1263,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '33. Parables about Counting the Cost',
-            level: 3
+            level: 5
           }
         },
         {
@@ -1325,7 +1325,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '34. The Parable of the Lost Sheep',
-            level: 3
+            level: 5
           }
         },
         {
@@ -1347,7 +1347,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '35. The Parable of the Lost Coin',
-            level: 3
+            level: 5
           }
         },
         {
@@ -1369,7 +1369,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '36. The Parable of the Prodigal Son',
-            level: 3
+            level: 5
           }
         },
         {
@@ -1419,7 +1419,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '37. The Parable of the Shrewd Manager',
-            level: 3
+            level: 5
           }
         },
         {
@@ -1455,7 +1455,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '38. The Parable of the Rich Man and Lazarus',
-            level: 3
+            level: 5
           }
         },
         {
@@ -1505,7 +1505,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '39. The Parable of the Persistent Widow',
-            level: 3
+            level: 5
           }
         },
         {
@@ -1548,7 +1548,7 @@ const postQuery = {
           attributes: {
             align: 'left',
             content: '40. The Parable of the Pharisee and the Tax Collector',
-            level: 3
+            level: 5
           }
         },
         {

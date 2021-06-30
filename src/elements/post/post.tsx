@@ -2,19 +2,19 @@ import React from 'react'
 import { AuthorCard } from '@jesus-film/ark.elements.author-card'
 import { Block, BlockProps } from '@jesus-film/ark.elements.block'
 import { Container } from '@material-ui/core'
-// import Header from './header/header'
+import { BasicPostHeader } from './header/header.composition'
 
-type Category = {
-  /** Callback when category is clicked */
-  categoryId: string
-  /** Category name */
-  name: string
-}
+// type Category = {
+//   /** Callback when category is clicked */
+//   categoryId: string
+//   /** Category name */
+//   name: string
+// }
 
-type Categories = {
-  /** Category name */
-  nodes: Category[]
-}
+// type Categories = {
+//   /** Category name */
+//   nodes: Category[]
+// }
 
 type Avatar = {
   url: string
@@ -33,38 +33,21 @@ type AuthorNode = {
 }
 
 export type PostProps = {
-  /**
-   * Title of post
-   */
-  title: string
+  // TODO: add in the videos and images
   /**
    * Post author
    */
   author: AuthorNode
   /**
-   * NodeList of categories
-   */
-  categories: Categories
-  /**
    * Main body of post
    */
   blocks: BlockProps[]
-  /**
-   * Date
-   */
-  date: string
 }
 
-export function Post({
-  title,
-  date,
-  // locale,
-  author,
-  categories,
-  blocks
-}: PostProps) {
+export function Post({ author, blocks }: PostProps) {
   return (
     <Container maxWidth="sm">
+      <BasicPostHeader />
       {blocks.map((block, i) => (
         <Block {...block} key={`${i}-block`} />
       ))}

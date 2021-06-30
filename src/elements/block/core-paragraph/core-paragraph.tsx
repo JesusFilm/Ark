@@ -22,6 +22,7 @@ export function CoreParagraph({ attributes }: CoreParagraphProps) {
       variant="body1"
       dangerouslySetInnerHTML={{ __html: attributes.content }}
       paragraph
+      style={{ paddingTop: '10px', paddingBottom: '10px' }}
     />
   )
 }

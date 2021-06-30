@@ -29,7 +29,8 @@ export function CoreHeading({
       data-testid="headingVariant"
       variant={variant}
       gutterBottom
-      align={normalized}>
+      align={normalized}
+      style={{ paddingTop: '20px', paddingBottom: '10px' }}>
       {content}
     </Typography>
   )

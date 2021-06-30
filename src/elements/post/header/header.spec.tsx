@@ -46,7 +46,7 @@ describe('post-header', () => {
       </I18nProvider>
     )
     expect(getByTestId('category-and-date').textContent).toEqual(
-      'Published under "Following Jesus" on June 15, 2021'
+      'Published under "Following Jesus" on 15 June 2021'
     )
     rerender(
       <PostHeader
@@ -73,9 +73,7 @@ describe('post-header', () => {
         <PostHeader date="2021-06-15T22:00:35.664Z" />
       </I18nProvider>
     )
-    expect(getByTestId('date').textContent).toEqual(
-      'Published on June 15, 2021'
-    )
+    expect(getByTestId('date').textContent).toEqual('Published on 15 June 2021')
   })
 
   it('renders author', () => {
