@@ -71,7 +71,13 @@
         "scope": "jesus-film.ark",
         "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/post-header"
+        "rootDir": "src/elements/post-header",
+        "nextVersion": {
+            "version": "patch",
+            "message": " (bump dependencies versions)",
+            "username": "Tataihono Nikora",
+            "email": "tataihono.nikora@gmail.com"
+        }
     },
     "elements/subscribe-card": {
         "scope": "jesus-film.ark",
@@ -95,7 +101,13 @@
         "scope": "jesus-film.ark",
         "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "src/providers/i18n-provider"
+        "rootDir": "src/providers/i18n-provider",
+        "nextVersion": {
+            "version": "patch",
+            "message": "",
+            "username": "Tataihono Nikora",
+            "email": "tataihono.nikora@gmail.com"
+        }
     },
     "providers/jesus-film-theme-provider": {
         "scope": "jesus-film.ark",
