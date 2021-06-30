@@ -1,7 +1,7 @@
 import React from 'react'
 import { I18nProvider } from '@jesus-film/ark.providers.i18n-provider'
 import { JesusFilmThemeProvider } from '@jesus-film/ark.providers.jesus-film-theme-provider'
-import { PostHeader } from './post-header'
+import { PostHeader } from './header'
 
 export const BasicPostHeader = () => (
   <JesusFilmThemeProvider>

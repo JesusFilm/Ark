@@ -1,8 +1,7 @@
 import React from 'react'
 import { AuthorCard } from '@jesus-film/ark.elements.author-card'
-import { TimeAgo, TimeAgoProps } from '@jesus-film/ark.elements.time-ago'
 import { Block, BlockProps } from '@jesus-film/ark.elements.block'
-import { Typography, Container } from '@material-ui/core'
+import { Container } from '@material-ui/core'
 
 type Category = {
   /** Callback when category is clicked */
@@ -53,34 +52,18 @@ export type PostProps = {
    * Date
    */
   date: string
-} & TimeAgoProps
+}
 
 export function Post({
   title,
   date,
-  locale,
+  // locale,
   author,
   categories,
   blocks
 }: PostProps) {
   return (
     <Container maxWidth="sm">
-      <Typography variant="h2" color="textSecondary" align="center">
-        {title}
-      </Typography>
-      <Typography variant="h6" align="center">
-        By {author.node.name}
-      </Typography>
-      <Typography variant="body2" align="center" gutterBottom>
-        Published under &nbsp;
-        {categories.nodes.map((category) => (
-          <span key={category.categoryId}>
-            {category.name}
-            &nbsp;
-          </span>
-        ))}
-        <TimeAgo datetime={new Date(date)} locale={locale} />
-      </Typography>
       {blocks.map((block, i) => (
         <Block {...block} key={`${i}-block`} />
       ))}

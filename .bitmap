@@ -77,7 +77,13 @@
         "scope": "",
         "version": "",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/post"
+        "rootDir": "src/elements/post",
+        "nextVersion": {
+            "version": "patch",
+            "message": "",
+            "username": "John Geronimo",
+            "email": "johnageronimo1@gmail.com"
+        }
     },
     "elements/post-card": {
         "scope": "jesus-film.ark",
@@ -85,23 +91,11 @@
         "mainFile": "index.ts",
         "rootDir": "src/elements/post-card"
     },
-    "elements/post-header": {
-        "scope": "jesus-film.ark",
-        "version": "0.0.2",
-        "mainFile": "index.ts",
-        "rootDir": "src/elements/post-header"
-    },
     "elements/subscribe-card": {
         "scope": "jesus-film.ark",
         "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "src/elements/subscribe-card"
-    },
-    "elements/time-ago": {
-        "scope": "jesus-film.ark",
-        "version": "0.0.1",
-        "mainFile": "index.ts",
-        "rootDir": "src/elements/time-ago"
     },
     "envs/react": {
         "scope": "jesus-film.ark",
