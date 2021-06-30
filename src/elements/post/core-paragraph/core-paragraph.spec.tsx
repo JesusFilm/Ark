@@ -5,7 +5,7 @@ import { CoreParagraph } from '.'
 it('renders the core paragraph', () => {
   const { getByText } = render(
     <CoreParagraph
-      block={{
+      blocks={{
         __typename: 'CoreParagraphBlock',
         attributes: {
           content: 'custom strings'

@@ -5,7 +5,7 @@ import { JesusFilmThemeProvider } from '@jesus-film/ark.providers.jesus-film-the
 export const BasicCoreParagraph = () => (
   <JesusFilmThemeProvider>
     <CoreParagraph
-      block={{
+      blocks={{
         __typename: 'CoreParagraphBlock',
         attributes: {
           content:

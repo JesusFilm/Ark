@@ -5,7 +5,7 @@ export type CoreParagraphProps = {
   /**
    * Paragraph blocks to be rendered in the component.
    */
-  block: {
+  blocks: {
     __typename: 'CoreParagraphBlock'
     attributes: {
       content: string
@@ -13,13 +13,13 @@ export type CoreParagraphProps = {
   }
 }
 
-export function CoreParagraph({ block }: CoreParagraphProps) {
+export function CoreParagraph({ blocks }: CoreParagraphProps) {
   return (
     <Box>
       <Container
         maxWidth="sm"
         style={{ paddingTop: '20px', paddingBottom: '20px' }}>
-        <Typography variant="body1">{block.attributes.content}</Typography>
+        <Typography variant="body1">{blocks.attributes.content}</Typography>
       </Container>
     </Box>
   )
