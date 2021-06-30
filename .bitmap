@@ -14,16 +14,10 @@
         "rootDir": "src/elements/author-list"
     },
     "elements/core": {
-        "scope": "",
-        "version": "",
+        "scope": "jesus-film.ark",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/core",
-        "nextVersion": {
-            "version": "patch",
-            "message": "",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/elements/core"
     },
     "elements/donate": {
         "scope": "jesus-film.ark",
@@ -104,16 +98,10 @@
         "rootDir": "src/envs/react"
     },
     "providers/core": {
-        "scope": "",
-        "version": "",
+        "scope": "jesus-film.ark",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "src/providers/core",
-        "nextVersion": {
-            "version": "patch",
-            "message": "",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/providers/core"
     },
     "providers/i18n-provider": {
         "scope": "jesus-film.ark",
