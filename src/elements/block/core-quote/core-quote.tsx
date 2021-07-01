@@ -1,5 +1,6 @@
 import React from 'react'
-import { Box, Container, Typography } from '@material-ui/core'
+import { Container, Typography, Divider } from '@material-ui/core'
+import Red from './assets/red.png'
 
 type Attributes = {
   /** */
@@ -19,25 +20,23 @@ export type CoreQuoteProps = {
 export function CoreQuote({ attributes }: CoreQuoteProps) {
   return (
     // TODO: make it look closer to the figma quote
-    <Box>
-      <Container>
-        <Box pt={2}>
-          <Typography
-            data-testid="quoteVariant"
-            dangerouslySetInnerHTML={{
-              __html: attributes.value
-            }}
-            variant="h5"
-          />
-        </Box>
-        <Box pt={1.5} pb={1}>
-          <Typography
-            data-testid="citation"
-            dangerouslySetInnerHTML={{ __html: attributes.citation }}
-            variant="body1"
-          />
-        </Box>
-      </Container>
-    </Box>
+    <Container>
+      <Divider />
+      <img src={Red} height={15} width={20} />
+      <Typography
+        data-testid="quoteVariant"
+        dangerouslySetInnerHTML={{
+          __html: attributes.value
+        }}
+        variant="h5"
+      />
+      <Typography
+        data-testid="citation"
+        dangerouslySetInnerHTML={{ __html: attributes.citation }}
+        variant="body1"
+      />
+      <img src={Red} height={15} width={20} />
+      <Divider />
+    </Container>
   )
 }

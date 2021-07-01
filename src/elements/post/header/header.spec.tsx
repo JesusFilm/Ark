@@ -81,11 +81,23 @@ describe('post-header', () => {
     expect(queryByTestId('author')).not.toBeInTheDocument()
     rerender(<PostHeader author={null} />)
     expect(queryByTestId('author')).not.toBeInTheDocument()
-    rerender(<PostHeader author="Josh McDowell" />)
+    rerender(
+      <PostHeader
+        author={{
+          node: {
+            name: 'Josh McDowell'
+          }
+        }}
+      />
+    )
     expect(getByTestId('author').textContent).toEqual('By Josh McDowell')
     rerender(
       <PostHeader
-        author="Josh McDowell"
+        author={{
+          node: {
+            name: 'Josh McDowell'
+          }
+        }}
         AuthorLink={(props) => (
           <a {...props} href="/josh-mcdowell" data-testid="author-link" />
         )}
@@ -102,7 +114,11 @@ describe('post-header', () => {
         src="https://source.unsplash.com/random/1920x1080"
         category="Following Jesus"
         CategoryLink={(props) => <a {...props} data-testid="category-link" />}
-        author="Bob Jones"
+        author={{
+          node: {
+            name: 'Bob Jones'
+          }
+        }}
         AuthorLink={(props) => <a {...props} data-testid="author-link" />}
       />
     )

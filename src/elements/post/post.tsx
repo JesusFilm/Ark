@@ -2,7 +2,7 @@ import React from 'react'
 import { AuthorCard } from '@jesus-film/ark.elements.author-card'
 import { Block, BlockProps } from '@jesus-film/ark.elements.block'
 import { Container } from '@material-ui/core'
-import { BasicPostHeader } from './header/header.composition'
+import { PostHeader, PostHeaderProps } from './header'
 
 type Avatar = {
   url: string
@@ -30,12 +30,16 @@ export type PostProps = {
    * Main body of post
    */
   blocks: BlockProps[]
+  /**
+   * Props from the header component
+   */
+  PostHeaderProps: PostHeaderProps
 }
 
-export function Post({ author, blocks }: PostProps) {
+export function Post({ author, blocks, PostHeaderProps }: PostProps) {
   return (
     <Container maxWidth="sm">
-      <BasicPostHeader />
+      <PostHeader {...PostHeaderProps} data-testid="postId" />
       {blocks.map((block, i) => (
         <Block {...block} key={`${i}-block`} />
       ))}

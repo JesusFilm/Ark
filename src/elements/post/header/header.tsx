@@ -36,6 +36,14 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
+type Author = {
+  name: string
+}
+
+type AuthorNode = {
+  node: Author
+}
+
 export type PostHeaderProps = {
   /**
    * The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made.
@@ -56,7 +64,7 @@ export type PostHeaderProps = {
   /**
    * Author Name
    */
-  author?: string
+  author?: AuthorNode
   /**
    * Category
    */
@@ -156,7 +164,7 @@ export function PostHeader({
                 </Typography>
               </Grid>
             )}
-            {author && (
+            {author?.node?.name && (
               <Grid item xs={12}>
                 <Typography data-testid="author">
                   <Trans t={t}>
@@ -166,7 +174,7 @@ export function PostHeader({
                         classes.link,
                         src && classes.linkFeaturedImage
                       )}>
-                      {{ author }}
+                      {{ author: author.node.name }}
                     </AuthorLink>
                   </Trans>
                 </Typography>

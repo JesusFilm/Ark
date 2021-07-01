@@ -1,13 +1,11 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import {
-  ParagraphBlock,
-  ImageBlock,
-  HeadingBlock,
-  ListBlock,
-  GalleryBlock,
-  QuoteBlock
-} from './block.composition'
+import { ParagraphBlock } from './core-paragraph/core-paragraph.composition'
+import { ImageBlock } from './core-image/core-image.composition'
+import { HeadingBlock } from './core-heading/core-heading.composition'
+import { ListBlock } from './core-list/core-list.composition'
+import { GalleryBlock } from './core-gallery/core-gallery.composition'
+import { QuoteBlock } from './core-quote/core-quote.composition'
 
 describe('block', () => {
   it('should render paragraph', () => {

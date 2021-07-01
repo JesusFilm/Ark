@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Container, Typography } from '@material-ui/core'
+import { Container, Typography } from '@material-ui/core'
 
 type Attributes = {
   /** mix of text and html */
@@ -17,15 +17,13 @@ export type CoreParagraphProps = {
 
 export function CoreParagraph({ attributes }: CoreParagraphProps) {
   return (
-    <Box pt={0.5} pb={0.5}>
-      <Container>
-        <Typography
-          data-testid="paragraphVariant"
-          variant="body1"
-          dangerouslySetInnerHTML={{ __html: attributes.content }}
-          paragraph
-        />
-      </Container>
-    </Box>
+    <Container>
+      <Typography
+        data-testid="paragraphVariant"
+        variant="body1"
+        dangerouslySetInnerHTML={{ __html: attributes.content }}
+        paragraph
+      />
+    </Container>
   )
 }
