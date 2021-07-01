@@ -25,6 +25,12 @@
             "email": "johnageronimo1@gmail.com"
         }
     },
+    "elements/core": {
+        "scope": "jesus-film.ark",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/core"
+    },
     "elements/donate": {
         "scope": "jesus-film.ark",
         "version": "0.0.1",
@@ -108,6 +114,12 @@
         "version": "0.0.5",
         "mainFile": "index.ts",
         "rootDir": "src/envs/react"
+    },
+    "providers/core": {
+        "scope": "jesus-film.ark",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "src/providers/core"
     },
     "providers/i18n-provider": {
         "scope": "jesus-film.ark",
