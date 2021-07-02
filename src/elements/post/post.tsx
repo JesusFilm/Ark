@@ -21,7 +21,6 @@ type AuthorNode = {
 }
 
 export type PostProps = {
-  // TODO: add in the videos and images
   /**
    * Post author
    */
@@ -39,7 +38,7 @@ export type PostProps = {
 export function Post({ author, blocks, PostHeaderProps }: PostProps) {
   return (
     <Container maxWidth="sm">
-      <PostHeader {...PostHeaderProps} data-testid="postId" />
+      <PostHeader {...PostHeaderProps} />
       {blocks.map((block, i) => (
         <Block {...block} key={`${i}-block`} />
       ))}

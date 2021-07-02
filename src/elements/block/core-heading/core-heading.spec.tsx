@@ -5,29 +5,24 @@ import { CoreHeading } from '.'
 it('should render with the correct text', () => {
   const { getByText } = render(
     <CoreHeading
-      {...{
-        name: 'core/heading',
-        attributes: {
-          align: 'left',
-          content: 'The parables from Matthew',
-          level: 2
-        }
+      name="core/heading"
+      attributes={{
+        align: 'left',
+        content: 'The parables from Matthew',
+        level: 2
       }}
     />
   )
-  const rendered = getByText('The parables from Matthew')
-  expect(rendered).toBeTruthy()
+  expect(getByText('The parables from Matthew')).toBeInTheDocument()
 })
 it('should render with the correct alignment', () => {
   const { getByText } = render(
     <CoreHeading
-      {...{
-        name: 'core/heading',
-        attributes: {
-          align: 'left',
-          content: 'The parables from Matthew',
-          level: 2
-        }
+      name="core/heading"
+      attributes={{
+        align: 'left',
+        content: 'The parables from Matthew',
+        level: 2
       }}
     />
   )
@@ -40,13 +35,11 @@ it('should render with the correct alignment', () => {
 it('should default to alignment inherit', () => {
   const { getByText } = render(
     <CoreHeading
-      {...{
-        name: 'core/heading',
-        attributes: {
-          align: '',
-          content: 'The parables from Matthew',
-          level: 2
-        }
+      name="core/heading"
+      attributes={{
+        align: '',
+        content: 'The parables from Matthew',
+        level: 2
       }}
     />
   )

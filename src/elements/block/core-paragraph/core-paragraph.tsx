@@ -15,11 +15,11 @@ export type CoreParagraphProps = {
   name: 'core/paragraph'
 }
 
-export function CoreParagraph({ attributes }: CoreParagraphProps) {
+export function CoreParagraph({ name, attributes }: CoreParagraphProps) {
   return (
     <Container>
       <Typography
-        data-testid="paragraphVariant"
+        data-testid={name}
         variant="body1"
         dangerouslySetInnerHTML={{ __html: attributes.content }}
         paragraph

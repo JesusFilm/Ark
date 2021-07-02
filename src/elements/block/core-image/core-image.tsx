@@ -30,12 +30,13 @@ export type CoreImageProps = {
 }
 
 export function CoreImage({
+  name,
   attributes: { alt, url, title, id }
 }: CoreImageProps) {
   const classes = useStyles()
   return (
     <img
-      data-testid="imageVariant"
+      data-testid={name}
       id={`${id}`}
       src={url}
       alt={alt}

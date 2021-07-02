@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import { ParagraphBlock } from './core-paragraph/core-paragraph.composition'
 import { ImageBlock } from './core-image/core-image.composition'
 import { HeadingBlock } from './core-heading/core-heading.composition'
@@ -8,28 +8,23 @@ import { GalleryBlock } from './core-gallery/core-gallery.composition'
 
 describe('block', () => {
   it('should render paragraph', () => {
-    render(<ParagraphBlock />)
-    const paragraphVariant = screen.getByTestId('paragraphVariant')
-    expect(paragraphVariant).toBeTruthy()
+    const { getByTestId } = render(<ParagraphBlock />)
+    expect(getByTestId('core/paragraph')).toBeInTheDocument()
   })
   it('should render image', () => {
-    render(<ImageBlock />)
-    const imageVariant = screen.getByTestId('imageVariant')
-    expect(imageVariant).toBeTruthy()
+    const { getByTestId } = render(<ImageBlock />)
+    expect(getByTestId('core/image')).toBeInTheDocument()
   })
   it('should render heading', () => {
-    render(<HeadingBlock />)
-    const headingVariant = screen.getByTestId('headingVariant')
-    expect(headingVariant).toBeTruthy()
+    const { getByTestId } = render(<HeadingBlock />)
+    expect(getByTestId('core/heading')).toBeInTheDocument()
   })
   it('should render list', () => {
-    render(<ListBlock />)
-    const listVariant = screen.getByTestId('listVariant')
-    expect(listVariant).toBeTruthy()
+    const { getByTestId } = render(<ListBlock />)
+    expect(getByTestId('core/list')).toBeInTheDocument()
   })
   it('should render gallery', () => {
-    render(<GalleryBlock />)
-    const galleryVariant = screen.getByTestId('galleryVariant')
-    expect(galleryVariant).toBeTruthy()
+    const { getByTestId } = render(<GalleryBlock />)
+    expect(getByTestId('core/gallery')).toBeInTheDocument()
   })
 })
