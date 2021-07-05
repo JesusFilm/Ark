@@ -5,14 +5,12 @@ import { CoreImage } from '.'
 it('should render with the correct text', () => {
   const { getByRole } = render(
     <CoreImage
-      {...{
-        name: 'core/image',
-        attributes: {
-          id: 23,
-          title: '',
-          url: 'http://54.204.85.23/wp-content/uploads/2020/12/1614778286060.jpg',
-          alt: ''
-        }
+      name="core/image"
+      attributes={{
+        id: 23,
+        title: '',
+        url: 'http://54.204.85.23/wp-content/uploads/2020/12/1614778286060.jpg',
+        alt: ''
       }}
     />
   )
