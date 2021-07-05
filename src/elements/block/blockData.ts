@@ -1,3 +1,5 @@
+import type { BlockProps } from '.'
+
 export const blocks = [
   {
     attributes: {
@@ -60,4 +62,4 @@ export const blocks = [
       ]
     }
   }
-]
+] as BlockProps[]

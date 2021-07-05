@@ -1,4 +1,4 @@
-import { BlockProps } from '../block'
+import type { BlockProps } from '@jesus-film/ark.elements.block'
 
 const postQuery = {
   data: {
