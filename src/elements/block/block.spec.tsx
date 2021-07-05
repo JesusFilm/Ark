@@ -34,8 +34,7 @@ describe('block', () => {
     expect(galleryVariant).toBeTruthy()
   })
   it('should render quotes', () => {
-    render(<QuoteBlock />)
-    const quoteVariant = screen.getByTestId('quoteVariant')
-    expect(quoteVariant).toBeTruthy()
+    const { getByTestId } = render(<QuoteBlock />)
+    expect(getByTestId('core/quote')).toBeInTheDocument()
   })
 })

@@ -23,14 +23,7 @@ export type DefaultProps = {
   variant: 'default'
 }
 
-export function Default({
-  title,
-  excerpt,
-  category,
-  // datetime,
-  src
-}: // locale,
-DefaultProps) {
+export function Default({ title, excerpt, category, src }: DefaultProps) {
   const classes = useStyles()
   return (
     <Container maxWidth="xs" data-testid="defaultVariant">

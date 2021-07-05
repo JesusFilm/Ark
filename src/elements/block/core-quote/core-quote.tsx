@@ -1,6 +1,42 @@
 import React from 'react'
-import { Container, Typography, Divider } from '@material-ui/core'
-import Red from './assets/red.png'
+import {
+  Box,
+  Container,
+  Typography,
+  Divider,
+  makeStyles
+} from '@material-ui/core'
+import classNames from 'classnames'
+import { JesusFilmSymbol } from '@jesus-film/ark.elements.jesus-film-symbol'
+
+const useStyles = makeStyles((theme) => ({
+  divider: {
+    width: '45%',
+    position: 'absolute',
+    background: theme.palette.common.black
+  },
+  leftDivider: {
+    left: '0',
+    marginTop: theme.spacing(0.7)
+  },
+  rightDivider: {
+    right: '0',
+    marginTop: theme.spacing(-1.3)
+  },
+  imageHeight: {
+    height: '15px',
+    width: '20px',
+    position: 'relative',
+    right: '50%',
+    left: '50%'
+  },
+  box: {
+    position: 'relative'
+  },
+  container: {
+    padding: '30px 0'
+  }
+}))
 
 type Attributes = {
   /** */
@@ -17,26 +53,31 @@ export type CoreQuoteProps = {
   name: 'core/quote'
 }
 
-export function CoreQuote({ attributes }: CoreQuoteProps) {
+export function CoreQuote({ attributes, name }: CoreQuoteProps) {
+  const classes = useStyles()
+
   return (
-    // TODO: make it look closer to the figma quote
-    <Container>
-      <Divider />
-      <img src={Red} height={15} width={20} />
-      <Typography
-        data-testid="quoteVariant"
-        dangerouslySetInnerHTML={{
-          __html: attributes.value
-        }}
-        variant="h5"
-      />
-      <Typography
-        data-testid="citation"
-        dangerouslySetInnerHTML={{ __html: attributes.citation }}
-        variant="body1"
-      />
-      <img src={Red} height={15} width={20} />
-      <Divider />
-    </Container>
+    <Box className={classes.box}>
+      <Divider className={classNames(classes.divider, classes.leftDivider)} />
+      <Container maxWidth="sm">
+        <JesusFilmSymbol className={classes.imageHeight} />
+        <Container maxWidth="sm" className={classes.container}>
+          <Typography
+            data-testid={name}
+            dangerouslySetInnerHTML={{
+              __html: attributes.value
+            }}
+            variant="h5"
+          />
+          <Typography
+            data-testid="citation"
+            dangerouslySetInnerHTML={{ __html: attributes.citation }}
+            variant="body1"
+          />
+        </Container>
+        <JesusFilmSymbol className={classes.imageHeight} />
+      </Container>
+      <Divider className={classNames(classes.divider, classes.rightDivider)} />
+    </Box>
   )
 }
