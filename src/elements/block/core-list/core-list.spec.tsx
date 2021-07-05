@@ -5,7 +5,7 @@ import { CoreList } from '.'
 it('should render with the correct text', () => {
   const { getByText } = render(
     <CoreList
-      name="core/list"
+      __typename="CoreListBlock"
       attributes={{
         ordered: true,
         values:
@@ -20,7 +20,7 @@ it('should render with the correct text', () => {
 it('should render unordered', () => {
   const { getByText } = render(
     <CoreList
-      name="core/list"
+      __typename="CoreListBlock"
       attributes={{
         ordered: false,
         values:

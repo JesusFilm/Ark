@@ -3,5 +3,7 @@ import { Block } from '..'
 import { blocks } from '../blockData'
 
 export const ListBlock = () => (
-  <Block {...blocks.filter((block) => block.name === 'core/list')[0]} />
+  <Block
+    {...blocks.filter((block) => block.__typename === 'CoreListBlock')[0]}
+  />
 )

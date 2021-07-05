@@ -13,16 +13,16 @@ export type BlockProps =
   | CoreGalleryProps
 
 export function Block(BlockProps: BlockProps) {
-  switch (BlockProps.name) {
-    case 'core/image':
+  switch (BlockProps.__typename) {
+    case 'CoreImageBlock':
       return <CoreImage {...BlockProps} />
-    case 'core/paragraph':
+    case 'CoreParagraphBlock':
       return <CoreParagraph {...BlockProps} />
-    case 'core/heading':
+    case 'CoreHeadingBlock':
       return <CoreHeading {...BlockProps} />
-    case 'core/list':
+    case 'CoreListBlock':
       return <CoreList {...BlockProps} />
-    case 'core/gallery':
+    case 'CoreGalleryBlock':
       return <CoreGallery {...BlockProps} />
   }
 }
