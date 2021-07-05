@@ -1,0 +1,81 @@
+---
+description: 'A Post component.'
+labels: ['label1', 'label2', 'label3']
+---
+
+import { Post } from './post';
+
+## React Component for rendering text
+
+A basic div that renders some text
+
+### Component usage
+```js
+<Post {...{
+  author: {
+    node: {
+      avatar: {
+        url: 'http://2.gravatar.com/avatar/b58996c504c5638798eb6b511e6f49af?s=96&d=mm&r=g'
+      },
+      name: 'Jesus Film Project'
+    }
+  },
+  blocks: [
+    {
+      attributes: {
+        content:
+          "When people talk about the ministry of Jesus, it's easy to focus on his miracles. Jesus performed some amazing feats that the world had never seen (and hasn’t seen since). But one of the most exciting things about His ministry was His teaching style."
+      },
+      name: 'core/paragraph'
+    }
+  ],
+  categories: {
+    nodes: [
+      {
+        categoryId: 1,
+        name: 'Following Jesus'
+      }
+    ]
+  },
+  excerpt:
+    '<p>When people talk about the ministry of Jesus, it&#8217;s easy to focus on his miracles. Jesus performed some amazing feats that the world had never seen (and hasn’t seen since). But one of the most exciting things about His ministry was His teaching style. Jesus taught using parables—simple stories intended to impart a spiritual lesson.&hellip; <a class="more-link" href="http://54.204.85.23/2021/03/17/all-the-parables-of-jesus/">Continue reading <span class="screen-reader-text">All the Parables of Jesus</span></a></p>\n',
+  date: '2021-03-17T16:11:59',
+  title: 'All the Parables of Jesus'
+}} />
+```
+
+### Using props to customize the text
+
+Modify the text to see it change live:
+```js live
+<Post {...{
+  author: {
+    node: {
+      avatar: {
+        url: 'http://2.gravatar.com/avatar/b58996c504c5638798eb6b511e6f49af?s=96&d=mm&r=g'
+      },
+      name: 'Jesus Film Project'
+    }
+  },
+  blocks: [
+    {
+      attributes: {
+        content:
+          "When people talk about the ministry of Jesus, it's easy to focus on his miracles. Jesus performed some amazing feats that the world had never seen (and hasn’t seen since). But one of the most exciting things about His ministry was His teaching style."
+      },
+      name: 'core/paragraph'
+    }
+  ],
+  categories: {
+    nodes: [
+      {
+        categoryId: 1,
+        name: 'Following Jesus'
+      }
+    ]
+  },
+  excerpt:
+    '<p>When people talk about the ministry of Jesus, it&#8217;s easy to focus on his miracles. Jesus performed some amazing feats that the world had never seen (and hasn’t seen since). But one of the most exciting things about His ministry was His teaching style. Jesus taught using parables—simple stories intended to impart a spiritual lesson.&hellip; <a class="more-link" href="http://54.204.85.23/2021/03/17/all-the-parables-of-jesus/">Continue reading <span class="screen-reader-text">All the Parables of Jesus</span></a></p>\n',
+  date: '2021-03-17T16:11:59',
+  title: 'All the Parables of Jesus'}} />
+```

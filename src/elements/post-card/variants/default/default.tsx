@@ -1,6 +1,5 @@
 import React from 'react'
 import { Grid, makeStyles, Typography, Container } from '@material-ui/core'
-import { TimeAgo, TimeAgoProps } from '@jesus-film/ark.elements.time-ago'
 
 const useStyles = makeStyles((theme) => ({
   image: {
@@ -22,16 +21,9 @@ export type DefaultProps = {
   src?: string
   /** Variant style */
   variant: 'default'
-} & TimeAgoProps
+}
 
-export function Default({
-  title,
-  excerpt,
-  category,
-  datetime,
-  src,
-  locale
-}: DefaultProps) {
+export function Default({ title, excerpt, category, src }: DefaultProps) {
   const classes = useStyles()
   return (
     <Container maxWidth="xs" data-testid="defaultVariant">
@@ -59,9 +51,9 @@ export function Default({
             <Typography variant="body1">{excerpt}</Typography>
           </Grid>
         )}
-        <Grid item>
+        {/* <Grid item>
           <TimeAgo datetime={datetime} locale={locale} />
-        </Grid>
+        </Grid> */}
       </Grid>
     </Container>
   )

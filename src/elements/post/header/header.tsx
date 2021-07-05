@@ -36,6 +36,28 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
+type Author = {
+  /**
+   * Author Name
+   */
+  name: string
+}
+
+type AuthorNode = {
+  node: Author
+}
+
+type Category = {
+  /**
+   * Category Name
+   */
+  name: string
+}
+
+type CategoryNodes = {
+  nodes: Category[]
+}
+
 export type PostHeaderProps = {
   /**
    * The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made.
@@ -54,13 +76,13 @@ export type PostHeaderProps = {
    */
   src?: string
   /**
-   * Author Name
+   * Author
    */
-  author?: string
+  author?: AuthorNode
   /**
-   * Category
+   * Categories
    */
-  category?: string
+  categories?: CategoryNodes
   AuthorLink?: (
     props: React.DetailedHTMLProps<
       React.AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -81,12 +103,13 @@ export function PostHeader({
   date,
   src,
   author,
-  category,
+  categories,
   AuthorLink = (props) => createElement('a', props),
   CategoryLink = (props) => createElement('a', props)
 }: PostHeaderProps) {
   const { t } = useTranslation('post-header')
   const classes = useStyles()
+  const category = categories?.nodes?.[0]?.name
 
   return (
     <Box
@@ -156,7 +179,7 @@ export function PostHeader({
                 </Typography>
               </Grid>
             )}
-            {author && (
+            {author?.node?.name && (
               <Grid item xs={12}>
                 <Typography data-testid="author">
                   <Trans t={t}>
@@ -166,7 +189,7 @@ export function PostHeader({
                         classes.link,
                         src && classes.linkFeaturedImage
                       )}>
-                      {{ author }}
+                      {{ author: author.node.name }}
                     </AuthorLink>
                   </Trans>
                 </Typography>

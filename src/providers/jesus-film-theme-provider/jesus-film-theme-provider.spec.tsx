@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { JesusFilmThemeProvider } from './jesus-film-theme-provider'
+import { JesusFilmThemeProvider } from '.'
 
 describe('jesus-film-theme-provider', () => {
   it('should render the component', () => {

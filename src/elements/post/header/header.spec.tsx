@@ -2,6 +2,7 @@ import React from 'react'
 import { render } from '@testing-library/react'
 import { PostHeader } from '.'
 import { I18nProvider } from '@jesus-film/ark.providers.i18n-provider'
+import { intlFormat, parseISO } from 'date-fns'
 
 describe('post-header', () => {
   it('renders title', () => {
@@ -16,16 +17,32 @@ describe('post-header', () => {
 
   it('renders category', () => {
     const { queryByTestId, getByTestId, rerender } = render(
-      <PostHeader category={null} />
+      <PostHeader categories={null} />
     )
     expect(queryByTestId('category')).not.toBeInTheDocument()
-    rerender(<PostHeader category="Following Jesus" />)
+    rerender(
+      <PostHeader
+        categories={{
+          nodes: [
+            {
+              name: 'Following Jesus'
+            }
+          ]
+        }}
+      />
+    )
     expect(getByTestId('category').textContent).toEqual(
       'Published under "Following Jesus"'
     )
     rerender(
       <PostHeader
-        category="Following Jesus"
+        categories={{
+          nodes: [
+            {
+              name: 'Following Jesus'
+            }
+          ]
+        }}
         CategoryLink={(props) => (
           <a {...props} href="/following-jesus" data-testid="category-link" />
         )}
@@ -37,20 +54,44 @@ describe('post-header', () => {
   })
 
   it('renders category and date', () => {
+    const date = '2021-06-15T22:00:35.664Z'
+    const prettyDate = intlFormat(
+      parseISO(date),
+      {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      },
+      {
+        locale: Intl.DateTimeFormat().resolvedOptions().locale
+      }
+    )
     const { getByTestId, rerender } = render(
       <I18nProvider>
         <PostHeader
-          category="Following Jesus"
-          date="2021-06-15T22:00:35.664Z"
+          categories={{
+            nodes: [
+              {
+                name: 'Following Jesus'
+              }
+            ]
+          }}
+          date={date}
         />
       </I18nProvider>
     )
     expect(getByTestId('category-and-date').textContent).toEqual(
-      'Published under "Following Jesus" on June 15, 2021'
+      `Published under "Following Jesus" on ${prettyDate}`
     )
     rerender(
       <PostHeader
-        category="Following Jesus"
+        categories={{
+          nodes: [
+            {
+              name: 'Following Jesus'
+            }
+          ]
+        }}
         CategoryLink={(props) => (
           <a {...props} href="/following-jesus" data-testid="category-link" />
         )}
@@ -62,19 +103,31 @@ describe('post-header', () => {
   })
 
   it('renders date', () => {
+    const date = '2021-06-15T22:00:35.664Z'
+    const prettyDate = intlFormat(
+      parseISO(date),
+      {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      },
+      {
+        locale: Intl.DateTimeFormat().resolvedOptions().locale
+      }
+    )
     const { getByTestId, rerender } = render(
       <I18nProvider>
-        <PostHeader category={null} date="2021-06-15T22:00:35.664Z" />
+        <PostHeader categories={null} date={date} />
       </I18nProvider>
     )
     expect(getByTestId('date')).toBeInTheDocument()
     rerender(
       <I18nProvider>
-        <PostHeader date="2021-06-15T22:00:35.664Z" />
+        <PostHeader date={date} />
       </I18nProvider>
     )
     expect(getByTestId('date').textContent).toEqual(
-      'Published on June 15, 2021'
+      `Published on ${prettyDate}`
     )
   })
 
@@ -83,11 +136,23 @@ describe('post-header', () => {
     expect(queryByTestId('author')).not.toBeInTheDocument()
     rerender(<PostHeader author={null} />)
     expect(queryByTestId('author')).not.toBeInTheDocument()
-    rerender(<PostHeader author="Josh McDowell" />)
+    rerender(
+      <PostHeader
+        author={{
+          node: {
+            name: 'Josh McDowell'
+          }
+        }}
+      />
+    )
     expect(getByTestId('author').textContent).toEqual('By Josh McDowell')
     rerender(
       <PostHeader
-        author="Josh McDowell"
+        author={{
+          node: {
+            name: 'Josh McDowell'
+          }
+        }}
         AuthorLink={(props) => (
           <a {...props} href="/josh-mcdowell" data-testid="author-link" />
         )}
@@ -102,9 +167,19 @@ describe('post-header', () => {
     const { getByTestId, rerender } = render(
       <PostHeader
         src="https://source.unsplash.com/random/1920x1080"
-        category="Following Jesus"
+        categories={{
+          nodes: [
+            {
+              name: 'Following Jesus'
+            }
+          ]
+        }}
         CategoryLink={(props) => <a {...props} data-testid="category-link" />}
-        author="Bob Jones"
+        author={{
+          node: {
+            name: 'Bob Jones'
+          }
+        }}
         AuthorLink={(props) => <a {...props} data-testid="author-link" />}
       />
     )
@@ -120,7 +195,13 @@ describe('post-header', () => {
     rerender(
       <PostHeader
         src="https://source.unsplash.com/random/1920x1080"
-        category="Following Jesus"
+        categories={{
+          nodes: [
+            {
+              name: 'Following Jesus'
+            }
+          ]
+        }}
         CategoryLink={(props) => <a {...props} data-testid="category-link" />}
         date="2021-06-15T22:00:35.664Z"
       />

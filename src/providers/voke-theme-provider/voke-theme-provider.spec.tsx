@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { VokeThemeProvider } from './voke-theme-provider'
+import { VokeThemeProvider } from '.'
 
 describe('voke-theme-provider', () => {
   it('should render the component', () => {

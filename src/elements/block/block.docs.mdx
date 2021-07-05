@@ -1,0 +1,23 @@
+---
+description: 'Block component that renders a variety of WordPress Gutenberg blocks.'
+labels: ["react", "typescript", "block"]
+---
+
+import { Block } from './block';
+
+## React Component that displays relevant blocks based on block name
+
+A component that renders data depending on its variant
+
+### Using props to customize the text
+
+Modify the props to see it change live:
+```js live
+<Block {...{
+    attributes: {
+      content:
+        "When people talk about the ministry of Jesus, it's easy to focus on his miracles. Jesus performed some amazing feats that the world had never seen (and hasn’t seen since). But one of the most exciting things about His ministry was His teaching style."
+    },
+    name: 'core/paragraph'
+  }} />
+```

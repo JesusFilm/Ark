@@ -1,0 +1,7 @@
+import React from 'react'
+import { Block } from '..'
+import { blocks } from '../blockData'
+
+export const HeadingBlock = () => (
+  <Block {...blocks.filter((block) => block.name === 'core/heading')[0]} />
+)

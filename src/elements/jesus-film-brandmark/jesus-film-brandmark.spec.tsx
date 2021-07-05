@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { JesusFilmBrandmark } from './jesus-film-brandmark'
+import { JesusFilmBrandmark } from '.'
 
 describe('jesus-film-brandmark', () => {
   it('should render with red brandmark by default', () => {
