@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import { Donate } from '.'
-import { I18nProvider } from '../../providers/i18n-provider'
+import { I18nProvider } from '@jesus-film/ark.providers.i18n-provider'
 
 describe('donateBanner', () => {
   it('should render with the correct link', () => {

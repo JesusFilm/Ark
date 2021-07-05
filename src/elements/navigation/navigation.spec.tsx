@@ -3,7 +3,7 @@ import React from 'react'
 import { render, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Navigation } from '.'
-import { I18nProvider } from '../../providers/i18n-provider'
+import { I18nProvider } from '@jesus-film/ark.providers.i18n-provider'
 
 let mockTrigger = false
 jest.mock('@material-ui/core/useScrollTrigger', () =>

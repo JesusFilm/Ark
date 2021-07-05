@@ -3,7 +3,7 @@ import React from 'react'
 import { render, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { SubscribeCard } from '.'
-import { I18nProvider } from '../../providers/i18n-provider'
+import { I18nProvider } from '@jesus-film/ark.providers.i18n-provider'
 
 describe('subscribeCard', () => {
   it('should allow submission of valid email', async () => {
