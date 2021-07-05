@@ -14,28 +14,16 @@
         "rootDir": "src/elements/author-list"
     },
     "elements/block": {
-        "scope": "",
-        "version": "",
-        "mainFile": "index.ts",
-        "rootDir": "src/elements/block",
-        "nextVersion": {
-            "version": "patch",
-            "message": "",
-            "username": "John Geronimo",
-            "email": "johnageronimo1@gmail.com"
-        }
-    },
-    "elements/core": {
         "scope": "jesus-film.ark",
         "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/core",
-        "nextVersion": {
-            "version": "patch",
-            "message": " (bump dependencies versions)",
-            "username": "John Geronimo",
-            "email": "johnageronimo1@gmail.com"
-        }
+        "rootDir": "src/elements/block"
+    },
+    "elements/core": {
+        "scope": "jesus-film.ark",
+        "version": "0.0.2",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/core"
     },
     "elements/donate": {
         "scope": "jesus-film.ark",
@@ -86,28 +74,16 @@
         "rootDir": "src/elements/navigation"
     },
     "elements/post": {
-        "scope": "",
-        "version": "",
-        "mainFile": "index.ts",
-        "rootDir": "src/elements/post",
-        "nextVersion": {
-            "version": "patch",
-            "message": "",
-            "username": "John Geronimo",
-            "email": "johnageronimo1@gmail.com"
-        }
-    },
-    "elements/post-card": {
         "scope": "jesus-film.ark",
         "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/post-card",
-        "nextVersion": {
-            "version": "patch",
-            "message": "",
-            "username": "John Geronimo",
-            "email": "johnageronimo1@gmail.com"
-        }
+        "rootDir": "src/elements/post"
+    },
+    "elements/post-card": {
+        "scope": "jesus-film.ark",
+        "version": "0.0.2",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/post-card"
     },
     "elements/subscribe-card": {
         "scope": "jesus-film.ark",
