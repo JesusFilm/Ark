@@ -1,3 +1,5 @@
+import { BlockProps } from '../block'
+
 const postQuery = {
   data: {
     post: {
@@ -1630,7 +1632,7 @@ const postQuery = {
           },
           name: 'core/paragraph'
         }
-      ],
+      ] as BlockProps[],
       categories: {
         nodes: [
           {
