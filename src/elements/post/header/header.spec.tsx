@@ -17,16 +17,32 @@ describe('post-header', () => {
 
   it('renders category', () => {
     const { queryByTestId, getByTestId, rerender } = render(
-      <PostHeader category={null} />
+      <PostHeader categories={null} />
     )
     expect(queryByTestId('category')).not.toBeInTheDocument()
-    rerender(<PostHeader category="Following Jesus" />)
+    rerender(
+      <PostHeader
+        categories={{
+          nodes: [
+            {
+              name: 'Following Jesus'
+            }
+          ]
+        }}
+      />
+    )
     expect(getByTestId('category').textContent).toEqual(
       'Published under "Following Jesus"'
     )
     rerender(
       <PostHeader
-        category="Following Jesus"
+        categories={{
+          nodes: [
+            {
+              name: 'Following Jesus'
+            }
+          ]
+        }}
         CategoryLink={(props) => (
           <a {...props} href="/following-jesus" data-testid="category-link" />
         )}
@@ -52,7 +68,16 @@ describe('post-header', () => {
     )
     const { getByTestId, rerender } = render(
       <I18nProvider>
-        <PostHeader category="Following Jesus" date={date} />
+        <PostHeader
+          categories={{
+            nodes: [
+              {
+                name: 'Following Jesus'
+              }
+            ]
+          }}
+          date={date}
+        />
       </I18nProvider>
     )
     expect(getByTestId('category-and-date').textContent).toEqual(
@@ -60,7 +85,13 @@ describe('post-header', () => {
     )
     rerender(
       <PostHeader
-        category="Following Jesus"
+        categories={{
+          nodes: [
+            {
+              name: 'Following Jesus'
+            }
+          ]
+        }}
         CategoryLink={(props) => (
           <a {...props} href="/following-jesus" data-testid="category-link" />
         )}
@@ -86,7 +117,7 @@ describe('post-header', () => {
     )
     const { getByTestId, rerender } = render(
       <I18nProvider>
-        <PostHeader category={null} date={date} />
+        <PostHeader categories={null} date={date} />
       </I18nProvider>
     )
     expect(getByTestId('date')).toBeInTheDocument()
@@ -136,7 +167,13 @@ describe('post-header', () => {
     const { getByTestId, rerender } = render(
       <PostHeader
         src="https://source.unsplash.com/random/1920x1080"
-        category="Following Jesus"
+        categories={{
+          nodes: [
+            {
+              name: 'Following Jesus'
+            }
+          ]
+        }}
         CategoryLink={(props) => <a {...props} data-testid="category-link" />}
         author={{
           node: {
@@ -158,7 +195,13 @@ describe('post-header', () => {
     rerender(
       <PostHeader
         src="https://source.unsplash.com/random/1920x1080"
-        category="Following Jesus"
+        categories={{
+          nodes: [
+            {
+              name: 'Following Jesus'
+            }
+          ]
+        }}
         CategoryLink={(props) => <a {...props} data-testid="category-link" />}
         date="2021-06-15T22:00:35.664Z"
       />
