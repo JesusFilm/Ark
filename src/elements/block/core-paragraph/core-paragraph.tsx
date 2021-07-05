@@ -11,15 +11,14 @@ export type CoreParagraphProps = {
    * container for paragraph attributes
    */
   attributes: Attributes
-  /** Variant style */
-  name: 'core/paragraph'
+  __typename: 'CoreParagraphBlock'
 }
 
-export function CoreParagraph({ name, attributes }: CoreParagraphProps) {
+export function CoreParagraph({ attributes }: CoreParagraphProps) {
   return (
     <Container>
       <Typography
-        data-testid={name}
+        data-testid="CoreParagraphBlock"
         variant="body1"
         dangerouslySetInnerHTML={{ __html: attributes.content }}
         paragraph

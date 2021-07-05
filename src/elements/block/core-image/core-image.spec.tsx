@@ -5,7 +5,7 @@ import { CoreImage } from '.'
 it('should render with the correct text', () => {
   const { getByRole } = render(
     <CoreImage
-      name="core/image"
+      __typename="CoreImageBlock"
       attributes={{
         id: 23,
         title: '',

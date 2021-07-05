@@ -5,7 +5,7 @@ import { CoreHeading } from '.'
 it('should render with the correct text', () => {
   const { getByText } = render(
     <CoreHeading
-      name="core/heading"
+      __typename="CoreHeadingBlock"
       attributes={{
         align: 'left',
         content: 'The parables from Matthew',
@@ -18,7 +18,7 @@ it('should render with the correct text', () => {
 it('should render with the correct alignment', () => {
   const { getByText } = render(
     <CoreHeading
-      name="core/heading"
+      __typename="CoreHeadingBlock"
       attributes={{
         align: 'left',
         content: 'The parables from Matthew',
@@ -35,7 +35,7 @@ it('should render with the correct alignment', () => {
 it('should default to alignment inherit', () => {
   const { getByText } = render(
     <CoreHeading
-      name="core/heading"
+      __typename="CoreHeadingBlock"
       attributes={{
         align: '',
         content: 'The parables from Matthew',
