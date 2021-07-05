@@ -5,7 +5,6 @@ import { ImageBlock } from './core-image/core-image.composition'
 import { HeadingBlock } from './core-heading/core-heading.composition'
 import { ListBlock } from './core-list/core-list.composition'
 import { GalleryBlock } from './core-gallery/core-gallery.composition'
-import { QuoteBlock } from './core-quote/core-quote.composition'
 
 describe('block', () => {
   it('should render paragraph', () => {
@@ -27,9 +26,5 @@ describe('block', () => {
   it('should render gallery', () => {
     const { getByTestId } = render(<GalleryBlock />)
     expect(getByTestId('core/gallery')).toBeInTheDocument()
-  })
-  it('should render quotes', () => {
-    const { getByTestId } = render(<QuoteBlock />)
-    expect(getByTestId('core/quote')).toBeInTheDocument()
   })
 })
