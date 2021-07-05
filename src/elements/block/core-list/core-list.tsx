@@ -17,7 +17,10 @@ export type CoreListProps = {
   name: 'core/list'
 }
 
-export function CoreList({ attributes: { ordered, values } }: CoreListProps) {
+export function CoreList({
+  name,
+  attributes: { ordered, values }
+}: CoreListProps) {
   const list = values
     .replace(/<\/li><li>/g, '*-*')
     .replace('</li>', '')
@@ -25,7 +28,7 @@ export function CoreList({ attributes: { ordered, values } }: CoreListProps) {
     .split('*-*')
 
   return (
-    <List data-testid="listVariant">
+    <List data-testid={name}>
       {list.map((item, i) => (
         <ListItem key={i}>
           <ListItemText primary={ordered ? `${i + 1}. ${item}` : `- ${item}`} />

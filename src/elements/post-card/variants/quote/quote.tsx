@@ -40,11 +40,6 @@ export function Quote({ title, excerpt }: QuoteProps) {
       <Grid item>
         <Typography variant="body1">- {title}</Typography>
       </Grid>
-      <Grid item>
-        {/* <Typography variant="body2">
-          <TimeAgo datetime={datetime} locale={locale} />
-        </Typography> */}
-      </Grid>
     </Grid>
   )
 }

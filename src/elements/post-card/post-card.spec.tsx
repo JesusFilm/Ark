@@ -29,7 +29,7 @@ describe('post-card', () => {
     const premiereVariant = screen.getByTestId('premiereVariant')
     expect(premiereVariant).toBeTruthy()
   })
-  it('should render deltfau with the correct variant', () => {
+  it('should render delfault with the correct variant', () => {
     render(<DefaultPostCard />)
     const defaultVariant = screen.getByTestId('defaultVariant')
     expect(defaultVariant).toBeTruthy()

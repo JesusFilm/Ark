@@ -1,25 +1,9 @@
 import React from 'react'
-import {
-  createStyles,
-  makeStyles,
-  GridList,
-  GridListTile
-} from '@material-ui/core'
-
-const useStyles = makeStyles(() =>
-  createStyles({
-    image: {
-      maxWidth: '100%'
-    },
-    grid: {
-      maxWidth: '960px'
-    }
-  })
-)
+import { GridList, GridListTile, Container } from '@material-ui/core'
 
 type Attributes = {
   /** Image */
-  images: Image[]
+  images?: Image[]
 }
 
 type Image = {
@@ -38,19 +22,19 @@ export type CoreGalleryProps = {
   name: 'core/gallery'
 }
 
-export function CoreGallery({ attributes: { images } }: CoreGalleryProps) {
-  const classes = useStyles()
+export function CoreGallery({
+  name,
+  attributes: { images }
+}: CoreGalleryProps) {
   return (
-    <GridList
-      data-testid="galleryVariant"
-      cellHeight={160}
-      cols={4}
-      className={classes.grid}>
-      {images.map((image, i) => (
-        <GridListTile key={`${i}-image-gallery`} cols={2} rows={1}>
-          <img src={image.fullUrl} alt={image.alt} className={classes.image} />
-        </GridListTile>
-      ))}
-    </GridList>
+    <Container maxWidth="md">
+      <GridList data-testid={name} cellHeight={160} cols={4}>
+        {images?.map((image, i) => (
+          <GridListTile key={`${i}-image-gallery`} cols={2} rows={1}>
+            <img src={image.fullUrl} alt={image.alt} />
+          </GridListTile>
+        ))}
+      </GridList>
+    </Container>
   )
 }
