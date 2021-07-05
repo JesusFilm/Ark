@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { JesusFilmGraphicSeal } from './jesus-film-graphic-seal'
+import { JesusFilmGraphicSeal } from '.'
 
 describe('jesus-film-symbol', () => {
   it('should render with red symbol by default', () => {

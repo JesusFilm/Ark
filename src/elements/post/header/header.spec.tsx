@@ -2,6 +2,7 @@ import React from 'react'
 import { render } from '@testing-library/react'
 import { PostHeader } from '.'
 import { I18nProvider } from '@jesus-film/ark.providers.i18n-provider'
+import { intlFormat, parseISO } from 'date-fns'
 
 describe('post-header', () => {
   it('renders title', () => {
@@ -37,16 +38,25 @@ describe('post-header', () => {
   })
 
   it('renders category and date', () => {
+    const date = '2021-06-15T22:00:35.664Z'
+    const prettyDate = intlFormat(
+      parseISO(date),
+      {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      },
+      {
+        locale: Intl.DateTimeFormat().resolvedOptions().locale
+      }
+    )
     const { getByTestId, rerender } = render(
       <I18nProvider>
-        <PostHeader
-          category="Following Jesus"
-          date="2021-06-15T22:00:35.664Z"
-        />
+        <PostHeader category="Following Jesus" date={date} />
       </I18nProvider>
     )
     expect(getByTestId('category-and-date').textContent).toEqual(
-      'Published under "Following Jesus" on June 15, 2021'
+      `Published under "Following Jesus" on ${prettyDate}`
     )
     rerender(
       <PostHeader
@@ -62,19 +72,31 @@ describe('post-header', () => {
   })
 
   it('renders date', () => {
+    const date = '2021-06-15T22:00:35.664Z'
+    const prettyDate = intlFormat(
+      parseISO(date),
+      {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      },
+      {
+        locale: Intl.DateTimeFormat().resolvedOptions().locale
+      }
+    )
     const { getByTestId, rerender } = render(
       <I18nProvider>
-        <PostHeader category={null} date="2021-06-15T22:00:35.664Z" />
+        <PostHeader category={null} date={date} />
       </I18nProvider>
     )
     expect(getByTestId('date')).toBeInTheDocument()
     rerender(
       <I18nProvider>
-        <PostHeader date="2021-06-15T22:00:35.664Z" />
+        <PostHeader date={date} />
       </I18nProvider>
     )
     expect(getByTestId('date').textContent).toEqual(
-      'Published on June 15, 2021'
+      `Published on ${prettyDate}`
     )
   })
 
