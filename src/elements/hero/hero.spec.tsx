@@ -1,7 +1,7 @@
 import React from 'react'
 import { fireEvent, render } from '@testing-library/react'
 import { CompleteHero, CustomHero } from './hero.composition'
-import { Hero } from './hero'
+import { Hero } from '.'
 
 describe('hero', () => {
   it('component should render', () => {
