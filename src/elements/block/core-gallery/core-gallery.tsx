@@ -3,7 +3,7 @@ import { GridList, GridListTile, Container } from '@material-ui/core'
 
 type Attributes = {
   /** Image */
-  images: Image[]
+  images?: Image[]
 }
 
 type Image = {
@@ -29,7 +29,7 @@ export function CoreGallery({
   return (
     <Container maxWidth="md">
       <GridList data-testid={name} cellHeight={160} cols={4}>
-        {images.map((image, i) => (
+        {images?.map((image, i) => (
           <GridListTile key={`${i}-image-gallery`} cols={2} rows={1}>
             <img src={image.fullUrl} alt={image.alt} />
           </GridListTile>
