@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { JesusFilmSymbol } from './jesus-film-symbol'
+import { JesusFilmSymbol } from '.'
 
 describe('jesus-film-symbol', () => {
   it('should render with red symbol by default', () => {

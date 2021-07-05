@@ -1,5 +1,5 @@
 import React from 'react'
-import { AuthorList } from './author-list'
+import { AuthorList } from '.'
 
 export const BasicAuthorList = () => (
   <AuthorList

@@ -1,5 +1,5 @@
 import React from 'react'
-import { AuthorCard, AuthorCardProps } from './author-card'
+import { AuthorCard, AuthorCardProps } from '.'
 
 export const BasicAuthorCard = (props: Partial<AuthorCardProps>) => (
   <AuthorCard

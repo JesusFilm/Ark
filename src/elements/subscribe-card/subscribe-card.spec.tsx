@@ -2,13 +2,16 @@ import '@testing-library/dom'
 import React from 'react'
 import { render, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { SubscribeCard } from './subscribe-card'
+import { SubscribeCard } from '.'
+import { I18nProvider } from '@jesus-film/ark.providers.i18n-provider'
 
 describe('subscribeCard', () => {
   it('should allow submission of valid email', async () => {
     const handleSubmit = jest.fn()
     const { getByRole, getByText } = render(
-      <SubscribeCard onSubmit={handleSubmit} />
+      <I18nProvider>
+        <SubscribeCard onSubmit={handleSubmit} />
+      </I18nProvider>
     )
     const subscribeButton = getByRole('button', { name: 'Subscribe' })
     userEvent.click(subscribeButton)
@@ -36,7 +39,9 @@ describe('subscribeCard', () => {
   it('should allow submission of valid email', async () => {
     const handleSubmit = jest.fn()
     const { getByRole, getByText } = render(
-      <SubscribeCard onSubmit={handleSubmit} variant="banner" />
+      <I18nProvider>
+        <SubscribeCard onSubmit={handleSubmit} variant="banner" />
+      </I18nProvider>
     )
     const subscribeButton = getByRole('button', { name: 'Subscribe' })
     userEvent.click(subscribeButton)
