@@ -21,15 +21,9 @@
     },
     "elements/core": {
         "scope": "jesus-film.ark",
-        "version": "0.0.2",
+        "version": "0.0.3",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/core",
-        "nextVersion": {
-            "version": "patch",
-            "message": "add post and block",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
-        }
+        "rootDir": "src/elements/core"
     },
     "elements/donate": {
         "scope": "jesus-film.ark",
