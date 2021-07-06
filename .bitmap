@@ -14,8 +14,8 @@
         "rootDir": "src/elements/author-list"
     },
     "elements/block": {
-        "scope": "",
-        "version": "",
+        "scope": "jesus-film.ark",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "src/elements/block",
         "nextVersion": {
@@ -27,7 +27,7 @@
     },
     "elements/core": {
         "scope": "jesus-film.ark",
-        "version": "0.0.1",
+        "version": "0.0.4",
         "mainFile": "index.ts",
         "rootDir": "src/elements/core",
         "nextVersion": {
@@ -86,8 +86,8 @@
         "rootDir": "src/elements/navigation"
     },
     "elements/post": {
-        "scope": "",
-        "version": "",
+        "scope": "jesus-film.ark",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "src/elements/post",
         "nextVersion": {

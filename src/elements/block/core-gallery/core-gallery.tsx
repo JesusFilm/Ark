@@ -18,17 +18,13 @@ export type CoreGalleryProps = {
    * container for image attributes
    */
   attributes: Attributes
-  /** Variant style */
-  name: 'core/gallery'
+  __typename: 'CoreGalleryBlock'
 }
 
-export function CoreGallery({
-  name,
-  attributes: { images }
-}: CoreGalleryProps) {
+export function CoreGallery({ attributes: { images } }: CoreGalleryProps) {
   return (
     <Container maxWidth="md">
-      <GridList data-testid={name} cellHeight={160} cols={4}>
+      <GridList data-testid="CoreGalleryBlock" cellHeight={160} cols={4}>
         {images?.map((image, i) => (
           <GridListTile key={`${i}-image-gallery`} cols={2} rows={1}>
             <img src={image.fullUrl} alt={image.alt} />
