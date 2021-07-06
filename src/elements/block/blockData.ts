@@ -61,5 +61,33 @@ export const blocks = [
         }
       ]
     }
+  },
+  {
+    __typename: 'CoreEmbedBlock',
+    attributes: {
+      url: 'https://youtu.be/UGFCbmvk0vo',
+      providerNameSlug: 'youtube'
+    }
+  },
+  {
+    __typename: 'CoreEmbedBlock',
+    attributes: {
+      url: 'https://www.youtube.com/embed/UGFCbmvk0vo',
+      providerNameSlug: 'ebed-handler'
+    }
+  },
+  {
+    __typename: 'CoreEmbedBlock',
+    attributes: {
+      url: 'https://vimeo.com/10679287',
+      providerNameSlug: 'vimeo'
+    }
+  },
+  {
+    __typename: 'CoreEmbedBlock',
+    attributes: {
+      url: 'https://player.vimeo.com/video/10679287',
+      providerNameSlug: 'vimeo'
+    }
   }
 ] as BlockProps[]

@@ -170,6 +170,13 @@ const postQuery = {
           __typename: 'CoreParagraphBlock'
         },
         {
+          name: 'CoreEmbedBlock',
+          attributes: {
+            url: 'https://www.youtube.com/watch?v=UGFCbmvk0vo',
+            providerNameSlug: 'youtube'
+          }
+        },
+        {
           __typename: 'CoreHeadingBlock',
           attributes: {
             align: 'left',
@@ -248,6 +255,13 @@ const postQuery = {
               'For a closer look at this parable, check out the post “<a href="https://www.jesusfilm.org/blog-and-stories/parable-the-weeds.html">What is the Meaning of the Parable of the Weeds?</a>"'
           },
           __typename: 'CoreParagraphBlock'
+        },
+        {
+          __typename: 'CoreEmbedBlock',
+          attributes: {
+            url: 'https://www.youtube.com/watch?v=Iz7YbgOJJMc',
+            providerNameSlug: 'youtube'
+          }
         },
         {
           __typename: 'CoreHeadingBlock',

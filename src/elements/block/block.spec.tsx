@@ -50,4 +50,10 @@ describe('block', () => {
     )
     expect(getByTestId('CoreGalleryBlock')).toBeInTheDocument()
   })
+  it('should render the embed video', () => {
+    const { getByTestId } = render(
+      <Block {...blocks.filter((block) => block.name === 'core/embed')[0]} />
+    )
+    expect(getByTestId('core/embed')).toBeInTheDocument()
+  })
 })
