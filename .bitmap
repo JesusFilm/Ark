@@ -20,7 +20,7 @@
         "rootDir": "src/elements/block",
         "nextVersion": {
             "version": "patch",
-            "message": "use __typename",
+            "message": "",
             "username": "Tataihono Nikora",
             "email": "tataihono.nikora@gmail.com"
         }
