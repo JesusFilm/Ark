@@ -1,5 +1,12 @@
 import React from 'react'
-import { Grid, makeStyles, Typography, Avatar, Box } from '@material-ui/core'
+import {
+  Grid,
+  makeStyles,
+  Typography,
+  Avatar,
+  Box,
+  Container
+} from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   wrap: {
@@ -50,35 +57,37 @@ export function AuthorCard({
     .toUpperCase()
 
   return (
-    <Box onClick={() => onClick?.()}>
-      <Grid
-        container
-        direction="row"
-        justify="center"
-        alignItems="center"
-        className={classes.wrap}
-        spacing={2}>
-        <Grid item>
-          <Avatar alt={name} src={src} className={classes.image}>
-            {initials}
-          </Avatar>
-        </Grid>
-        <Grid item md container direction="column" spacing={2}>
+    <Container maxWidth="sm">
+      <Box onClick={() => onClick?.()}>
+        <Grid
+          container
+          direction="row"
+          justify="center"
+          alignItems="center"
+          className={classes.wrap}
+          spacing={2}>
           <Grid item>
-            <Typography
-              variant="h5"
-              color="textSecondary"
-              className={classes.name}>
-              {name}
-            </Typography>
+            <Avatar alt={name} src={src} className={classes.image}>
+              {initials}
+            </Avatar>
           </Grid>
-          <Grid item>
-            <Typography variant="body1" className={classes.description}>
-              {description}
-            </Typography>
+          <Grid item md container direction="column" spacing={2}>
+            <Grid item>
+              <Typography
+                variant="h5"
+                color="textSecondary"
+                className={classes.name}>
+                {name}
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="body1" className={classes.description}>
+                {description}
+              </Typography>
+            </Grid>
           </Grid>
         </Grid>
-      </Grid>
-    </Box>
+      </Box>
+    </Container>
   )
 }
