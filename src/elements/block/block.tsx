@@ -4,6 +4,7 @@ import { CoreImage, CoreImageProps } from './core-image'
 import { CoreParagraph, CoreParagraphProps } from './core-paragraph'
 import { CoreHeading, CoreHeadingProps } from './core-heading'
 import { CoreGallery, CoreGalleryProps } from './core-gallery'
+import { Card, CardContent, Container, Typography } from '@material-ui/core'
 
 export type BlockProps =
   | CoreParagraphProps
@@ -25,6 +26,19 @@ export function Block(BlockProps: BlockProps) {
     case 'CoreGalleryBlock':
       return <CoreGallery {...BlockProps} />
     default:
-      return null
+      return (
+        <Container maxWidth="sm">
+          <Card>
+            <CardContent>
+              <Typography variant="h6" component="h2">
+                The block type is currently unsupported.
+              </Typography>
+              <Typography color="textSecondary">
+                {(BlockProps as { __typename: string }).__typename}
+              </Typography>
+            </CardContent>
+          </Card>
+        </Container>
+      )
   }
 }

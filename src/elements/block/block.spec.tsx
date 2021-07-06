@@ -63,6 +63,8 @@ describe('block', () => {
         } as unknown as BlockProps)}
       />
     )
-    expect(baseElement.innerHTML).toEqual('<div></div>')
+    expect(baseElement.textContent).toEqual(
+      'The block type is currently unsupported.CoreUnknownBlock'
+    )
   })
 })
