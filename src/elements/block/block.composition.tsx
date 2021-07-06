@@ -1,5 +1,5 @@
 import React from 'react'
-import { Block } from '.'
+import { Block, BlockProps } from '.'
 import { blocks } from './blockData'
 
 export const Blocks = () => (
@@ -8,4 +8,12 @@ export const Blocks = () => (
       <Block key={index} {...block} />
     ))}
   </>
+)
+
+export const InvalidBlock = () => (
+  <Block
+    {...({
+      __typename: 'CoreUnknownBlock'
+    } as unknown as BlockProps)}
+  />
 )
