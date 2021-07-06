@@ -25,18 +25,16 @@ export type CoreImageProps = {
    * container for image attributes
    */
   attributes: Attributes
-  /** Variant style */
-  name: 'core/image'
+  __typename: 'CoreImageBlock'
 }
 
 export function CoreImage({
-  name,
   attributes: { alt, url, title, id }
 }: CoreImageProps) {
   const classes = useStyles()
   return (
     <img
-      data-testid={name}
+      data-testid="CoreImageBlock"
       id={`${id}`}
       src={url}
       alt={alt}

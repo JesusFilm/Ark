@@ -5,7 +5,7 @@ import { CoreGallery } from '.'
 it('should render with the correct text', () => {
   const { getByAltText } = render(
     <CoreGallery
-      name="core/gallery"
+      __typename="CoreGalleryBlock"
       attributes={{
         images: [
           {

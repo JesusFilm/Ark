@@ -6,10 +6,10 @@ export const blocks = [
       content:
         "When people talk about the ministry of Jesus, it's easy to focus on his miracles. Jesus performed some amazing feats that the world had never seen (and hasn’t seen since). But one of the most exciting things about His ministry was His teaching style."
     },
-    name: 'core/paragraph'
+    __typename: 'CoreParagraphBlock'
   },
   {
-    name: 'core/list',
+    __typename: 'CoreListBlock',
     attributes: {
       ordered: false,
       values:
@@ -17,7 +17,7 @@ export const blocks = [
     }
   },
   {
-    name: 'core/heading',
+    __typename: 'CoreHeadingBlock',
     attributes: {
       align: '',
       textAlign: '',
@@ -26,7 +26,7 @@ export const blocks = [
     }
   },
   {
-    name: 'core/image',
+    __typename: 'CoreImageBlock',
     attributes: {
       id: 23,
       href: '',
@@ -38,7 +38,7 @@ export const blocks = [
     }
   },
   {
-    name: 'core/gallery',
+    __typename: 'CoreGalleryBlock',
     attributes: {
       images: [
         {

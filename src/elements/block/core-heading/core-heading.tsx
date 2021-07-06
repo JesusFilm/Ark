@@ -15,12 +15,10 @@ export type CoreHeadingProps = {
    * container for heading attributes
    */
   attributes: Attributes
-  /** Variant style */
-  name: 'core/heading'
+  __typename: 'CoreHeadingBlock'
 }
 
 export function CoreHeading({
-  name,
   attributes: { level, content, align }
 }: CoreHeadingProps) {
   const variant = `h${level}` as TypographyVariant
@@ -28,7 +26,7 @@ export function CoreHeading({
   return (
     <Container>
       <Typography
-        data-testid={name}
+        data-testid="CoreHeadingBlock"
         variant={variant}
         gutterBottom
         align={normalized}>

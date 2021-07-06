@@ -7,33 +7,47 @@ describe('block', () => {
   it('should render paragraph', () => {
     const { getByTestId } = render(
       <Block
-        {...blocks.filter((block) => block.name === 'core/paragraph')[0]}
+        {...blocks.filter(
+          (block) => block.__typename === 'CoreParagraphBlock'
+        )[0]}
       />
     )
-    expect(getByTestId('core/paragraph')).toBeInTheDocument()
+    expect(getByTestId('CoreParagraphBlock')).toBeInTheDocument()
   })
   it('should render image', () => {
     const { getByTestId } = render(
-      <Block {...blocks.filter((block) => block.name === 'core/image')[0]} />
+      <Block
+        {...blocks.filter((block) => block.__typename === 'CoreImageBlock')[0]}
+      />
     )
-    expect(getByTestId('core/image')).toBeInTheDocument()
+    expect(getByTestId('CoreImageBlock')).toBeInTheDocument()
   })
   it('should render heading', () => {
     const { getByTestId } = render(
-      <Block {...blocks.filter((block) => block.name === 'core/heading')[0]} />
+      <Block
+        {...blocks.filter(
+          (block) => block.__typename === 'CoreHeadingBlock'
+        )[0]}
+      />
     )
-    expect(getByTestId('core/heading')).toBeInTheDocument()
+    expect(getByTestId('CoreHeadingBlock')).toBeInTheDocument()
   })
   it('should render list', () => {
     const { getByTestId } = render(
-      <Block {...blocks.filter((block) => block.name === 'core/list')[0]} />
+      <Block
+        {...blocks.filter((block) => block.__typename === 'CoreListBlock')[0]}
+      />
     )
-    expect(getByTestId('core/list')).toBeInTheDocument()
+    expect(getByTestId('CoreListBlock')).toBeInTheDocument()
   })
   it('should render gallery', () => {
     const { getByTestId } = render(
-      <Block {...blocks.filter((block) => block.name === 'core/gallery')[0]} />
+      <Block
+        {...blocks.filter(
+          (block) => block.__typename === 'CoreGalleryBlock'
+        )[0]}
+      />
     )
-    expect(getByTestId('core/gallery')).toBeInTheDocument()
+    expect(getByTestId('CoreGalleryBlock')).toBeInTheDocument()
   })
 })
