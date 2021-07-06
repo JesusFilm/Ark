@@ -1,7 +1,5 @@
 import React from 'react'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemText from '@material-ui/core/ListItemText'
+import { List, ListItem, ListItemText, Container } from '@material-ui/core'
 
 type Attributes = {
   /** Order List? */
@@ -26,12 +24,16 @@ export function CoreList({ attributes: { ordered, values } }: CoreListProps) {
     .split('*-*')
 
   return (
-    <List data-testid="CoreListBlock">
-      {list.map((item, i) => (
-        <ListItem key={i}>
-          <ListItemText primary={ordered ? `${i + 1}. ${item}` : `- ${item}`} />
-        </ListItem>
-      ))}
-    </List>
+    <Container maxWidth="sm">
+      <List data-testid="CoreListBlock">
+        {list.map((item, i) => (
+          <ListItem key={i}>
+            <ListItemText
+              primary={ordered ? `${i + 1}. ${item}` : `- ${item}`}
+            />
+          </ListItem>
+        ))}
+      </List>
+    </Container>
   )
 }

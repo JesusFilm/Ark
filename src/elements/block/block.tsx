@@ -5,6 +5,8 @@ import { CoreParagraph, CoreParagraphProps } from './core-paragraph'
 import { CoreHeading, CoreHeadingProps } from './core-heading'
 import { CoreGallery, CoreGalleryProps } from './core-gallery'
 import { CoreEmbed, CoreEmbedProps } from './core-embed'
+import { CoreQuote, CoreQuoteProps } from './core-quote'
+import { Card, CardContent, Container, Typography } from '@material-ui/core'
 
 export type BlockProps =
   | CoreParagraphProps
@@ -13,6 +15,7 @@ export type BlockProps =
   | CoreListProps
   | CoreGalleryProps
   | CoreEmbedProps
+  | CoreQuoteProps
 
 export function Block(BlockProps: BlockProps) {
   switch (BlockProps.__typename) {
@@ -28,5 +31,22 @@ export function Block(BlockProps: BlockProps) {
       return <CoreGallery {...BlockProps} />
     case 'CoreEmbedBlock':
       return <CoreEmbed {...BlockProps} />
+    case 'CoreQuoteBlock':
+      return <CoreQuote {...BlockProps} />
+    default:
+      return (
+        <Container maxWidth="sm">
+          <Card>
+            <CardContent>
+              <Typography variant="h6" component="h2">
+                The block type is currently unsupported.
+              </Typography>
+              <Typography color="textSecondary">
+                {(BlockProps as { __typename: string }).__typename}
+              </Typography>
+            </CardContent>
+          </Card>
+        </Container>
+      )
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { Block } from '.'
+import { Block, BlockProps } from '.'
 import { blocks } from './blockData'
 
 describe('block', () => {
@@ -14,6 +14,7 @@ describe('block', () => {
     )
     expect(getByTestId('CoreParagraphBlock')).toBeInTheDocument()
   })
+
   it('should render image', () => {
     const { getByTestId } = render(
       <Block
@@ -22,6 +23,7 @@ describe('block', () => {
     )
     expect(getByTestId('CoreImageBlock')).toBeInTheDocument()
   })
+
   it('should render heading', () => {
     const { getByTestId } = render(
       <Block
@@ -32,6 +34,7 @@ describe('block', () => {
     )
     expect(getByTestId('CoreHeadingBlock')).toBeInTheDocument()
   })
+
   it('should render list', () => {
     const { getByTestId } = render(
       <Block
@@ -40,6 +43,7 @@ describe('block', () => {
     )
     expect(getByTestId('CoreListBlock')).toBeInTheDocument()
   })
+
   it('should render gallery', () => {
     const { getByTestId } = render(
       <Block
@@ -50,10 +54,26 @@ describe('block', () => {
     )
     expect(getByTestId('CoreGalleryBlock')).toBeInTheDocument()
   })
-  it('should render the embed video', () => {
+
+  it('should render quote', () => {
     const { getByTestId } = render(
-      <Block {...blocks.filter((block) => block.name === 'core/embed')[0]} />
+      <Block
+        {...blocks.filter((block) => block.__typename === 'CoreQuoteBlock')[0]}
+      />
     )
-    expect(getByTestId('core/embed')).toBeInTheDocument()
+    expect(getByTestId('CoreQuoteBlock')).toBeInTheDocument()
+  })
+
+  it('should render null', () => {
+    const { baseElement } = render(
+      <Block
+        {...({
+          __typename: 'CoreUnknownBlock'
+        } as unknown as BlockProps)}
+      />
+    )
+    expect(baseElement.textContent).toEqual(
+      'The block type is currently unsupported.CoreUnknownBlock'
+    )
   })
 })

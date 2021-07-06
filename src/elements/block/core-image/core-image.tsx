@@ -1,5 +1,5 @@
 import React from 'react'
-import { createStyles, makeStyles } from '@material-ui/core'
+import { createStyles, makeStyles, Container } from '@material-ui/core'
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -33,13 +33,15 @@ export function CoreImage({
 }: CoreImageProps) {
   const classes = useStyles()
   return (
-    <img
-      data-testid="CoreImageBlock"
-      id={`${id}`}
-      src={url}
-      alt={alt}
-      title={title}
-      className={classes.image}
-    />
+    <Container maxWidth="sm">
+      <img
+        data-testid="CoreImageBlock"
+        id={`${id}`}
+        src={url}
+        alt={alt}
+        title={title}
+        className={classes.image}
+      />
+    </Container>
   )
 }

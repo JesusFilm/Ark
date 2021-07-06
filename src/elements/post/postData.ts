@@ -86,6 +86,14 @@ const postQuery = {
           __typename: 'CoreParagraphBlock'
         },
         {
+          __typename: 'CoreQuoteBlock',
+          attributes: {
+            value:
+              '"Many people spend their lives trying to create a lasting legacy on earth. They want to be remembered when they\'re gone. Yet, what ultimately matters most will not be what others say about your life but what God says."',
+            citation: 'Citation for this quote goes here'
+          }
+        },
+        {
           __typename: 'CoreHeadingBlock',
           attributes: {
             align: 'left',
@@ -1656,7 +1664,9 @@ const postQuery = {
         ]
       },
       date: '2021-03-17T16:11:59',
-      title: 'All the Parables of Jesus'
+      title: 'All the Parables of Jesus',
+      excerpt:
+        "When people talk about the ministry of Jesus, it's easy to focus on his miracles. Jesus performed some amazing feats that the world had never seen (and hasn’t seen since). But one of the most exciting things about His ministry was His teaching style."
     }
   },
   extensions: {
