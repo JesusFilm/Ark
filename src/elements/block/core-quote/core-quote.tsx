@@ -49,11 +49,10 @@ export type CoreQuoteProps = {
    * container for quote attributes
    */
   attributes: Attributes
-  /** Variant Style */
-  name: 'core/quote'
+  __typename: 'CoreQuoteBlock'
 }
 
-export function CoreQuote({ attributes, name }: CoreQuoteProps) {
+export function CoreQuote({ attributes }: CoreQuoteProps) {
   const classes = useStyles()
 
   return (
@@ -63,7 +62,7 @@ export function CoreQuote({ attributes, name }: CoreQuoteProps) {
         <JesusFilmSymbol className={classes.imageHeight} />
         <Container maxWidth="sm" className={classes.container}>
           <Typography
-            data-testid={name}
+            data-testid="CoreQuoteBlock"
             dangerouslySetInnerHTML={{
               __html: attributes.value
             }}

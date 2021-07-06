@@ -26,7 +26,7 @@ export function Block(BlockProps: BlockProps) {
       return <CoreList {...BlockProps} />
     case 'CoreGalleryBlock':
       return <CoreGallery {...BlockProps} />
-    case 'core/quote':
+    case 'CoreQuoteBlock':
       return <CoreQuote {...BlockProps} />
   }
 }

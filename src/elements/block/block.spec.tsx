@@ -14,6 +14,7 @@ describe('block', () => {
     )
     expect(getByTestId('CoreParagraphBlock')).toBeInTheDocument()
   })
+
   it('should render image', () => {
     const { getByTestId } = render(
       <Block
@@ -22,6 +23,7 @@ describe('block', () => {
     )
     expect(getByTestId('CoreImageBlock')).toBeInTheDocument()
   })
+
   it('should render heading', () => {
     const { getByTestId } = render(
       <Block
@@ -32,6 +34,7 @@ describe('block', () => {
     )
     expect(getByTestId('CoreHeadingBlock')).toBeInTheDocument()
   })
+
   it('should render list', () => {
     const { getByTestId } = render(
       <Block
@@ -40,6 +43,7 @@ describe('block', () => {
     )
     expect(getByTestId('CoreListBlock')).toBeInTheDocument()
   })
+
   it('should render gallery', () => {
     const { getByTestId } = render(
       <Block
@@ -49,5 +53,14 @@ describe('block', () => {
       />
     )
     expect(getByTestId('CoreGalleryBlock')).toBeInTheDocument()
+  })
+
+  it('should render quote', () => {
+    const { getByTestId } = render(
+      <Block
+        {...blocks.filter((block) => block.__typename === 'CoreQuoteBlock')[0]}
+      />
+    )
+    expect(getByTestId('CoreQuoteBlock')).toBeInTheDocument()
   })
 })

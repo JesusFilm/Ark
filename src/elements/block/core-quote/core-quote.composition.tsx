@@ -1,12 +1,9 @@
 import React from 'react'
-import { CoreQuote } from '.'
+import { Block } from '..'
 import { blocks } from '../blockData'
-import { CoreQuoteProps } from './core-quote'
 
 export const QuoteBlock = () => (
-  <CoreQuote
-    {...(blocks.filter(
-      (block) => block.name === 'core/quote'
-    )[0] as CoreQuoteProps)}
+  <Block
+    {...blocks.filter((block) => block.__typename === 'CoreQuoteBlock')[0]}
   />
 )

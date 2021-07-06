@@ -63,11 +63,11 @@ export const blocks = [
     }
   },
   {
+    __typename: 'CoreQuoteBlock',
     attributes: {
       value:
         '"Many people spend their lives trying to create a lasting legacy on earth. They want to be remembered when they\'re gone. Yet, what ultimately matters most will not be what others say about your life but what God says."',
       citation: 'Citation for this quote goes here'
-    },
-    name: 'core/quote'
+    }
   }
 ] as BlockProps[]

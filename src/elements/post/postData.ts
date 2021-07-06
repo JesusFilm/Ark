@@ -94,7 +94,6 @@ const postQuery = {
           }
         },
         {
-          name: 'core/heading',
           __typename: 'CoreHeadingBlock',
           attributes: {
             align: 'left',
