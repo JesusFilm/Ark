@@ -166,7 +166,9 @@ describe('post-header', () => {
   it('renders featured image', () => {
     const { getByTestId, rerender } = render(
       <PostHeader
-        src="https://source.unsplash.com/random/1920x1080"
+        featuredImage={{
+          node: { sourceUrl: 'https://source.unsplash.com/random/1920x1080' }
+        }}
         categories={{
           nodes: [
             {
@@ -194,7 +196,9 @@ describe('post-header', () => {
     ).toEqual('url(https://source.unsplash.com/random/1920x1080)')
     rerender(
       <PostHeader
-        src="https://source.unsplash.com/random/1920x1080"
+        featuredImage={{
+          node: { sourceUrl: 'https://source.unsplash.com/random/1920x1080' }
+        }}
         categories={{
           nodes: [
             {

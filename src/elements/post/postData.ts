@@ -1650,7 +1650,9 @@ const postQuery = {
         ]
       },
       date: '2021-03-17T16:11:59',
-      title: 'All the Parables of Jesus'
+      title: 'All the Parables of Jesus',
+      excerpt:
+        "When people talk about the ministry of Jesus, it's easy to focus on his miracles. Jesus performed some amazing feats that the world had never seen (and hasn’t seen since). But one of the most exciting things about His ministry was His teaching style."
     }
   },
   extensions: {

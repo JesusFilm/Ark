@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { Block } from '.'
+import { Block, BlockProps } from '.'
 import { blocks } from './blockData'
 
 describe('block', () => {
@@ -62,5 +62,18 @@ describe('block', () => {
       />
     )
     expect(getByTestId('CoreQuoteBlock')).toBeInTheDocument()
+  })
+
+  it('should render null', () => {
+    const { baseElement } = render(
+      <Block
+        {...({
+          __typename: 'CoreUnknownBlock'
+        } as unknown as BlockProps)}
+      />
+    )
+    expect(baseElement.textContent).toEqual(
+      'The block type is currently unsupported.CoreUnknownBlock'
+    )
   })
 })
