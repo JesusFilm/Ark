@@ -17,13 +17,25 @@
         "scope": "jesus-film.ark",
         "version": "0.0.3",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/block"
+        "rootDir": "src/elements/block",
+        "nextVersion": {
+            "version": "patch",
+            "message": "add CoreQuoteBlock",
+            "username": "Tataihono Nikora",
+            "email": "tataihono.nikora@gmail.com"
+        }
     },
     "elements/core": {
         "scope": "jesus-film.ark",
         "version": "0.0.5",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/core"
+        "rootDir": "src/elements/core",
+        "nextVersion": {
+            "version": "patch",
+            "message": " (bump dependencies versions)",
+            "username": "Tataihono Nikora",
+            "email": "tataihono.nikora@gmail.com"
+        }
     },
     "elements/donate": {
         "scope": "jesus-film.ark",
@@ -77,7 +89,13 @@
         "scope": "jesus-film.ark",
         "version": "0.0.3",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/post"
+        "rootDir": "src/elements/post",
+        "nextVersion": {
+            "version": "patch",
+            "message": " (bump dependencies versions)",
+            "username": "Tataihono Nikora",
+            "email": "tataihono.nikora@gmail.com"
+        }
     },
     "elements/post-card": {
         "scope": "jesus-film.ark",

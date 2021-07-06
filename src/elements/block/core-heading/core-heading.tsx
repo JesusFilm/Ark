@@ -24,7 +24,7 @@ export function CoreHeading({
   const variant = `h${level}` as TypographyVariant
   const normalized = align === '' ? 'inherit' : align
   return (
-    <Container>
+    <Container maxWidth="sm">
       <Typography
         data-testid="CoreHeadingBlock"
         variant={variant}

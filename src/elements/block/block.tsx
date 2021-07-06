@@ -4,6 +4,7 @@ import { CoreImage, CoreImageProps } from './core-image'
 import { CoreParagraph, CoreParagraphProps } from './core-paragraph'
 import { CoreHeading, CoreHeadingProps } from './core-heading'
 import { CoreGallery, CoreGalleryProps } from './core-gallery'
+import { CoreQuote, CoreQuoteProps } from './core-quote'
 import { Card, CardContent, Container, Typography } from '@material-ui/core'
 
 export type BlockProps =
@@ -12,6 +13,7 @@ export type BlockProps =
   | CoreHeadingProps
   | CoreListProps
   | CoreGalleryProps
+  | CoreQuoteProps
 
 export function Block(BlockProps: BlockProps) {
   switch (BlockProps.__typename) {
@@ -25,6 +27,8 @@ export function Block(BlockProps: BlockProps) {
       return <CoreList {...BlockProps} />
     case 'CoreGalleryBlock':
       return <CoreGallery {...BlockProps} />
+    case 'CoreQuoteBlock':
+      return <CoreQuote {...BlockProps} />
     default:
       return (
         <Container maxWidth="sm">

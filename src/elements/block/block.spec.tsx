@@ -55,6 +55,15 @@ describe('block', () => {
     expect(getByTestId('CoreGalleryBlock')).toBeInTheDocument()
   })
 
+  it('should render quote', () => {
+    const { getByTestId } = render(
+      <Block
+        {...blocks.filter((block) => block.__typename === 'CoreQuoteBlock')[0]}
+      />
+    )
+    expect(getByTestId('CoreQuoteBlock')).toBeInTheDocument()
+  })
+
   it('should render null', () => {
     const { baseElement } = render(
       <Block

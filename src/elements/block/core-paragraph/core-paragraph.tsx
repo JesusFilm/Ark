@@ -16,7 +16,7 @@ export type CoreParagraphProps = {
 
 export function CoreParagraph({ attributes }: CoreParagraphProps) {
   return (
-    <Container>
+    <Container maxWidth="sm">
       <Typography
         data-testid="CoreParagraphBlock"
         variant="body1"
