@@ -24,5 +24,7 @@ export function Block(BlockProps: BlockProps) {
       return <CoreList {...BlockProps} />
     case 'CoreGalleryBlock':
       return <CoreGallery {...BlockProps} />
+    default:
+      return null
   }
 }
