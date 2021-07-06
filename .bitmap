@@ -15,7 +15,7 @@
     },
     "elements/block": {
         "scope": "jesus-film.ark",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "src/elements/block",
         "nextVersion": {
@@ -27,7 +27,7 @@
     },
     "elements/core": {
         "scope": "jesus-film.ark",
-        "version": "0.0.3",
+        "version": "0.0.4",
         "mainFile": "index.ts",
         "rootDir": "src/elements/core",
         "nextVersion": {
@@ -87,7 +87,7 @@
     },
     "elements/post": {
         "scope": "jesus-film.ark",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "src/elements/post",
         "nextVersion": {
