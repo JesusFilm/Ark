@@ -58,6 +58,17 @@ type CategoryNodes = {
   nodes: Category[]
 }
 
+type Image = {
+  /**
+   * Image URL
+   */
+  sourceUrl: string
+}
+
+type ImageNode = {
+  node: Image
+}
+
 export type PostHeaderProps = {
   /**
    * The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made.
@@ -72,9 +83,9 @@ export type PostHeaderProps = {
    */
   date?: string
   /**
-   * Url for featured image
+   * Featured Image
    */
-  src?: string
+  featuredImage?: ImageNode
   /**
    * Author
    */
@@ -101,7 +112,7 @@ export function PostHeader({
   title,
   excerpt,
   date,
-  src,
+  featuredImage,
   author,
   categories,
   AuthorLink = (props) => createElement('a', props),
@@ -113,15 +124,24 @@ export function PostHeader({
 
   return (
     <Box
-      style={src && { backgroundImage: `url(${src})` }}
-      className={classNames(src && classes.boxFeaturedImage)}
+      style={
+        featuredImage?.node?.sourceUrl && {
+          backgroundImage: `url(${featuredImage.node.sourceUrl})`
+        }
+      }
+      className={classNames(
+        featuredImage?.node?.sourceUrl && classes.boxFeaturedImage
+      )}
       data-testid="featured-image">
-      <Box className={classNames(src && classes.boxFeaturedImageContainer)}>
+      <Box
+        className={classNames(
+          featuredImage?.node?.sourceUrl && classes.boxFeaturedImageContainer
+        )}>
         <Container
-          maxWidth={(!src && 'sm') || false}
+          maxWidth={(!featuredImage?.node?.sourceUrl && 'sm') || false}
           className={classNames(
             classes.container,
-            src && classes.containerFeaturedImage
+            featuredImage?.node?.sourceUrl && classes.containerFeaturedImage
           )}>
           <Grid container spacing={3}>
             {title && (
@@ -146,7 +166,8 @@ export function PostHeader({
                     <CategoryLink
                       className={classNames(
                         classes.link,
-                        src && classes.linkFeaturedImage
+                        featuredImage?.node?.sourceUrl &&
+                          classes.linkFeaturedImage
                       )}>
                       {{ category }}
                     </CategoryLink>
@@ -163,7 +184,8 @@ export function PostHeader({
                     <CategoryLink
                       className={classNames(
                         classes.link,
-                        src && classes.linkFeaturedImage
+                        featuredImage?.node?.sourceUrl &&
+                          classes.linkFeaturedImage
                       )}>
                       {{ category }}
                     </CategoryLink>
@@ -187,7 +209,8 @@ export function PostHeader({
                     <AuthorLink
                       className={classNames(
                         classes.link,
-                        src && classes.linkFeaturedImage
+                        featuredImage?.node?.sourceUrl &&
+                          classes.linkFeaturedImage
                       )}>
                       {{ author: author.node.name }}
                     </AuthorLink>

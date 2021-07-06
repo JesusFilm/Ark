@@ -20,7 +20,7 @@ type AuthorNode = {
   node: Author
 }
 
-export type PostProps = {
+export type PostProps = PostHeaderProps & {
   /**
    * Post author
    */
@@ -29,20 +29,19 @@ export type PostProps = {
    * Main body of post
    */
   blocks: BlockProps[]
-  /**
-   * Props from the header component
-   */
-  PostHeaderProps: PostHeaderProps
 }
 
-export function Post({ author, blocks, PostHeaderProps }: PostProps) {
+export function Post(props: PostProps) {
   return (
     <Container maxWidth="sm">
-      <PostHeader {...PostHeaderProps} />
-      {blocks.map((block, i) => (
+      <PostHeader {...props} />
+      {props.blocks.map((block, i) => (
         <Block {...block} key={`${i}-block`} />
       ))}
-      <AuthorCard name={author.node.name} src={author.node.avatar.url} />
+      <AuthorCard
+        name={props.author.node.name}
+        src={props.author.node.avatar.url}
+      />
     </Container>
   )
 }
