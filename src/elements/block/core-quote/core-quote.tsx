@@ -67,6 +67,7 @@ export function CoreQuote({ attributes }: CoreQuoteProps) {
               __html: attributes.value
             }}
             variant="h5"
+            gutterBottom
           />
           <Typography
             data-testid="citation"
