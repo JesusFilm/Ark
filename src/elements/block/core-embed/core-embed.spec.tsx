@@ -3,7 +3,7 @@ import { render } from '@testing-library/react'
 import { Youtube } from './embed/youtube'
 import { Vimeo } from './embed/vimeo'
 import { Iframe } from './embed/iframe'
-import { Default } from './embed/Default'
+import { Default } from './embed/default'
 
 describe('embed', () => {
   it('should render youtube embed videos', () => {
