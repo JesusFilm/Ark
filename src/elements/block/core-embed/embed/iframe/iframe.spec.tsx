@@ -1,18 +1,17 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { Youtube } from '.'
+import { Iframe } from '.'
 
 it('should render with the provider name slug', () => {
   const { getByTestId } = render(
-    <Youtube
+    <Iframe
       attributes={{
         url: 'https://www.youtube.com/embed/UGFCbmvk0vo',
-        providerNameSlug: 'youtube'
+        providerNameSlug: 'embed-handler'
       }}
     />
   )
-
-  expect(getByTestId('youtube').getAttribute('src')).toEqual(
+  expect(getByTestId('embed-handler').getAttribute('src')).toEqual(
     'https://www.youtube.com/embed/UGFCbmvk0vo'
   )
 })

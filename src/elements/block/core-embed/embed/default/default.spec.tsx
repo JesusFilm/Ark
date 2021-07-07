@@ -1,9 +1,17 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { EmbedBlock } from '../../core-embed.composition'
+import { Default } from '.'
 
-it('should render with the correct text', () => {
-  const { getByText } = render(<EmbedBlock />)
-  const rendered = getByText('hello from Default')
-  expect(rendered).toBeTruthy()
+it('should render with the right text', () => {
+  const { getByText } = render(
+    <Default
+      attributes={{
+        url: 'https://youtu.be/UGFCbmvk0vo',
+        providerNameSlug: ''
+      }}
+    />
+  )
+  expect(
+    getByText('This embed type is currently unsupported.')
+  ).toBeInTheDocument()
 })

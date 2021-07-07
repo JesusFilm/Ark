@@ -7,11 +7,7 @@ type Attributes = {
 }
 
 export type DefaultProps = {
-  /**
-   * Container for embed attributes
-   */
   attributes: Attributes
-  __typename: 'CoreEmbedBlock'
 }
 
 export function Default({ attributes }: DefaultProps) {
@@ -19,8 +15,11 @@ export function Default({ attributes }: DefaultProps) {
     <Container maxWidth="sm">
       <Card>
         <CardContent>
-          <Typography variant="h6">
+          <Typography variant="h6" component="h2">
             This embed type is currently unsupported.
+          </Typography>
+          <Typography color="textSecondary">
+            {attributes.providerNameSlug}
           </Typography>
         </CardContent>
       </Card>

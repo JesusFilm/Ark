@@ -178,7 +178,7 @@ const postQuery = {
           __typename: 'CoreParagraphBlock'
         },
         {
-          name: 'CoreEmbedBlock',
+          __typename: 'CoreEmbedBlock',
           attributes: {
             url: 'https://www.youtube.com/watch?v=UGFCbmvk0vo',
             providerNameSlug: 'youtube'
@@ -267,8 +267,8 @@ const postQuery = {
         {
           __typename: 'CoreEmbedBlock',
           attributes: {
-            url: 'https://www.youtube.com/watch?v=Iz7YbgOJJMc',
-            providerNameSlug: 'youtube'
+            url: 'https://player.vimeo.com/video/10679287',
+            providerNameSlug: 'vimeo'
           }
         },
         {

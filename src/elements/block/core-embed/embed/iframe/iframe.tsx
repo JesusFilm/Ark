@@ -13,25 +13,14 @@ type Attributes = {
   providerNameSlug: string
 }
 
-export type VimeoProps = {
+export type IframeProps = {
   /**
    * Container for embed attributes
    */
   attributes: Attributes
 }
 
-function extractVimeoId(url): string {
-  const regExp =
-    /^.*((vimeo.com\/)|(v\/)|(\/u\/\w\/)|(video\/)|(watch\?))\??v?=?([^#&?]*).*/
-  const match = url.match(regExp)
-
-  if (match && match[7]) {
-    return match[7]
-  }
-  return null
-}
-
-export function Vimeo({ attributes }: VimeoProps) {
+export function Iframe({ attributes }: IframeProps) {
   const classes = useStyles()
 
   return (
@@ -40,7 +29,7 @@ export function Vimeo({ attributes }: VimeoProps) {
         data-testid={attributes.providerNameSlug}
         className={classes.cardSize}
         component="iframe"
-        src={`https://player.vimeo.com/video/${extractVimeoId(attributes.url)}`}
+        src={attributes.url}
       />
     </Container>
   )

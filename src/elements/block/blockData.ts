@@ -73,7 +73,7 @@ export const blocks = [
     __typename: 'CoreEmbedBlock',
     attributes: {
       url: 'https://www.youtube.com/embed/UGFCbmvk0vo',
-      providerNameSlug: 'ebed-handler'
+      providerNameSlug: 'embed-handler'
     }
   },
   {

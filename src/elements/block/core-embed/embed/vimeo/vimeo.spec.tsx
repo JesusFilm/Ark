@@ -1,9 +1,17 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { EmbedBlock } from '../../core-embed.composition'
+import { Vimeo } from '.'
 
-it('should render with the correct text', () => {
-  const { getByText } = render(<EmbedBlock />)
-  const rendered = getByText('hello from Vimeo')
-  expect(rendered).toBeTruthy()
+it('should render with the provider name slug', () => {
+  const { getByTestId } = render(
+    <Vimeo
+      attributes={{
+        url: 'https://player.vimeo.com/video/10679287',
+        providerNameSlug: 'vimeo'
+      }}
+    />
+  )
+  expect(getByTestId('vimeo').getAttribute('src')).toEqual(
+    'https://player.vimeo.com/video/10679287'
+  )
 })
