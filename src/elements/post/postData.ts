@@ -229,6 +229,13 @@ const postQuery = {
           __typename: 'CoreParagraphBlock'
         },
         {
+          attributes: {
+            url: 'https://www.youtube.com/embed/91hHw1YPqxE',
+            providerNameSlug: 'embed-handler'
+          },
+          __typename: 'CoreEmbedBlock'
+        },
+        {
           __typename: 'CoreHeadingBlock',
           attributes: {
             align: 'left',
