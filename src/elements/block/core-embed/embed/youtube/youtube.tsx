@@ -27,7 +27,6 @@ function extractYoutubeID(url): string {
   if (match && match[7].length === 11) {
     return match[7]
   }
-  return null
 }
 
 export function Youtube({ attributes }: YoutubeProps) {

@@ -28,7 +28,6 @@ function extractVimeoId(url): string {
   if (match && match[7]) {
     return match[7]
   }
-  return null
 }
 
 export function Vimeo({ attributes }: VimeoProps) {
