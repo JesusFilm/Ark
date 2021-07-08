@@ -1,0 +1,36 @@
+---
+description: 'A Posts component.'
+labels: ['label1', 'label2', 'label3']
+---
+
+import { Posts } from './posts';
+
+## React Component for rendering text
+
+A basic div that renders some text
+
+### Using props to customize the text
+
+Modify the text to see it change live:
+```js live
+  <Posts
+    Link={({ children, href, className }) =>
+      React.createElement('a', { children, className, href: `/posts/${href}` })
+    }
+    posts={{
+      nodes: [
+        {
+          featuredImage: {
+            node: {
+              sourceUrl: 'https://source.unsplash.com/1920x1080/daily?doubt'
+            }
+          },
+          slug: '10-bible-verses-about-faith-and-doubt',
+          title: '10 Bible Verses about Faith and Doubt',
+          excerpt:
+            "Issues of faith and doubt have a massive impact on Christians of every maturity level. And sometimes, the topic is presented in ways that are confusing and only increase people's anxiety about their doubt."
+        }
+      ]
+    }}
+  />
+```

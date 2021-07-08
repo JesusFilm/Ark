@@ -1,7 +1,7 @@
 import React from 'react'
-import { Grid, makeStyles, Typography, Container } from '@material-ui/core'
+import { Grid, makeStyles, Typography } from '@material-ui/core'
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   image: {
     maxWidth: '100%'
   },
@@ -26,35 +26,31 @@ export type DefaultProps = {
 export function Default({ title, excerpt, category, src }: DefaultProps) {
   const classes = useStyles()
   return (
-    <Container maxWidth="xs" data-testid="defaultVariant">
-      <Grid
-        container
-        direction="column"
-        alignItems="flex-start"
-        justify="flex-start"
-        spacing={1}>
-        {src && (
-          <Grid item>
-            <img src={src} className={classes.image} />
-          </Grid>
-        )}
+    <Grid
+      container
+      direction="column"
+      alignItems="flex-start"
+      justify="flex-start"
+      spacing={1}
+      data-testid="defaultVariant">
+      {src && (
         <Grid item>
-          <Typography variant="h6" className={classes.category}>
-            {category}
-          </Typography>
+          <img src={src} className={classes.image} />
         </Grid>
-        <Grid item>
-          <Typography variant="h3">{title}</Typography>
-        </Grid>
-        {excerpt && (
-          <Grid item>
-            <Typography variant="body1">{excerpt}</Typography>
-          </Grid>
-        )}
-        {/* <Grid item>
-          <TimeAgo datetime={datetime} locale={locale} />
-        </Grid> */}
+      )}
+      <Grid item>
+        <Typography variant="h6" className={classes.category}>
+          {category}
+        </Typography>
       </Grid>
-    </Container>
+      <Grid item>
+        <Typography variant="h3">{title}</Typography>
+      </Grid>
+      {excerpt && (
+        <Grid item>
+          <Typography variant="body1">{excerpt}</Typography>
+        </Grid>
+      )}
+    </Grid>
   )
 }
