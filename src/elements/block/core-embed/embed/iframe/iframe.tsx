@@ -20,16 +20,16 @@ export type IframeProps = {
   attributes: Attributes
 }
 
-export function Iframe({ attributes }: IframeProps) {
+export function Iframe({ attributes: { url, providerNameSlug } }: IframeProps) {
   const classes = useStyles()
 
   return (
     <Container maxWidth="sm">
       <CardMedia
-        data-testid={attributes.providerNameSlug}
+        data-testid={providerNameSlug}
         className={classes.cardSize}
         component="iframe"
-        src={attributes.url}
+        src={url}
       />
     </Container>
   )

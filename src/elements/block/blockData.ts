@@ -69,6 +69,36 @@ export const blocks = [
       providerNameSlug: 'youtube'
     }
   },
+  // different youtube format tests
+  {
+    __typename: 'CoreEmbedBlock',
+    attributes: {
+      url: 'http://www.youtube.com/watch?v=-wtIMTCHWuI',
+      providerNameSlug: 'youtube'
+    }
+  },
+  {
+    __typename: 'CoreEmbedBlock',
+    attributes: {
+      url: 'https://www.youtube.com/watch?v=-wtIMTCHWuI&ab_channel=TechCrunch',
+      providerNameSlug: 'youtube'
+    }
+  },
+  {
+    __typename: 'CoreEmbedBlock',
+    attributes: {
+      url: 'https://www.youtube.com/watch?v=yZv2daTWRZU&feature=em-uploademail',
+      providerNameSlug: 'youtube'
+    }
+  },
+  {
+    __typename: 'CoreEmbedBlock',
+    attributes: {
+      url: 'https://www.youtube.com/watch?v=0zM3nApSvMg&feature=feedrec_grec_index',
+      providerNameSlug: 'youtube'
+    }
+  },
+  // end
   {
     __typename: 'CoreEmbedBlock',
     attributes: {
@@ -88,6 +118,20 @@ export const blocks = [
     attributes: {
       url: 'https://player.vimeo.com/video/10679287',
       providerNameSlug: 'vimeo'
+    }
+  },
+  {
+    __typename: 'CoreEmbedBlock',
+    attributes: {
+      url: 'https://player.vimeo.com/video/10679287',
+      providerNameSlug: ''
+    }
+  },
+  {
+    __typename: 'CoreEmbedBlock',
+    attributes: {
+      url: 'https://player.vimeo.com/video/10679287',
+      providerNameSlug: 'vim'
     }
   },
   {

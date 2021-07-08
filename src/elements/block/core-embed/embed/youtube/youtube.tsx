@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, CardMedia, makeStyles } from '@material-ui/core'
+import { Default } from '../default'
 
 const useStyles = makeStyles((theme) => ({
   cardSize: {
@@ -31,18 +32,22 @@ function extractYoutubeID(url): string {
 
 export function Youtube({ attributes }: YoutubeProps) {
   const classes = useStyles()
+  const youtubeUrl = extractYoutubeID(attributes.url)
 
-  return (
-    <Container maxWidth="sm">
-      <CardMedia
-        data-testid={attributes.providerNameSlug}
-        className={classes.cardSize}
-        component="iframe"
-        hidden
-        src={`https://www.youtube.com/embed/${extractYoutubeID(
-          attributes.url
-        )}`}
-      />
-    </Container>
-  )
+  switch (youtubeUrl) {
+    case undefined:
+      return <Default attributes={attributes} />
+    default:
+      return (
+        <Container maxWidth="sm">
+          <CardMedia
+            data-testid={attributes.providerNameSlug}
+            className={classes.cardSize}
+            component="iframe"
+            hidden
+            src={`https://www.youtube.com/embed/${youtubeUrl}`}
+          />
+        </Container>
+      )
+  }
 }
