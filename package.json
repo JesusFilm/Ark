@@ -74,7 +74,7 @@
   },
   "scripts": {
     "test": "jest . --coverage",
-    "postinstall": "bvm install && bvm remove --all --keep-latest-versions 1 && bit import && bit link",
+    "postinstall": "bvm install 0.0.440 && bvm remove --all --keep-latest-versions 1 && bit import && bit link",
     "lint": "tsc --noEmit && eslint --ext .jsx,.js,.tsx,.ts .",
     "lint:fix": "tsc --noEmit && eslint --ext .jsx,.js,.tsx,.ts . --fix",
     "extract": "i18next --config i18next-parser.config.js"
