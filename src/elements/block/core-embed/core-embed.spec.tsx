@@ -6,7 +6,7 @@ import { Iframe } from './embed/iframe'
 import { Default } from './embed/default'
 
 describe('embed', () => {
-  it('should render youtube embed videos', () => {
+  it('should render with the provider name slug', () => {
     const { getByTestId } = render(
       <Youtube
         attributes={{
@@ -18,7 +18,7 @@ describe('embed', () => {
     expect(getByTestId('youtube')).toBeInTheDocument()
   })
 
-  it('should render vimeo embed videos', () => {
+  it('hould render with the provider name slug', () => {
     const { getByTestId } = render(
       <Vimeo
         attributes={{
@@ -30,7 +30,7 @@ describe('embed', () => {
     expect(getByTestId('vimeo')).toBeInTheDocument()
   })
 
-  it('should render iframe embed videos', () => {
+  it('hould render with the provider name slug', () => {
     const { getByTestId } = render(
       <Iframe
         attributes={{

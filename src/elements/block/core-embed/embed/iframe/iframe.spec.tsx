@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from '@testing-library/react'
 import { Iframe } from '.'
 
-it('should render with the provider name slug', () => {
+it('should render the embeded video', () => {
   const { getByTestId } = render(
     <Iframe
       attributes={{

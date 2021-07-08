@@ -32,7 +32,7 @@
         "rootDir": "src/elements/core",
         "nextVersion": {
             "version": "patch",
-            "message": "",
+            "message": " (bump dependencies versions)",
             "username": "John Geronimo",
             "email": "johnageronimo1@gmail.com"
         }
