@@ -75,6 +75,10 @@ Components controlling the position of elements in the document. (Grid, breakpoi
 Generic building blocks for any front end application.
 These components are 'vanilla', meaning they should not contain content (like texts or icons) and no specific styles. This is because different designs could look entirely different, so any styles in the base component could lead to a 'CSS Specificity War'. So, add the bare minimum of css here and keep these components purely logical!
 
+### Compounds
+
+Components made up of multiple of the same or different elements. e.g List of post-card elements.
+
 ### Utils
 
 Pure logic components and helpers. (no visual components)
