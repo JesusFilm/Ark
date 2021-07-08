@@ -1,2 +1,2 @@
-export { Posts } from './posts';
-export type { PostsProps } from './posts';
+export { Posts } from './posts'
+export type { PostsProps } from './posts'
