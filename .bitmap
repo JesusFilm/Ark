@@ -5,7 +5,13 @@
         "scope": "",
         "version": "",
         "mainFile": "index.ts",
-        "rootDir": "src/compounds/posts"
+        "rootDir": "src/compounds/posts",
+        "nextVersion": {
+            "version": "patch",
+            "message": "",
+            "username": "Tataihono Nikora",
+            "email": "tataihono.nikora@gmail.com"
+        }
     },
     "elements/author-card": {
         "scope": "jesus-film.ark",
