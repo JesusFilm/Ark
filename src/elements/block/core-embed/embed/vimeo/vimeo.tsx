@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, CardMedia, makeStyles } from '@material-ui/core'
-import { Default } from '../default'
+import { Error } from '../error'
 
 const useStyles = makeStyles((theme) => ({
   cardSize: {
@@ -33,11 +33,12 @@ function extractVimeoId(url): string {
 
 export function Vimeo({ attributes }: VimeoProps) {
   const classes = useStyles()
-  const vimeoUrl = extractVimeoId(attributes.url)
+  const vimeoId = extractVimeoId(attributes.url)
+  const vimeoUrl = `https://player.vimeo.com/video/${vimeoId}`
 
-  switch (vimeoUrl) {
+  switch (vimeoId) {
     case undefined:
-      return <Default attributes={attributes} />
+      return <Error attributes={attributes} title="vimeo" subtitle={vimeoUrl} />
     default:
       return (
         <Container maxWidth="sm">
@@ -45,7 +46,7 @@ export function Vimeo({ attributes }: VimeoProps) {
             data-testid={attributes.providerNameSlug}
             className={classes.cardSize}
             component="iframe"
-            src={`https://player.vimeo.com/video/${vimeoUrl}`}
+            src={vimeoUrl}
           />
         </Container>
       )

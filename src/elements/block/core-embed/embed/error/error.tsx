@@ -15,26 +15,29 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 type Attributes = {
-  url: string
   providerNameSlug: string
 }
 
-export type DefaultProps = {
+export type ErrorProps = {
   attributes: Attributes
+  title: string
+  subtitle: string
 }
 
-export function Default({
-  attributes: { url, providerNameSlug }
-}: DefaultProps) {
+export function Error({
+  attributes: { providerNameSlug },
+  title,
+  subtitle
+}: ErrorProps) {
   const classes = useStyles()
   return (
     <Container maxWidth="sm">
       <Card className={classes.cardSize} data-testid={providerNameSlug}>
         <CardContent>
           <Typography variant="h6" component="h2">
-            This embed type is currently unsupported.
+            This is not a valid {title} url
+            <Typography color="textSecondary">{subtitle}</Typography>
           </Typography>
-          <Typography color="textSecondary">{providerNameSlug}</Typography>
         </CardContent>
       </Card>
     </Container>

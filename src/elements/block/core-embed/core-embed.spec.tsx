@@ -47,11 +47,11 @@ describe('embed', () => {
       <CoreEmbed
         attributes={{
           url: 'https://player.vimeo.com/video/10679287',
-          providerNameSlug: ''
+          providerNameSlug: 'vim'
         }}
         __typename="CoreEmbedBlock"
       />
     )
-    expect(getByTestId('')).toBeInTheDocument()
+    expect(getByTestId('vim')).toBeInTheDocument()
   })
 })

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Default } from './embed/default'
+import { Error } from './embed/error'
 import { Youtube } from './embed/youtube'
 import { Vimeo } from './embed/vimeo'
 import { Iframe } from './embed/iframe'
@@ -26,6 +26,12 @@ export function CoreEmbed({ attributes }: CoreEmbedProps) {
     case 'vimeo':
       return <Vimeo attributes={attributes} />
     default:
-      return <Default attributes={attributes} />
+      return (
+        <Error
+          attributes={attributes}
+          title="embed"
+          subtitle={attributes.providerNameSlug}
+        />
+      )
   }
 }
