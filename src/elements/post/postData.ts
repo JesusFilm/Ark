@@ -365,6 +365,14 @@ const postQuery = {
           },
           __typename: 'CoreParagraphBlock'
         },
+        /** Not a valid youtube url */
+        {
+          __typename: 'CoreEmbedBlock',
+          attributes: {
+            url: 'https://www.youtube.com/UGFCbmvk0v0',
+            providerNameSlug: 'youtube'
+          }
+        },
         {
           __typename: 'CoreHeadingBlock',
           attributes: {

@@ -1,15 +1,10 @@
 import React from 'react'
-import {
-  Card,
-  CardContent,
-  Container,
-  Typography,
-  makeStyles
-} from '@material-ui/core'
+import { Container, makeStyles } from '@material-ui/core'
+import { Alert, AlertTitle } from '@material-ui/lab'
 
 const useStyles = makeStyles((theme) => ({
-  cardSize: {
-    height: '100px',
+  alertSize: {
+    height: '70px',
     margin: theme.spacing(3, 0)
   }
 }))
@@ -32,14 +27,13 @@ export function Error({
   const classes = useStyles()
   return (
     <Container maxWidth="sm">
-      <Card className={classes.cardSize} data-testid={providerNameSlug}>
-        <CardContent>
-          <Typography variant="h6" component="h2">
-            This is not a valid {title} url
-            <Typography color="textSecondary">{subtitle}</Typography>
-          </Typography>
-        </CardContent>
-      </Card>
+      <Alert
+        severity="error"
+        className={classes.alertSize}
+        data-testid={providerNameSlug}>
+        <AlertTitle>{title}</AlertTitle>
+        <strong>{subtitle}</strong>
+      </Alert>
     </Container>
   )
 }

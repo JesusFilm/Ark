@@ -63,19 +63,22 @@ export const blocks = [
     }
   },
   {
+    __typename: 'CoreQuoteBlock',
+    attributes: {
+      value:
+        '"Many people spend their lives trying to create a lasting legacy on earth. They want to be remembered when they\'re gone. Yet, what ultimately matters most will not be what others say about your life but what God says."',
+      citation: 'Citation for this quote goes here'
+    }
+  },
+  /** Youtube Url */
+  {
     __typename: 'CoreEmbedBlock',
     attributes: {
       url: 'https://youtu.be/UGFCbmvk0vo',
       providerNameSlug: 'youtube'
     }
   },
-  {
-    __typename: 'CoreEmbedBlock',
-    attributes: {
-      url: 'https://www.youtube.com/embed/UGFCbmvk0vo',
-      providerNameSlug: 'embed-handler'
-    }
-  },
+  /** Vimeo Url */
   {
     __typename: 'CoreEmbedBlock',
     attributes: {
@@ -83,6 +86,15 @@ export const blocks = [
       providerNameSlug: 'vimeo'
     }
   },
+  /** Embeded Youtube */
+  {
+    __typename: 'CoreEmbedBlock',
+    attributes: {
+      url: 'https://www.youtube.com/embed/UGFCbmvk0vo',
+      providerNameSlug: 'embed-handler'
+    }
+  },
+  /** Embeded Vimeo */
   {
     __typename: 'CoreEmbedBlock',
     attributes: {
@@ -90,6 +102,7 @@ export const blocks = [
       providerNameSlug: 'vimeo'
     }
   },
+  /** Not a valid provider name slug */
   {
     __typename: 'CoreEmbedBlock',
     attributes: {
@@ -97,12 +110,20 @@ export const blocks = [
       providerNameSlug: 'vim'
     }
   },
+  /** Not a valid youtube url */
   {
-    __typename: 'CoreQuoteBlock',
+    __typename: 'CoreEmbedBlock',
     attributes: {
-      value:
-        '"Many people spend their lives trying to create a lasting legacy on earth. They want to be remembered when they\'re gone. Yet, what ultimately matters most will not be what others say about your life but what God says."',
-      citation: 'Citation for this quote goes here'
+      url: 'https://www.youtube.com/UGFCbmvk0v0',
+      providerNameSlug: 'youtube'
+    }
+  },
+  /** Not a valid vimeo url */
+  {
+    __typename: 'CoreEmbedBlock',
+    attributes: {
+      url: 'https://vimeo.commm/10679287',
+      providerNameSlug: 'vimeo'
     }
   }
 ] as BlockProps[]

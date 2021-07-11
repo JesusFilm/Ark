@@ -38,7 +38,11 @@ export function Youtube({ attributes }: YoutubeProps) {
   switch (youtubeId) {
     case undefined:
       return (
-        <Error attributes={attributes} title="youtube" subtitle={youtubeUrl} />
+        <Error
+          attributes={attributes}
+          title="This is not a valid youtube url"
+          subtitle={youtubeUrl}
+        />
       )
     default:
       return (

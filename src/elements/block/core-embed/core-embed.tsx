@@ -29,7 +29,7 @@ export function CoreEmbed({ attributes }: CoreEmbedProps) {
       return (
         <Error
           attributes={attributes}
-          title="embed"
+          title="This type of embed is currently unsupported"
           subtitle={attributes.providerNameSlug}
         />
       )

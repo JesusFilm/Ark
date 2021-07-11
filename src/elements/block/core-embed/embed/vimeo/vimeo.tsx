@@ -38,7 +38,13 @@ export function Vimeo({ attributes }: VimeoProps) {
 
   switch (vimeoId) {
     case undefined:
-      return <Error attributes={attributes} title="vimeo" subtitle={vimeoUrl} />
+      return (
+        <Error
+          attributes={attributes}
+          title="This is not a valid vimeo url"
+          subtitle={vimeoUrl}
+        />
+      )
     default:
       return (
         <Container maxWidth="sm">
