@@ -8,7 +8,8 @@ describe('Youtube', () => {
       <Youtube
         attributes={{
           url: 'https://www.youtube.com/embed/UGFCbmvk0vo',
-          providerNameSlug: 'youtube'
+          providerNameSlug: 'youtube',
+          align: ''
         }}
       />
     )

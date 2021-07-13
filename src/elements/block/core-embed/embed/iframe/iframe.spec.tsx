@@ -8,7 +8,8 @@ describe('Iframe', () => {
       <Iframe
         attributes={{
           url: 'https://www.youtube.com/embed/UGFCbmvk0vo',
-          providerNameSlug: 'embed-handler'
+          providerNameSlug: 'embed-handler',
+          align: ''
         }}
       />
     )

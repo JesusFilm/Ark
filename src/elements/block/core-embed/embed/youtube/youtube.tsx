@@ -3,8 +3,12 @@ import { Container, CardMedia, makeStyles } from '@material-ui/core'
 import { Error } from '../error'
 
 const useStyles = makeStyles((theme) => ({
-  cardSize: {
+  smallSize: {
     height: '300px',
+    margin: theme.spacing(3, 0)
+  },
+  mediumSize: {
+    height: '500px',
     margin: theme.spacing(3, 0)
   }
 }))
@@ -12,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
 type Attributes = {
   url: string
   providerNameSlug: string
+  align: string
 }
 
 export type YoutubeProps = {
@@ -46,10 +51,14 @@ export function Youtube({ attributes }: YoutubeProps) {
       )
     default:
       return (
-        <Container maxWidth="sm">
+        <Container maxWidth={attributes.align === 'wide' ? 'md' : 'sm'}>
           <CardMedia
             data-testid={attributes.providerNameSlug}
-            className={classes.cardSize}
+            className={
+              attributes.align === 'wide'
+                ? classes.mediumSize
+                : classes.smallSize
+            }
             component="iframe"
             hidden
             src={youtubeUrl}

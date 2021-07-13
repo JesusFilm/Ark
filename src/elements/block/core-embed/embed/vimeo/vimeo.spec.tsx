@@ -8,7 +8,8 @@ describe('Vimeo', () => {
       <Vimeo
         attributes={{
           url: 'https://player.vimeo.com/video/10679287',
-          providerNameSlug: 'vimeo'
+          providerNameSlug: 'vimeo',
+          align: 'wide'
         }}
       />
     )

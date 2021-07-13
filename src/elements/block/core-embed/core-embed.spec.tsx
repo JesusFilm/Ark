@@ -8,7 +8,8 @@ describe('embed', () => {
       <CoreEmbed
         attributes={{
           url: 'https://www.youtube.com/embed/UGFCbmvk0vo',
-          providerNameSlug: 'youtube'
+          providerNameSlug: 'youtube',
+          align: ''
         }}
         __typename="CoreEmbedBlock"
       />
@@ -21,7 +22,8 @@ describe('embed', () => {
       <CoreEmbed
         attributes={{
           url: 'https://www.youtube.com/embed/UGFCbmvk0vo',
-          providerNameSlug: 'vimeo'
+          providerNameSlug: 'vimeo',
+          align: ''
         }}
         __typename="CoreEmbedBlock"
       />
@@ -34,7 +36,8 @@ describe('embed', () => {
       <CoreEmbed
         attributes={{
           url: 'https://www.youtube.com/embed/UGFCbmvk0vo',
-          providerNameSlug: 'embed-handler'
+          providerNameSlug: 'embed-handler',
+          align: 'wide'
         }}
         __typename="CoreEmbedBlock"
       />
@@ -47,7 +50,8 @@ describe('embed', () => {
       <CoreEmbed
         attributes={{
           url: 'https://player.vimeo.com/video/10679287',
-          providerNameSlug: 'vim'
+          providerNameSlug: 'vim',
+          align: ''
         }}
         __typename="CoreEmbedBlock"
       />

@@ -7,6 +7,7 @@ import { Iframe } from './embed/iframe'
 type Attributes = {
   url: string
   providerNameSlug: string
+  align: string
 }
 
 export type CoreEmbedProps = {
