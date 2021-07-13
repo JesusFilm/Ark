@@ -1,13 +1,24 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { QuotePostCard } from '../../post-card.composition'
+import { PostCard } from '../..'
 
-describe('post-card-quote', () => {
+describe('post-card', () => {
   it('quote variant should render', () => {
-    const { getByText } = render(<QuotePostCard />)
-    const rendered = getByText(
-      "The call to prayer eminated from Omar's Lips - an eerie sound, out of place in the park. Omar and a group of 15 men bowed in sync."
+    const { getByText } = render(
+      <PostCard
+        title="His Shoes Led to Learning About Christianity"
+        customPostFields={{
+          quote:
+            'If you can?” said Jesus. "Everything is possible for one who believes."'
+        }}
+        date="2021-06-15T22:00:35.664Z"
+        variant="quote"
+      />
     )
-    expect(rendered).toBeTruthy()
+    expect(
+      getByText(
+        'If you can?” said Jesus. "Everything is possible for one who believes."'
+      )
+    ).toBeInTheDocument()
   })
 })

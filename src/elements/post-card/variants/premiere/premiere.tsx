@@ -4,6 +4,9 @@ import { Grid, makeStyles, Typography, Container } from '@material-ui/core'
 const useStyles = makeStyles((theme) => ({
   image: {
     maxWidth: '100%'
+  },
+  title: {
+    fontWeight: 700
   }
 }))
 
@@ -35,7 +38,10 @@ export function Premiere({ title, excerpt, src }: PremiereProps) {
           </Grid>
         )}
         <Grid item>
-          <Typography variant="subtitle1" align="center">
+          <Typography
+            variant="subtitle1"
+            align="center"
+            className={classes.title}>
             {title}
           </Typography>
         </Grid>

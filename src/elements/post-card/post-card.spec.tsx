@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import {
   HeroPostCard,
   QuotePostCard,
@@ -10,28 +10,23 @@ import {
 
 describe('post-card', () => {
   it('should render hero with the correct variant', () => {
-    render(<HeroPostCard />)
-    const heroVariant = screen.getByTestId('heroVariant')
-    expect(heroVariant).toBeTruthy()
+    const { getByTestId } = render(<HeroPostCard />)
+    expect(getByTestId('heroVariant')).toBeInTheDocument()
   })
   it('should render quote with the correct variant', () => {
-    render(<QuotePostCard />)
-    const quoteVariant = screen.getByTestId('quoteVariant')
-    expect(quoteVariant).toBeTruthy()
+    const { getByTestId } = render(<QuotePostCard />)
+    expect(getByTestId('quoteVariant')).toBeInTheDocument()
   })
   it('should render item with the correct variant', () => {
-    render(<ItemPostCardNoImage />)
-    const itemVariant = screen.getByTestId('itemVariant')
-    expect(itemVariant).toBeTruthy()
+    const { getByTestId } = render(<ItemPostCardNoImage />)
+    expect(getByTestId('itemVariant')).toBeInTheDocument()
   })
   it('should render premiere with the correct variant', () => {
-    render(<PremierePostCard />)
-    const premiereVariant = screen.getByTestId('premiereVariant')
-    expect(premiereVariant).toBeTruthy()
+    const { getByTestId } = render(<PremierePostCard />)
+    expect(getByTestId('premiereVariant')).toBeInTheDocument()
   })
   it('should render delfault with the correct variant', () => {
-    render(<DefaultPostCard />)
-    const defaultVariant = screen.getByTestId('defaultVariant')
-    expect(defaultVariant).toBeTruthy()
+    const { getByTestId } = render(<DefaultPostCard />)
+    expect(getByTestId('defaultVariant')).toBeInTheDocument()
   })
 })

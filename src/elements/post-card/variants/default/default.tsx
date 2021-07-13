@@ -1,31 +1,68 @@
 import React from 'react'
-import { Grid, makeStyles, Typography, Container } from '@material-ui/core'
+import { Box, Grid, makeStyles, Typography, Container } from '@material-ui/core'
+import { useTranslation } from 'react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   image: {
     maxWidth: '100%'
   },
-  category: {
-    textTransform: 'uppercase'
+  title: {
+    fontWeight: 700
   }
 }))
 
+type Category = {
+  /**
+   * Category Name
+   */
+  name: string
+}
+
+type CategoryNodes = {
+  nodes: Category[]
+}
+
+type Image = {
+  /**
+   * Image URL
+   */
+  sourceUrl: string
+}
+
+type ImageNode = {
+  node: Image
+}
+
 export type DefaultProps = {
   /** Post title */
-  title: string
+  title?: string
   /** Category */
-  category: string
+  categories?: CategoryNodes
   /** Post excerpt */
   excerpt?: string
-  /** Image source url */
-  src?: string
+  /**
+   * Featured Image
+   */
+  featuredImage?: ImageNode
+  /**
+   * Post publishing date.
+   */
+  date?: string
   /** Variant style */
   variant: 'default'
 }
 
-export function Default({ title, excerpt, category, src }: DefaultProps) {
+export function Default({
+  title,
+  excerpt,
+  categories,
+  featuredImage,
+  date
+}: DefaultProps) {
+  const { t } = useTranslation('post-card')
   const classes = useStyles()
-  return (
+
+  return title ? (
     <Container maxWidth="xs" data-testid="defaultVariant">
       <Grid
         container
@@ -33,28 +70,38 @@ export function Default({ title, excerpt, category, src }: DefaultProps) {
         alignItems="flex-start"
         justify="flex-start"
         spacing={1}>
-        {src && (
+        {featuredImage?.node?.sourceUrl && (
           <Grid item>
-            <img src={src} className={classes.image} />
+            <img src={featuredImage.node.sourceUrl} className={classes.image} />
+          </Grid>
+        )}
+        {categories?.nodes?.[0]?.name && (
+          <Grid item>
+            <Box py={1}>
+              <Typography variant="h6" aria-label="category">
+                {categories.nodes[0].name}
+              </Typography>
+            </Box>
           </Grid>
         )}
         <Grid item>
-          <Typography variant="h6" className={classes.category}>
-            {category}
+          <Typography variant="h5" aria-label="title" className={classes.title}>
+            {title}
           </Typography>
-        </Grid>
-        <Grid item>
-          <Typography variant="h3">{title}</Typography>
         </Grid>
         {excerpt && (
           <Grid item>
-            <Typography variant="body1">{excerpt}</Typography>
+            <Typography>{excerpt}</Typography>
           </Grid>
         )}
-        {/* <Grid item>
-          <TimeAgo datetime={datetime} locale={locale} />
-        </Grid> */}
+        {date && (
+          <Grid item>
+            <Typography variant="body2" color="textSecondary">
+              {t('{{date, date}}', { date })}
+            </Typography>
+          </Grid>
+        )}
       </Grid>
     </Container>
-  )
+  ) : null
 }
