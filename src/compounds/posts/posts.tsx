@@ -29,7 +29,7 @@ export type PostsProps = {
   /**
    * a component to link to a post (href param will be the slug of the post).
    */
-  Link?: (props: {
+  PostLink?: (props: {
     children: ReactNode
     href: string
     className?: string
@@ -38,7 +38,7 @@ export type PostsProps = {
 
 export function Posts({
   posts,
-  Link = (props) => createElement('a', props)
+  PostLink = (props) => createElement('a', props)
 }: PostsProps) {
   const classes = useStyles()
   return (
@@ -51,38 +51,38 @@ export function Posts({
               xs={12}
               sm={posts.length === 2 ? 6 : 12}
               md={posts.length === 3 ? 3 : 6}>
-              <Link href={posts[0].slug} className={classes.link}>
+              <PostLink href={posts[0].slug} className={classes.link}>
                 <PostCard
                   src={posts[0].featuredImage?.node?.sourceUrl}
                   title={posts[0].title}
                   excerpt={posts[0].excerpt}
                   variant="premiere"
                 />
-              </Link>
+              </PostLink>
             </Grid>
           )}
           {posts[1] && (
             <Grid item xs={12} sm={6} md={6}>
-              <Link href={posts[1].slug} className={classes.link}>
+              <PostLink href={posts[1].slug} className={classes.link}>
                 <PostCard
                   src={posts[1].featuredImage?.node?.sourceUrl}
                   title={posts[1].title}
                   excerpt={posts[1].excerpt}
                   variant="premiere"
                 />
-              </Link>
+              </PostLink>
             </Grid>
           )}
           {posts[2] && (
             <Grid item xs={12} sm={6} md={3}>
-              <Link href={posts[2].slug} className={classes.link}>
+              <PostLink href={posts[2].slug} className={classes.link}>
                 <PostCard
                   src={posts[2].featuredImage?.node?.sourceUrl}
                   title={posts[2].title}
                   excerpt={posts[2].excerpt}
                   variant="premiere"
                 />
-              </Link>
+              </PostLink>
             </Grid>
           )}
         </Grid>
