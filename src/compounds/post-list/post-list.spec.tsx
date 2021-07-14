@@ -1,12 +1,12 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { Posts } from '.'
+import { PostList } from '.'
 
-describe('Posts', () => {
+describe('PostList', () => {
   it('should render a single post', () => {
     const { getByTestId } = render(
-      <Posts
-        Link={({ children, href, className }) => (
+      <PostList
+        PostLink={({ children, href, className }) => (
           <a
             data-testid={`link-${href}`}
             className={className}
@@ -43,8 +43,8 @@ describe('Posts', () => {
 
   it('should render two posts', () => {
     const { getByTestId } = render(
-      <Posts
-        Link={({ children, href, className }) => (
+      <PostList
+        PostLink={({ children, href, className }) => (
           <a
             data-testid={`link-${href}`}
             className={className}
@@ -98,8 +98,8 @@ describe('Posts', () => {
 
   it('should render three posts', () => {
     const { getByTestId } = render(
-      <Posts
-        Link={({ children, href, className }) => (
+      <PostList
+        PostLink={({ children, href, className }) => (
           <a
             data-testid={`link-${href}`}
             className={className}
@@ -165,7 +165,7 @@ describe('Posts', () => {
 
   it('should render without error', () => {
     const { rerender } = render(
-      <Posts
+      <PostList
         posts={{
           nodes: [
             {
@@ -206,7 +206,7 @@ describe('Posts', () => {
       />
     )
     rerender(
-      <Posts
+      <PostList
         posts={{
           nodes: [
             {
@@ -240,7 +240,7 @@ describe('Posts', () => {
       />
     )
     rerender(
-      <Posts
+      <PostList
         posts={{
           nodes: [
             {

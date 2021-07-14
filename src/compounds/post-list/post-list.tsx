@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export type PostsProps = {
+export type PostListProps = {
   /**
    * a collection of posts to be rendered in the component.
    */
@@ -36,10 +36,10 @@ export type PostsProps = {
   }) => ReactElement
 }
 
-export function Posts({
+export function PostList({
   posts,
   PostLink = (props) => createElement('a', props)
-}: PostsProps) {
+}: PostListProps) {
   const classes = useStyles()
   return (
     <Grid container spacing={2} item>

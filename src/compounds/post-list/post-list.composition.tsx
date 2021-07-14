@@ -1,9 +1,9 @@
 import React, { createElement } from 'react'
-import { Posts } from '.'
+import { PostList } from '.'
 
 export const BasicPosts = () => (
-  <Posts
-    Link={({ children, href, className }) =>
+  <PostList
+    PostLink={({ children, href, className }) =>
       createElement('a', { children, className, href: `/posts/${href}` })
     }
     posts={{
@@ -47,8 +47,8 @@ export const BasicPosts = () => (
 )
 
 export const TwoPosts = () => (
-  <Posts
-    Link={({ children, href, className }) =>
+  <PostList
+    PostLink={({ children, href, className }) =>
       createElement('a', { children, className, href: `/posts/${href}` })
     }
     posts={{
@@ -81,8 +81,8 @@ export const TwoPosts = () => (
 )
 
 export const OnePost = () => (
-  <Posts
-    Link={({ children, href, className }) =>
+  <PostList
+    PostLink={({ children, href, className }) =>
       createElement('a', { children, className, href: `/posts/${href}` })
     }
     posts={{
@@ -104,8 +104,8 @@ export const OnePost = () => (
 )
 
 export const FullPosts = () => (
-  <Posts
-    Link={({ children, href, className }) =>
+  <PostList
+    PostLink={({ children, href, className }) =>
       createElement('a', { children, className, href: `/posts/${href}` })
     }
     posts={{
