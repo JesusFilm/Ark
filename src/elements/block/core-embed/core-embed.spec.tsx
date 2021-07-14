@@ -8,7 +8,8 @@ describe('embed', () => {
       <CoreEmbed
         attributes={{
           url: 'https://www.youtube.com/embed/UGFCbmvk0vo',
-          providerNameSlug: 'youtube'
+          providerNameSlug: 'youtube',
+          align: ''
         }}
         __typename="CoreEmbedBlock"
       />
@@ -20,8 +21,9 @@ describe('embed', () => {
     const { getByTestId } = render(
       <CoreEmbed
         attributes={{
-          url: 'https://www.youtube.com/embed/UGFCbmvk0vo',
-          providerNameSlug: 'vimeo'
+          url: 'https://player.vimeo.com/video/10679287',
+          providerNameSlug: 'vimeo',
+          align: ''
         }}
         __typename="CoreEmbedBlock"
       />
@@ -34,7 +36,8 @@ describe('embed', () => {
       <CoreEmbed
         attributes={{
           url: 'https://www.youtube.com/embed/UGFCbmvk0vo',
-          providerNameSlug: 'embed-handler'
+          providerNameSlug: 'embed-handler',
+          align: 'wide'
         }}
         __typename="CoreEmbedBlock"
       />
@@ -43,15 +46,16 @@ describe('embed', () => {
   })
 
   it('should render with the default provider name slug', () => {
-    const { getByTestId } = render(
+    const { getByText } = render(
       <CoreEmbed
         attributes={{
           url: 'https://player.vimeo.com/video/10679287',
-          providerNameSlug: 'vim'
+          providerNameSlug: 'vim',
+          align: ''
         }}
         __typename="CoreEmbedBlock"
       />
     )
-    expect(getByTestId('vim')).toBeInTheDocument()
+    expect(getByText('vim')).toBeInTheDocument()
   })
 })

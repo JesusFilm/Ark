@@ -1,10 +1,14 @@
 import React from 'react'
 import { Container, CardMedia, makeStyles } from '@material-ui/core'
-import { Error } from '../error'
+import { Error } from '../../../error'
 
 const useStyles = makeStyles((theme) => ({
-  cardSize: {
+  smallSize: {
     height: '300px',
+    margin: theme.spacing(3, 0)
+  },
+  mediumSize: {
+    height: '500px',
     margin: theme.spacing(3, 0)
   }
 }))
@@ -12,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
 type Attributes = {
   url: string
   providerNameSlug: string
+  align: string
 }
 
 export type VimeoProps = {
@@ -36,25 +41,22 @@ export function Vimeo({ attributes }: VimeoProps) {
   const vimeoId = extractVimeoId(attributes.url)
   const vimeoUrl = `https://player.vimeo.com/video/${vimeoId}`
 
-  switch (vimeoId) {
-    case undefined:
-      return (
-        <Error
-          attributes={attributes}
-          title="This is not a valid vimeo url"
-          subtitle={vimeoUrl}
+  if (vimeoId === undefined) {
+    return (
+      <Error title="This is not a valid vimeo url" subtitle={attributes.url} />
+    )
+  } else {
+    return (
+      <Container maxWidth={attributes.align === 'wide' ? 'lg' : 'sm'}>
+        <CardMedia
+          data-testid={attributes.providerNameSlug}
+          className={
+            attributes.align === 'wide' ? classes.mediumSize : classes.smallSize
+          }
+          component="iframe"
+          src={vimeoUrl}
         />
-      )
-    default:
-      return (
-        <Container maxWidth="sm">
-          <CardMedia
-            data-testid={attributes.providerNameSlug}
-            className={classes.cardSize}
-            component="iframe"
-            src={vimeoUrl}
-          />
-        </Container>
-      )
+      </Container>
+    )
   }
 }
