@@ -1,7 +1,7 @@
 import React, { createElement } from 'react'
 import { PostList } from '.'
 
-export const BasicPosts = () => (
+export const PremiereThreePosts = () => (
   <PostList
     PostLink={({ children, href, className }) =>
       createElement('a', { children, className, href: `/posts/${href}` })
@@ -43,10 +43,11 @@ export const BasicPosts = () => (
         }
       ]
     }}
+    variant="premiere"
   />
 )
 
-export const TwoPosts = () => (
+export const PremiereTwoPosts = () => (
   <PostList
     PostLink={({ children, href, className }) =>
       createElement('a', { children, className, href: `/posts/${href}` })
@@ -77,10 +78,11 @@ export const TwoPosts = () => (
         }
       ]
     }}
+    variant="premiere"
   />
 )
 
-export const OnePost = () => (
+export const PremiereOnePost = () => (
   <PostList
     PostLink={({ children, href, className }) =>
       createElement('a', { children, className, href: `/posts/${href}` })
@@ -100,10 +102,11 @@ export const OnePost = () => (
         }
       ]
     }}
+    variant="premiere"
   />
 )
 
-export const FullPosts = () => (
+export const PremiereFivePosts = () => (
   <PostList
     PostLink={({ children, href, className }) =>
       createElement('a', { children, className, href: `/posts/${href}` })
@@ -168,5 +171,6 @@ export const FullPosts = () => (
         }
       ]
     }}
+    variant="premiere"
   />
 )
