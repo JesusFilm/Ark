@@ -1,8 +1,8 @@
 import React, { createElement } from 'react'
-import { Posts } from '.'
+import { PostList } from '.'
 
-export const BasicPosts = () => (
-  <Posts
+export const PremiereThreePosts = () => (
+  <PostList
     PostLink={({ children, href, className }) =>
       createElement('a', { children, className, href: `/posts/${href}` })
     }
@@ -65,11 +65,12 @@ export const BasicPosts = () => (
         }
       ]
     }}
+    variant="premiere"
   />
 )
 
-export const TwoPosts = () => (
-  <Posts
+export const PremiereTwoPosts = () => (
+  <PostList
     PostLink={({ children, href, className }) =>
       createElement('a', { children, className, href: `/posts/${href}` })
     }
@@ -99,11 +100,13 @@ export const TwoPosts = () => (
         }
       ]
     }}
+    cols={[4]}
+    variants={['premiere']}
   />
 )
 
-export const OnePost = () => (
-  <Posts
+export const PremiereOnePost = () => (
+  <PostList
     PostLink={({ children, href, className }) =>
       createElement('a', { children, className, href: `/posts/${href}` })
     }
@@ -122,16 +125,17 @@ export const OnePost = () => (
         }
       ]
     }}
+    variants={['hero']}
   />
 )
 
-export const FullPosts = () => (
-  <Posts
+export const PremiereFivePosts = () => (
+  <PostList
     PostLink={({ children, href, className }) =>
       createElement('a', { children, className, href: `/posts/${href}` })
     }
-    variants={['premiere', 'item']}
-    cols={[12, 6, 6]}
+    variants={['premiere', 'item', 'item', 'hero']}
+    cols={[12, 4, 4]}
     posts={{
       nodes: [
         {

@@ -1,12 +1,12 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { Posts } from '.'
+import { PostList } from '.'
 
-describe('Posts', () => {
+describe('PostList', () => {
   it('should render a single post', () => {
     const { getByTestId } = render(
-      <Posts
-        Link={({ children, href, className }) => (
+      <PostList
+        PostLink={({ children, href, className }) => (
           <a
             data-testid={`link-${href}`}
             className={className}
@@ -29,6 +29,7 @@ describe('Posts', () => {
             }
           ]
         }}
+        variant="premiere"
       />
     )
     const link = getByTestId('link-10-bible-verses-about-faith-and-doubt')
@@ -43,8 +44,8 @@ describe('Posts', () => {
 
   it('should render two posts', () => {
     const { getByTestId } = render(
-      <Posts
-        Link={({ children, href, className }) => (
+      <PostList
+        PostLink={({ children, href, className }) => (
           <a
             data-testid={`link-${href}`}
             className={className}
@@ -79,6 +80,7 @@ describe('Posts', () => {
             }
           ]
         }}
+        variant="premiere"
       />
     )
     const link1 = getByTestId('link-10-bible-verses-about-faith-and-doubt')
@@ -98,8 +100,8 @@ describe('Posts', () => {
 
   it('should render three posts', () => {
     const { getByTestId } = render(
-      <Posts
-        Link={({ children, href, className }) => (
+      <PostList
+        PostLink={({ children, href, className }) => (
           <a
             data-testid={`link-${href}`}
             className={className}
@@ -144,6 +146,7 @@ describe('Posts', () => {
             }
           ]
         }}
+        variant="premiere"
       />
     )
     const link1 = getByTestId('link-10-bible-verses-about-faith-and-doubt')
@@ -164,8 +167,8 @@ describe('Posts', () => {
   })
 
   it('should render without error', () => {
-    const { rerender } = render(
-      <Posts
+    const { rerender, getByRole } = render(
+      <PostList
         posts={{
           nodes: [
             {
@@ -203,10 +206,16 @@ describe('Posts', () => {
             }
           ]
         }}
+        variant="premiere"
       />
     )
+    expect(
+      getByRole('link', {
+        name: '10 Bible Verses about Faith and Doubt Issues of faith and doubt have a massive impact on Christians of every maturity level.'
+      })
+    ).toBeInTheDocument()
     rerender(
-      <Posts
+      <PostList
         posts={{
           nodes: [
             {
@@ -237,10 +246,16 @@ describe('Posts', () => {
             }
           ]
         }}
+        variant="premiere"
       />
     )
+    expect(
+      getByRole('link', {
+        name: '10 Bible Verses about Faith and Doubt Issues of faith and doubt have a massive impact on Christians of every maturity level.'
+      })
+    ).toBeInTheDocument()
     rerender(
-      <Posts
+      <PostList
         posts={{
           nodes: [
             {
@@ -265,7 +280,13 @@ describe('Posts', () => {
             }
           ]
         }}
+        variant="premiere"
       />
     )
+    expect(
+      getByRole('link', {
+        name: '10 Bible Verses about Faith and Doubt Issues of faith and doubt have a massive impact on Christians of every maturity level.'
+      })
+    ).toBeInTheDocument()
   })
 })

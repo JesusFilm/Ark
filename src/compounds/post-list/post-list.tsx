@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export type PostsProps = {
+export type PostListProps = {
   /**
    * a collection of posts to be rendered in the component.
    */
@@ -48,14 +48,16 @@ export type PostsProps = {
     href: string
     className?: string
   }) => ReactElement
+  /** Variant style */
+  variant?: 'premiere'
 }
 
-export function Posts({
+export function PostList({
   posts,
   variants = ['premiere'],
   cols = [12],
   PostLink = (props) => createElement('a', props)
-}: PostsProps) {
+}: PostListProps) {
   const classes = useStyles()
   return (
     <Grid container spacing={2} item justify="center">
