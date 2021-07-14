@@ -29,6 +29,7 @@ describe('PostList', () => {
             }
           ]
         }}
+        variant="premiere"
       />
     )
     const link = getByTestId('link-10-bible-verses-about-faith-and-doubt')
@@ -79,6 +80,7 @@ describe('PostList', () => {
             }
           ]
         }}
+        variant="premiere"
       />
     )
     const link1 = getByTestId('link-10-bible-verses-about-faith-and-doubt')
@@ -144,6 +146,7 @@ describe('PostList', () => {
             }
           ]
         }}
+        variant="premiere"
       />
     )
     const link1 = getByTestId('link-10-bible-verses-about-faith-and-doubt')
@@ -164,7 +167,7 @@ describe('PostList', () => {
   })
 
   it('should render without error', () => {
-    const { rerender } = render(
+    const { rerender, getByRole } = render(
       <PostList
         posts={{
           nodes: [
@@ -203,8 +206,14 @@ describe('PostList', () => {
             }
           ]
         }}
+        variant="premiere"
       />
     )
+    expect(
+      getByRole('link', {
+        name: '10 Bible Verses about Faith and Doubt Issues of faith and doubt have a massive impact on Christians of every maturity level.'
+      })
+    ).toBeInTheDocument()
     rerender(
       <PostList
         posts={{
@@ -237,8 +246,14 @@ describe('PostList', () => {
             }
           ]
         }}
+        variant="premiere"
       />
     )
+    expect(
+      getByRole('link', {
+        name: '10 Bible Verses about Faith and Doubt Issues of faith and doubt have a massive impact on Christians of every maturity level.'
+      })
+    ).toBeInTheDocument()
     rerender(
       <PostList
         posts={{
@@ -265,7 +280,13 @@ describe('PostList', () => {
             }
           ]
         }}
+        variant="premiere"
       />
     )
+    expect(
+      getByRole('link', {
+        name: '10 Bible Verses about Faith and Doubt Issues of faith and doubt have a massive impact on Christians of every maturity level.'
+      })
+    ).toBeInTheDocument()
   })
 })

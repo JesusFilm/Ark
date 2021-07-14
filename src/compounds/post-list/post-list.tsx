@@ -34,14 +34,17 @@ export type PostListProps = {
     href: string
     className?: string
   }) => ReactElement
+  /** Variant style */
+  variant?: 'premiere'
 }
 
 export function PostList({
   posts,
-  PostLink = (props) => createElement('a', props)
+  PostLink = (props) => createElement('a', props),
+  variant
 }: PostListProps) {
   const classes = useStyles()
-  return (
+  return variant === 'premiere' ? (
     <Grid container spacing={2} item>
       {chunk(3, posts.nodes).map((posts, i) => (
         <Grid container spacing={2} item key={i} justify="center">
@@ -88,5 +91,5 @@ export function PostList({
         </Grid>
       ))}
     </Grid>
-  )
+  ) : null
 }
