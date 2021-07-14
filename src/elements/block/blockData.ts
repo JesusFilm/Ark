@@ -119,7 +119,7 @@ export const blocks = [
   {
     __typename: 'CoreEmbedBlock',
     attributes: {
-      url: 'https://www.youtube.com/UGFCbmvk0v0',
+      url: 'https://www.youtube.com/UGBVbmvk0v0',
       providerNameSlug: 'youtube',
       align: ''
     }

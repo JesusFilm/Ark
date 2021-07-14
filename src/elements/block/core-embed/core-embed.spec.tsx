@@ -21,7 +21,7 @@ describe('embed', () => {
     const { getByTestId } = render(
       <CoreEmbed
         attributes={{
-          url: 'https://www.youtube.com/embed/UGFCbmvk0vo',
+          url: 'https://player.vimeo.com/video/10679287',
           providerNameSlug: 'vimeo',
           align: ''
         }}
@@ -46,7 +46,7 @@ describe('embed', () => {
   })
 
   it('should render with the default provider name slug', () => {
-    const { getByTestId } = render(
+    const { getByText } = render(
       <CoreEmbed
         attributes={{
           url: 'https://player.vimeo.com/video/10679287',
@@ -56,6 +56,6 @@ describe('embed', () => {
         __typename="CoreEmbedBlock"
       />
     )
-    expect(getByTestId('vim')).toBeInTheDocument()
+    expect(getByText('vim')).toBeInTheDocument()
   })
 })

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, CardMedia, makeStyles } from '@material-ui/core'
-import { Error } from '../error'
+import { Error } from '../../../error'
 
 const useStyles = makeStyles((theme) => ({
   smallSize: {
@@ -40,30 +40,26 @@ export function Youtube({ attributes }: YoutubeProps) {
   const youtubeId = extractYoutubeID(attributes.url)
   const youtubeUrl = `https://www.youtube.com/embed/${youtubeId}`
 
-  switch (youtubeId) {
-    case undefined:
-      return (
-        <Error
-          attributes={attributes}
-          title="This is not a valid youtube url"
-          subtitle={youtubeUrl}
+  if (youtubeId === undefined) {
+    return (
+      <Error
+        title="This is not a valid youtube url"
+        subtitle={attributes.url}
+      />
+    )
+  } else {
+    return (
+      <Container maxWidth={attributes.align === 'wide' ? 'md' : 'sm'}>
+        <CardMedia
+          data-testid={attributes.providerNameSlug}
+          className={
+            attributes.align === 'wide' ? classes.mediumSize : classes.smallSize
+          }
+          component="iframe"
+          hidden
+          src={youtubeUrl}
         />
-      )
-    default:
-      return (
-        <Container maxWidth={attributes.align === 'wide' ? 'md' : 'sm'}>
-          <CardMedia
-            data-testid={attributes.providerNameSlug}
-            className={
-              attributes.align === 'wide'
-                ? classes.mediumSize
-                : classes.smallSize
-            }
-            component="iframe"
-            hidden
-            src={youtubeUrl}
-          />
-        </Container>
-      )
+      </Container>
+    )
   }
 }

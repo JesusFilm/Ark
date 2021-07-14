@@ -17,4 +17,30 @@ describe('Vimeo', () => {
       'https://player.vimeo.com/video/10679287'
     )
   })
+
+  it('should render the error message', () => {
+    const { getByText } = render(
+      <Vimeo
+        attributes={{
+          url: 'https://vimeo.commm/10679287',
+          providerNameSlug: 'vimeo',
+          align: ''
+        }}
+      />
+    )
+    expect(getByText('This is not a valid vimeo url')).toBeInTheDocument()
+  })
+
+  it('should render the wrong the url link', () => {
+    const { getByText } = render(
+      <Vimeo
+        attributes={{
+          url: 'https://vimeo.commm/10679287',
+          providerNameSlug: 'vimeo',
+          align: ''
+        }}
+      />
+    )
+    expect(getByText('https://vimeo.commm/10679287')).toBeInTheDocument()
+  })
 })

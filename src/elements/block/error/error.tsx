@@ -9,28 +9,16 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-type Attributes = {
-  providerNameSlug: string
-}
-
 export type ErrorProps = {
-  attributes: Attributes
   title: string
   subtitle: string
 }
 
-export function Error({
-  attributes: { providerNameSlug },
-  title,
-  subtitle
-}: ErrorProps) {
+export function Error({ title, subtitle }: ErrorProps) {
   const classes = useStyles()
   return (
     <Container maxWidth="sm">
-      <Alert
-        severity="error"
-        className={classes.alertSize}
-        data-testid={providerNameSlug}>
+      <Alert severity="error" className={classes.alertSize}>
         <AlertTitle>{title}</AlertTitle>
         <strong>{subtitle}</strong>
       </Alert>
