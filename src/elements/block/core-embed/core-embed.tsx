@@ -1,5 +1,5 @@
 import React from 'react'
-import { Error } from './embed/error'
+import { Error } from '../error'
 import { Youtube } from './embed/youtube'
 import { Vimeo } from './embed/vimeo'
 import { Iframe } from './embed/iframe'
@@ -7,6 +7,7 @@ import { Iframe } from './embed/iframe'
 type Attributes = {
   url: string
   providerNameSlug: string
+  align: string
 }
 
 export type CoreEmbedProps = {
@@ -28,7 +29,6 @@ export function CoreEmbed({ attributes }: CoreEmbedProps) {
     default:
       return (
         <Error
-          attributes={attributes}
           title="This type of embed is currently unsupported"
           subtitle={attributes.providerNameSlug}
         />

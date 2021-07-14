@@ -75,7 +75,8 @@ export const blocks = [
     __typename: 'CoreEmbedBlock',
     attributes: {
       url: 'https://youtu.be/UGFCbmvk0vo',
-      providerNameSlug: 'youtube'
+      providerNameSlug: 'youtube',
+      align: 'wide'
     }
   },
   /** Vimeo Url */
@@ -83,7 +84,8 @@ export const blocks = [
     __typename: 'CoreEmbedBlock',
     attributes: {
       url: 'https://vimeo.com/10679287',
-      providerNameSlug: 'vimeo'
+      providerNameSlug: 'vimeo',
+      align: ''
     }
   },
   /** Embeded Youtube */
@@ -91,7 +93,8 @@ export const blocks = [
     __typename: 'CoreEmbedBlock',
     attributes: {
       url: 'https://www.youtube.com/embed/UGFCbmvk0vo',
-      providerNameSlug: 'embed-handler'
+      providerNameSlug: 'embed-handler',
+      align: ''
     }
   },
   /** Embeded Vimeo */
@@ -99,7 +102,8 @@ export const blocks = [
     __typename: 'CoreEmbedBlock',
     attributes: {
       url: 'https://player.vimeo.com/video/10679287',
-      providerNameSlug: 'vimeo'
+      providerNameSlug: 'vimeo',
+      align: 'wide'
     }
   },
   /** Not a valid provider name slug */
@@ -107,15 +111,17 @@ export const blocks = [
     __typename: 'CoreEmbedBlock',
     attributes: {
       url: 'https://player.vimeo.com/video/10679287',
-      providerNameSlug: 'vim'
+      providerNameSlug: 'vim',
+      align: ''
     }
   },
   /** Not a valid youtube url */
   {
     __typename: 'CoreEmbedBlock',
     attributes: {
-      url: 'https://www.youtube.com/UGFCbmvk0v0',
-      providerNameSlug: 'youtube'
+      url: 'https://www.youtube.com/UGBVbmvk0v0',
+      providerNameSlug: 'youtube',
+      align: ''
     }
   },
   /** Not a valid vimeo url */
@@ -123,13 +129,8 @@ export const blocks = [
     __typename: 'CoreEmbedBlock',
     attributes: {
       url: 'https://vimeo.commm/10679287',
-      providerNameSlug: 'vimeo'
-    }
-  },
-  {
-    __typename: 'LazyblockArclightBlock',
-    attributes: {
-      refId: '1_1106-mld-0-0'
+      providerNameSlug: 'vimeo',
+      align: ''
     }
   }
 ] as BlockProps[]

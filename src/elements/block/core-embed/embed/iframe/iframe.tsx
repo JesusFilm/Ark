@@ -2,8 +2,12 @@ import React from 'react'
 import { Container, CardMedia, makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
-  cardSize: {
+  smallSize: {
     height: '300px',
+    margin: theme.spacing(3, 0)
+  },
+  mediumSize: {
+    height: '500px',
     margin: theme.spacing(3, 0)
   }
 }))
@@ -11,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
 type Attributes = {
   url: string
   providerNameSlug: string
+  align: string
 }
 
 export type IframeProps = {
@@ -20,14 +25,16 @@ export type IframeProps = {
   attributes: Attributes
 }
 
-export function Iframe({ attributes: { url, providerNameSlug } }: IframeProps) {
+export function Iframe({
+  attributes: { url, providerNameSlug, align }
+}: IframeProps) {
   const classes = useStyles()
 
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth={align === 'wide' ? 'md' : 'sm'}>
       <CardMedia
         data-testid={providerNameSlug}
-        className={classes.cardSize}
+        className={align === 'wide' ? classes.mediumSize : classes.smallSize}
         component="iframe"
         src={url}
       />
