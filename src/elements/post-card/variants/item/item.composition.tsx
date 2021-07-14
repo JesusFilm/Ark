@@ -1,6 +1,6 @@
 import React from 'react'
 import { PostCard } from '../..'
-import { JesusFilmThemeProvider } from '../../../../providers/jesus-film-theme-provider'
+import { JesusFilmThemeProvider } from '@jesus-film/ark.providers.jesus-film-theme-provider'
 
 export const ItemPostCardNoImage = () => (
   <JesusFilmThemeProvider>
