@@ -79,6 +79,18 @@
         "mainFile": "index.ts",
         "rootDir": "src/elements/menu"
     },
+    "elements/mission": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/mission",
+        "nextVersion": {
+            "version": "patch",
+            "message": "",
+            "username": "John Geronimo",
+            "email": "johnageronimo1@gmail.com"
+        }
+    },
     "elements/navigation": {
         "scope": "jesus-film.ark",
         "version": "0.0.1",
