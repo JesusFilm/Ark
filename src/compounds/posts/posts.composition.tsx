@@ -3,9 +3,11 @@ import { Posts } from '.'
 
 export const BasicPosts = () => (
   <Posts
-    Link={({ children, href, className }) =>
+    PostLink={({ children, href, className }) =>
       createElement('a', { children, className, href: `/posts/${href}` })
     }
+    variants={['hero', 'premiere', 'premiere']}
+    cols={[12, 4, 4]}
     posts={{
       nodes: [
         {
@@ -16,6 +18,16 @@ export const BasicPosts = () => (
           },
           slug: '10-bible-verses-about-faith-and-doubt',
           title: '10 Bible Verses about Faith and Doubt',
+          categories: {
+            nodes: [
+              {
+                name: 'Following Jesus'
+              },
+              {
+                name: 'Second Category'
+              }
+            ]
+          },
           excerpt:
             "Issues of faith and doubt have a massive impact on Christians of every maturity level. And sometimes, the topic is presented in ways that are confusing and only increase people's anxiety about their doubt."
         },
@@ -27,6 +39,16 @@ export const BasicPosts = () => (
           },
           slug: '4-tips-for-when-you-feel-directionless',
           title: '4 Tips for When You Feel Directionless',
+          categories: {
+            nodes: [
+              {
+                name: 'Following Jesus'
+              },
+              {
+                name: 'Second Category'
+              }
+            ]
+          },
           excerpt:
             "Wouldn't it be great if God sent us a daily email that outlined all the things He wanted us to accomplish? We could simply go through our day checking off His to-do list. And we'd never have to worry about whether we're in the center of His will."
         },
@@ -48,7 +70,7 @@ export const BasicPosts = () => (
 
 export const TwoPosts = () => (
   <Posts
-    Link={({ children, href, className }) =>
+    PostLink={({ children, href, className }) =>
       createElement('a', { children, className, href: `/posts/${href}` })
     }
     posts={{
@@ -82,7 +104,7 @@ export const TwoPosts = () => (
 
 export const OnePost = () => (
   <Posts
-    Link={({ children, href, className }) =>
+    PostLink={({ children, href, className }) =>
       createElement('a', { children, className, href: `/posts/${href}` })
     }
     posts={{
@@ -105,9 +127,11 @@ export const OnePost = () => (
 
 export const FullPosts = () => (
   <Posts
-    Link={({ children, href, className }) =>
+    PostLink={({ children, href, className }) =>
       createElement('a', { children, className, href: `/posts/${href}` })
     }
+    variants={['premiere', 'item']}
+    cols={[12, 6, 6]}
     posts={{
       nodes: [
         {

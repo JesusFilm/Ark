@@ -1,7 +1,6 @@
 import React, { ReactElement, createElement, ReactNode } from 'react'
 import { Grid, makeStyles } from '@material-ui/core'
 import { PostCard } from '@jesus-film/ark.elements.core'
-import { chunk } from 'lodash/fp'
 
 const useStyles = makeStyles((theme) => ({
   link: {
@@ -24,8 +23,23 @@ export type PostsProps = {
           sourceUrl: string
         }
       }
+      categories?: {
+        nodes?: {
+          name?: string
+        }[]
+      }
     }[]
   }
+  /**
+   * Display style of list items. Variant corresponds to post index.
+   * If length of variant array is less than length of posts nodes, pattern repeats.
+   */
+  variants?: ('hero' | 'premiere' | 'item' | 'quote' | 'default')[]
+  /**
+   * Number of columns at size md. If nothing is passed, defaults to 12.
+   * If array is passed less than size of posts node length, repeats in pattern.
+   */
+  cols?: (12 | 6 | 4)[]
   /**
    * a component to link to a post (href param will be the slug of the post).
    */
@@ -38,53 +52,36 @@ export type PostsProps = {
 
 export function Posts({
   posts,
+  variants = ['premiere'],
+  cols = [12],
   PostLink = (props) => createElement('a', props)
 }: PostsProps) {
   const classes = useStyles()
   return (
-    <Grid container spacing={2} item>
-      {chunk(3, posts.nodes).map((posts, i) => (
-        <Grid container spacing={2} item key={i} justify="center">
-          {posts[0] && (
-            <Grid
-              item
-              xs={12}
-              sm={posts.length === 2 ? 6 : 12}
-              md={posts.length === 3 ? 3 : 6}>
-              <PostLink href={posts[0].slug} className={classes.link}>
-                <PostCard
-                  src={posts[0].featuredImage?.node?.sourceUrl}
-                  title={posts[0].title}
-                  excerpt={posts[0].excerpt}
-                  variant="premiere"
-                />
-              </PostLink>
-            </Grid>
-          )}
-          {posts[1] && (
-            <Grid item xs={12} sm={6} md={6}>
-              <PostLink href={posts[1].slug} className={classes.link}>
-                <PostCard
-                  src={posts[1].featuredImage?.node?.sourceUrl}
-                  title={posts[1].title}
-                  excerpt={posts[1].excerpt}
-                  variant="premiere"
-                />
-              </PostLink>
-            </Grid>
-          )}
-          {posts[2] && (
-            <Grid item xs={12} sm={6} md={3}>
-              <PostLink href={posts[2].slug} className={classes.link}>
-                <PostCard
-                  src={posts[2].featuredImage?.node?.sourceUrl}
-                  title={posts[2].title}
-                  excerpt={posts[2].excerpt}
-                  variant="premiere"
-                />
-              </PostLink>
-            </Grid>
-          )}
+    <Grid container spacing={2} item justify="center">
+      {posts.nodes.map((post, i) => (
+        <Grid
+          item
+          key={i}
+          xs={12}
+          sm={
+            (cols[i] || cols[cols.length < i + 1 ? i % cols.length : i]) === 4
+              ? 6
+              : 12
+          }
+          md={cols[i] || cols[cols.length < i + 1 ? i % cols.length : i]}>
+          <PostLink href={post.slug} className={classes.link}>
+            <PostCard
+              categories={post.categories}
+              src={post.featuredImage?.node?.sourceUrl}
+              title={post.title}
+              excerpt={post.excerpt}
+              variant={
+                variants[i] ||
+                variants[variants.length < i + 1 ? i % variants.length : i]
+              }
+            />
+          </PostLink>
         </Grid>
       ))}
     </Grid>

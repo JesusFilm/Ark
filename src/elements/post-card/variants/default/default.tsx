@@ -13,8 +13,12 @@ const useStyles = makeStyles(() => ({
 export type DefaultProps = {
   /** Post title */
   title: string
-  /** Category */
-  category: string
+  /** Categories */
+  categories?: {
+    nodes?: {
+      name?: string
+    }[]
+  }
   /** Post excerpt */
   excerpt?: string
   /** Image source url */
@@ -23,7 +27,7 @@ export type DefaultProps = {
   variant: 'default'
 }
 
-export function Default({ title, excerpt, category, src }: DefaultProps) {
+export function Default({ title, excerpt, categories, src }: DefaultProps) {
   const classes = useStyles()
   return (
     <Grid
@@ -38,11 +42,14 @@ export function Default({ title, excerpt, category, src }: DefaultProps) {
           <img src={src} className={classes.image} />
         </Grid>
       )}
-      <Grid item>
-        <Typography variant="h6" className={classes.category}>
-          {category}
-        </Typography>
-      </Grid>
+      {categories &&
+        categories.nodes.map((category, i) => (
+          <Grid item key={i}>
+            <Typography variant="h6" className={classes.category}>
+              {category.name}
+            </Typography>
+          </Grid>
+        ))}
       <Grid item>
         <Typography variant="h3">{title}</Typography>
       </Grid>

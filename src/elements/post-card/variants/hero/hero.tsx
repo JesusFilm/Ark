@@ -31,7 +31,11 @@ export type HeroProps = {
   /** Post title */
   title: string
   /** Post category */
-  category?: string
+  categories?: {
+    nodes?: {
+      name?: string
+    }[]
+  }
   /** Post excerpt */
   excerpt?: string
   /** Image source url */
@@ -46,7 +50,7 @@ export type HeroProps = {
 
 export function Hero({
   title,
-  category,
+  categories,
   excerpt,
   src,
   onClick,
@@ -69,11 +73,12 @@ export function Hero({
           <Grid item sm={12} md={9} lg={6}>
             <Container maxWidth="sm">
               <Grid container direction="row" alignItems="center" spacing={2}>
-                {category && (
-                  <Grid item>
-                    <Typography variant="h5">{category}</Typography>
-                  </Grid>
-                )}
+                {categories &&
+                  categories.nodes.map((category, i) => (
+                    <Grid item key={i}>
+                      <Typography variant="h6">{category.name}</Typography>
+                    </Grid>
+                  ))}
                 <Grid item>
                   <Typography variant="h2">{title}</Typography>
                 </Grid>
