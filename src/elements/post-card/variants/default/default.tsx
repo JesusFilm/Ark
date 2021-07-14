@@ -35,7 +35,7 @@ type ImageNode = {
 
 export type DefaultProps = {
   /** Post title */
-  title?: string
+  title: string
   /** Category */
   categories?: CategoryNodes
   /** Post excerpt */
@@ -62,7 +62,7 @@ export function Default({
   const { t } = useTranslation('post-card')
   const classes = useStyles()
 
-  return title ? (
+  return (
     <Container maxWidth="xs" data-testid="defaultVariant">
       <Grid
         container
@@ -103,5 +103,5 @@ export function Default({
         )}
       </Grid>
     </Container>
-  ) : null
+  )
 }

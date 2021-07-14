@@ -89,9 +89,4 @@ describe('post-card-default', () => {
     expect(queryByRole('img')).not.toBeInTheDocument()
     expect(queryByRole('heading', { name: 'category' })).not.toBeInTheDocument()
   })
-
-  it('should render null if no props', () => {
-    const { queryByTestId } = render(<PostCard variant="default" />)
-    expect(queryByTestId('defaultVariant')).not.toBeInTheDocument()
-  })
 })

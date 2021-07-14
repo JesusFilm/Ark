@@ -26,36 +26,20 @@ export function Item({ title, author, src }: ItemProps) {
 
   return (
     <Container maxWidth="sm" data-testid="itemVariant">
-      <Grid
-        container
-        direction="row"
-        alignItems="flex-start"
-        justify="flex-start"
-        spacing={1}>
+      <Grid container spacing={2}>
         {src && (
-          <Grid item sm={3} xs={3} md={3}>
+          <Grid item sm={4} xs={12}>
             <img src={src} className={classes.image} />
           </Grid>
         )}
-        <Grid
-          item
-          xs={src ? 9 : 12}
-          sm={src ? 9 : 12}
-          md={src ? 9 : 12}
-          container
-          direction="column"
-          alignItems="flex-start"
-          justify="flex-start"
-          spacing={1}>
-          <Grid item>
-            <Typography variant="subtitle1">{title}</Typography>
-          </Grid>
+        <Grid item sm={src ? 8 : 12} xs={12}>
+          <Typography variant="h5" gutterBottom={!!author}>
+            {title}
+          </Typography>
           {author && (
-            <Grid item>
-              <Typography variant="body2" className={classes.author}>
-                {author}
-              </Typography>
-            </Grid>
+            <Typography variant="h6" className={classes.author}>
+              {author}
+            </Typography>
           )}
         </Grid>
       </Grid>

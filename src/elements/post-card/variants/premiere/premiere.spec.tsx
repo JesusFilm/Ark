@@ -12,7 +12,8 @@ describe('post-card-premiere', () => {
         variant="premiere"
       />
     )
-    const rendered = getByText('His Shoes Led to Learning About Christianity')
-    expect(rendered).toBeTruthy()
+    expect(
+      getByText('His Shoes Led to Learning About Christianity')
+    ).toBeInTheDocument()
   })
 })

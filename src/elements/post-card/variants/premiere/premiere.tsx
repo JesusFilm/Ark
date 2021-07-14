@@ -38,10 +38,7 @@ export function Premiere({ title, excerpt, src }: PremiereProps) {
           </Grid>
         )}
         <Grid item>
-          <Typography
-            variant="subtitle1"
-            align="center"
-            className={classes.title}>
+          <Typography variant="h5" align="center" className={classes.title}>
             {title}
           </Typography>
         </Grid>
