@@ -178,6 +178,13 @@ const postQuery = {
           __typename: 'CoreParagraphBlock'
         },
         {
+          __typename: 'CoreEmbedBlock',
+          attributes: {
+            url: 'https://www.youtube.com/watch?v=UGFCbmvk0vo',
+            providerNameSlug: 'youtube'
+          }
+        },
+        {
           __typename: 'CoreHeadingBlock',
           attributes: {
             align: 'left',
@@ -222,6 +229,13 @@ const postQuery = {
           __typename: 'CoreParagraphBlock'
         },
         {
+          attributes: {
+            url: 'https://www.youtube.com/embed/91hHw1YPqxE',
+            providerNameSlug: 'embed-handler'
+          },
+          __typename: 'CoreEmbedBlock'
+        },
+        {
           __typename: 'CoreHeadingBlock',
           attributes: {
             align: 'left',
@@ -256,6 +270,13 @@ const postQuery = {
               'For a closer look at this parable, check out the post “<a href="https://www.jesusfilm.org/blog-and-stories/parable-the-weeds.html">What is the Meaning of the Parable of the Weeds?</a>"'
           },
           __typename: 'CoreParagraphBlock'
+        },
+        {
+          __typename: 'CoreEmbedBlock',
+          attributes: {
+            url: 'https://player.vimeo.com/video/10679287',
+            providerNameSlug: 'vimeo'
+          }
         },
         {
           __typename: 'CoreHeadingBlock',
@@ -343,6 +364,14 @@ const postQuery = {
               'For a closer look at these parables, check out the post "<a href="https://www.jesusfilm.org/blog-and-stories/parables-treasure-and-pearl.html">What Are the Parables of the Hidden Treasure and Pearl About</a>?"'
           },
           __typename: 'CoreParagraphBlock'
+        },
+        /** Not a valid youtube url */
+        {
+          __typename: 'CoreEmbedBlock',
+          attributes: {
+            url: 'https://www.youtube.com/UGFCbmvk0v0',
+            providerNameSlug: 'youtube'
+          }
         },
         {
           __typename: 'CoreHeadingBlock',

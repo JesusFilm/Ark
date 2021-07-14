@@ -64,6 +64,15 @@ describe('block', () => {
     expect(getByTestId('CoreQuoteBlock')).toBeInTheDocument()
   })
 
+  it('should render embed', () => {
+    const { getByTestId } = render(
+      <Block
+        {...blocks.filter((block) => block.__typename === 'CoreEmbedBlock')[0]}
+      />
+    )
+    expect(getByTestId('youtube')).toBeInTheDocument()
+  })
+
   it('should render null', () => {
     const { baseElement } = render(
       <Block

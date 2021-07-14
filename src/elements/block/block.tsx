@@ -4,6 +4,7 @@ import { CoreImage, CoreImageProps } from './core-image'
 import { CoreParagraph, CoreParagraphProps } from './core-paragraph'
 import { CoreHeading, CoreHeadingProps } from './core-heading'
 import { CoreGallery, CoreGalleryProps } from './core-gallery'
+import { CoreEmbed, CoreEmbedProps } from './core-embed'
 import { CoreQuote, CoreQuoteProps } from './core-quote'
 import { Card, CardContent, Container, Typography } from '@material-ui/core'
 
@@ -13,6 +14,7 @@ export type BlockProps =
   | CoreHeadingProps
   | CoreListProps
   | CoreGalleryProps
+  | CoreEmbedProps
   | CoreQuoteProps
 
 export function Block(BlockProps: BlockProps) {
@@ -27,6 +29,8 @@ export function Block(BlockProps: BlockProps) {
       return <CoreList {...BlockProps} />
     case 'CoreGalleryBlock':
       return <CoreGallery {...BlockProps} />
+    case 'CoreEmbedBlock':
+      return <CoreEmbed {...BlockProps} />
     case 'CoreQuoteBlock':
       return <CoreQuote {...BlockProps} />
     default:

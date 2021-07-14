@@ -51,9 +51,6 @@ export function Default({ title, excerpt, category, src }: DefaultProps) {
             <Typography variant="body1">{excerpt}</Typography>
           </Grid>
         )}
-        {/* <Grid item>
-          <TimeAgo datetime={datetime} locale={locale} />
-        </Grid> */}
       </Grid>
     </Container>
   )
