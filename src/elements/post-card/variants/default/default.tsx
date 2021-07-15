@@ -36,10 +36,10 @@ type ImageNode = {
 export type DefaultProps = {
   /** Post title */
   title: string
-  /** Category */
-  categories?: CategoryNodes
   /** Post excerpt */
   excerpt?: string
+  /** Category */
+  categories?: CategoryNodes
   /**
    * Featured Image
    */

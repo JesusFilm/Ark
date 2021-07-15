@@ -10,18 +10,31 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
+type Image = {
+  /**
+   * Image URL
+   */
+  sourceUrl: string
+}
+
+type ImageNode = {
+  node: Image
+}
+
 export type PremiereProps = {
   /** Post title */
   title: string
   /** Post excerpt */
   excerpt?: string
-  /** Image source url */
-  src?: string
+  /**
+   * Featured Image
+   */
+  featuredImage?: ImageNode
   /** Variant style */
   variant: 'premiere'
 }
 
-export function Premiere({ title, excerpt, src }: PremiereProps) {
+export function Premiere({ title, excerpt, featuredImage }: PremiereProps) {
   const classes = useStyles()
 
   return (
@@ -32,9 +45,13 @@ export function Premiere({ title, excerpt, src }: PremiereProps) {
         alignItems="center"
         justify="center"
         spacing={1}>
-        {src && (
+        {featuredImage?.node?.sourceUrl && (
           <Grid item>
-            <img src={src} className={classes.image} />
+            <img
+              src={featuredImage.node.sourceUrl}
+              className={classes.image}
+              data-testid="featured-image"
+            />
           </Grid>
         )}
         <Grid item>
@@ -44,7 +61,7 @@ export function Premiere({ title, excerpt, src }: PremiereProps) {
         </Grid>
         {excerpt && (
           <Grid item>
-            <Typography variant="body2" align="center">
+            <Typography variant="body2" align="center" data-testid="excerpt">
               {excerpt}
             </Typography>
           </Grid>

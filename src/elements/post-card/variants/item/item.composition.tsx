@@ -7,15 +7,24 @@ export const ItemPostCardNoImage = () => (
     <PostCard
       title="His Shoes Led to Learning About Christianity"
       variant="item"
-      author="Jill Hadlock"
+      author={{
+        node: {
+          name: 'Ryan Johnson'
+        }
+      }}
     />
   </JesusFilmThemeProvider>
 )
 
-export const ItemPostCardNoImageNoAuthor = () => (
+export const ItemPostCardNoAuthor = () => (
   <JesusFilmThemeProvider>
     <PostCard
       title="His Shoes Led to Learning About Christianity"
+      featuredImage={{
+        node: {
+          sourceUrl: 'https://source.unsplash.com/random/1920x1080'
+        }
+      }}
       variant="item"
     />
   </JesusFilmThemeProvider>
@@ -24,10 +33,18 @@ export const ItemPostCardNoImageNoAuthor = () => (
 export const ItemPostCard = () => (
   <JesusFilmThemeProvider>
     <PostCard
-      src="https://source.unsplash.com/random/1920x1080"
+      featuredImage={{
+        node: {
+          sourceUrl: 'https://source.unsplash.com/random/1920x1080'
+        }
+      }}
       title="A Behind the Scenes Glimpse at Film Production"
       variant="item"
-      author="Micheal Allen"
+      author={{
+        node: {
+          name: 'Ryan Johnson'
+        }
+      }}
     />
   </JesusFilmThemeProvider>
 )

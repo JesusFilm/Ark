@@ -30,40 +30,82 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
+type Category = {
+  /**
+   * Category Name
+   */
+  name: string
+}
+
+type CategoryNodes = {
+  nodes: Category[]
+}
+
+type Image = {
+  /**
+   * Image URL
+   */
+  sourceUrl: string
+}
+
+type ImageNode = {
+  node: Image
+}
+
 export type HeroProps = {
   /** Post title */
   title: string
-  /** Post category */
-  category?: string
   /** Post excerpt */
   excerpt?: string
-  /** Image source url */
-  src?: string
+  /** Category */
+  categories?: CategoryNodes
+  /**
+   * Featured Image
+   */
+  featuredImage?: ImageNode
   /** Callback when button is clicked */
   onClick?: () => void
   /** Variant style */
   variant: 'hero'
 }
 
-export function Hero({ title, category, excerpt, src, onClick }: HeroProps) {
+export function Hero({
+  title,
+  categories,
+  excerpt,
+  featuredImage,
+  onClick
+}: HeroProps) {
   const classes = useStyles()
   const { t } = useTranslation('post-card')
 
   return (
     <Box
       data-testid="heroVariant"
-      className={classNames(src && classes.heroBackground)}
-      style={src ? { backgroundImage: `url(${src})` } : {}}>
-      <Box className={classNames(classes.box, src && classes.boxOverlay)}>
+      className={classNames(
+        featuredImage?.node?.sourceUrl && classes.heroBackground
+      )}
+      style={
+        featuredImage?.node?.sourceUrl
+          ? { backgroundImage: `url(${featuredImage.node.sourceUrl})` }
+          : null
+      }>
+      <Box
+        className={classNames(
+          classes.box,
+          featuredImage?.node?.sourceUrl && classes.boxOverlay
+        )}>
         <Container>
           <Grid
             container
             direction="column"
             spacing={2}
             className={classes.grid}>
-            {category && (
+            {categories?.nodes?.[0]?.name && (
               <Grid item>
-                <Typography variant="h6">{category}</Typography>
+                <Typography variant="h6" data-testid="category">
+                  {categories.nodes[0].name}
+                </Typography>
               </Grid>
             )}
             <Grid item>
@@ -71,7 +113,7 @@ export function Hero({ title, category, excerpt, src, onClick }: HeroProps) {
             </Grid>
             {excerpt && (
               <Grid item>
-                <Typography>{excerpt}</Typography>
+                <Typography data-testid="excerpt">{excerpt}</Typography>
               </Grid>
             )}
             {onClick && (

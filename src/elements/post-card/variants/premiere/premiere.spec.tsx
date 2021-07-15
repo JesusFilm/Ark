@@ -3,17 +3,70 @@ import { render } from '@testing-library/react'
 import { PostCard } from '../..'
 
 describe('post-card-premiere', () => {
-  it('premiere variant should render', () => {
-    const { getByText } = render(
+  it('renders excerpt and handles null case', () => {
+    const { getByText, queryByTestId, rerender } = render(
       <PostCard
-        src="https://www.jesusfilm.org/content/dam/jesusfilm/homepage/hero/hero-omn21.png"
         title="His Shoes Led to Learning About Christianity"
-        excerpt="The call to prayer eminated from Omar's Lips - an eerie sound, out of place in the park. Omar and a group of 15 men bowed in sync."
+        excerpt="This is an excerpt"
         variant="premiere"
       />
     )
-    expect(
-      getByText('His Shoes Led to Learning About Christianity')
-    ).toBeInTheDocument()
+    expect(getByText('This is an excerpt')).toBeInTheDocument()
+    rerender(
+      <PostCard
+        title="His Shoes Led to Learning About Christianity"
+        excerpt={null}
+        variant="premiere"
+      />
+    )
+    expect(queryByTestId('excerpt')).not.toBeInTheDocument()
+  })
+
+  it('renders featured image and handles null case', () => {
+    const { getByTestId, queryByTestId, rerender } = render(
+      <PostCard
+        title="His Shoes Led to Learning About Christianity"
+        featuredImage={{
+          node: {
+            sourceUrl:
+              'https://www.jesusfilm.org/content/dam/jesusfilm/homepage/hero/hero-omn21.png'
+          }
+        }}
+        variant="premiere"
+      />
+    )
+    expect(getByTestId('featured-image').getAttribute('src')).toEqual(
+      'https://www.jesusfilm.org/content/dam/jesusfilm/homepage/hero/hero-omn21.png'
+    )
+    rerender(
+      <PostCard
+        title="His Shoes Led to Learning About Christianity"
+        variant="premiere"
+        featuredImage={{
+          node: {
+            sourceUrl: null
+          }
+        }}
+      />
+    )
+    expect(queryByTestId('featured-image')).not.toBeInTheDocument()
+    rerender(
+      <PostCard
+        title="His Shoes Led to Learning About Christianity"
+        variant="premiere"
+        featuredImage={{
+          node: null
+        }}
+      />
+    )
+    expect(queryByTestId('featured-image')).not.toBeInTheDocument()
+    rerender(
+      <PostCard
+        title="His Shoes Led to Learning About Christianity"
+        variant="premiere"
+        featuredImage={null}
+      />
+    )
+    expect(queryByTestId('featured-image')).not.toBeInTheDocument()
   })
 })

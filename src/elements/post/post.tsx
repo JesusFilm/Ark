@@ -11,7 +11,7 @@ type Avatar = {
 type Author = {
   /** Avatar */
   avatar: Avatar
-  /** Category name */
+  /** Author name */
   name: string
 }
 

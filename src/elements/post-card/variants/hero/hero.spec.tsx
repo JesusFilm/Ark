@@ -16,13 +16,16 @@ describe('post-card-hero', () => {
     expect(handleClick).toHaveBeenCalled()
   })
 
-  it('hero variant should display bg image', () => {
-    const handleClick = jest.fn()
-    const { getByTestId } = render(
+  it('renders featured image and handles null cases', () => {
+    const { getByTestId, rerender } = render(
       <PostCard
-        src="https://www.jesusfilm.org/content/dam/jesusfilm/homepage/hero/hero-omn21.png"
+        featuredImage={{
+          node: {
+            sourceUrl:
+              'https://www.jesusfilm.org/content/dam/jesusfilm/homepage/hero/hero-omn21.png'
+          }
+        }}
         title="His Shoes Led to Learning About Christianity"
-        onClick={handleClick}
         variant="hero"
       />
     )
@@ -34,14 +37,42 @@ describe('post-card-hero', () => {
     ).toEqual(
       'url(https://www.jesusfilm.org/content/dam/jesusfilm/homepage/hero/hero-omn21.png)'
     )
-  })
-
-  it('hero variant not display bg img if nothing is passed', () => {
-    const handleClick = jest.fn()
-    const { getByTestId } = render(
+    rerender(
       <PostCard
+        featuredImage={{
+          node: {
+            sourceUrl: null
+          }
+        }}
         title="His Shoes Led to Learning About Christianity"
-        onClick={handleClick}
+        variant="hero"
+      />
+    )
+    expect(
+      window.getComputedStyle(getByTestId('heroVariant')).backgroundSize
+    ).toBeFalsy()
+    expect(
+      window.getComputedStyle(getByTestId('heroVariant')).backgroundImage
+    ).toBeFalsy()
+    rerender(
+      <PostCard
+        featuredImage={{
+          node: null
+        }}
+        title="His Shoes Led to Learning About Christianity"
+        variant="hero"
+      />
+    )
+    expect(
+      window.getComputedStyle(getByTestId('heroVariant')).backgroundSize
+    ).toBeFalsy()
+    expect(
+      window.getComputedStyle(getByTestId('heroVariant')).backgroundImage
+    ).toBeFalsy()
+    rerender(
+      <PostCard
+        featuredImage={null}
+        title="His Shoes Led to Learning About Christianity"
         variant="hero"
       />
     )
@@ -53,18 +84,63 @@ describe('post-card-hero', () => {
     ).toBeFalsy()
   })
 
-  it('renders category and excerpt', () => {
-    const handleClick = jest.fn()
-    const { getByText } = render(
+  it('renders category and handles null cases', () => {
+    const { getByText, queryByTestId, rerender } = render(
+      <PostCard
+        title="His Shoes Led to Learning About Christianity"
+        categories={{
+          nodes: []
+        }}
+        variant="hero"
+      />
+    )
+    expect(queryByTestId('category')).not.toBeInTheDocument()
+    rerender(
+      <PostCard
+        title="His Shoes Led to Learning About Christianity"
+        categories={{
+          nodes: null
+        }}
+        variant="hero"
+      />
+    )
+    expect(queryByTestId('category')).not.toBeInTheDocument()
+    rerender(
+      <PostCard
+        title="His Shoes Led to Learning About Christianity"
+        categories={null}
+        variant="hero"
+      />
+    )
+    expect(queryByTestId('category')).not.toBeInTheDocument()
+    rerender(
+      <PostCard
+        title="His Shoes Led to Learning About Christianity"
+        categories={{
+          nodes: [{ name: 'This is a category' }]
+        }}
+        variant="hero"
+      />
+    )
+    expect(getByText('This is a category')).toBeInTheDocument()
+  })
+
+  it('renders excerpt and handles null cases', () => {
+    const { getByText, queryByTestId, rerender } = render(
       <PostCard
         title="His Shoes Led to Learning About Christianity"
         excerpt="This is an excerpt"
-        category="This is a category"
-        onClick={handleClick}
         variant="hero"
       />
     )
     expect(getByText('This is an excerpt')).toBeInTheDocument()
-    expect(getByText('This is a category')).toBeInTheDocument()
+    rerender(
+      <PostCard
+        title="His Shoes Led to Learning About Christianity"
+        excerpt={null}
+        variant="hero"
+      />
+    )
+    expect(queryByTestId('excerpt')).not.toBeInTheDocument()
   })
 })

@@ -1,4 +1,4 @@
-import React, { ReactElement, createElement } from 'react'
+import React, { ReactNode, ReactElement, createElement } from 'react'
 import {
   Box,
   Container,
@@ -28,6 +28,8 @@ const useStyles = makeStyles((theme) => ({
 export type QuoteProps = {
   /** Post title */
   title: string
+  /** Post slug */
+  slug?: string
   /** quote from customPostFields  */
   customPostFields: {
     quote: string
@@ -36,17 +38,17 @@ export type QuoteProps = {
    * Post publishing date.
    */
   date: string
-  PostLink?: (
-    props: React.DetailedHTMLProps<
-      React.AnchorHTMLAttributes<HTMLAnchorElement>,
-      HTMLAnchorElement
-    >
-  ) => ReactElement
+  PostLink?: (props: {
+    children: ReactNode
+    href: string
+    className?: string
+  }) => ReactElement
   /** Variant style */
   variant: 'quote'
 }
 export function Quote({
   title,
+  slug,
   customPostFields: { quote },
   date,
   PostLink = (props) => createElement('a', props)
@@ -77,7 +79,9 @@ export function Quote({
               </Grid>
               <Grid item>
                 <Typography>
-                  <PostLink className={classes.link}>{title}</PostLink>
+                  <PostLink href={slug} className={classes.link}>
+                    {title}
+                  </PostLink>
                 </Typography>
                 <Typography color="textPrimary">
                   {t('{{date,date}}', { date })}
