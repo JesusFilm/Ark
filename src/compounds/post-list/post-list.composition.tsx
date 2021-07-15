@@ -6,8 +6,7 @@ export const PremiereThreePosts = () => (
     PostLink={({ children, href, className }) =>
       createElement('a', { children, className, href: `/posts/${href}` })
     }
-    variants={['hero', 'premiere', 'premiere']}
-    cols={[12, 4, 4]}
+    variant="premiere"
     posts={{
       nodes: [
         {
@@ -18,16 +17,6 @@ export const PremiereThreePosts = () => (
           },
           slug: '10-bible-verses-about-faith-and-doubt',
           title: '10 Bible Verses about Faith and Doubt',
-          categories: {
-            nodes: [
-              {
-                name: 'Following Jesus'
-              },
-              {
-                name: 'Second Category'
-              }
-            ]
-          },
           excerpt:
             "Issues of faith and doubt have a massive impact on Christians of every maturity level. And sometimes, the topic is presented in ways that are confusing and only increase people's anxiety about their doubt."
         },
@@ -39,16 +28,6 @@ export const PremiereThreePosts = () => (
           },
           slug: '4-tips-for-when-you-feel-directionless',
           title: '4 Tips for When You Feel Directionless',
-          categories: {
-            nodes: [
-              {
-                name: 'Following Jesus'
-              },
-              {
-                name: 'Second Category'
-              }
-            ]
-          },
           excerpt:
             "Wouldn't it be great if God sent us a daily email that outlined all the things He wanted us to accomplish? We could simply go through our day checking off His to-do list. And we'd never have to worry about whether we're in the center of His will."
         },
@@ -65,7 +44,6 @@ export const PremiereThreePosts = () => (
         }
       ]
     }}
-    variant="premiere"
   />
 )
 
@@ -100,8 +78,43 @@ export const PremiereTwoPosts = () => (
         }
       ]
     }}
-    cols={[4]}
-    variants={['premiere']}
+    variant="premiere"
+  />
+)
+
+export const PremiereTwoPostsFullWidth = () => (
+  <PostList
+    PostLink={({ children, href, className }) =>
+      createElement('a', { children, className, href: `/posts/${href}` })
+    }
+    fullWidth
+    posts={{
+      nodes: [
+        {
+          featuredImage: {
+            node: {
+              sourceUrl: 'https://source.unsplash.com/1920x1080/daily?doubt'
+            }
+          },
+          slug: '10-bible-verses-about-faith-and-doubt',
+          title: '10 Bible Verses about Faith and Doubt',
+          excerpt:
+            "Issues of faith and doubt have a massive impact on Christians of every maturity level. And sometimes, the topic is presented in ways that are confusing and only increase people's anxiety about their doubt."
+        },
+        {
+          featuredImage: {
+            node: {
+              sourceUrl: 'https://source.unsplash.com/1920x1080/daily?direction'
+            }
+          },
+          slug: '4-tips-for-when-you-feel-directionless',
+          title: '4 Tips for When You Feel Directionless',
+          excerpt:
+            "Wouldn't it be great if God sent us a daily email that outlined all the things He wanted us to accomplish? We could simply go through our day checking off His to-do list. And we'd never have to worry about whether we're in the center of His will."
+        }
+      ]
+    }}
+    variant="premiere"
   />
 )
 
@@ -125,7 +138,7 @@ export const PremiereOnePost = () => (
         }
       ]
     }}
-    variants={['hero']}
+    variant="premiere"
   />
 )
 
@@ -134,8 +147,7 @@ export const PremiereFivePosts = () => (
     PostLink={({ children, href, className }) =>
       createElement('a', { children, className, href: `/posts/${href}` })
     }
-    variants={['premiere', 'item', 'item', 'hero']}
-    cols={[12, 4, 4]}
+    variant="premiere"
     posts={{
       nodes: [
         {
@@ -193,6 +205,241 @@ export const PremiereFivePosts = () => (
           title: '15 Bible Verses about Friends and Friendship',
           excerpt:
             'For Christians, witnessing is sharing your personal experience with Jesus. It might seem like a strange word to use in talking about your faith, but once you understand how the Bible uses the term, it makes a lot more sense—and becomes a meaningful part of your Christian life.'
+        }
+      ]
+    }}
+  />
+)
+
+export const ItemPostsJustTitle = () => (
+  <PostList
+    PostLink={({ children, href, className }) =>
+      createElement('a', { children, className, href: `/posts/${href}` })
+    }
+    fullWidth
+    variant="item"
+    posts={{
+      nodes: [
+        {
+          slug: '10-bible-verses-about-faith-and-doubt',
+          title: '10 Bible Verses about Faith and Doubt'
+        },
+        {
+          slug: '4-tips-for-when-you-feel-directionless',
+          title: '4 Tips for When You Feel Directionless'
+        },
+        {
+          slug: 'what-to-do-when-you-feel-alone',
+          title: 'What To Do When You Feel Alone'
+        },
+        {
+          slug: 'Why-You-Should-Know-Your-Neighbors-Better-and-How-to-Do-it',
+          title: 'Why You Should Know Your Neighbors Better, and How to Do it'
+        },
+        {
+          slug: '15-Bible-Verses-about-Friends-and-Friendship',
+          title: '15 Bible Verses about Friends and Friendship'
+        }
+      ]
+    }}
+  />
+)
+
+export const ItemPostsJustTitleAuthor = () => (
+  <PostList
+    PostLink={({ children, href, className }) =>
+      createElement('a', { children, className, href: `/posts/${href}` })
+    }
+    fullWidth
+    variant="item"
+    posts={{
+      nodes: [
+        {
+          author: {
+            node: {
+              name: 'Josh McDowell'
+            }
+          },
+          slug: '10-bible-verses-about-faith-and-doubt',
+          title: '10 Bible Verses about Faith and Doubt'
+        },
+        {
+          author: {
+            node: {
+              name: 'Josh McDowell'
+            }
+          },
+          slug: '4-tips-for-when-you-feel-directionless',
+          title: '4 Tips for When You Feel Directionless'
+        },
+        {
+          author: {
+            node: {
+              name: 'Josh McDowell'
+            }
+          },
+          slug: 'what-to-do-when-you-feel-alone',
+          title: 'What To Do When You Feel Alone'
+        },
+        {
+          author: {
+            node: {
+              name: 'Josh McDowell'
+            }
+          },
+          slug: 'Why-You-Should-Know-Your-Neighbors-Better-and-How-to-Do-it',
+          title: 'Why You Should Know Your Neighbors Better, and How to Do it'
+        },
+        {
+          author: {
+            node: {
+              name: 'Josh McDowell'
+            }
+          },
+          slug: '15-Bible-Verses-about-Friends-and-Friendship',
+          title: '15 Bible Verses about Friends and Friendship'
+        }
+      ]
+    }}
+  />
+)
+
+export const ItemPostsImageTitleSometimesAuthor = () => (
+  <PostList
+    PostLink={({ children, href, className }) =>
+      createElement('a', { children, className, href: `/posts/${href}` })
+    }
+    fullWidth
+    variant="item"
+    posts={{
+      nodes: [
+        {
+          featuredImage: {
+            node: {
+              sourceUrl: 'https://source.unsplash.com/1920x1080/daily?doubt'
+            }
+          },
+          slug: '10-bible-verses-about-faith-and-doubt',
+          title: '10 Bible Verses about Faith and Doubt',
+          author: {
+            node: {
+              name: 'Josh McDowell'
+            }
+          }
+        },
+        {
+          featuredImage: {
+            node: {
+              sourceUrl: 'https://source.unsplash.com/1920x1080/daily?direction'
+            }
+          },
+          slug: '4-tips-for-when-you-feel-directionless',
+          title: '4 Tips for When You Feel Directionless'
+        },
+        {
+          featuredImage: {
+            node: {
+              sourceUrl: 'https://source.unsplash.com/1920x1080/daily?alone'
+            }
+          },
+          slug: 'what-to-do-when-you-feel-alone',
+          title: 'What To Do When You Feel Alone',
+          author: {
+            node: {
+              name: 'Josh McDowell'
+            }
+          }
+        },
+        {
+          featuredImage: {
+            node: {
+              sourceUrl: 'https://source.unsplash.com/1920x1080/daily?city'
+            }
+          },
+          slug: 'Why-You-Should-Know-Your-Neighbors-Better-and-How-to-Do-it',
+          title: 'Why You Should Know Your Neighbors Better, and How to Do it'
+        },
+        {
+          featuredImage: {
+            node: {
+              sourceUrl:
+                'https://source.unsplash.com/1920x1080/daily?friendship'
+            }
+          },
+          slug: '15-Bible-Verses-about-Friends-and-Friendship',
+          title: '15 Bible Verses about Friends and Friendship'
+        }
+      ]
+    }}
+  />
+)
+
+export const DefaultPosts = () => (
+  <PostList
+    PostLink={({ children, href, className }) =>
+      createElement('a', { children, className, href: `/posts/${href}` })
+    }
+    fullWidth
+    variant="default"
+    posts={{
+      nodes: [
+        {
+          featuredImage: {
+            node: {
+              sourceUrl: 'https://source.unsplash.com/1920x1080/daily?doubt'
+            }
+          },
+          slug: '10-bible-verses-about-faith-and-doubt',
+          title: '10 Bible Verses about Faith and Doubt',
+          categories: {
+            nodes: [
+              {
+                name: 'Following Jesus'
+              }
+            ]
+          }
+        },
+        {
+          featuredImage: {
+            node: {
+              sourceUrl: 'https://source.unsplash.com/1920x1080/daily?direction'
+            }
+          },
+          slug: '4-tips-for-when-you-feel-directionless',
+          title: '4 Tips for When You Feel Directionless'
+        },
+        {
+          featuredImage: {
+            node: {
+              sourceUrl: 'https://source.unsplash.com/1920x1080/daily?alone'
+            }
+          },
+          slug: 'what-to-do-when-you-feel-alone',
+          title: 'What To Do When You Feel Alone',
+          author: {
+            node: {
+              name: 'Josh McDowell'
+            }
+          }
+        },
+        {
+          featuredImage: {
+            node: {
+              sourceUrl: 'https://source.unsplash.com/1920x1080/daily?city'
+            }
+          },
+          slug: 'Why-You-Should-Know-Your-Neighbors-Better-and-How-to-Do-it',
+          title: 'Why You Should Know Your Neighbors Better, and How to Do it'
+        },
+        {
+          featuredImage: {
+            node: {
+              sourceUrl:
+                'https://source.unsplash.com/1920x1080/daily?friendship'
+            }
+          },
+          slug: '15-Bible-Verses-about-Friends-and-Friendship',
+          title: '15 Bible Verses about Friends and Friendship'
         }
       ]
     }}
