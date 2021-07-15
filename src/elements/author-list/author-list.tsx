@@ -1,5 +1,6 @@
 import React from 'react'
-import { Grid, makeStyles } from '@material-ui/core'
+import { Container, Grid, makeStyles } from '@material-ui/core'
+import { ListHeader } from '@jesus-film/ark.elements.list-header'
 import {
   AuthorCardProps,
   AuthorCard
@@ -21,12 +22,15 @@ export type AuthorListProps = {
 export function AuthorList({ authors }: AuthorListProps) {
   const classes = useStyles()
   return (
-    <Grid container className={classes.align} alignItems="center" spacing={4}>
-      {authors.map((author, i) => (
-        <Grid item key={`${i}-author`}>
-          <AuthorCard {...author} />
-        </Grid>
-      ))}
-    </Grid>
+    <Container maxWidth="xs">
+      <ListHeader title="Author" />
+      <Grid container className={classes.align} alignItems="center" spacing={4}>
+        {authors.map((author, i) => (
+          <Grid item key={`${i}-author`}>
+            <AuthorCard {...author} />
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
   )
 }

@@ -61,6 +61,12 @@
         "mainFile": "index.ts",
         "rootDir": "src/elements/jesus-film-symbol"
     },
+    "elements/list-header": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/list-header"
+    },
     "elements/menu": {
         "scope": "jesus-film.ark",
         "version": "0.0.1",
