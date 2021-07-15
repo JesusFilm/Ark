@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createElement, ReactElement } from 'react'
 import { Container, Grid, makeStyles } from '@material-ui/core'
 import { ListHeader } from '@jesus-film/ark.elements.list-header'
 import {
@@ -17,17 +17,39 @@ const useStyles = makeStyles((theme) => ({
 export type AuthorListProps = {
   /** authors */
   authors: AuthorCardProps[]
+  /** Title of the list */
+  title?: string
+  /** See All */
+  onSeeAllClick?: () => void
+  /** Author Link */
+  AuthorLink?: (
+    props: React.DetailedHTMLProps<
+      React.AnchorHTMLAttributes<HTMLAnchorElement>,
+      HTMLAnchorElement
+    >
+  ) => ReactElement
 }
 
-export function AuthorList({ authors }: AuthorListProps) {
+export function AuthorList({
+  authors,
+  title,
+  onSeeAllClick,
+  AuthorLink = (props) => createElement('a', props)
+}: AuthorListProps) {
   const classes = useStyles()
   return (
     <Container maxWidth="xs">
-      <ListHeader title="Author" />
+      {title === 'Authors' ? (
+        <ListHeader title={title} onSeeAllClick={onSeeAllClick} />
+      ) : (
+        <></>
+      )}
       <Grid container className={classes.align} alignItems="center" spacing={4}>
         {authors.map((author, i) => (
           <Grid item key={`${i}-author`}>
-            <AuthorCard {...author} />
+            <AuthorLink>
+              <AuthorCard {...author} />
+            </AuthorLink>
           </Grid>
         ))}
       </Grid>

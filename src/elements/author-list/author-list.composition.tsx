@@ -19,6 +19,7 @@ export const BasicAuthorList = () => (
         onClick: () => alert('Clicked Raeli')
       }
     ]}
+    title="Authors"
   />
 )
 

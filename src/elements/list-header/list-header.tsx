@@ -1,4 +1,4 @@
-import React, { createElement, ReactElement } from 'react'
+import React from 'react'
 import {
   Container,
   Typography,
@@ -23,18 +23,10 @@ export type ListHeaderProps = {
    * Title of the list
    */
   title: string
-  Link?: (
-    props: React.DetailedHTMLProps<
-      React.AnchorHTMLAttributes<HTMLAnchorElement>,
-      HTMLAnchorElement
-    >
-  ) => ReactElement
+  onSeeAllClick?: () => void
 }
 
-export function ListHeader({
-  title,
-  Link = (props) => createElement('a', props)
-}: ListHeaderProps) {
+export function ListHeader({ title, onSeeAllClick }: ListHeaderProps) {
   const classes = useStyles()
   return (
     <Container maxWidth="sm">
@@ -43,9 +35,13 @@ export function ListHeader({
           <Typography variant="h4">{title}</Typography>
         </Grid>
         <Grid item xs={2}>
-          <Typography variant="body2" className={classes.seeAll}>
-            <Link>SEE ALL</Link>
-          </Typography>
+          {onSeeAllClick ? (
+            <Typography variant="body2" className={classes.seeAll}>
+              SEE ALL
+            </Typography>
+          ) : (
+            <></>
+          )}
         </Grid>
       </Grid>
       <Divider className={classes.divider} />
