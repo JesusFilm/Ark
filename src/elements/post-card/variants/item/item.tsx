@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, makeStyles, Typography, Container } from '@material-ui/core'
+import { Grid, makeStyles, Typography } from '@material-ui/core'
 
 const useStyles = makeStyles(() => ({
   image: {
@@ -50,31 +50,29 @@ export function Item({ title, author, featuredImage }: ItemProps) {
   const classes = useStyles()
 
   return (
-    <Container maxWidth="sm" data-testid="itemVariant">
-      <Grid container spacing={2}>
-        {featuredImage?.node?.sourceUrl && (
-          <Grid item sm={4} xs={12}>
-            <img
-              src={featuredImage.node.sourceUrl}
-              className={classes.image}
-              data-testid="featured-image"
-            />
-          </Grid>
-        )}
-        <Grid item sm={featuredImage?.node?.sourceUrl ? 8 : 12} xs={12}>
-          <Typography variant="h5" gutterBottom>
-            {title}
-          </Typography>
-          {author?.node?.name && (
-            <Typography
-              variant="h6"
-              className={classes.author}
-              data-testid="author">
-              {author.node.name}
-            </Typography>
-          )}
+    <Grid container spacing={2} data-testid="itemVariant">
+      {featuredImage?.node?.sourceUrl && (
+        <Grid item sm={4} xs={12}>
+          <img
+            src={featuredImage.node.sourceUrl}
+            className={classes.image}
+            data-testid="featured-image"
+          />
         </Grid>
+      )}
+      <Grid item sm={featuredImage?.node?.sourceUrl ? 8 : 12} xs={12}>
+        <Typography variant="h5" gutterBottom>
+          {title}
+        </Typography>
+        {author?.node?.name && (
+          <Typography
+            variant="h6"
+            className={classes.author}
+            data-testid="author">
+            {author.node.name}
+          </Typography>
+        )}
       </Grid>
-    </Container>
+    </Grid>
   )
 }

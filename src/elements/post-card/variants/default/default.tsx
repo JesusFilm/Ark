@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Grid, makeStyles, Typography, Container } from '@material-ui/core'
+import { Box, Grid, makeStyles, Typography } from '@material-ui/core'
 import { useTranslation } from 'react-i18next'
 
 const useStyles = makeStyles((theme) => ({
@@ -38,7 +38,7 @@ export type DefaultProps = {
   title: string
   /** Post excerpt */
   excerpt?: string
-  /** Category */
+  /** Category (Uses only first category) */
   categories?: CategoryNodes
   /**
    * Featured Image
@@ -63,45 +63,44 @@ export function Default({
   const classes = useStyles()
 
   return (
-    <Container maxWidth="xs" data-testid="defaultVariant">
-      <Grid
-        container
-        direction="column"
-        alignItems="flex-start"
-        justify="flex-start"
-        spacing={1}>
-        {featuredImage?.node?.sourceUrl && (
-          <Grid item>
-            <img src={featuredImage.node.sourceUrl} className={classes.image} />
-          </Grid>
-        )}
-        {categories?.nodes?.[0]?.name && (
-          <Grid item>
-            <Box py={1}>
-              <Typography variant="h6" aria-label="category">
-                {categories.nodes[0].name}
-              </Typography>
-            </Box>
-          </Grid>
-        )}
+    <Grid
+      container
+      direction="column"
+      alignItems="flex-start"
+      justify="flex-start"
+      spacing={1}
+      data-testid="defaultVariant">
+      {featuredImage?.node?.sourceUrl && (
         <Grid item>
-          <Typography variant="h5" aria-label="title" className={classes.title}>
-            {title}
+          <img src={featuredImage.node.sourceUrl} className={classes.image} />
+        </Grid>
+      )}
+      {categories?.nodes?.[0]?.name && (
+        <Grid item>
+          <Box py={1}>
+            <Typography variant="h6" aria-label="category">
+              {categories.nodes[0].name}
+            </Typography>
+          </Box>
+        </Grid>
+      )}
+      <Grid item>
+        <Typography variant="h5" aria-label="title" className={classes.title}>
+          {title}
+        </Typography>
+      </Grid>
+      {excerpt && (
+        <Grid item>
+          <Typography>{excerpt}</Typography>
+        </Grid>
+      )}
+      {date && (
+        <Grid item>
+          <Typography variant="body2" color="textSecondary">
+            {t('{{date, date}}', { date })}
           </Typography>
         </Grid>
-        {excerpt && (
-          <Grid item>
-            <Typography>{excerpt}</Typography>
-          </Grid>
-        )}
-        {date && (
-          <Grid item>
-            <Typography variant="body2" color="textSecondary">
-              {t('{{date, date}}', { date })}
-            </Typography>
-          </Grid>
-        )}
-      </Grid>
-    </Container>
+      )}
+    </Grid>
   )
 }

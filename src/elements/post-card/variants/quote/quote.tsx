@@ -38,6 +38,9 @@ export type QuoteProps = {
    * Post publishing date.
    */
   date: string
+  /**
+   * Component to render post link
+   */
   PostLink?: (props: {
     children: ReactNode
     href: string

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, makeStyles, Typography, Container } from '@material-ui/core'
+import { Grid, makeStyles, Typography } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   image: {
@@ -38,35 +38,34 @@ export function Premiere({ title, excerpt, featuredImage }: PremiereProps) {
   const classes = useStyles()
 
   return (
-    <Container maxWidth="xs" data-testid="premiereVariant">
-      <Grid
-        container
-        direction="column"
-        alignItems="center"
-        justify="center"
-        spacing={1}>
-        {featuredImage?.node?.sourceUrl && (
-          <Grid item>
-            <img
-              src={featuredImage.node.sourceUrl}
-              className={classes.image}
-              data-testid="featured-image"
-            />
-          </Grid>
-        )}
+    <Grid
+      container
+      direction="column"
+      alignItems="center"
+      justify="center"
+      spacing={1}
+      data-testid="premiereVariant">
+      {featuredImage?.node?.sourceUrl && (
         <Grid item>
-          <Typography variant="h5" align="center" className={classes.title}>
-            {title}
+          <img
+            src={featuredImage.node.sourceUrl}
+            className={classes.image}
+            data-testid="featured-image"
+          />
+        </Grid>
+      )}
+      <Grid item>
+        <Typography variant="h5" align="center" className={classes.title}>
+          {title}
+        </Typography>
+      </Grid>
+      {excerpt && (
+        <Grid item>
+          <Typography variant="body2" align="center" data-testid="excerpt">
+            {excerpt}
           </Typography>
         </Grid>
-        {excerpt && (
-          <Grid item>
-            <Typography variant="body2" align="center" data-testid="excerpt">
-              {excerpt}
-            </Typography>
-          </Grid>
-        )}
-      </Grid>
-    </Container>
+      )}
+    </Grid>
   )
 }

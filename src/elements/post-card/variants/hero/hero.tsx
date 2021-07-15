@@ -27,6 +27,10 @@ const useStyles = makeStyles((theme) => ({
   },
   grid: {
     maxWidth: 600
+  },
+  title: {
+    fontFamily: theme.typography.h6.fontFamily,
+    fontWeight: 700
   }
 }))
 
@@ -57,7 +61,7 @@ export type HeroProps = {
   title: string
   /** Post excerpt */
   excerpt?: string
-  /** Category */
+  /** Category (Uses only first category) */
   categories?: CategoryNodes
   /**
    * Featured Image
@@ -109,7 +113,9 @@ export function Hero({
               </Grid>
             )}
             <Grid item>
-              <Typography variant="h2">{title}</Typography>
+              <Typography variant="h2" className={classes.title}>
+                {title}
+              </Typography>
             </Grid>
             {excerpt && (
               <Grid item>
