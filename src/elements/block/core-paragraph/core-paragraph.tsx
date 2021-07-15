@@ -14,7 +14,7 @@ export type CoreParagraphProps = {
   __typename: 'CoreParagraphBlock'
 }
 
-export function CoreParagraph({ attributes, __typename }: CoreParagraphProps) {
+export function CoreParagraph({ attributes }: CoreParagraphProps) {
   return (
     <Container maxWidth="sm">
       <Typography
