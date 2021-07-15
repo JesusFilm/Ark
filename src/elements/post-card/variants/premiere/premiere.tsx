@@ -1,7 +1,7 @@
-import React from 'react'
-import { Grid, makeStyles, Typography } from '@material-ui/core'
+import React, { ReactNode, ReactElement, createElement } from 'react'
+import { Grid, makeStyles, Typography, Link } from '@material-ui/core'
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   image: {
     maxWidth: '100%'
   },
@@ -24,17 +24,33 @@ type ImageNode = {
 export type PremiereProps = {
   /** Post title */
   title: string
+  /** Post slug */
+  slug: string
   /** Post excerpt */
   excerpt?: string
   /**
    * Featured Image
    */
   featuredImage?: ImageNode
+  /**
+   * Component to render post link
+   */
+  PostLink?: (props: {
+    children: ReactNode
+    href: string
+    className?: string
+  }) => ReactElement
   /** Variant style */
   variant: 'premiere'
 }
 
-export function Premiere({ title, excerpt, featuredImage }: PremiereProps) {
+export function Premiere({
+  title,
+  slug,
+  excerpt,
+  featuredImage,
+  PostLink = (props) => createElement('a', props)
+}: PremiereProps) {
   const classes = useStyles()
 
   return (
@@ -47,22 +63,28 @@ export function Premiere({ title, excerpt, featuredImage }: PremiereProps) {
       data-testid="premiereVariant">
       {featuredImage?.node?.sourceUrl && (
         <Grid item>
-          <img
-            src={featuredImage.node.sourceUrl}
-            className={classes.image}
-            data-testid="featured-image"
-          />
+          <Link component={PostLink} href={slug}>
+            <img
+              src={featuredImage.node.sourceUrl}
+              className={classes.image}
+              data-testid="featured-image"
+            />
+          </Link>
         </Grid>
       )}
       <Grid item>
         <Typography variant="h5" align="center" className={classes.title}>
-          {title}
+          <Link component={PostLink} href={slug} color="inherit">
+            {title}
+          </Link>
         </Typography>
       </Grid>
       {excerpt && (
         <Grid item>
           <Typography variant="body2" align="center" data-testid="excerpt">
-            {excerpt}
+            <Link component={PostLink} href={slug} color="inherit">
+              {excerpt}
+            </Link>
           </Typography>
         </Grid>
       )}

@@ -7,6 +7,7 @@ describe('post-card-item', () => {
     const { getByTestId, queryByTestId, rerender } = render(
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         variant="item"
         featuredImage={{
           node: {
@@ -22,6 +23,7 @@ describe('post-card-item', () => {
     rerender(
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         variant="item"
         featuredImage={{
           node: {
@@ -34,6 +36,7 @@ describe('post-card-item', () => {
     rerender(
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         variant="item"
         featuredImage={{
           node: null
@@ -44,6 +47,7 @@ describe('post-card-item', () => {
     rerender(
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         variant="item"
         featuredImage={null}
       />
@@ -55,10 +59,12 @@ describe('post-card-item', () => {
     const { getByTestId, queryByTestId, rerender } = render(
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         variant="item"
         author={{
           node: {
-            name: 'James Bond'
+            name: 'James Bond',
+            slug: 'ryan-johnson'
           }
         }}
       />
@@ -67,10 +73,12 @@ describe('post-card-item', () => {
     rerender(
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         variant="item"
         author={{
           node: {
-            name: null
+            name: null,
+            slug: null
           }
         }}
       />
@@ -79,6 +87,7 @@ describe('post-card-item', () => {
     rerender(
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         variant="item"
         author={{
           node: null
@@ -89,6 +98,7 @@ describe('post-card-item', () => {
     rerender(
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         variant="item"
         author={null}
       />
@@ -100,11 +110,58 @@ describe('post-card-item', () => {
     const { getByText } = render(
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         variant="item"
       />
     )
     expect(
       getByText('His Shoes Led to Learning About Christianity')
     ).toBeInTheDocument()
+  })
+
+  it('renders custom post link', () => {
+    const { getByTestId } = render(
+      <PostCard
+        title="His Shoes Led to Learning About Christianity"
+        slug="post-slug"
+        PostLink={(props) => (
+          <a {...props} href={`/posts/${props.href}`} data-testid="post-link" />
+        )}
+        variant="item"
+      />
+    )
+    const link = getByTestId('post-link')
+    expect(link).toBeInTheDocument()
+    expect(link.textContent).toEqual(
+      'His Shoes Led to Learning About Christianity'
+    )
+    expect(link.getAttribute('href')).toEqual('/posts/post-slug')
+  })
+
+  it('renders custom author link', () => {
+    const { getByTestId } = render(
+      <PostCard
+        title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
+        author={{
+          node: {
+            name: 'Ryan Johnson',
+            slug: 'ryan-johnson'
+          }
+        }}
+        AuthorLink={(props) => (
+          <a
+            {...props}
+            href={`/authors/${props.href}`}
+            data-testid="author-link"
+          />
+        )}
+        variant="item"
+      />
+    )
+    const link = getByTestId('author-link')
+    expect(link).toBeInTheDocument()
+    expect(link.textContent).toEqual('Ryan Johnson')
+    expect(link.getAttribute('href')).toEqual('/authors/ryan-johnson')
   })
 })

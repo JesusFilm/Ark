@@ -1,21 +1,8 @@
 import React from 'react'
-import { fireEvent, render } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import { PostCard } from '../..'
 
 describe('post-card-hero', () => {
-  it('hero variant should be clickable', () => {
-    const handleClick = jest.fn()
-    const { getByText } = render(
-      <PostCard
-        title="His Shoes Led to Learning About Christianity"
-        onClick={handleClick}
-        variant="hero"
-      />
-    )
-    fireEvent.click(getByText('Read Story'))
-    expect(handleClick).toHaveBeenCalled()
-  })
-
   it('renders featured image and handles null cases', () => {
     const { getByTestId, rerender } = render(
       <PostCard
@@ -26,6 +13,7 @@ describe('post-card-hero', () => {
           }
         }}
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         variant="hero"
       />
     )
@@ -45,6 +33,7 @@ describe('post-card-hero', () => {
           }
         }}
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         variant="hero"
       />
     )
@@ -60,6 +49,7 @@ describe('post-card-hero', () => {
           node: null
         }}
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         variant="hero"
       />
     )
@@ -73,6 +63,7 @@ describe('post-card-hero', () => {
       <PostCard
         featuredImage={null}
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         variant="hero"
       />
     )
@@ -88,6 +79,7 @@ describe('post-card-hero', () => {
     const { getByText, queryByTestId, rerender } = render(
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         categories={{
           nodes: []
         }}
@@ -98,6 +90,7 @@ describe('post-card-hero', () => {
     rerender(
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         categories={{
           nodes: null
         }}
@@ -108,6 +101,7 @@ describe('post-card-hero', () => {
     rerender(
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         categories={null}
         variant="hero"
       />
@@ -116,8 +110,14 @@ describe('post-card-hero', () => {
     rerender(
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         categories={{
-          nodes: [{ name: 'This is a category' }]
+          nodes: [
+            {
+              name: 'This is a category',
+              slug: 'this-is-a-category'
+            }
+          ]
         }}
         variant="hero"
       />
@@ -129,6 +129,7 @@ describe('post-card-hero', () => {
     const { getByText, queryByTestId, rerender } = render(
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         excerpt="This is an excerpt"
         variant="hero"
       />
@@ -137,10 +138,59 @@ describe('post-card-hero', () => {
     rerender(
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         excerpt={null}
         variant="hero"
       />
     )
     expect(queryByTestId('excerpt')).not.toBeInTheDocument()
+  })
+
+  it('renders custom post link', () => {
+    const { getByTestId } = render(
+      <PostCard
+        title="His Shoes Led to Learning About Christianity"
+        slug="post-slug"
+        PostLink={(props) => (
+          <a {...props} href={`/posts/${props.href}`} data-testid="post-link" />
+        )}
+        variant="hero"
+      />
+    )
+    const link = getByTestId('post-link')
+    expect(link).toBeInTheDocument()
+    expect(link.textContent).toEqual('Read Story')
+    expect(link.getAttribute('href')).toEqual('/posts/post-slug')
+  })
+
+  it('renders custom category link', () => {
+    const { getByTestId } = render(
+      <PostCard
+        title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
+        categories={{
+          nodes: [
+            {
+              name: 'Reaching the Nations',
+              slug: 'reaching-the-nations'
+            }
+          ]
+        }}
+        CategoryLink={(props) => (
+          <a
+            {...props}
+            href={`/categories/${props.href}`}
+            data-testid="category-link"
+          />
+        )}
+        variant="hero"
+      />
+    )
+    const link = getByTestId('category-link')
+    expect(link).toBeInTheDocument()
+    expect(link.textContent).toEqual('Reaching the Nations')
+    expect(link.getAttribute('href')).toEqual(
+      '/categories/reaching-the-nations'
+    )
   })
 })

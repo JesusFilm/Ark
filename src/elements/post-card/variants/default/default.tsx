@@ -1,5 +1,5 @@
-import React from 'react'
-import { Box, Grid, makeStyles, Typography } from '@material-ui/core'
+import React, { ReactNode, ReactElement, createElement } from 'react'
+import { Box, makeStyles, Typography, Link } from '@material-ui/core'
 import { useTranslation } from 'react-i18next'
 
 const useStyles = makeStyles((theme) => ({
@@ -16,6 +16,8 @@ type Category = {
    * Category Name
    */
   name: string
+  /** Category slug */
+  slug: string
 }
 
 type CategoryNodes = {
@@ -36,6 +38,8 @@ type ImageNode = {
 export type DefaultProps = {
   /** Post title */
   title: string
+  /** Post slug */
+  slug: string
   /** Post excerpt */
   excerpt?: string
   /** Category (Uses only first category) */
@@ -48,59 +52,96 @@ export type DefaultProps = {
    * Post publishing date.
    */
   date?: string
+  /**
+   * Component to render post link
+   */
+  PostLink?: (props: {
+    children: ReactNode
+    href: string
+    className?: string
+  }) => ReactElement
+  /**
+   * Component to render category link
+   */
+  CategoryLink?: (props: {
+    children: ReactNode
+    href: string
+    className?: string
+  }) => ReactElement
   /** Variant style */
   variant: 'default'
 }
 
 export function Default({
   title,
+  slug,
   excerpt,
   categories,
   featuredImage,
-  date
+  date,
+  PostLink = (props) => createElement('a', props),
+  CategoryLink = (props) => createElement('a', props)
 }: DefaultProps) {
   const { t } = useTranslation('post-card')
   const classes = useStyles()
 
   return (
-    <Grid
-      container
-      direction="column"
-      alignItems="flex-start"
-      justify="flex-start"
-      spacing={1}
-      data-testid="defaultVariant">
+    <Box data-testid="defaultVariant">
       {featuredImage?.node?.sourceUrl && (
-        <Grid item>
+        <Link component={PostLink} href={slug} underline="none">
           <img src={featuredImage.node.sourceUrl} className={classes.image} />
-        </Grid>
+        </Link>
       )}
       {categories?.nodes?.[0]?.name && (
-        <Grid item>
-          <Box py={1}>
-            <Typography variant="h6" aria-label="category">
+        <Box my={1}>
+          <Typography variant="h6" data-testid="category">
+            <Link
+              component={CategoryLink}
+              href={categories.nodes[0].slug}
+              color="inherit"
+              underline="none">
               {categories.nodes[0].name}
-            </Typography>
-          </Box>
-        </Grid>
-      )}
-      <Grid item>
-        <Typography variant="h5" aria-label="title" className={classes.title}>
-          {title}
-        </Typography>
-      </Grid>
-      {excerpt && (
-        <Grid item>
-          <Typography>{excerpt}</Typography>
-        </Grid>
-      )}
-      {date && (
-        <Grid item>
-          <Typography variant="body2" color="textSecondary">
-            {t('{{date, date}}', { date })}
+            </Link>
           </Typography>
-        </Grid>
+        </Box>
       )}
-    </Grid>
+      <Box my={1}>
+        <Typography
+          variant="h5"
+          aria-label="title"
+          className={classes.title}
+          gutterBottom>
+          <Link
+            component={PostLink}
+            href={slug}
+            color="inherit"
+            underline="none">
+            {title}
+          </Link>
+        </Typography>
+        {excerpt && (
+          <Typography gutterBottom>
+            <Link
+              component={PostLink}
+              href={slug}
+              color="inherit"
+              underline="none">
+              {excerpt}
+            </Link>
+          </Typography>
+        )}
+        {date && (
+          <Typography variant="body2" color="textSecondary" gutterBottom>
+            <Link
+              component={PostLink}
+              href={slug}
+              color="inherit"
+              underline="none">
+              {t('{{date, date}}', { date })}
+            </Link>
+          </Typography>
+        )}
+      </Box>
+    </Box>
   )
 }

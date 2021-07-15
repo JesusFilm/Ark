@@ -10,11 +10,13 @@ export const DefaultPostCard = () => (
         featuredImage={{
           node: { sourceUrl: 'https://source.unsplash.com/random/1920x1080' }
         }}
+        slug="know-your-neighbors-better"
         title="Why You Should Know Your Neighbors Better, and How to Do it"
         categories={{
           nodes: [
             {
-              name: 'Reaching the Nations'
+              name: 'Reaching the Nations',
+              slug: 'reaching-the-nations'
             }
           ]
         }}

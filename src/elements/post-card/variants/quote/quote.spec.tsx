@@ -7,6 +7,7 @@ describe('post-card', () => {
     const { getByText } = render(
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="post-slug"
         customPostFields={{
           quote:
             'If you can?” said Jesus. "Everything is possible for one who believes."'
@@ -33,7 +34,9 @@ describe('post-card', () => {
         date="2021-06-15T22:00:35.664Z"
         variant="quote"
         slug="post-slug"
-        PostLink={(props) => <a {...props} data-testid="post-link" />}
+        PostLink={(props) => (
+          <a {...props} href={`/posts/${props.href}`} data-testid="post-link" />
+        )}
       />
     )
     const link = getByTestId('post-link')
@@ -41,6 +44,6 @@ describe('post-card', () => {
     expect(link.textContent).toEqual(
       'His Shoes Led to Learning About Christianity'
     )
-    expect(link.getAttribute('href')).toEqual('post-slug')
+    expect(link.getAttribute('href')).toEqual('/posts/post-slug')
   })
 })

@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { ReactNode, ReactElement, createElement } from 'react'
+
 import {
   Grid,
   makeStyles,
   Typography,
   Box,
   Button,
-  Container
+  Container,
+  Link
 } from '@material-ui/core'
 import { useTranslation } from 'react-i18next'
 import classNames from 'classnames'
@@ -39,6 +41,8 @@ type Category = {
    * Category Name
    */
   name: string
+  /** Category slug */
+  slug: string
 }
 
 type CategoryNodes = {
@@ -59,6 +63,8 @@ type ImageNode = {
 export type HeroProps = {
   /** Post title */
   title: string
+  /** Post slug */
+  slug: string
   /** Post excerpt */
   excerpt?: string
   /** Category (Uses only first category) */
@@ -67,18 +73,34 @@ export type HeroProps = {
    * Featured Image
    */
   featuredImage?: ImageNode
-  /** Callback when button is clicked */
-  onClick?: () => void
+  /**
+   * Component to render post link
+   */
+  PostLink?: (props: {
+    children: ReactNode
+    href: string
+    className?: string
+  }) => ReactElement
+  /**
+   * Component to render category link
+   */
+  CategoryLink?: (props: {
+    children: ReactNode
+    href: string
+    className?: string
+  }) => ReactElement
   /** Variant style */
   variant: 'hero'
 }
 
 export function Hero({
   title,
+  slug,
   categories,
   excerpt,
   featuredImage,
-  onClick
+  PostLink = (props) => createElement('a', props),
+  CategoryLink = (props) => createElement('a', props)
 }: HeroProps) {
   const classes = useStyles()
   const { t } = useTranslation('post-card')
@@ -108,7 +130,13 @@ export function Hero({
             {categories?.nodes?.[0]?.name && (
               <Grid item>
                 <Typography variant="h6" data-testid="category">
-                  {categories.nodes[0].name}
+                  <Link
+                    component={CategoryLink}
+                    href={categories.nodes[0].slug}
+                    color="inherit"
+                    underline="none">
+                    {categories.nodes[0].name}
+                  </Link>
                 </Typography>
               </Grid>
             )}
@@ -122,17 +150,13 @@ export function Hero({
                 <Typography data-testid="excerpt">{excerpt}</Typography>
               </Grid>
             )}
-            {onClick && (
-              <Grid item>
-                <Button
-                  onClick={onClick}
-                  variant="contained"
-                  color="primary"
-                  size="large">
+            <Grid item>
+              <Link component={PostLink} href={slug} underline="none">
+                <Button variant="contained" color="primary" size="large">
                   {t('Read Story')}
                 </Button>
-              </Grid>
-            )}
+              </Link>
+            </Grid>
           </Grid>
         </Container>
       </Box>

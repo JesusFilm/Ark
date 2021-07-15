@@ -7,6 +7,7 @@ describe('post-card-premiere', () => {
     const { getByText, queryByTestId, rerender } = render(
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         excerpt="This is an excerpt"
         variant="premiere"
       />
@@ -15,6 +16,7 @@ describe('post-card-premiere', () => {
     rerender(
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         excerpt={null}
         variant="premiere"
       />
@@ -26,6 +28,7 @@ describe('post-card-premiere', () => {
     const { getByTestId, queryByTestId, rerender } = render(
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         featuredImage={{
           node: {
             sourceUrl:
@@ -41,6 +44,7 @@ describe('post-card-premiere', () => {
     rerender(
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         variant="premiere"
         featuredImage={{
           node: {
@@ -53,6 +57,7 @@ describe('post-card-premiere', () => {
     rerender(
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         variant="premiere"
         featuredImage={{
           node: null
@@ -63,10 +68,30 @@ describe('post-card-premiere', () => {
     rerender(
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         variant="premiere"
         featuredImage={null}
       />
     )
     expect(queryByTestId('featured-image')).not.toBeInTheDocument()
+  })
+
+  it('renders custom post link', () => {
+    const { getByTestId } = render(
+      <PostCard
+        title="His Shoes Led to Learning About Christianity"
+        slug="post-slug"
+        PostLink={(props) => (
+          <a {...props} href={`/posts/${props.href}`} data-testid="post-link" />
+        )}
+        variant="premiere"
+      />
+    )
+    const link = getByTestId('post-link')
+    expect(link).toBeInTheDocument()
+    expect(link.textContent).toEqual(
+      'His Shoes Led to Learning About Christianity'
+    )
+    expect(link.getAttribute('href')).toEqual('/posts/post-slug')
   })
 })

@@ -11,11 +11,16 @@ export const HeroPostCard = () => (
         }
       }}
       title="His Shoes Led to Learning About Christianity"
+      slug="his-shoes-led-to-learning-about-christianity"
       excerpt="The call to prayer eminated from Omar's Lips - an eerie sound, out of place in the park. Omar and a group of 15 men bowed in sync."
       categories={{
-        nodes: [{ name: 'Following Jesus' }]
+        nodes: [
+          {
+            name: 'Following Jesus',
+            slug: 'following-jesus'
+          }
+        ]
       }}
-      onClick={() => alert('clicked')}
       variant="hero"
     />
   </JesusFilmThemeProvider>
@@ -25,11 +30,16 @@ export const HeroPostCardNoImage = () => (
   <JesusFilmThemeProvider>
     <PostCard
       title="His Shoes Led to Learning About Christianity"
+      slug="his-shoes-led-to-learning-about-christianity"
       excerpt="The call to prayer eminated from Omar's Lips - an eerie sound, out of place in the park. Omar and a group of 15 men bowed in sync."
       categories={{
-        nodes: [{ name: 'Following Jesus' }]
+        nodes: [
+          {
+            name: 'Following Jesus',
+            slug: 'following-jesus'
+          }
+        ]
       }}
-      onClick={() => alert('clicked')}
       variant="hero"
     />
   </JesusFilmThemeProvider>

@@ -8,10 +8,12 @@ export const ItemPostCardNoImage = () => (
     <Container maxWidth="sm">
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         variant="item"
         author={{
           node: {
-            name: 'Ryan Johnson'
+            name: 'Ryan Johnson',
+            slug: 'ryan-johnson'
           }
         }}
       />
@@ -24,6 +26,7 @@ export const ItemPostCardNoAuthor = () => (
     <Container maxWidth="sm">
       <PostCard
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         featuredImage={{
           node: {
             sourceUrl: 'https://source.unsplash.com/random/1920x1080'
@@ -45,10 +48,12 @@ export const ItemPostCard = () => (
           }
         }}
         title="A Behind the Scenes Glimpse at Film Production"
+        slug="a-behind-the-scenes-glimpse-at-film-production"
         variant="item"
         author={{
           node: {
-            name: 'Ryan Johnson'
+            name: 'Ryan Johnson',
+            slug: 'ryan-johnson'
           }
         }}
       />

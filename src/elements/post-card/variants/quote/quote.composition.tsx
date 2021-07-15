@@ -6,6 +6,7 @@ export const QuotePostCard = () => (
   <JesusFilmThemeProvider>
     <PostCard
       title="His Shoes Led to Learning About Christianity"
+      slug="his-shoes-led-to-learning-about-christianity"
       customPostFields={{
         quote:
           'If you can?” said Jesus. "Everything is possible for one who believes."'

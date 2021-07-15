@@ -4,7 +4,9 @@ import { PostCard } from '.'
 
 describe('post-card', () => {
   it('should render hero', () => {
-    const { getByTestId } = render(<PostCard title="abc" variant="hero" />)
+    const { getByTestId } = render(
+      <PostCard title="abc" slug="abc" variant="hero" />
+    )
     expect(getByTestId('heroVariant')).toBeInTheDocument()
   })
   it('should render quote', () => {
@@ -13,21 +15,28 @@ describe('post-card', () => {
         customPostFields={{ quote: 'abc' }}
         date="2021-06-15T22:00:35.664Z"
         title="abc"
+        slug="abc"
         variant="quote"
       />
     )
     expect(getByTestId('quoteVariant')).toBeInTheDocument()
   })
   it('should render item', () => {
-    const { getByTestId } = render(<PostCard title="abc" variant="item" />)
+    const { getByTestId } = render(
+      <PostCard title="abc" slug="abc" variant="item" />
+    )
     expect(getByTestId('itemVariant')).toBeInTheDocument()
   })
   it('should render premiere', () => {
-    const { getByTestId } = render(<PostCard title="abc" variant="premiere" />)
+    const { getByTestId } = render(
+      <PostCard title="abc" slug="abc" variant="premiere" />
+    )
     expect(getByTestId('premiereVariant')).toBeInTheDocument()
   })
   it('should render delfault', () => {
-    const { getByTestId } = render(<PostCard title="abc" variant="default" />)
+    const { getByTestId } = render(
+      <PostCard title="abc" slug="abc" variant="default" />
+    )
     expect(getByTestId('defaultVariant')).toBeInTheDocument()
   })
 })

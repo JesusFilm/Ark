@@ -5,7 +5,8 @@ import {
   Divider,
   Grid,
   makeStyles,
-  Typography
+  Typography,
+  Link
 } from '@material-ui/core'
 import { useTranslation } from 'react-i18next'
 
@@ -14,11 +15,6 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.main,
     fontStyle: 'italic',
     fontWeight: 700
-  },
-  link: {
-    color: theme.palette.text.primary,
-    textDecoration: 'underline',
-    cursor: 'pointer'
   },
   grid: {
     marginLeft: -28
@@ -29,7 +25,7 @@ export type QuoteProps = {
   /** Post title */
   title: string
   /** Post slug */
-  slug?: string
+  slug: string
   /** quote from customPostFields  */
   customPostFields: {
     quote: string
@@ -82,9 +78,13 @@ export function Quote({
               </Grid>
               <Grid item>
                 <Typography>
-                  <PostLink href={slug} className={classes.link}>
+                  <Link
+                    component={PostLink}
+                    href={slug}
+                    color="inherit"
+                    underline="always">
                     {title}
-                  </PostLink>
+                  </Link>
                 </Typography>
                 <Typography color="textPrimary">
                   {t('{{date,date}}', { date })}

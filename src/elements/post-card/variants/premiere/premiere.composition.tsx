@@ -13,6 +13,7 @@ export const PremierePostCard = () => (
           }
         }}
         title="His Shoes Led to Learning About Christianity"
+        slug="his-shoes-led-to-learning-about-christianity"
         excerpt="The call to prayer eminated from Omar's Lips - an eerie sound, out of place in the park. Omar and a group of 15 men bowed in sync."
         variant="premiere"
       />
