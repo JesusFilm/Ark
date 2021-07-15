@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-  Box,
-  Container,
-  Divider,
-  Typography,
-  makeStyles
-} from '@material-ui/core'
+import { Container, Divider, Typography, makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   firstDivider: {
@@ -21,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
   },
   fourthDivider: {
     marginBottom: theme.spacing(5)
+  },
+  textColor: {
+    color: '#EF3340'
   }
 }))
 
@@ -38,8 +35,8 @@ export function Mission({ text }: MissionProps) {
       <Divider className={classes.firstDivider} variant="middle" />
       <Divider className={classes.secondDivider} variant="middle" />
       <Container maxWidth="md">
-        <Typography variant="h5" align="center">
-          <Box color="error.main">{text}</Box>
+        <Typography className={classes.textColor} variant="h5" align="center">
+          {text}
         </Typography>
       </Container>
       <Divider className={classes.thirdDivider} variant="middle" />
