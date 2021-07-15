@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createElement, ReactElement } from 'react'
 import {
   Grid,
   makeStyles,
@@ -39,15 +39,20 @@ export type AuthorCardProps = {
   description?: string
   /** Background image source url */
   src?: string
-  /** Callback when button is clicked */
-  onClick?: () => void
+  /** Author Link */
+  AuthorLink?: (
+    props: React.DetailedHTMLProps<
+      React.AnchorHTMLAttributes<HTMLAnchorElement>,
+      HTMLAnchorElement
+    >
+  ) => ReactElement
 }
 
 export function AuthorCard({
   name,
   description,
   src,
-  onClick
+  AuthorLink = (props) => createElement('a', props)
 }: AuthorCardProps) {
   const classes = useStyles()
   const initials = name
@@ -58,18 +63,19 @@ export function AuthorCard({
 
   return (
     <Container maxWidth="sm">
-      <Box onClick={() => onClick?.()}>
+      <Box>
         <Grid
           container
           direction="row"
           justify="center"
-          alignItems="center"
           className={classes.wrap}
           spacing={2}>
           <Grid item>
-            <Avatar alt={name} src={src} className={classes.image}>
-              {initials}
-            </Avatar>
+            <AuthorLink>
+              <Avatar alt={name} src={src} className={classes.image}>
+                {initials}
+              </Avatar>
+            </AuthorLink>
           </Grid>
           <Grid item md container direction="column" spacing={2}>
             <Grid item>

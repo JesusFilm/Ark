@@ -8,19 +8,29 @@ export const BasicAuthorList = () => (
         name: 'Tez Brooks',
         description:
           'Award winning author, screenwriter and international speaker',
-        src: 'https://www.jesusfilm.org/content/dam/jesusfilm/avatars/tezg.jpg',
-        onClick: () => alert('Clicked Tez')
+        src: 'https://www.jesusfilm.org/content/dam/jesusfilm/avatars/tezg.jpg'
       },
       {
         name: 'Raeli Miller',
         description:
-          'Raeli Miller is the Community and Content Digital Strategist for Jesus Film Project. Her heart is captivated by Jesus, fulfilled in serving ministry leaders, and satisfied with a quality cup of coffee. She studied Writing and Rhetoric, with a double minor in Nonprofit Management and Advertising/Public Relations, at the University of Central Florida. And uses every ounce of it to help this generation find passion and confidence in following Christ. Get to know Raeli on Instagram.',
-        src: 'https://www.jesusfilm.org/content/dam/jesusfilm/avatars/rs.jpg',
-        onClick: () => alert('Clicked Raeli')
+          'Raeli Miller is the Community and Content Digital Strategist for Jesus Film Project.',
+        src: 'https://www.jesusfilm.org/content/dam/jesusfilm/avatars/rs.jpg'
+      },
+      {
+        name: 'Josh McDowell',
+        description:
+          'On staff with Cru as trailblazer for truth, Josh has been at the forefront of cultural trens and ground-breaking minsitry for over five decades.',
+        src: 'https://www.jesusfilm.org/content/dam/jesusfilm/avatars/josh-mcdowell.jpg'
+      },
+      {
+        name: 'Holly Newell',
+        description:
+          'Holly and her husband Josh live in Orlando, Florida where Josh is serving as executive director of Jesus Film Project',
+        src: 'https://www.jesusfilm.org/content/dam/jesusfilm/holly-newell.jpeg'
       }
     ]}
     title="Authors"
   />
 )
 
-export const EmptyAuthorList = () => <AuthorList authors={[]} />
+export const EmptyAuthorList = () => <AuthorList authors={[]} title="" />
