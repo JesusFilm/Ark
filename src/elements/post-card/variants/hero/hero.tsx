@@ -152,7 +152,10 @@ export function Hero({
             )}
             <Grid item>
               <Link component={PostLink} href={slug} underline="none">
-                <Button variant="contained" color="primary" size="large">
+                <Button
+                  variant="contained"
+                  color={featuredImage?.node?.sourceUrl ? 'default' : 'primary'}
+                  size="large">
                   {t('Read Story')}
                 </Button>
               </Link>
