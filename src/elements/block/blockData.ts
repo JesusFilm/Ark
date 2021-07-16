@@ -69,5 +69,68 @@ export const blocks = [
         '"Many people spend their lives trying to create a lasting legacy on earth. They want to be remembered when they\'re gone. Yet, what ultimately matters most will not be what others say about your life but what God says."',
       citation: 'Citation for this quote goes here'
     }
+  },
+  /** Youtube Url */
+  {
+    __typename: 'CoreEmbedBlock',
+    attributes: {
+      url: 'https://youtu.be/UGFCbmvk0vo',
+      providerNameSlug: 'youtube',
+      align: 'wide'
+    }
+  },
+  /** Vimeo Url */
+  {
+    __typename: 'CoreEmbedBlock',
+    attributes: {
+      url: 'https://vimeo.com/10679287',
+      providerNameSlug: 'vimeo',
+      align: ''
+    }
+  },
+  /** Embeded Youtube */
+  {
+    __typename: 'CoreEmbedBlock',
+    attributes: {
+      url: 'https://www.youtube.com/embed/UGFCbmvk0vo',
+      providerNameSlug: 'embed-handler',
+      align: ''
+    }
+  },
+  /** Embeded Vimeo */
+  {
+    __typename: 'CoreEmbedBlock',
+    attributes: {
+      url: 'https://player.vimeo.com/video/10679287',
+      providerNameSlug: 'vimeo',
+      align: 'wide'
+    }
+  },
+  /** Not a valid provider name slug */
+  {
+    __typename: 'CoreEmbedBlock',
+    attributes: {
+      url: 'https://player.vimeo.com/video/10679287',
+      providerNameSlug: 'vim',
+      align: ''
+    }
+  },
+  /** Not a valid youtube url */
+  {
+    __typename: 'CoreEmbedBlock',
+    attributes: {
+      url: 'https://www.youtube.com/UGBVbmvk0v0',
+      providerNameSlug: 'youtube',
+      align: ''
+    }
+  },
+  /** Not a valid vimeo url */
+  {
+    __typename: 'CoreEmbedBlock',
+    attributes: {
+      url: 'https://vimeo.commm/10679287',
+      providerNameSlug: 'vimeo',
+      align: ''
+    }
   }
 ] as BlockProps[]

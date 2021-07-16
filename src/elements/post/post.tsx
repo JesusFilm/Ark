@@ -2,6 +2,7 @@ import React from 'react'
 import { AuthorCard } from '@jesus-film/ark.elements.author-card'
 import { Block, BlockProps } from '@jesus-film/ark.elements.block'
 import { PostHeader, PostHeaderProps } from './header'
+import { Grid } from '@material-ui/core'
 
 type Avatar = {
   url: string
@@ -10,7 +11,7 @@ type Avatar = {
 type Author = {
   /** Avatar */
   avatar: Avatar
-  /** Category name */
+  /** Author name */
   name: string
 }
 
@@ -35,7 +36,11 @@ export function Post(props: PostProps) {
     <>
       <PostHeader {...props} />
       {props.blocks.map((block, i) => (
-        <Block {...block} key={`${i}-block`} />
+        <Grid container spacing={5} key={`${i}-block`}>
+          <Grid item xs={12}>
+            <Block {...block} key={`${i}-block`} />
+          </Grid>
+        </Grid>
       ))}
       <AuthorCard
         name={props.author.node.name}
