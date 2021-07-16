@@ -1,5 +1,6 @@
 import React from 'react'
 import {
+  Box,
   Container,
   Typography,
   Grid,
@@ -11,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
   divider: {
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(5)
+  },
+  text: {
+    color: '#EE3441'
   },
   seeAll: {
     marginTop: theme.spacing(2),
@@ -32,13 +36,17 @@ export function ListHeader({ title, onSeeAllClick }: ListHeaderProps) {
     <Container maxWidth="sm">
       <Grid container>
         <Grid item xs={10}>
-          <Typography variant="h4">{title}</Typography>
+          <Typography className={classes.text} variant="h4">
+            {title}
+          </Typography>
         </Grid>
         <Grid item xs={2}>
           {onSeeAllClick ? (
-            <Typography variant="body2" className={classes.seeAll}>
-              SEE ALL
-            </Typography>
+            <Box onClick={() => onSeeAllClick?.()}>
+              <Typography variant="body2" className={classes.seeAll}>
+                SEE ALL
+              </Typography>
+            </Box>
           ) : (
             <></>
           )}

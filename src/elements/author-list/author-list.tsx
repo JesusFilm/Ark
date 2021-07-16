@@ -19,7 +19,7 @@ export type AuthorListProps = {
   authors: AuthorCardProps[]
   /** Title of the list */
   title?: string
-  /** See All */
+  /** See all callback */
   onSeeAllClick?: () => void
   /** Author Link */
   AuthorLink?: (
@@ -47,6 +47,8 @@ export function AuthorList({
       <Grid container className={classes.align} alignItems="center" spacing={4}>
         {authors.map((author, i) => (
           <Grid item key={`${i}-author`}>
+            {/* href={author[0].src} */}
+            {/* where do we want it to be redirecting to? */}
             <AuthorLink>
               <AuthorCard {...author} />
             </AuthorLink>

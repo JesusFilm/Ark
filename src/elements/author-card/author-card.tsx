@@ -1,4 +1,4 @@
-import React, { createElement, ReactElement } from 'react'
+import React from 'react'
 import {
   Grid,
   makeStyles,
@@ -39,20 +39,15 @@ export type AuthorCardProps = {
   description?: string
   /** Background image source url */
   src?: string
-  /** Author Link */
-  AuthorLink?: (
-    props: React.DetailedHTMLProps<
-      React.AnchorHTMLAttributes<HTMLAnchorElement>,
-      HTMLAnchorElement
-    >
-  ) => ReactElement
+  /** Callback when button is clicked */
+  onClick?: () => void
 }
 
 export function AuthorCard({
   name,
   description,
   src,
-  AuthorLink = (props) => createElement('a', props)
+  onClick
 }: AuthorCardProps) {
   const classes = useStyles()
   const initials = name
@@ -63,7 +58,7 @@ export function AuthorCard({
 
   return (
     <Container maxWidth="sm">
-      <Box>
+      <Box onClick={() => onClick?.()}>
         <Grid
           container
           direction="row"
@@ -71,11 +66,9 @@ export function AuthorCard({
           className={classes.wrap}
           spacing={2}>
           <Grid item>
-            <AuthorLink>
-              <Avatar alt={name} src={src} className={classes.image}>
-                {initials}
-              </Avatar>
-            </AuthorLink>
+            <Avatar alt={name} src={src} className={classes.image}>
+              {initials}
+            </Avatar>
           </Grid>
           <Grid item md container direction="column" spacing={2}>
             <Grid item>

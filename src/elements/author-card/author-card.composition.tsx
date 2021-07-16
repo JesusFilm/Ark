@@ -14,6 +14,7 @@ export const CompleteAuthorCard = (props: Partial<AuthorCardProps>) => (
     name="Tez Brooks"
     description="Award winning author, screenwriter and international speaker"
     src="https://www.jesusfilm.org/content/dam/jesusfilm/avatars/tezg.jpg"
+    onClick={() => alert('This is coming from the author')}
     {...props}
   />
 )
