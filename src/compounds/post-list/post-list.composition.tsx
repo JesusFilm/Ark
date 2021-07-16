@@ -257,7 +257,8 @@ export const ItemPostsJustTitleAuthor = () => (
         {
           author: {
             node: {
-              name: 'Josh McDowell'
+              name: 'Josh McDowell',
+              slug: 'josh'
             }
           },
           slug: '10-bible-verses-about-faith-and-doubt',
@@ -266,7 +267,8 @@ export const ItemPostsJustTitleAuthor = () => (
         {
           author: {
             node: {
-              name: 'Josh McDowell'
+              name: 'Josh McDowell',
+              slug: 'josh'
             }
           },
           slug: '4-tips-for-when-you-feel-directionless',
@@ -275,7 +277,8 @@ export const ItemPostsJustTitleAuthor = () => (
         {
           author: {
             node: {
-              name: 'Josh McDowell'
+              name: 'Josh McDowell',
+              slug: 'josh'
             }
           },
           slug: 'what-to-do-when-you-feel-alone',
@@ -284,7 +287,8 @@ export const ItemPostsJustTitleAuthor = () => (
         {
           author: {
             node: {
-              name: 'Josh McDowell'
+              name: 'Josh McDowell',
+              slug: 'josh'
             }
           },
           slug: 'Why-You-Should-Know-Your-Neighbors-Better-and-How-to-Do-it',
@@ -293,7 +297,8 @@ export const ItemPostsJustTitleAuthor = () => (
         {
           author: {
             node: {
-              name: 'Josh McDowell'
+              name: 'Josh McDowell',
+              slug: 'josh'
             }
           },
           slug: '15-Bible-Verses-about-Friends-and-Friendship',
@@ -323,7 +328,8 @@ export const ItemPostsImageTitleSometimesAuthor = () => (
           title: '10 Bible Verses about Faith and Doubt',
           author: {
             node: {
-              name: 'Josh McDowell'
+              name: 'Josh McDowell',
+              slug: 'josh'
             }
           }
         },
@@ -346,7 +352,8 @@ export const ItemPostsImageTitleSometimesAuthor = () => (
           title: 'What To Do When You Feel Alone',
           author: {
             node: {
-              name: 'Josh McDowell'
+              name: 'Josh McDowell',
+              slug: 'josh'
             }
           }
         },

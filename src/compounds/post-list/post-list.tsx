@@ -131,7 +131,7 @@ export function PostList({
               PostLink={PostLink}
             />
           </div>
-          <Divider />
+          {i + 1 === posts.nodes.length ? null : <Divider />}
         </Grid>
       ))}
     </Grid>
