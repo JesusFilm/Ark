@@ -7,6 +7,9 @@ const useStyles = makeStyles((theme) => ({
   link: {
     textDecoration: 'none',
     color: theme.palette.text.primary
+  },
+  item: {
+    minHeight: '6rem'
   }
 }))
 
@@ -20,20 +23,23 @@ export type PostListProps = {
       title?: string
       excerpt?: string
       featuredImage?: {
-        node?: {
+        node: {
           sourceUrl: string
         }
       }
       author?: {
-        node?: {
+        node: {
           name: string
+          slug: string
         }
       }
       categories?: {
-        nodes?: {
-          name?: string
+        nodes: {
+          name: string
+          slug: string
         }[]
       }
+      date?: string
     }[]
   }
   /**
@@ -67,38 +73,40 @@ export function PostList({
               xs={12}
               sm={fullWidth ? 12 : posts.length === 2 ? 6 : 12}
               md={fullWidth ? 12 : posts.length === 3 ? 3 : 6}>
-              <PostLink href={posts[0].slug} className={classes.link}>
-                <PostCard
-                  src={posts[0].featuredImage?.node?.sourceUrl}
-                  title={posts[0].title}
-                  excerpt={posts[0].excerpt}
-                  variant="premiere"
-                />
-              </PostLink>
+              <PostCard
+                featuredImage={posts[0].featuredImage}
+                title={posts[0].title}
+                excerpt={posts[0].excerpt}
+                variant="premiere"
+                slug={posts[0].slug}
+                PostLink={PostLink}
+              />
             </Grid>
           )}
           {posts[1] && (
             <Grid item xs={12} sm={fullWidth ? 12 : 6} md={fullWidth ? 12 : 6}>
               <PostLink href={posts[1].slug} className={classes.link}>
                 <PostCard
-                  src={posts[1].featuredImage?.node?.sourceUrl}
+                  featuredImage={posts[1].featuredImage}
                   title={posts[1].title}
                   excerpt={posts[1].excerpt}
                   variant="premiere"
+                  slug={posts[1].slug}
+                  PostLink={PostLink}
                 />
               </PostLink>
             </Grid>
           )}
           {posts[2] && (
             <Grid item xs={12} sm={fullWidth ? 12 : 6} md={fullWidth ? 12 : 3}>
-              <PostLink href={posts[2].slug} className={classes.link}>
-                <PostCard
-                  src={posts[2].featuredImage?.node?.sourceUrl}
-                  title={posts[2].title}
-                  excerpt={posts[2].excerpt}
-                  variant="premiere"
-                />
-              </PostLink>
+              <PostCard
+                featuredImage={posts[2].featuredImage}
+                title={posts[2].title}
+                excerpt={posts[2].excerpt}
+                variant="premiere"
+                slug={posts[1].slug}
+                PostLink={PostLink}
+              />
             </Grid>
           )}
         </Grid>
@@ -113,14 +121,16 @@ export function PostList({
           xs={12}
           sm={fullWidth ? 12 : posts.nodes.length === 2 ? 6 : 12}
           md={fullWidth ? 12 : posts.nodes.length === 3 ? 3 : 6}>
-          <PostLink href={post.slug} className={classes.link}>
+          <div className={classes.item}>
             <PostCard
-              src={post.featuredImage?.node?.sourceUrl}
+              featuredImage={post.featuredImage}
               title={post.title}
               variant="item"
-              author={post.author?.node?.name}
+              author={post.author}
+              slug={post.slug}
+              PostLink={PostLink}
             />
-          </PostLink>
+          </div>
           <Divider />
         </Grid>
       ))}
@@ -132,16 +142,18 @@ export function PostList({
           item
           key={i}
           xs={12}
-          sm={fullWidth ? 12 : posts.nodes.length === 2 ? 6 : 12}
-          md={fullWidth ? 12 : posts.nodes.length === 3 ? 3 : 6}>
-          <PostLink href={post.slug} className={classes.link}>
-            <PostCard
-              src={post.featuredImage?.node?.sourceUrl}
-              title={post.title}
-              variant="default"
-              categories={post.categories}
-            />
-          </PostLink>
+          sm={fullWidth ? 12 : 4}
+          md={fullWidth ? 12 : 4}>
+          <PostCard
+            featuredImage={post.featuredImage}
+            title={post.title}
+            variant="default"
+            slug={post.slug}
+            categories={post.categories}
+            PostLink={PostLink}
+            date={post.date}
+            excerpt={post.excerpt}
+          />
         </Grid>
       ))}
     </Grid>

@@ -379,7 +379,6 @@ export const DefaultPosts = () => (
     PostLink={({ children, href, className }) =>
       createElement('a', { children, className, href: `/posts/${href}` })
     }
-    fullWidth
     variant="default"
     posts={{
       nodes: [
@@ -394,10 +393,14 @@ export const DefaultPosts = () => (
           categories: {
             nodes: [
               {
-                name: 'Following Jesus'
+                name: 'Reaching the Nations',
+                slug: 'reaching-the-nations'
               }
             ]
-          }
+          },
+          excerpt:
+            'Getting to know your neighbors is trending in the wrong direction. In 2019, Pew Research Center reported that 57% of Americans claimed to know some of their neighbors, and 26% said they knew most of their neighbors.',
+          date: '2021-06-15T22:00:35.664Z'
         },
         {
           featuredImage: {
@@ -406,7 +409,18 @@ export const DefaultPosts = () => (
             }
           },
           slug: '4-tips-for-when-you-feel-directionless',
-          title: '4 Tips for When You Feel Directionless'
+          title: '4 Tips for When You Feel Directionless',
+          categories: {
+            nodes: [
+              {
+                name: 'Reaching the Nations',
+                slug: 'reaching-the-nations'
+              }
+            ]
+          },
+          excerpt:
+            'Getting to know your neighbors is trending in the wrong direction. In 2019, Pew Research Center reported that 57% of Americans claimed to know some of their neighbors, and 26% said they knew most of their neighbors.',
+          date: '2021-06-15T22:00:35.664Z'
         },
         {
           featuredImage: {
@@ -418,7 +432,8 @@ export const DefaultPosts = () => (
           title: 'What To Do When You Feel Alone',
           author: {
             node: {
-              name: 'Josh McDowell'
+              name: 'Josh McDowell',
+              slug: 'josh'
             }
           }
         },
@@ -429,7 +444,18 @@ export const DefaultPosts = () => (
             }
           },
           slug: 'Why-You-Should-Know-Your-Neighbors-Better-and-How-to-Do-it',
-          title: 'Why You Should Know Your Neighbors Better, and How to Do it'
+          title: 'Why You Should Know Your Neighbors Better, and How to Do it',
+          categories: {
+            nodes: [
+              {
+                name: 'Reaching the Nations',
+                slug: 'reaching-the-nations'
+              }
+            ]
+          },
+          excerpt:
+            'Getting to know your neighbors is trending in the wrong direction. In 2019, Pew Research Center reported that 57% of Americans claimed to know some of their neighbors, and 26% said they knew most of their neighbors.',
+          date: '2021-06-15T22:00:35.664Z'
         },
         {
           featuredImage: {
