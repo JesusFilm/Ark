@@ -1,7 +1,6 @@
 import React from 'react'
 import { Block, BlockProps } from '@jesus-film/ark.elements.block'
 import { PostHeader, PostHeaderProps } from './header'
-import { PostFooter, PostFooterProps } from './footer'
 import { Grid } from '@material-ui/core'
 
 type Avatar = {
@@ -20,17 +19,16 @@ type AuthorNode = {
   node: Author
 }
 
-export type PostProps = PostHeaderProps &
-  PostFooterProps & {
-    /**
-     * Post author
-     */
-    author: AuthorNode
-    /**
-     * Main body of post
-     */
-    blocks: BlockProps[]
-  }
+export type PostProps = PostHeaderProps & {
+  /**
+   * Post author
+   */
+  author: AuthorNode
+  /**
+   * Main body of post
+   */
+  blocks: BlockProps[]
+}
 
 export function Post(props: PostProps) {
   return (
@@ -43,7 +41,6 @@ export function Post(props: PostProps) {
           </Grid>
         </Grid>
       ))}
-      <PostFooter {...props} />
     </>
   )
 }
