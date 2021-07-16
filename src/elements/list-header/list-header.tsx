@@ -27,6 +27,7 @@ export type ListHeaderProps = {
    * Title of the list
    */
   title: string
+  /** Callback when see all is clicked */
   onSeeAllClick?: () => void
 }
 

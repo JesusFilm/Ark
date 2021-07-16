@@ -11,6 +11,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       justifyContent: 'center'
     }
+  },
+  link: {
+    cursor: 'pointer'
   }
 }))
 
@@ -47,9 +50,9 @@ export function AuthorList({
       <Grid container className={classes.align} alignItems="center" spacing={4}>
         {authors.map((author, i) => (
           <Grid item key={`${i}-author`}>
-            {/* href={author[0].src} */}
             {/* where do we want it to be redirecting to? */}
-            <AuthorLink>
+            {/* href={author[0].src} */}
+            <AuthorLink className={classes.link}>
               <AuthorCard {...author} />
             </AuthorLink>
           </Grid>

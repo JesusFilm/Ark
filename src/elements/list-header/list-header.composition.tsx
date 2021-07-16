@@ -1,9 +1,7 @@
 import React from 'react'
 import { ListHeader, ListHeaderProps } from './list-header'
 
-export const BasicListHeader = (props: Partial<ListHeaderProps>) => (
-  <ListHeader title="Authors" {...props} />
-)
+export const BasicListHeader = () => <ListHeader title="Authors" />
 
 export const ListHeaderWithCallback = (props: Partial<ListHeaderProps>) => (
   <ListHeader
