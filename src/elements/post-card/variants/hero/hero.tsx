@@ -11,6 +11,7 @@ import {
 } from '@material-ui/core'
 import { useTranslation } from 'react-i18next'
 import classNames from 'classnames'
+import { JesusFilmSymbol } from '@jesus-film/ark.elements.jesus-film-symbol'
 
 const useStyles = makeStyles((theme) => ({
   heroBackground: {
@@ -28,11 +29,24 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '80vh'
   },
   grid: {
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column-reverse',
+      alignItems: 'center'
+    }
+  },
+  gridPost: {
     maxWidth: 600
   },
   title: {
     fontFamily: theme.typography.h6.fontFamily,
     fontWeight: 700
+  },
+  button: {
+    [theme.breakpoints.down('sm')]: {
+      width: '100%'
+    }
   }
 }))
 
@@ -122,40 +136,54 @@ export function Hero({
           featuredImage?.node?.sourceUrl && classes.boxOverlay
         )}>
         <Container>
-          <Grid
-            container
-            direction="column"
-            spacing={2}
-            className={classes.grid}>
-            {categories?.nodes?.[0]?.name && (
+          <Grid container className={classes.grid} spacing={2}>
+            <Grid
+              item
+              container
+              direction="column"
+              spacing={2}
+              className={classes.gridPost}>
+              {categories?.nodes?.[0]?.name && (
+                <Grid item>
+                  <Typography variant="h6" data-testid="category">
+                    <Link
+                      component={CategoryLink}
+                      href={categories.nodes[0].slug}
+                      color="inherit"
+                      underline="none">
+                      {categories.nodes[0].name}
+                    </Link>
+                  </Typography>
+                </Grid>
+              )}
               <Grid item>
-                <Typography variant="h6" data-testid="category">
-                  <Link
-                    component={CategoryLink}
-                    href={categories.nodes[0].slug}
-                    color="inherit"
-                    underline="none">
-                    {categories.nodes[0].name}
-                  </Link>
+                <Typography variant="h2" className={classes.title}>
+                  {title}
                 </Typography>
               </Grid>
-            )}
-            <Grid item>
-              <Typography variant="h2" className={classes.title}>
-                {title}
-              </Typography>
-            </Grid>
-            {excerpt && (
+              {excerpt && (
+                <Grid item>
+                  <Typography data-testid="excerpt" gutterBottom>
+                    {excerpt}
+                  </Typography>
+                </Grid>
+              )}
               <Grid item>
-                <Typography data-testid="excerpt">{excerpt}</Typography>
+                <Link component={PostLink} href={slug} underline="none">
+                  <Button
+                    variant="contained"
+                    color={
+                      featuredImage?.node?.sourceUrl ? 'default' : 'primary'
+                    }
+                    size="large"
+                    className={classes.button}>
+                    {t('Read Story')}
+                  </Button>
+                </Link>
               </Grid>
-            )}
+            </Grid>
             <Grid item>
-              <Link component={PostLink} href={slug} underline="none">
-                <Button variant="contained" color="primary" size="large">
-                  {t('Read Story')}
-                </Button>
-              </Link>
+              <JesusFilmSymbol variant="white" text width={150} />
             </Grid>
           </Grid>
         </Container>
