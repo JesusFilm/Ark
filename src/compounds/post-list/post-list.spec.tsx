@@ -4,7 +4,7 @@ import { PostList } from '.'
 
 describe('PostList', () => {
   it('should render a single post', () => {
-    const { getByTestId } = render(
+    const { getAllByTestId } = render(
       <PostList
         PostLink={({ children, href, className }) => (
           <a
@@ -32,18 +32,16 @@ describe('PostList', () => {
         variant="premiere"
       />
     )
-    const link = getByTestId('link-10-bible-verses-about-faith-and-doubt')
-    expect(link).toHaveAttribute(
+    const link = getAllByTestId('link-10-bible-verses-about-faith-and-doubt')
+    expect(link[0]).toHaveAttribute(
       'href',
       '/posts/10-bible-verses-about-faith-and-doubt'
     )
-    expect(link.parentElement).toHaveClass(
-      'MuiGrid-grid-sm-12 MuiGrid-grid-md-6'
-    )
+    expect(link[0].parentElement).toHaveClass('MuiGrid-root MuiGrid-item')
   })
 
   it('should render two posts', () => {
-    const { getByTestId } = render(
+    const { getAllByTestId } = render(
       <PostList
         PostLink={({ children, href, className }) => (
           <a
@@ -83,23 +81,21 @@ describe('PostList', () => {
         variant="premiere"
       />
     )
-    const link1 = getByTestId('link-10-bible-verses-about-faith-and-doubt')
-    expect(link1).toHaveAttribute(
+    const link1 = getAllByTestId('link-10-bible-verses-about-faith-and-doubt')
+    expect(link1[0]).toHaveAttribute(
       'href',
       '/posts/10-bible-verses-about-faith-and-doubt'
     )
-    expect(link1.parentElement).toHaveClass(
-      'MuiGrid-grid-sm-6 MuiGrid-grid-md-6'
-    )
-    const link2 = getByTestId('link-4-tips-for-when-you-feel-directionless')
-    expect(link2).toHaveAttribute(
+    expect(link1[0].parentElement).toHaveClass('MuiGrid-root MuiGrid-item')
+    const link2 = getAllByTestId('link-4-tips-for-when-you-feel-directionless')
+    expect(link2[0]).toHaveAttribute(
       'href',
       '/posts/4-tips-for-when-you-feel-directionless'
     )
   })
 
   it('should render three posts', () => {
-    const { getByTestId } = render(
+    const { getAllByTestId } = render(
       <PostList
         PostLink={({ children, href, className }) => (
           <a
@@ -149,26 +145,31 @@ describe('PostList', () => {
         variant="premiere"
       />
     )
-    const link1 = getByTestId('link-10-bible-verses-about-faith-and-doubt')
-    expect(link1).toHaveAttribute(
+    const link1 = getAllByTestId('link-10-bible-verses-about-faith-and-doubt')
+    expect(link1[0]).toHaveAttribute(
       'href',
       '/posts/10-bible-verses-about-faith-and-doubt'
     )
-    expect(link1.parentElement).toHaveClass(
-      'MuiGrid-grid-sm-12 MuiGrid-grid-md-3'
-    )
+    expect(link1[0].parentElement).toHaveClass('MuiGrid-root MuiGrid-item')
     expect(
-      getByTestId('link-4-tips-for-when-you-feel-directionless')
+      getAllByTestId('link-4-tips-for-when-you-feel-directionless')[0]
     ).toHaveAttribute('href', '/posts/4-tips-for-when-you-feel-directionless')
-    expect(getByTestId('link-what-to-do-when-you-feel-alone')).toHaveAttribute(
-      'href',
-      '/posts/what-to-do-when-you-feel-alone'
-    )
+    expect(
+      getAllByTestId('link-what-to-do-when-you-feel-alone')[0]
+    ).toHaveAttribute('href', '/posts/what-to-do-when-you-feel-alone')
   })
 
   it('should render without error', () => {
     const { rerender, getByRole } = render(
       <PostList
+        PostLink={({ children, href, className }) => (
+          <a
+            data-testid={`link-${href}`}
+            className={className}
+            href={`/posts/${href}`}>
+            {children}
+          </a>
+        )}
         posts={{
           nodes: [
             {
@@ -211,11 +212,19 @@ describe('PostList', () => {
     )
     expect(
       getByRole('link', {
-        name: '10 Bible Verses about Faith and Doubt Issues of faith and doubt have a massive impact on Christians of every maturity level.'
+        name: 'Issues of faith and doubt have a massive impact on Christians of every maturity level.'
       })
     ).toBeInTheDocument()
     rerender(
       <PostList
+        PostLink={({ children, href, className }) => (
+          <a
+            data-testid={`link-${href}`}
+            className={className}
+            href={`/posts/${href}`}>
+            {children}
+          </a>
+        )}
         posts={{
           nodes: [
             {
@@ -251,11 +260,19 @@ describe('PostList', () => {
     )
     expect(
       getByRole('link', {
-        name: '10 Bible Verses about Faith and Doubt Issues of faith and doubt have a massive impact on Christians of every maturity level.'
+        name: 'Issues of faith and doubt have a massive impact on Christians of every maturity level.'
       })
     ).toBeInTheDocument()
     rerender(
       <PostList
+        PostLink={({ children, href, className }) => (
+          <a
+            data-testid={`link-${href}`}
+            className={className}
+            href={`/posts/${href}`}>
+            {children}
+          </a>
+        )}
         posts={{
           nodes: [
             {
@@ -285,7 +302,7 @@ describe('PostList', () => {
     )
     expect(
       getByRole('link', {
-        name: '10 Bible Verses about Faith and Doubt Issues of faith and doubt have a massive impact on Christians of every maturity level.'
+        name: 'Issues of faith and doubt have a massive impact on Christians of every maturity level.'
       })
     ).toBeInTheDocument()
   })
