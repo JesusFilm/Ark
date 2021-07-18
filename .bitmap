@@ -11,7 +11,7 @@
         "scope": "jesus-film.ark",
         "version": "0.0.6",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/author-list",
+        "rootDir": "src/compounds/author-list",
         "nextVersion": {
             "version": "patch",
             "message": "",

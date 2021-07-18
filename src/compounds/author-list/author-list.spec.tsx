@@ -1,9 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import {
-  AuthorListWithHeader,
-  BasicAuthorList
-} from './author-list.composition'
+import { AuthorListHeader, BasicAuthorList } from './author-list.composition'
 
 describe('author-list', () => {
   it('should render the name of the author', () => {
@@ -12,7 +9,7 @@ describe('author-list', () => {
   })
 
   it('should render the list header', () => {
-    const { getByText } = render(<AuthorListWithHeader />)
+    const { getByText } = render(<AuthorListHeader />)
     expect(getByText('Authors')).toBeInTheDocument()
   })
 })

@@ -29,7 +29,7 @@ export const BasicAuthorList = () => (
     title=""
   />
 )
-export const AuthorListWithHeader = () => (
+export const AuthorListHeader = () => (
   <AuthorList
     authors={[
       {

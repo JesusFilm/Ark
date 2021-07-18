@@ -2,7 +2,7 @@ import React from 'react'
 import { fireEvent, render } from '@testing-library/react'
 import {
   BasicListHeader,
-  ListHeaderWithCallback
+  ListHeaderWithSeeAll
 } from './list-header.composition'
 
 describe('list-header', () => {
@@ -12,14 +12,14 @@ describe('list-header', () => {
   })
 
   it('should render SEE ALL text', () => {
-    const { getByText } = render(<ListHeaderWithCallback />)
+    const { getByText } = render(<ListHeaderWithSeeAll />)
     expect(getByText('SEE ALL')).toBeInTheDocument()
   })
 
   it('should handle onSeeAllClick', () => {
     const handleClick = jest.fn()
     const { getByText } = render(
-      <ListHeaderWithCallback onSeeAllClick={handleClick} />
+      <ListHeaderWithSeeAll onSeeAllClick={handleClick} />
     )
     fireEvent.click(getByText('SEE ALL'))
     expect(handleClick).toHaveBeenCalled()

@@ -50,8 +50,6 @@ export function AuthorList({
       <Grid container className={classes.align} alignItems="center" spacing={4}>
         {authors.map((author, i) => (
           <Grid item key={`${i}-author`}>
-            {/* where do we want it to be redirecting to? */}
-            {/* href={author[0].src} */}
             <AuthorLink className={classes.link}>
               <AuthorCard {...author} />
             </AuthorLink>
