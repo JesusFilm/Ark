@@ -21,7 +21,7 @@ type ImageNode = {
   node: Image
 }
 
-export type PremiereProps = {
+export type PremierePost = {
   /** Post title */
   title: string
   /** Post slug */
@@ -32,6 +32,9 @@ export type PremiereProps = {
    * Featured Image
    */
   featuredImage?: ImageNode
+}
+
+export type PremiereProps = PremierePost & {
   /**
    * Component to render post link
    */

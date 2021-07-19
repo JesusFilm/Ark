@@ -1,0 +1,37 @@
+---
+description: 'A compound component to display multiple posts.'
+labels: ['react', 'compounds', 'posts']
+---
+
+import { PostList } from './post-list';
+
+## React Component for rendering multiple posts
+
+This is a compound component to render multiple posts. It takes in varying number of posts and chooses an optimal layout for them. Each post links to the post's independent page.
+
+### Using props to customize the way posts are listed.
+
+Modify the props to see it change live:
+```js live
+  <PostList
+    PostLink={({ children, href, className }) =>
+      React.createElement('a', { children, className, href: `/posts/${href}` })
+    }
+    posts={{
+      nodes: [
+        {
+          featuredImage: {
+            node: {
+              sourceUrl: 'https://source.unsplash.com/1920x1080/daily?doubt'
+            }
+          },
+          slug: '10-bible-verses-about-faith-and-doubt',
+          title: '10 Bible Verses about Faith and Doubt',
+          excerpt:
+            "Issues of faith and doubt have a massive impact on Christians of every maturity level. And sometimes, the topic is presented in ways that are confusing and only increase people's anxiety about their doubt."
+        }
+      ]
+    }}
+    variant="premiere"
+  />
+```
