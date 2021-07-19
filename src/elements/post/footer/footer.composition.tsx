@@ -5,7 +5,6 @@ export const BasicPostFooter = () => (
   <PostFooter
     author={{
       node: {
-        slug: 'user',
         avatar: {
           url: 'http://2.gravatar.com/avatar/b58996c504c5638798eb6b511e6f49af?s=96&d=mm&r=g'
         },

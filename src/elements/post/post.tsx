@@ -4,28 +4,8 @@ import { PostHeader, PostHeaderProps } from './header'
 import { PostFooter, PostFooterProps } from './footer'
 import { Grid } from '@material-ui/core'
 
-type Avatar = {
-  url: string
-}
-
-type Author = {
-  /** Avatar */
-  avatar: Avatar
-  /** Category name */
-  name: string
-}
-
-type AuthorNode = {
-  /** Avatar */
-  node: Author
-}
-
 export type PostProps = PostHeaderProps &
   PostFooterProps & {
-    /**
-     * Post author
-     */
-    author: AuthorNode
     /**
      * Main body of post
      */
