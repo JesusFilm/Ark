@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export function Mission() {
-  const { t } = useTranslation()
+  const { t } = useTranslation('mission')
   const classes = useStyles()
 
   return (
