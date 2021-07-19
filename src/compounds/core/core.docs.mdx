@@ -1,0 +1,17 @@
+---
+description: "A Collection of all compound components."
+labels: ["react", "typescript", "core"]
+---
+
+import { PostList } from ".";
+
+## React Component for Core
+
+A component that references all other compound components. This simplifies the number of components external consumers need to import.
+
+```js live
+<PostList
+  variant="default"
+  posts={{ nodes: [{ slug: 'find-help', title: 'Find Help' }] }}
+/>
+```

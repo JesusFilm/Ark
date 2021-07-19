@@ -1,2 +1,2 @@
 export { Premiere } from './premiere'
-export type { PremiereProps } from './premiere'
+export type { PremierePost, PremiereProps } from './premiere'

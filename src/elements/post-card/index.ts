@@ -1,2 +1,5 @@
 export { PostCard } from './post-card'
 export type { PostCardProps } from './post-card'
+export type { PremierePost } from './variants/premiere'
+export type { ItemPost } from './variants/item'
+export type { DefaultPost } from './variants/default'
