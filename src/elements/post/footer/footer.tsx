@@ -1,4 +1,4 @@
-import React, { createElement, ReactElement } from 'react'
+import React, { ReactNode, createElement, ReactElement } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   Avatar,
@@ -6,7 +6,8 @@ import {
   Grid,
   Typography,
   Divider,
-  makeStyles
+  makeStyles,
+  Link
 } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
@@ -38,6 +39,8 @@ type AuthorAvatar = {
 type Author = {
   /** Avatar */
   avatar: AuthorAvatar
+  /** User Slug */
+  slug: string
   /** Author Name */
   name: string
   /** Author Biography */
@@ -53,12 +56,11 @@ export type PostFooterProps = {
    * Author
    */
   author?: AuthorNode
-  AuthorLink?: (
-    props: React.DetailedHTMLProps<
-      React.AnchorHTMLAttributes<HTMLAnchorElement>,
-      HTMLAnchorElement
-    >
-  ) => ReactElement
+  AuthorLink?: (props: {
+    children: ReactNode
+    href: string
+    className?: string
+  }) => ReactElement
 }
 
 export function PostFooter({
@@ -81,9 +83,12 @@ export function PostFooter({
           </Grid>
           <Grid item sm={7}>
             <Typography className={classes.author} variant="h5">
-              <AuthorLink className={classes.link} data-testid="author-link">
+              <Link
+                component={AuthorLink}
+                href={author.node.slug}
+                className={classes.link}>
                 {author.node.name}
-              </AuthorLink>
+              </Link>
             </Typography>
             <Typography variant="body2">{author.node.description}</Typography>
           </Grid>
