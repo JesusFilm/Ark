@@ -110,15 +110,9 @@
         "rootDir": "src/elements/post",
         "nextVersion": {
             "version": "patch",
-<<<<<<< HEAD
             "message": "",
             "username": "John Geronimo",
             "email": "johnageronimo1@gmail.com"
-=======
-            "message": " (bump dependencies versions)",
-            "username": "Tataihono Nikora",
-            "email": "tataihono.nikora@gmail.com"
->>>>>>> main
         }
     },
     "elements/post-card": {
