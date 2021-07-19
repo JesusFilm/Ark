@@ -1,5 +1,5 @@
 import React, { ReactElement, ReactNode } from 'react'
-import { Grid } from '@material-ui/core'
+import { Hidden, Grid, makeStyles, Box, Divider } from '@material-ui/core'
 import { PostCard } from '@jesus-film/ark.elements.core'
 import { chunk } from 'lodash/fp'
 import {
@@ -86,7 +86,23 @@ export type PostListProps =
   | ItemPostListProps
   | DefaultPostListProps
 
+const useStyles = makeStyles((theme) => ({
+  defaultGridItem: {
+    borderRight: `1px solid ${theme.palette.divider}`,
+    padding: theme.spacing(0, 2),
+    '&:last-child': {
+      borderRight: 0
+    },
+    [theme.breakpoints.down('xs')]: {
+      borderRight: 0,
+      padding: theme.spacing(2)
+    }
+  }
+}))
+
 export function PostList(props: PostListProps) {
+  const classes = useStyles()
+
   switch (props.variant) {
     case 'premiere':
       return (
@@ -146,18 +162,41 @@ export function PostList(props: PostListProps) {
       )
     case 'default':
       return (
-        <Grid container spacing={2}>
-          {props.posts.nodes.map((post, i) => (
-            <Grid item key={i} xs={12} sm={4}>
-              <PostCard
-                {...post}
-                variant="default"
-                PostLink={props.PostLink}
-                CategoryLink={props.CategoryLink}
-              />
-            </Grid>
+        <>
+          {chunk(3, props.posts.nodes).map((posts, i) => (
+            <Box key={`posts-${i}`}>
+              {i !== 0 && (
+                <Hidden xsDown>
+                  <Box py={2}>
+                    <Divider />
+                  </Box>
+                </Hidden>
+              )}
+              <Grid container key={i}>
+                {posts.map((post, j) => (
+                  <Grid
+                    item
+                    key={`post-${j}`}
+                    xs={12}
+                    sm={4}
+                    className={classes.defaultGridItem}>
+                    <PostCard
+                      {...post}
+                      variant="default"
+                      PostLink={props.PostLink}
+                      CategoryLink={props.CategoryLink}
+                    />
+                    <Hidden smUp>
+                      <Box pt={2}>
+                        <Divider />
+                      </Box>
+                    </Hidden>
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
           ))}
-        </Grid>
+        </>
       )
   }
 }
