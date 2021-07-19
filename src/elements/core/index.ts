@@ -15,6 +15,8 @@ export { JesusFilmGraphicSeal } from '@jesus-film/ark.elements.jesus-film-graphi
 export type { JesusFilmGraphicSealProps } from '@jesus-film/ark.elements.jesus-film-graphic-seal'
 export { JesusFilmSymbol } from '@jesus-film/ark.elements.jesus-film-symbol'
 export type { JesusFilmSymbolProps } from '@jesus-film/ark.elements.jesus-film-symbol'
+export { ListHeader } from '@jesus-film/ark.elements.list-header'
+export type { ListHeaderProps } from '@jesus-film/ark.elements.list-header'
 export { Menu } from '@jesus-film/ark.elements.menu'
 export type { MenuProps } from '@jesus-film/ark.elements.menu'
 export { Navigation } from '@jesus-film/ark.elements.navigation'
