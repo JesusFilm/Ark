@@ -398,6 +398,10 @@ describe('PostList', () => {
             {
               slug: 'what-to-do-when-you-feel-alone',
               title: 'What To Do When You Feel Alone'
+            },
+            {
+              slug: 'visit-your-neighbors',
+              title: 'Visit your neighbors'
             }
           ]
         }}
