@@ -1,2 +1,2 @@
 export { Default } from './default'
-export type { DefaultProps } from './default'
+export type { DefaultPost, DefaultProps } from './default'
