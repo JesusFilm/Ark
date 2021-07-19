@@ -42,10 +42,8 @@ export function AuthorList({
   const classes = useStyles()
   return (
     <Container maxWidth="xs">
-      {title === 'Authors' ? (
+      {title === 'Authors' && (
         <ListHeader title={title} onSeeAllClick={onSeeAllClick} />
-      ) : (
-        <></>
       )}
       <Grid container className={classes.align} alignItems="center" spacing={4}>
         {authors.map((author, i) => (

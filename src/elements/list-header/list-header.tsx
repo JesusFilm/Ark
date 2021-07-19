@@ -42,14 +42,12 @@ export function ListHeader({ title, onSeeAllClick }: ListHeaderProps) {
           </Typography>
         </Grid>
         <Grid item xs={2}>
-          {onSeeAllClick ? (
+          {onSeeAllClick && (
             <Box onClick={() => onSeeAllClick?.()}>
               <Typography variant="body2" className={classes.seeAll}>
                 SEE ALL
               </Typography>
             </Box>
-          ) : (
-            <></>
           )}
         </Grid>
       </Grid>
