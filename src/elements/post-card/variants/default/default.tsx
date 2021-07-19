@@ -2,7 +2,7 @@ import React, { ReactNode, ReactElement, createElement } from 'react'
 import { Box, makeStyles, Typography, Link } from '@material-ui/core'
 import { useTranslation } from 'react-i18next'
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   image: {
     maxWidth: '100%'
   },
@@ -35,7 +35,7 @@ type ImageNode = {
   node: Image
 }
 
-export type DefaultProps = {
+export type DefaultPost = {
   /** Post title */
   title: string
   /** Post slug */
@@ -52,6 +52,9 @@ export type DefaultProps = {
    * Post publishing date.
    */
   date?: string
+}
+
+export type DefaultProps = DefaultPost & {
   /**
    * Component to render post link
    */

@@ -1,5 +1,12 @@
 import React, { ReactNode, ReactElement, createElement } from 'react'
-import { Grid, makeStyles, Typography, Link } from '@material-ui/core'
+import {
+  Box,
+  Grid,
+  makeStyles,
+  Typography,
+  Link,
+  Divider
+} from '@material-ui/core'
 
 const useStyles = makeStyles(() => ({
   image: {
@@ -33,7 +40,7 @@ type ImageNode = {
   node: Image
 }
 
-export type ItemProps = {
+export type ItemPost = {
   /** Post title */
   title: string
   /** Post slug */
@@ -46,6 +53,13 @@ export type ItemProps = {
    * Featured Image
    */
   featuredImage?: ImageNode
+}
+
+export type ItemProps = ItemPost & {
+  /**
+   * Divider should show at the bottom
+   */
+  divider?: boolean
   /**
    * Component to render post link
    */
@@ -55,7 +69,7 @@ export type ItemProps = {
     className?: string
   }) => ReactElement
   /**
-   * Component to render category link
+   * Component to render author link
    */
   AuthorLink?: (props: {
     children: ReactNode
@@ -71,49 +85,57 @@ export function Item({
   slug,
   author,
   featuredImage,
+  divider,
   PostLink = (props) => createElement('a', props),
   AuthorLink = (props) => createElement('a', props)
 }: ItemProps) {
   const classes = useStyles()
 
   return (
-    <Grid container spacing={2} data-testid="itemVariant">
-      {featuredImage?.node?.sourceUrl && (
-        <Grid item sm={4} xs={12}>
-          <Link component={PostLink} href={slug} underline="none">
-            <img
-              src={featuredImage.node.sourceUrl}
-              className={classes.image}
-              data-testid="featured-image"
-            />
-          </Link>
-        </Grid>
-      )}
-      <Grid item sm={featuredImage?.node?.sourceUrl ? 8 : 12} xs={12}>
-        <Typography variant="h5" gutterBottom>
-          <Link
-            component={PostLink}
-            href={slug}
-            color="inherit"
-            underline="none">
-            {title}
-          </Link>
-        </Typography>
-        {author?.node?.name && (
-          <Typography
-            variant="h6"
-            className={classes.author}
-            data-testid="author">
+    <>
+      <Grid container spacing={2} data-testid="itemVariant">
+        {featuredImage?.node?.sourceUrl && (
+          <Grid item sm={4} xs={12}>
+            <Link component={PostLink} href={slug} underline="none">
+              <img
+                src={featuredImage.node.sourceUrl}
+                className={classes.image}
+                data-testid="featured-image"
+              />
+            </Link>
+          </Grid>
+        )}
+        <Grid item sm={featuredImage?.node?.sourceUrl ? 8 : 12} xs={12}>
+          <Typography variant="h5">
             <Link
-              component={AuthorLink}
-              href={author.node.slug}
+              component={PostLink}
+              href={slug}
               color="inherit"
               underline="none">
-              {author.node.name}
+              {title}
             </Link>
           </Typography>
-        )}
+          {author?.node?.name && (
+            <Typography
+              variant="h6"
+              className={classes.author}
+              data-testid="author">
+              <Link
+                component={AuthorLink}
+                href={author.node.slug}
+                color="inherit"
+                underline="none">
+                {author.node.name}
+              </Link>
+            </Typography>
+          )}
+        </Grid>
       </Grid>
-    </Grid>
+      {divider && (
+        <Box mt={2}>
+          <Divider data-testid="divider" />
+        </Box>
+      )}
+    </>
   )
 }

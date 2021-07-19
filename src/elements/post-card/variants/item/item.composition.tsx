@@ -38,6 +38,30 @@ export const ItemPostCardNoAuthor = () => (
   </JesusFilmThemeProvider>
 )
 
+export const ItemPostCardWithDivider = () => (
+  <JesusFilmThemeProvider>
+    <Container maxWidth="sm">
+      <PostCard
+        featuredImage={{
+          node: {
+            sourceUrl: 'https://source.unsplash.com/random/1920x1080'
+          }
+        }}
+        title="A Behind the Scenes Glimpse at Film Production"
+        slug="a-behind-the-scenes-glimpse-at-film-production"
+        variant="item"
+        author={{
+          node: {
+            name: 'Ryan Johnson',
+            slug: 'ryan-johnson'
+          }
+        }}
+        divider
+      />
+    </Container>
+  </JesusFilmThemeProvider>
+)
+
 export const ItemPostCard = () => (
   <JesusFilmThemeProvider>
     <Container maxWidth="sm">
