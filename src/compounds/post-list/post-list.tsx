@@ -1,49 +1,22 @@
-import React, { ReactElement, createElement, ReactNode } from 'react'
-import { Grid, makeStyles, Divider } from '@material-ui/core'
+import React, { ReactElement, ReactNode } from 'react'
+import { Grid } from '@material-ui/core'
 import { PostCard } from '@jesus-film/ark.elements.core'
 import { chunk } from 'lodash/fp'
+import {
+  PremierePost,
+  ItemPost,
+  DefaultPost
+} from '@jesus-film/ark.elements.post-card'
 
-const useStyles = makeStyles((theme) => ({
-  link: {
-    textDecoration: 'none',
-    color: theme.palette.text.primary
-  },
-  item: {
-    minHeight: '6rem'
-  }
-}))
-
-export type PostListProps = {
+type PremierePostListProps = {
   /**
-   * a collection of posts to be rendered in the component.
+   * a collection of posts to be rendered in a list of premiere post cards.
    */
   posts: {
-    nodes?: {
-      slug?: string
-      title?: string
-      excerpt?: string
-      featuredImage?: {
-        node: {
-          sourceUrl: string
-        }
-      }
-      author?: {
-        node: {
-          name: string
-          slug: string
-        }
-      }
-      categories?: {
-        nodes: {
-          name: string
-          slug: string
-        }[]
-      }
-      date?: string
-    }[]
+    nodes: PremierePost[]
   }
   /**
-   * a component to link to a post (href param will be the slug of the post).
+   * Component to render post link
    */
   PostLink?: (props: {
     children: ReactNode
@@ -51,111 +24,140 @@ export type PostListProps = {
     className?: string
   }) => ReactElement
   /** Variant style */
-  variant?: 'premiere' | 'item' | 'default'
-  /** Full Width option */
-  fullWidth?: boolean
+  variant: 'premiere'
 }
 
-export function PostList({
-  posts,
-  PostLink = (props) => createElement('a', props),
-  variant,
-  fullWidth = false
-}: PostListProps) {
-  const classes = useStyles()
-  return variant === 'premiere' ? (
-    <Grid container spacing={2} item>
-      {chunk(3, posts.nodes).map((posts, i) => (
-        <Grid container spacing={2} item key={i} justify="center">
-          {posts[0] && (
-            <Grid
-              item
-              xs={12}
-              sm={fullWidth ? 12 : posts.length === 2 ? 6 : 12}
-              md={fullWidth ? 12 : posts.length === 3 ? 3 : 6}>
+type ItemPostListProps = {
+  /**
+   * a collection of posts to be rendered in a list of item post cards.
+   */
+  posts: {
+    nodes: ItemPost[]
+  }
+  /**
+   * Component to render post link
+   */
+  PostLink?: (props: {
+    children: ReactNode
+    href: string
+    className?: string
+  }) => ReactElement
+  /**
+   * Component to render author link
+   */
+  AuthorLink?: (props: {
+    children: ReactNode
+    href: string
+    className?: string
+  }) => ReactElement
+  /** Variant style */
+  variant: 'item'
+}
+
+type DefaultPostListProps = {
+  /**
+   * a collection of posts to be rendered in a list of default post cards.
+   */
+  posts: {
+    nodes: DefaultPost[]
+  }
+  /**
+   * Component to render post link
+   */
+  PostLink?: (props: {
+    children: ReactNode
+    href: string
+    className?: string
+  }) => ReactElement
+  /**
+   * Component to render category link
+   */
+  CategoryLink?: (props: {
+    children: ReactNode
+    href: string
+    className?: string
+  }) => ReactElement
+  /** Variant style */
+  variant: 'default'
+}
+
+export type PostListProps =
+  | PremierePostListProps
+  | ItemPostListProps
+  | DefaultPostListProps
+
+export function PostList(props: PostListProps) {
+  switch (props.variant) {
+    case 'premiere':
+      return (
+        <Grid container spacing={2}>
+          {chunk(3, props.posts.nodes).map((posts, i) => (
+            <Grid container spacing={2} item key={i} justify="center">
+              {posts[0] && (
+                <Grid
+                  item
+                  xs={12}
+                  sm={posts.length === 2 ? 6 : 12}
+                  md={posts.length === 3 ? 3 : 6}>
+                  <PostCard
+                    {...posts[0]}
+                    variant="premiere"
+                    PostLink={props.PostLink}
+                  />
+                </Grid>
+              )}
+              {posts[1] && (
+                <Grid item xs={12} sm={6} md={6}>
+                  <PostCard
+                    {...posts[1]}
+                    variant="premiere"
+                    PostLink={props.PostLink}
+                  />
+                </Grid>
+              )}
+              {posts[2] && (
+                <Grid item xs={12} sm={6} md={3}>
+                  <PostCard
+                    {...posts[2]}
+                    variant="premiere"
+                    PostLink={props.PostLink}
+                  />
+                </Grid>
+              )}
+            </Grid>
+          ))}
+        </Grid>
+      )
+    case 'item':
+      return (
+        <Grid container spacing={2}>
+          {props.posts.nodes.map((post, i) => (
+            <Grid item key={i} xs={12}>
               <PostCard
-                featuredImage={posts[0].featuredImage}
-                title={posts[0].title}
-                excerpt={posts[0].excerpt}
-                variant="premiere"
-                slug={posts[0].slug}
-                PostLink={PostLink}
+                {...post}
+                variant="item"
+                PostLink={props.PostLink}
+                AuthorLink={props.AuthorLink}
+                divider={i + 1 < props.posts.nodes.length}
               />
             </Grid>
-          )}
-          {posts[1] && (
-            <Grid item xs={12} sm={fullWidth ? 12 : 6} md={fullWidth ? 12 : 6}>
-              <PostLink href={posts[1].slug} className={classes.link}>
-                <PostCard
-                  featuredImage={posts[1].featuredImage}
-                  title={posts[1].title}
-                  excerpt={posts[1].excerpt}
-                  variant="premiere"
-                  slug={posts[1].slug}
-                  PostLink={PostLink}
-                />
-              </PostLink>
-            </Grid>
-          )}
-          {posts[2] && (
-            <Grid item xs={12} sm={fullWidth ? 12 : 6} md={fullWidth ? 12 : 3}>
+          ))}
+        </Grid>
+      )
+    case 'default':
+      return (
+        <Grid container spacing={2}>
+          {props.posts.nodes.map((post, i) => (
+            <Grid item key={i} xs={12} sm={4}>
               <PostCard
-                featuredImage={posts[2].featuredImage}
-                title={posts[2].title}
-                excerpt={posts[2].excerpt}
-                variant="premiere"
-                slug={posts[1].slug}
-                PostLink={PostLink}
+                {...post}
+                variant="default"
+                PostLink={props.PostLink}
+                CategoryLink={props.CategoryLink}
               />
             </Grid>
-          )}
+          ))}
         </Grid>
-      ))}
-    </Grid>
-  ) : variant === 'item' ? (
-    <Grid container spacing={2} item>
-      {posts.nodes.map((post, i) => (
-        <Grid
-          item
-          key={i}
-          xs={12}
-          sm={fullWidth ? 12 : posts.nodes.length === 2 ? 6 : 12}
-          md={fullWidth ? 12 : posts.nodes.length === 3 ? 3 : 6}>
-          <div className={classes.item}>
-            <PostCard
-              featuredImage={post.featuredImage}
-              title={post.title}
-              variant="item"
-              author={post.author}
-              slug={post.slug}
-              PostLink={PostLink}
-            />
-          </div>
-          {i + 1 === posts.nodes.length ? null : <Divider />}
-        </Grid>
-      ))}
-    </Grid>
-  ) : variant === 'default' ? (
-    <Grid container spacing={2} item>
-      {posts.nodes.map((post, i) => (
-        <Grid
-          item
-          key={i}
-          xs={12}
-          sm={fullWidth ? 12 : 4}
-          md={fullWidth ? 12 : 4}>
-          <PostCard
-            featuredImage={post.featuredImage}
-            title={post.title}
-            variant="default"
-            slug={post.slug}
-            categories={post.categories}
-            PostLink={PostLink}
-            date={post.date}
-            excerpt={post.excerpt}
-          />
-        </Grid>
-      ))}
-    </Grid>
-  ) : null
+      )
+  }
 }

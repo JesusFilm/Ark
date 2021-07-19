@@ -164,4 +164,24 @@ describe('post-card-item', () => {
     expect(link.textContent).toEqual('Ryan Johnson')
     expect(link.getAttribute('href')).toEqual('/authors/ryan-johnson')
   })
+
+  it('renders divider', () => {
+    const { getByTestId, queryByTestId, rerender } = render(
+      <PostCard
+        title="His Shoes Led to Learning About Christianity"
+        slug="post-slug"
+        variant="item"
+      />
+    )
+    expect(queryByTestId('divider')).not.toBeInTheDocument()
+    rerender(
+      <PostCard
+        title="His Shoes Led to Learning About Christianity"
+        slug="post-slug"
+        variant="item"
+        divider
+      />
+    )
+    expect(getByTestId('divider')).toBeInTheDocument()
+  })
 })
