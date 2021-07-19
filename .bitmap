@@ -110,7 +110,7 @@
         "rootDir": "src/elements/post",
         "nextVersion": {
             "version": "patch",
-            "message": "",
+            "message": " (bump dependencies versions)",
             "username": "John Geronimo",
             "email": "johnageronimo1@gmail.com"
         }
