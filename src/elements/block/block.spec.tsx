@@ -73,6 +73,17 @@ describe('block', () => {
     expect(getByTestId('youtube')).toBeInTheDocument()
   })
 
+  it('should render arclight', () => {
+    const { getByTestId } = render(
+      <Block
+        {...blocks.filter(
+          (block) => block.__typename === 'LazyblockArclightBlock'
+        )[0]}
+      />
+    )
+    expect(getByTestId('Arclight')).toBeInTheDocument()
+  })
+
   it('should render null', () => {
     const { baseElement } = render(
       <Block

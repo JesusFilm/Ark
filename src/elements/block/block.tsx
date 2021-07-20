@@ -6,6 +6,7 @@ import { CoreHeading, CoreHeadingProps } from './core-heading'
 import { CoreGallery, CoreGalleryProps } from './core-gallery'
 import { CoreEmbed, CoreEmbedProps } from './core-embed'
 import { CoreQuote, CoreQuoteProps } from './core-quote'
+import { CoreArclight, CoreArclightProps } from './core-arclight'
 import { Card, CardContent, Container, Typography } from '@material-ui/core'
 
 export type BlockProps =
@@ -16,6 +17,7 @@ export type BlockProps =
   | CoreGalleryProps
   | CoreEmbedProps
   | CoreQuoteProps
+  | CoreArclightProps
 
 export function Block(BlockProps: BlockProps) {
   switch (BlockProps.__typename) {
@@ -33,6 +35,8 @@ export function Block(BlockProps: BlockProps) {
       return <CoreEmbed {...BlockProps} />
     case 'CoreQuoteBlock':
       return <CoreQuote {...BlockProps} />
+    case 'LazyblockArclightBlock':
+      return <CoreArclight {...BlockProps} />
     default:
       return (
         <Container maxWidth="sm">
