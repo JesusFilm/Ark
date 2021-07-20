@@ -14,7 +14,6 @@ export const BasicAuthorCard = (props: Partial<AuthorCardProps>) => (
           'Award winning author, screenwriter and international speaker'
       }
     }}
-    {...props}
   />
 )
 
