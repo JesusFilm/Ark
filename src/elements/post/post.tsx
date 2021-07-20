@@ -1,30 +1,9 @@
 import React from 'react'
-import { AuthorCard } from '@jesus-film/ark.elements.author-card'
 import { Block, BlockProps } from '@jesus-film/ark.elements.block'
 import { PostHeader, PostHeaderProps } from './header'
 import { Grid } from '@material-ui/core'
 
-type Avatar = {
-  url: string
-}
-
-type Author = {
-  /** Avatar */
-  avatar: Avatar
-  /** Author name */
-  name: string
-}
-
-type AuthorNode = {
-  /** Avatar */
-  node: Author
-}
-
 export type PostProps = PostHeaderProps & {
-  /**
-   * Post author
-   */
-  author: AuthorNode
   /**
    * Main body of post
    */
@@ -42,10 +21,6 @@ export function Post(props: PostProps) {
           </Grid>
         </Grid>
       ))}
-      <AuthorCard
-        name={props.author.node.name}
-        src={props.author.node.avatar.url}
-      />
     </>
   )
 }
