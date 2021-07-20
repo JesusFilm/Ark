@@ -15,12 +15,9 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   name: {
-    textTransform: 'uppercase',
     [theme.breakpoints.down('xs')]: {
       textAlign: 'center'
-    },
-    color: theme.palette.text.primary,
-    cursor: 'pointer'
+    }
   },
   description: {
     [theme.breakpoints.down('xs')]: {
@@ -91,22 +88,19 @@ export function AuthorCard({
             {initials}
           </Avatar>
         </Grid>
-        <Grid item md container direction="column" spacing={2}>
-          <Grid item>
-            <Typography variant="h5" color="textSecondary">
-              <Link
-                component={AuthorLink}
-                href={author.node.slug}
-                className={classes.name}>
-                {author.node.name}
-              </Link>
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography variant="body1" className={classes.description}>
-              {author.node.description}
-            </Typography>
-          </Grid>
+        <Grid item>
+          <Typography variant="h6" gutterBottom className={classes.name}>
+            <Link
+              component={AuthorLink}
+              href={author.node.slug}
+              color="textSecondary"
+              underline="none">
+              {author.node.name}
+            </Link>
+          </Typography>
+          <Typography className={classes.description}>
+            {author.node.description}
+          </Typography>
         </Grid>
       </Grid>
     </Container>

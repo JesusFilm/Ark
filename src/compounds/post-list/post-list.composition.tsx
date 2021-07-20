@@ -243,6 +243,7 @@ export const ItemPosts = () => (
           }
         ]
       }}
+      headerTitle="Latest"
     />
   </JesusFilmThemeProvider>
 )
