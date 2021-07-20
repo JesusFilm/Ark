@@ -1,5 +1,12 @@
 import React from 'react'
-import { Box, Typography, Grid, Divider, makeStyles } from '@material-ui/core'
+import {
+  Box,
+  Typography,
+  Grid,
+  Divider,
+  makeStyles,
+  Container
+} from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   divider: {
@@ -7,11 +14,13 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(5)
   },
   text: {
-    color: '#EE3441'
+    color: '#EE3441',
+    fontWeight: 700
   },
   seeAll: {
     marginTop: theme.spacing(2),
-    cursor: 'pointer'
+    cursor: 'pointer',
+    fontWeight: 700
   }
 }))
 
@@ -27,14 +36,14 @@ export type ListHeaderProps = {
 export function ListHeader({ title, onSeeAllClick }: ListHeaderProps) {
   const classes = useStyles()
   return (
-    <>
-      <Grid container>
-        <Grid item xs={10}>
+    <Container maxWidth="sm">
+      <Grid container spacing={4}>
+        <Grid item xs={9}>
           <Typography className={classes.text} variant="h4">
             {title}
           </Typography>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={3}>
           {onSeeAllClick && (
             <Box onClick={() => onSeeAllClick?.()}>
               <Typography variant="body2" className={classes.seeAll}>
@@ -45,6 +54,6 @@ export function ListHeader({ title, onSeeAllClick }: ListHeaderProps) {
         </Grid>
       </Grid>
       <Divider className={classes.divider} />
-    </>
+    </Container>
   )
 }
