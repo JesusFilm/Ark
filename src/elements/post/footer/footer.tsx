@@ -9,6 +9,8 @@ import {
   makeStyles,
   Link
 } from '@material-ui/core'
+import { PostList } from '@jesus-film/ark.compounds.post-list'
+import { DefaultPost } from '@jesus-film/ark.elements.post-card'
 
 const useStyles = makeStyles((theme) => ({
   divider: {
@@ -27,8 +29,13 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     marginBottom: theme.spacing(4)
   },
-  heading: {
-    textAlign: 'center'
+  subTitle: {
+    textAlign: 'center',
+    marginBottom: theme.spacing(10)
+  },
+  title: {
+    textAlign: 'center',
+    marginTop: theme.spacing(26)
   }
 }))
 
@@ -56,7 +63,24 @@ export type PostFooterProps = {
    * Author
    */
   author?: AuthorNode
+  /** Author Link */
+  /** Post List */
+  posts: {
+    nodes: DefaultPost[]
+  }
   AuthorLink?: (props: {
+    children: ReactNode
+    href: string
+    className?: string
+  }) => ReactElement
+  /** Category Link */
+  CategoryLink?: (props: {
+    children: ReactNode
+    href: string
+    className?: string
+  }) => ReactElement
+  /** Post Link */
+  PostLink?: (props: {
     children: ReactNode
     href: string
     className?: string
@@ -65,7 +89,10 @@ export type PostFooterProps = {
 
 export function PostFooter({
   author,
-  AuthorLink = (props) => createElement('a', props)
+  posts,
+  AuthorLink = (props) => createElement('a', props),
+  CategoryLink = (props) => createElement('a', props),
+  PostLink = (props) => createElement('a', props)
 }: PostFooterProps) {
   const { t } = useTranslation('post-footer')
   const classes = useStyles()
@@ -95,12 +122,20 @@ export function PostFooter({
         </Grid>
         <Divider className={classes.divider} />
       </Container>
-      <Typography variant="h2" className={classes.heading}>
+      <Typography variant="h2" className={classes.title}>
         {t('His Word in Yours')}
       </Typography>
-      <Typography variant="body1" className={classes.heading}>
+      <Typography variant="body1" className={classes.subTitle}>
         {t('READ MORE BLOGS & STORIES')}
       </Typography>
+      <Container maxWidth="lg">
+        <PostList
+          posts={posts}
+          variant="default"
+          PostLink={PostLink}
+          CategoryLink={CategoryLink}
+        />
+      </Container>
     </>
   )
 }

@@ -1,29 +1,41 @@
 import React from 'react'
 import { Block, BlockProps } from '@jesus-film/ark.elements.block'
-import { PostHeader, PostHeaderProps } from './header'
-import { PostFooter, PostFooterProps } from './footer'
+import { PostHeader } from './header'
+import { PostFooter } from './footer'
 import { Grid } from '@material-ui/core'
+import { DefaultPost } from '@jesus-film/ark.elements.post-card'
 
-export type PostProps = PostHeaderProps &
-  PostFooterProps & {
-    /**
-     * Main body of post
-     */
+export type PostProps = {
+  post: {
+    author: {
+      node: {
+        slug: string
+        avatar: {
+          url: string
+        }
+        name: string
+        description: string
+      }
+    }
     blocks: BlockProps[]
   }
+  posts: {
+    nodes: DefaultPost[]
+  }
+}
 
-export function Post(props: PostProps) {
+export function Post({ post, posts }: PostProps) {
   return (
     <>
-      <PostHeader {...props} />
-      {props.blocks.map((block, i) => (
+      <PostHeader {...post} />
+      {post.blocks.map((block, i) => (
         <Grid container spacing={5} key={`${i}-block`}>
           <Grid item xs={12}>
             <Block {...block} key={`${i}-block`} />
           </Grid>
         </Grid>
       ))}
-      <PostFooter {...props} />
+      <PostFooter {...post} posts={posts} />
     </>
   )
 }
