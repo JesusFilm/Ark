@@ -55,7 +55,7 @@ describe('post-footer', () => {
     expect(link.getAttribute('href')).toEqual('/josh-mcdowell')
   })
 
-  it('should render post-list title', () => {
+  it('should render default post list', () => {
     const { getByText } = render(
       <PostFooter
         author={{

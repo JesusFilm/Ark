@@ -5,6 +5,15 @@ import { PostFooter } from './footer'
 import { Grid } from '@material-ui/core'
 import { DefaultPost } from '@jesus-film/ark.elements.post-card'
 
+type Category = {
+  categoryId: number
+  name: string
+}
+
+type CategoryNode = {
+  nodes: Category[]
+}
+
 export type PostProps = {
   post: {
     author: {
@@ -18,6 +27,10 @@ export type PostProps = {
       }
     }
     blocks: BlockProps[]
+    categories?: CategoryNode
+    date?: string
+    title: string
+    excerpt: string
   }
   posts: {
     nodes: DefaultPost[]
