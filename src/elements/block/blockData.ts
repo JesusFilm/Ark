@@ -132,5 +132,11 @@ export const blocks = [
       providerNameSlug: 'vimeo',
       align: ''
     }
+  },
+  {
+    __typename: 'LazyblockArclightBlock',
+    attributes: {
+      refId: '1_1106-mld-0-0'
+    }
   }
 ] as BlockProps[]

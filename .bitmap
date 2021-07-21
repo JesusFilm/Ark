@@ -103,6 +103,12 @@
         "mainFile": "index.ts",
         "rootDir": "src/elements/menu"
     },
+    "elements/mission": {
+        "scope": "jesus-film.ark",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/mission"
+    },
     "elements/navigation": {
         "scope": "jesus-film.ark",
         "version": "0.0.2",

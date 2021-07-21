@@ -500,6 +500,12 @@ const postQuery = {
           __typename: 'CoreParagraphBlock'
         },
         {
+          __typename: 'LazyblockArclightBlock',
+          attributes: {
+            refId: '1_1106-mld-0-0'
+          }
+        },
+        {
           __typename: 'CoreHeadingBlock',
           attributes: {
             align: 'left',
