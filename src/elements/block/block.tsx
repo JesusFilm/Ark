@@ -10,14 +10,54 @@ import { CoreArclight, CoreArclightProps } from './core-arclight'
 import { Card, CardContent, Container, Typography } from '@material-ui/core'
 
 export type BlockProps =
-  | CoreParagraphProps
   | CoreImageProps
+  | CoreParagraphProps
   | CoreHeadingProps
   | CoreListProps
   | CoreGalleryProps
   | CoreEmbedProps
   | CoreQuoteProps
   | CoreArclightProps
+  | {
+      __typename:
+        | 'LazyblockCoreFreeBlock'
+        | 'CoreShortcodeBlock'
+        | 'CoreArchivesBlock'
+        | 'CoreAudioBlock'
+        | 'CoreButtonBlock'
+        | 'CoreButtonsBlock'
+        | 'CoreCalendarBlock'
+        | 'CoreCategoriesBlock'
+        | 'CoreCodeBlock'
+        | 'CoreColumnsBlock'
+        | 'CoreColumnBlock'
+        | 'CoreCoverBlock'
+        | 'CoreFileBlock'
+        | 'CoreGroupBlock'
+        | 'CoreFreeformBlock'
+        | 'CoreHtmlBlock'
+        | 'CoreMediaTextBlock'
+        | 'CoreLatestCommentsBlock'
+        | 'CoreLatestPostsBlock'
+        | 'CoreMissingBlock'
+        | 'CoreMoreBlock'
+        | 'CoreNextpageBlock'
+        | 'CorePreformattedBlock'
+        | 'CorePullquoteBlock'
+        | 'CoreRssBlock'
+        | 'CoreSearchBlock'
+        | 'CoreSeparatorBlock'
+        | 'CoreBlock'
+        | 'CoreSocialLinksBlock'
+        | 'CoreSocialLinkBlock'
+        | 'CoreSpacerBlock'
+        | 'CoreSubheadBlock'
+        | 'CoreTableBlock'
+        | 'CoreTagCloudBlock'
+        | 'CoreTextColumnsBlock'
+        | 'CoreVerseBlock'
+        | 'CoreVideoBlock'
+    }
 
 export function Block(BlockProps: BlockProps) {
   switch (BlockProps.__typename) {
