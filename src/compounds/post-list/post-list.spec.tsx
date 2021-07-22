@@ -1,36 +1,40 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import { PostList } from '.'
+import { I18nProvider } from '@jesus-film/ark.providers.i18n-provider'
 
 describe('PostList', () => {
   it('should render a single post', () => {
     const { getAllByTestId } = render(
-      <PostList
-        PostLink={({ children, href, className }) => (
-          <a
-            data-testid={`link-${href}`}
-            className={className}
-            href={`/posts/${href}`}>
-            {children}
-          </a>
-        )}
-        posts={{
-          nodes: [
-            {
-              featuredImage: {
-                node: {
-                  sourceUrl: 'https://source.unsplash.com/1920x1080/daily?doubt'
-                }
-              },
-              slug: '10-bible-verses-about-faith-and-doubt',
-              title: '10 Bible Verses about Faith and Doubt',
-              excerpt:
-                'Issues of faith and doubt have a massive impact on Christians of every maturity level.'
-            }
-          ]
-        }}
-        variant="premiere"
-      />
+      <I18nProvider>
+        <PostList
+          PostLink={({ children, href, className }) => (
+            <a
+              data-testid={`link-${href}`}
+              className={className}
+              href={`/posts/${href}`}>
+              {children}
+            </a>
+          )}
+          posts={{
+            nodes: [
+              {
+                featuredImage: {
+                  node: {
+                    sourceUrl:
+                      'https://source.unsplash.com/1920x1080/daily?doubt'
+                  }
+                },
+                slug: '10-bible-verses-about-faith-and-doubt',
+                title: '10 Bible Verses about Faith and Doubt',
+                excerpt:
+                  'Issues of faith and doubt have a massive impact on Christians of every maturity level.'
+              }
+            ]
+          }}
+          variant="premiere"
+        />
+      </I18nProvider>
     )
     const link = getAllByTestId('link-10-bible-verses-about-faith-and-doubt')
     expect(link[0]).toHaveAttribute(
@@ -42,44 +46,47 @@ describe('PostList', () => {
 
   it('should render two posts', () => {
     const { getAllByTestId } = render(
-      <PostList
-        PostLink={({ children, href, className }) => (
-          <a
-            data-testid={`link-${href}`}
-            className={className}
-            href={`/posts/${href}`}>
-            {children}
-          </a>
-        )}
-        posts={{
-          nodes: [
-            {
-              featuredImage: {
-                node: {
-                  sourceUrl: 'https://source.unsplash.com/1920x1080/daily?doubt'
-                }
+      <I18nProvider>
+        <PostList
+          PostLink={({ children, href, className }) => (
+            <a
+              data-testid={`link-${href}`}
+              className={className}
+              href={`/posts/${href}`}>
+              {children}
+            </a>
+          )}
+          posts={{
+            nodes: [
+              {
+                featuredImage: {
+                  node: {
+                    sourceUrl:
+                      'https://source.unsplash.com/1920x1080/daily?doubt'
+                  }
+                },
+                slug: '10-bible-verses-about-faith-and-doubt',
+                title: '10 Bible Verses about Faith and Doubt',
+                excerpt:
+                  'Issues of faith and doubt have a massive impact on Christians of every maturity level.'
               },
-              slug: '10-bible-verses-about-faith-and-doubt',
-              title: '10 Bible Verses about Faith and Doubt',
-              excerpt:
-                'Issues of faith and doubt have a massive impact on Christians of every maturity level.'
-            },
-            {
-              featuredImage: {
-                node: {
-                  sourceUrl:
-                    'https://source.unsplash.com/1920x1080/daily?direction'
-                }
-              },
-              slug: '4-tips-for-when-you-feel-directionless',
-              title: '4 Tips for When You Feel Directionless',
-              excerpt:
-                "Wouldn't it be great if God sent us a daily email that outlined all the things He wanted us to accomplish?"
-            }
-          ]
-        }}
-        variant="premiere"
-      />
+              {
+                featuredImage: {
+                  node: {
+                    sourceUrl:
+                      'https://source.unsplash.com/1920x1080/daily?direction'
+                  }
+                },
+                slug: '4-tips-for-when-you-feel-directionless',
+                title: '4 Tips for When You Feel Directionless',
+                excerpt:
+                  "Wouldn't it be great if God sent us a daily email that outlined all the things He wanted us to accomplish?"
+              }
+            ]
+          }}
+          variant="premiere"
+        />
+      </I18nProvider>
     )
     const link1 = getAllByTestId('link-10-bible-verses-about-faith-and-doubt')
     expect(link1[0]).toHaveAttribute(
@@ -96,54 +103,58 @@ describe('PostList', () => {
 
   it('should render three posts', () => {
     const { getAllByTestId } = render(
-      <PostList
-        PostLink={({ children, href, className }) => (
-          <a
-            data-testid={`link-${href}`}
-            className={className}
-            href={`/posts/${href}`}>
-            {children}
-          </a>
-        )}
-        posts={{
-          nodes: [
-            {
-              featuredImage: {
-                node: {
-                  sourceUrl: 'https://source.unsplash.com/1920x1080/daily?doubt'
-                }
+      <I18nProvider>
+        <PostList
+          PostLink={({ children, href, className }) => (
+            <a
+              data-testid={`link-${href}`}
+              className={className}
+              href={`/posts/${href}`}>
+              {children}
+            </a>
+          )}
+          posts={{
+            nodes: [
+              {
+                featuredImage: {
+                  node: {
+                    sourceUrl:
+                      'https://source.unsplash.com/1920x1080/daily?doubt'
+                  }
+                },
+                slug: '10-bible-verses-about-faith-and-doubt',
+                title: '10 Bible Verses about Faith and Doubt',
+                excerpt:
+                  'Issues of faith and doubt have a massive impact on Christians of every maturity level.'
               },
-              slug: '10-bible-verses-about-faith-and-doubt',
-              title: '10 Bible Verses about Faith and Doubt',
-              excerpt:
-                'Issues of faith and doubt have a massive impact on Christians of every maturity level.'
-            },
-            {
-              featuredImage: {
-                node: {
-                  sourceUrl:
-                    'https://source.unsplash.com/1920x1080/daily?direction'
-                }
+              {
+                featuredImage: {
+                  node: {
+                    sourceUrl:
+                      'https://source.unsplash.com/1920x1080/daily?direction'
+                  }
+                },
+                slug: '4-tips-for-when-you-feel-directionless',
+                title: '4 Tips for When You Feel Directionless',
+                excerpt:
+                  "Wouldn't it be great if God sent us a daily email that outlined all the things He wanted us to accomplish?"
               },
-              slug: '4-tips-for-when-you-feel-directionless',
-              title: '4 Tips for When You Feel Directionless',
-              excerpt:
-                "Wouldn't it be great if God sent us a daily email that outlined all the things He wanted us to accomplish?"
-            },
-            {
-              featuredImage: {
-                node: {
-                  sourceUrl: 'https://source.unsplash.com/1920x1080/daily?alone'
-                }
-              },
-              slug: 'what-to-do-when-you-feel-alone',
-              title: 'What To Do When You Feel Alone',
-              excerpt: 'At one time or another, we all feel alone.'
-            }
-          ]
-        }}
-        variant="premiere"
-      />
+              {
+                featuredImage: {
+                  node: {
+                    sourceUrl:
+                      'https://source.unsplash.com/1920x1080/daily?alone'
+                  }
+                },
+                slug: 'what-to-do-when-you-feel-alone',
+                title: 'What To Do When You Feel Alone',
+                excerpt: 'At one time or another, we all feel alone.'
+              }
+            ]
+          }}
+          variant="premiere"
+        />
+      </I18nProvider>
     )
     const link1 = getAllByTestId('link-10-bible-verses-about-faith-and-doubt')
     expect(link1[0]).toHaveAttribute(
@@ -161,54 +172,58 @@ describe('PostList', () => {
 
   it('should render without error', () => {
     const { rerender, getByRole } = render(
-      <PostList
-        PostLink={({ children, href, className }) => (
-          <a
-            data-testid={`link-${href}`}
-            className={className}
-            href={`/posts/${href}`}>
-            {children}
-          </a>
-        )}
-        posts={{
-          nodes: [
-            {
-              featuredImage: {
-                node: {
-                  sourceUrl: 'https://source.unsplash.com/1920x1080/daily?doubt'
-                }
+      <I18nProvider>
+        <PostList
+          PostLink={({ children, href, className }) => (
+            <a
+              data-testid={`link-${href}`}
+              className={className}
+              href={`/posts/${href}`}>
+              {children}
+            </a>
+          )}
+          posts={{
+            nodes: [
+              {
+                featuredImage: {
+                  node: {
+                    sourceUrl:
+                      'https://source.unsplash.com/1920x1080/daily?doubt'
+                  }
+                },
+                slug: '10-bible-verses-about-faith-and-doubt',
+                title: '10 Bible Verses about Faith and Doubt',
+                excerpt:
+                  'Issues of faith and doubt have a massive impact on Christians of every maturity level.'
               },
-              slug: '10-bible-verses-about-faith-and-doubt',
-              title: '10 Bible Verses about Faith and Doubt',
-              excerpt:
-                'Issues of faith and doubt have a massive impact on Christians of every maturity level.'
-            },
-            {
-              featuredImage: {
-                node: {
-                  sourceUrl:
-                    'https://source.unsplash.com/1920x1080/daily?direction'
-                }
+              {
+                featuredImage: {
+                  node: {
+                    sourceUrl:
+                      'https://source.unsplash.com/1920x1080/daily?direction'
+                  }
+                },
+                slug: '4-tips-for-when-you-feel-directionless',
+                title: '4 Tips for When You Feel Directionless',
+                excerpt:
+                  "Wouldn't it be great if God sent us a daily email that outlined all the things He wanted us to accomplish?"
               },
-              slug: '4-tips-for-when-you-feel-directionless',
-              title: '4 Tips for When You Feel Directionless',
-              excerpt:
-                "Wouldn't it be great if God sent us a daily email that outlined all the things He wanted us to accomplish?"
-            },
-            {
-              featuredImage: {
-                node: {
-                  sourceUrl: 'https://source.unsplash.com/1920x1080/daily?alone'
-                }
-              },
-              slug: 'what-to-do-when-you-feel-alone',
-              title: 'What To Do When You Feel Alone',
-              excerpt: 'At one time or another, we all feel alone.'
-            }
-          ]
-        }}
-        variant="premiere"
-      />
+              {
+                featuredImage: {
+                  node: {
+                    sourceUrl:
+                      'https://source.unsplash.com/1920x1080/daily?alone'
+                  }
+                },
+                slug: 'what-to-do-when-you-feel-alone',
+                title: 'What To Do When You Feel Alone',
+                excerpt: 'At one time or another, we all feel alone.'
+              }
+            ]
+          }}
+          variant="premiere"
+        />
+      </I18nProvider>
     )
     expect(
       getByRole('link', {
@@ -216,47 +231,49 @@ describe('PostList', () => {
       })
     ).toBeInTheDocument()
     rerender(
-      <PostList
-        PostLink={({ children, href, className }) => (
-          <a
-            data-testid={`link-${href}`}
-            className={className}
-            href={`/posts/${href}`}>
-            {children}
-          </a>
-        )}
-        posts={{
-          nodes: [
-            {
-              featuredImage: {
-                node: null
+      <I18nProvider>
+        <PostList
+          PostLink={({ children, href, className }) => (
+            <a
+              data-testid={`link-${href}`}
+              className={className}
+              href={`/posts/${href}`}>
+              {children}
+            </a>
+          )}
+          posts={{
+            nodes: [
+              {
+                featuredImage: {
+                  node: null
+                },
+                slug: '10-bible-verses-about-faith-and-doubt',
+                title: '10 Bible Verses about Faith and Doubt',
+                excerpt:
+                  'Issues of faith and doubt have a massive impact on Christians of every maturity level.'
               },
-              slug: '10-bible-verses-about-faith-and-doubt',
-              title: '10 Bible Verses about Faith and Doubt',
-              excerpt:
-                'Issues of faith and doubt have a massive impact on Christians of every maturity level.'
-            },
-            {
-              featuredImage: {
-                node: null
+              {
+                featuredImage: {
+                  node: null
+                },
+                slug: '4-tips-for-when-you-feel-directionless',
+                title: '4 Tips for When You Feel Directionless',
+                excerpt:
+                  "Wouldn't it be great if God sent us a daily email that outlined all the things He wanted us to accomplish?"
               },
-              slug: '4-tips-for-when-you-feel-directionless',
-              title: '4 Tips for When You Feel Directionless',
-              excerpt:
-                "Wouldn't it be great if God sent us a daily email that outlined all the things He wanted us to accomplish?"
-            },
-            {
-              featuredImage: {
-                node: null
-              },
-              slug: 'what-to-do-when-you-feel-alone',
-              title: 'What To Do When You Feel Alone',
-              excerpt: 'At one time or another, we all feel alone.'
-            }
-          ]
-        }}
-        variant="premiere"
-      />
+              {
+                featuredImage: {
+                  node: null
+                },
+                slug: 'what-to-do-when-you-feel-alone',
+                title: 'What To Do When You Feel Alone',
+                excerpt: 'At one time or another, we all feel alone.'
+              }
+            ]
+          }}
+          variant="premiere"
+        />
+      </I18nProvider>
     )
     expect(
       getByRole('link', {
@@ -264,41 +281,43 @@ describe('PostList', () => {
       })
     ).toBeInTheDocument()
     rerender(
-      <PostList
-        PostLink={({ children, href, className }) => (
-          <a
-            data-testid={`link-${href}`}
-            className={className}
-            href={`/posts/${href}`}>
-            {children}
-          </a>
-        )}
-        posts={{
-          nodes: [
-            {
-              featuredImage: null,
-              slug: '10-bible-verses-about-faith-and-doubt',
-              title: '10 Bible Verses about Faith and Doubt',
-              excerpt:
-                'Issues of faith and doubt have a massive impact on Christians of every maturity level.'
-            },
-            {
-              featuredImage: null,
-              slug: '4-tips-for-when-you-feel-directionless',
-              title: '4 Tips for When You Feel Directionless',
-              excerpt:
-                "Wouldn't it be great if God sent us a daily email that outlined all the things He wanted us to accomplish?"
-            },
-            {
-              featuredImage: null,
-              slug: 'what-to-do-when-you-feel-alone',
-              title: 'What To Do When You Feel Alone',
-              excerpt: 'At one time or another, we all feel alone.'
-            }
-          ]
-        }}
-        variant="premiere"
-      />
+      <I18nProvider>
+        <PostList
+          PostLink={({ children, href, className }) => (
+            <a
+              data-testid={`link-${href}`}
+              className={className}
+              href={`/posts/${href}`}>
+              {children}
+            </a>
+          )}
+          posts={{
+            nodes: [
+              {
+                featuredImage: null,
+                slug: '10-bible-verses-about-faith-and-doubt',
+                title: '10 Bible Verses about Faith and Doubt',
+                excerpt:
+                  'Issues of faith and doubt have a massive impact on Christians of every maturity level.'
+              },
+              {
+                featuredImage: null,
+                slug: '4-tips-for-when-you-feel-directionless',
+                title: '4 Tips for When You Feel Directionless',
+                excerpt:
+                  "Wouldn't it be great if God sent us a daily email that outlined all the things He wanted us to accomplish?"
+              },
+              {
+                featuredImage: null,
+                slug: 'what-to-do-when-you-feel-alone',
+                title: 'What To Do When You Feel Alone',
+                excerpt: 'At one time or another, we all feel alone.'
+              }
+            ]
+          }}
+          variant="premiere"
+        />
+      </I18nProvider>
     )
     expect(
       getByRole('link', {
@@ -309,47 +328,49 @@ describe('PostList', () => {
 
   it('should render item post list', () => {
     const { getByTestId, getAllByTestId } = render(
-      <PostList
-        PostLink={({ children, href, className }) => (
-          <a
-            data-testid={`post-${href}`}
-            className={className}
-            href={`/posts/${href}`}>
-            {children}
-          </a>
-        )}
-        AuthorLink={({ children, href, className }) => (
-          <a
-            data-testid={`author-${href}`}
-            className={className}
-            href={`/posts/${href}`}>
-            {children}
-          </a>
-        )}
-        posts={{
-          nodes: [
-            {
-              slug: '10-bible-verses-about-faith-and-doubt',
-              title: '10 Bible Verses about Faith and Doubt',
-              author: {
-                node: {
-                  slug: 'john-doe',
-                  name: 'John Doe'
+      <I18nProvider>
+        <PostList
+          PostLink={({ children, href, className }) => (
+            <a
+              data-testid={`post-${href}`}
+              className={className}
+              href={`/posts/${href}`}>
+              {children}
+            </a>
+          )}
+          AuthorLink={({ children, href, className }) => (
+            <a
+              data-testid={`author-${href}`}
+              className={className}
+              href={`/posts/${href}`}>
+              {children}
+            </a>
+          )}
+          posts={{
+            nodes: [
+              {
+                slug: '10-bible-verses-about-faith-and-doubt',
+                title: '10 Bible Verses about Faith and Doubt',
+                author: {
+                  node: {
+                    slug: 'john-doe',
+                    name: 'John Doe'
+                  }
                 }
+              },
+              {
+                slug: '4-tips-for-when-you-feel-directionless',
+                title: '4 Tips for When You Feel Directionless'
+              },
+              {
+                slug: 'what-to-do-when-you-feel-alone',
+                title: 'What To Do When You Feel Alone'
               }
-            },
-            {
-              slug: '4-tips-for-when-you-feel-directionless',
-              title: '4 Tips for When You Feel Directionless'
-            },
-            {
-              slug: 'what-to-do-when-you-feel-alone',
-              title: 'What To Do When You Feel Alone'
-            }
-          ]
-        }}
-        variant="item"
-      />
+            ]
+          }}
+          variant="item"
+        />
+      </I18nProvider>
     )
     expect(
       getByTestId('post-10-bible-verses-about-faith-and-doubt')
@@ -360,53 +381,55 @@ describe('PostList', () => {
 
   it('should render default post list', () => {
     const { getByTestId } = render(
-      <PostList
-        PostLink={({ children, href, className }) => (
-          <a
-            data-testid={`post-${href}`}
-            className={className}
-            href={`/posts/${href}`}>
-            {children}
-          </a>
-        )}
-        CategoryLink={({ children, href, className }) => (
-          <a
-            data-testid={`category-${href}`}
-            className={className}
-            href={`/posts/${href}`}>
-            {children}
-          </a>
-        )}
-        posts={{
-          nodes: [
-            {
-              slug: '10-bible-verses-about-faith-and-doubt',
-              title: '10 Bible Verses about Faith and Doubt',
-              categories: {
-                nodes: [
-                  {
-                    slug: 'following-jesus',
-                    name: 'Following Jesus'
-                  }
-                ]
+      <I18nProvider>
+        <PostList
+          PostLink={({ children, href, className }) => (
+            <a
+              data-testid={`post-${href}`}
+              className={className}
+              href={`/posts/${href}`}>
+              {children}
+            </a>
+          )}
+          CategoryLink={({ children, href, className }) => (
+            <a
+              data-testid={`category-${href}`}
+              className={className}
+              href={`/posts/${href}`}>
+              {children}
+            </a>
+          )}
+          posts={{
+            nodes: [
+              {
+                slug: '10-bible-verses-about-faith-and-doubt',
+                title: '10 Bible Verses about Faith and Doubt',
+                categories: {
+                  nodes: [
+                    {
+                      slug: 'following-jesus',
+                      name: 'Following Jesus'
+                    }
+                  ]
+                }
+              },
+              {
+                slug: '4-tips-for-when-you-feel-directionless',
+                title: '4 Tips for When You Feel Directionless'
+              },
+              {
+                slug: 'what-to-do-when-you-feel-alone',
+                title: 'What To Do When You Feel Alone'
+              },
+              {
+                slug: 'visit-your-neighbors',
+                title: 'Visit your neighbors'
               }
-            },
-            {
-              slug: '4-tips-for-when-you-feel-directionless',
-              title: '4 Tips for When You Feel Directionless'
-            },
-            {
-              slug: 'what-to-do-when-you-feel-alone',
-              title: 'What To Do When You Feel Alone'
-            },
-            {
-              slug: 'visit-your-neighbors',
-              title: 'Visit your neighbors'
-            }
-          ]
-        }}
-        variant="default"
-      />
+            ]
+          }}
+          variant="default"
+        />
+      </I18nProvider>
     )
     expect(
       getByTestId('post-10-bible-verses-about-faith-and-doubt')
