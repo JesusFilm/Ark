@@ -11,13 +11,13 @@ const useStyles = makeStyles(() =>
 
 type Attributes = {
   /** Alt tag for image */
-  alt: string
+  alt?: string
   /** Image source url */
-  url: string
+  url?: string
   /** Image title */
-  title: string
+  title?: string
   /** Id of image */
-  id: Number
+  id?: Number
 }
 
 export type CoreImageProps = {
@@ -32,7 +32,7 @@ export function CoreImage({
   attributes: { alt, url, title, id }
 }: CoreImageProps) {
   const classes = useStyles()
-  return (
+  return alt || url || title || id ? (
     <Container maxWidth="sm">
       <img
         data-testid="CoreImageBlock"
@@ -43,5 +43,5 @@ export function CoreImage({
         className={classes.image}
       />
     </Container>
-  )
+  ) : null
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, CardMedia, makeStyles } from '@material-ui/core'
+import { CoreEmbedProps } from '../../core-embed'
 
 const useStyles = makeStyles((theme) => ({
   smallSize: {
@@ -12,25 +13,12 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-type Attributes = {
-  url: string
-  providerNameSlug: string
-  align: string
-}
-
-export type IframeProps = {
-  /**
-   * Container for embed attributes
-   */
-  attributes: Attributes
-}
-
 export function Iframe({
   attributes: { url, providerNameSlug, align }
-}: IframeProps) {
+}: CoreEmbedProps) {
   const classes = useStyles()
 
-  return (
+  return url || providerNameSlug || align ? (
     <Container maxWidth={align === 'wide' ? 'md' : 'sm'}>
       <CardMedia
         data-testid={providerNameSlug}
@@ -39,5 +27,5 @@ export function Iframe({
         src={url}
       />
     </Container>
-  )
+  ) : null
 }

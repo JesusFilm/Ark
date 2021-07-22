@@ -3,7 +3,7 @@ import { Container, Typography } from '@material-ui/core'
 
 type Attributes = {
   /** mix of text and html */
-  content: string
+  content?: string
 }
 
 export type CoreParagraphProps = {
@@ -14,15 +14,15 @@ export type CoreParagraphProps = {
   __typename: 'CoreParagraphBlock'
 }
 
-export function CoreParagraph({ attributes }: CoreParagraphProps) {
-  return (
+export function CoreParagraph({ attributes: { content } }: CoreParagraphProps) {
+  return content ? (
     <Container maxWidth="sm">
       <Typography
         data-testid="CoreParagraphBlock"
         variant="body1"
-        dangerouslySetInnerHTML={{ __html: attributes.content }}
+        dangerouslySetInnerHTML={{ __html: content }}
         paragraph
       />
     </Container>
-  )
+  ) : null
 }

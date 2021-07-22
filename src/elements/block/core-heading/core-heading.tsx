@@ -3,11 +3,11 @@ import { Container, Typography, TypographyVariant } from '@material-ui/core'
 
 type Attributes = {
   /** Heading size */
-  level: Number
+  level?: Number
   /** Heading content */
-  content: string
+  content?: string
   /** align is sometimes supplied as an empty string from WP */
-  align: 'inherit' | 'left' | 'center' | 'right' | 'justify' | ''
+  align?: string
 }
 
 export type CoreHeadingProps = {
@@ -22,7 +22,12 @@ export function CoreHeading({
   attributes: { level, content, align }
 }: CoreHeadingProps) {
   const variant = `h${level}` as TypographyVariant
-  const normalized = align === '' ? 'inherit' : align
+  const normalized = (
+    ['inherit', 'left', 'center', 'right', 'justify'].includes(align)
+      ? align
+      : 'inherit'
+  ) as 'inherit' | 'left' | 'center' | 'right' | 'justify'
+
   return (
     <Container maxWidth="sm">
       <Typography
