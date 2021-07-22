@@ -18,3 +18,10 @@ it('should render with the correct text', () => {
     )
   ).toBeInTheDocument()
 })
+
+it('should render null', () => {
+  const { container } = render(
+    <CoreParagraph __typename="CoreParagraphBlock" attributes={{}} />
+  )
+  expect(container).toBeEmptyDOMElement()
+})

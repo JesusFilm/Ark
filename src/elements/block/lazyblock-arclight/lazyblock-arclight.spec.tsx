@@ -15,3 +15,10 @@ it('should render the Arclight video', () => {
     'http://api.arclight.org/videoPlayerUrl?refId=1_1106-mld-0-0'
   )
 })
+
+it('should render null', () => {
+  const { container } = render(
+    <CoreArclight __typename="LazyblockArclightBlock" attributes={{}} />
+  )
+  expect(container).toBeEmptyDOMElement()
+})

@@ -40,8 +40,8 @@ const useStyles = makeStyles((theme) => ({
 
 type Attributes = {
   /** */
-  value: string
-  citation: string
+  value?: string
+  citation?: string
 }
 
 export type CoreQuoteProps = {
@@ -52,10 +52,10 @@ export type CoreQuoteProps = {
   __typename: 'CoreQuoteBlock'
 }
 
-export function CoreQuote({ attributes }: CoreQuoteProps) {
+export function CoreQuote({ attributes: { value, citation } }: CoreQuoteProps) {
   const classes = useStyles()
 
-  return (
+  return value || citation ? (
     <Box className={classes.box}>
       <Divider className={classNames(classes.divider, classes.leftDivider)} />
       <Container maxWidth="sm">
@@ -64,14 +64,14 @@ export function CoreQuote({ attributes }: CoreQuoteProps) {
           <Typography
             data-testid="CoreQuoteBlock"
             dangerouslySetInnerHTML={{
-              __html: attributes.value
+              __html: value
             }}
             variant="h5"
             gutterBottom
           />
           <Typography
             data-testid="citation"
-            dangerouslySetInnerHTML={{ __html: attributes.citation }}
+            dangerouslySetInnerHTML={{ __html: citation }}
             variant="body1"
           />
         </Container>
@@ -79,5 +79,5 @@ export function CoreQuote({ attributes }: CoreQuoteProps) {
       </Container>
       <Divider className={classNames(classes.divider, classes.rightDivider)} />
     </Box>
-  )
+  ) : null
 }

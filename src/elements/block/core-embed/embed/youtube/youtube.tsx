@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, CardMedia, makeStyles } from '@material-ui/core'
 import { Error } from '../../../error'
+import { CoreEmbedProps } from '../../core-embed'
 
 const useStyles = makeStyles((theme) => ({
   smallSize: {
@@ -13,48 +14,32 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-type Attributes = {
-  url: string
-  providerNameSlug: string
-  align: string
-}
-
-export type YoutubeProps = {
-  /**
-   * Container for embed attributes
-   */
-  attributes: Attributes
-}
-
 function extractYoutubeID(url): string {
   const regExp =
     /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/
-  const match = url.match(regExp)
+  const match = url?.match(regExp)
   if (match && match[7].length === 11) {
     return match[7]
   }
 }
 
-export function Youtube({ attributes }: YoutubeProps) {
+export function Youtube({
+  attributes: { url, align, providerNameSlug }
+}: CoreEmbedProps) {
   const classes = useStyles()
-  const youtubeId = extractYoutubeID(attributes.url)
+  const youtubeId = extractYoutubeID(url)
   const youtubeUrl = `https://www.youtube.com/embed/${youtubeId}`
 
-  if (youtubeId === undefined) {
-    return (
-      <Error
-        title="This is not a valid youtube url"
-        subtitle={attributes.url}
-      />
-    )
+  if (!url && !align && !providerNameSlug) {
+    return null
+  } else if (youtubeId === undefined) {
+    return <Error title="This is not a valid youtube url" subtitle={url} />
   } else {
     return (
-      <Container maxWidth={attributes.align === 'wide' ? 'md' : 'sm'}>
+      <Container maxWidth={align === 'wide' ? 'md' : 'sm'}>
         <CardMedia
-          data-testid={attributes.providerNameSlug}
-          className={
-            attributes.align === 'wide' ? classes.mediumSize : classes.smallSize
-          }
+          data-testid={providerNameSlug}
+          className={align === 'wide' ? classes.mediumSize : classes.smallSize}
           component="iframe"
           hidden
           src={youtubeUrl}
