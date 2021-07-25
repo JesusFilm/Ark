@@ -11,6 +11,7 @@ describe('Youtube', () => {
           providerNameSlug: 'youtube',
           align: ''
         }}
+        __typename="CoreEmbedBlock"
       />
     )
     expect(getByTestId('youtube').getAttribute('src')).toEqual(
@@ -26,6 +27,7 @@ describe('Youtube', () => {
           providerNameSlug: 'youtube',
           align: ''
         }}
+        __typename="CoreEmbedBlock"
       />
     )
     expect(getByText('This is not a valid youtube url')).toBeInTheDocument()
@@ -39,8 +41,16 @@ describe('Youtube', () => {
           providerNameSlug: 'youtube',
           align: ''
         }}
+        __typename="CoreEmbedBlock"
       />
     )
     expect(getByText('https://www.youtube.com/UGBVbmvk0v0')).toBeInTheDocument()
+  })
+
+  it('should render null', () => {
+    const { container } = render(
+      <Youtube __typename="CoreEmbedBlock" attributes={{}} />
+    )
+    expect(container).toBeEmptyDOMElement()
   })
 })

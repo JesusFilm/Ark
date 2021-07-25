@@ -22,7 +22,7 @@ export type CoreGalleryProps = {
 }
 
 export function CoreGallery({ attributes: { images } }: CoreGalleryProps) {
-  return (
+  return images ? (
     <Container maxWidth="md">
       <GridList data-testid="CoreGalleryBlock" cellHeight={160} cols={4}>
         {images?.map((image, i) => (
@@ -32,5 +32,5 @@ export function CoreGallery({ attributes: { images } }: CoreGalleryProps) {
         ))}
       </GridList>
     </Container>
-  )
+  ) : null
 }

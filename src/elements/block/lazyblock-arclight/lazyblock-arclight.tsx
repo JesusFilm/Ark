@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 type Attributes = {
-  refId: string
+  refId?: string
 }
 
 export type CoreArclightProps = {
@@ -20,11 +20,11 @@ export type CoreArclightProps = {
   __typename: 'LazyblockArclightBlock'
 }
 
-export function CoreArclight({ attributes }: CoreArclightProps) {
+export function CoreArclight({ attributes: { refId } }: CoreArclightProps) {
   const classes = useStyles()
-  const arclightUrl = `http://api.arclight.org/videoPlayerUrl?refId=${attributes.refId}`
+  const arclightUrl = `http://api.arclight.org/videoPlayerUrl?refId=${refId}`
 
-  return (
+  return refId ? (
     <Container maxWidth="sm">
       <CardMedia
         className={classes.cardSize}
@@ -34,5 +34,5 @@ export function CoreArclight({ attributes }: CoreArclightProps) {
         src={arclightUrl}
       />
     </Container>
-  )
+  ) : null
 }

@@ -6,7 +6,7 @@ import { CoreHeading, CoreHeadingProps } from './core-heading'
 import { CoreGallery, CoreGalleryProps } from './core-gallery'
 import { CoreEmbed, CoreEmbedProps } from './core-embed'
 import { CoreQuote, CoreQuoteProps } from './core-quote'
-import { CoreArclight, CoreArclightProps } from './core-arclight'
+import { CoreArclight, CoreArclightProps } from './lazyblock-arclight'
 import { Card, CardContent, Container, Typography } from '@material-ui/core'
 
 export type BlockProps =

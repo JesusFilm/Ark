@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from '@testing-library/react'
 import { CoreGallery } from '.'
 
-it('should render with the correct text', () => {
+it('should render with the correct images', () => {
   const { getByAltText } = render(
     <CoreGallery
       __typename="CoreGalleryBlock"
@@ -31,4 +31,11 @@ it('should render with the correct text', () => {
   expect(getByAltText('man in woods').getAttribute('src')).toEqual(
     'http://54.204.85.23/wp-content/uploads/2021/03/1614778286060-2-scaled.jpg'
   )
+})
+
+it('should render null', () => {
+  const { container } = render(
+    <CoreGallery __typename="CoreGalleryBlock" attributes={{}} />
+  )
+  expect(container).toBeEmptyDOMElement()
 })

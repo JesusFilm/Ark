@@ -58,4 +58,11 @@ describe('embed', () => {
     )
     expect(getByText('vim')).toBeInTheDocument()
   })
+
+  it('should render null', () => {
+    const { container } = render(
+      <CoreEmbed __typename="CoreEmbedBlock" attributes={{}} />
+    )
+    expect(container).toBeEmptyDOMElement()
+  })
 })

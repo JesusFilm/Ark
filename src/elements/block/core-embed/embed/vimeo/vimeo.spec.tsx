@@ -11,6 +11,7 @@ describe('Vimeo', () => {
           providerNameSlug: 'vimeo',
           align: 'wide'
         }}
+        __typename="CoreEmbedBlock"
       />
     )
     expect(getByTestId('vimeo').getAttribute('src')).toEqual(
@@ -26,6 +27,7 @@ describe('Vimeo', () => {
           providerNameSlug: 'vimeo',
           align: ''
         }}
+        __typename="CoreEmbedBlock"
       />
     )
     expect(getByText('This is not a valid vimeo url')).toBeInTheDocument()
@@ -39,8 +41,16 @@ describe('Vimeo', () => {
           providerNameSlug: 'vimeo',
           align: ''
         }}
+        __typename="CoreEmbedBlock"
       />
     )
     expect(getByText('https://vimeo.commm/10679287')).toBeInTheDocument()
+  })
+
+  it('should render null', () => {
+    const { container } = render(
+      <Vimeo __typename="CoreEmbedBlock" attributes={{}} />
+    )
+    expect(container).toBeEmptyDOMElement()
   })
 })
