@@ -6,7 +6,6 @@ import { Grid } from '@material-ui/core'
 import { DefaultPost } from '@jesus-film/ark.elements.post-card'
 
 type Category = {
-  categoryId: number
   name: string
 }
 
