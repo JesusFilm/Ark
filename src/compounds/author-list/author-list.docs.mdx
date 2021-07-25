@@ -13,33 +13,26 @@ A component that display a list of authors with names, description, and images
 
 ```js live
 <AuthorList
-  authors={[
+  authors={{ 
+    node: [
     {
-      author: {
-        node: {
-          name: 'Tez Brooks',
-          slug: 'tez-brooks',
-          avatar: {
-            url: 'https://www.jesusfilm.org/content/dam/jesusfilm/avatars/tezg.jpg'
-          },
-          description:
-            'Award winning author, screenwriter and international speaker'
-        }
-      }
+      name: 'Tez Brooks',
+      slug: 'tez-brooks',
+      avatar: {
+        url: 'https://www.jesusfilm.org/content/dam/jesusfilm/avatars/tezg.jpg'
+      },
+      description:
+        'Award winning author, screenwriter and international speaker'
     },
     {
-      author: {
-        node: {
-          name: 'Raeli Miller',
-          slug: 'raeli-miller',
-          avatar: {
-            url: 'https://www.jesusfilm.org/content/dam/jesusfilm/avatars/rs.jpg'
-          },
-          description:
-            'Raeli Miller is the Community and Content Digital Strategist for Jesus Film Project.'
-        }
-      }
+      name: 'Raeli Miller',
+      slug: 'raeli-miller',
+      avatar: {
+        url: 'https://www.jesusfilm.org/content/dam/jesusfilm/avatars/rs.jpg'
+      },
+      description:
+        'Raeli Miller is the Community and Content Digital Strategist for Jesus Film Project.'
     }
-  ]}
+  ]}}
 />
 ```

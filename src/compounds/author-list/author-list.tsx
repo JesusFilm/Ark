@@ -1,10 +1,7 @@
-import React from 'react'
+import React, { ReactNode, ReactElement, createElement } from 'react'
 import { Container, Grid, makeStyles } from '@material-ui/core'
 import { ListHeader } from '@jesus-film/ark.elements.list-header'
-import {
-  AuthorCardProps,
-  AuthorCard
-} from '@jesus-film/ark.elements.author-card'
+import { Author, AuthorCard } from '@jesus-film/ark.elements.author-card'
 
 const useStyles = makeStyles((theme) => ({
   align: {
@@ -19,22 +16,35 @@ const useStyles = makeStyles((theme) => ({
 
 export type AuthorListProps = {
   /** authors */
-  authors: AuthorCardProps[]
+  authors: {
+    node: Author[]
+  }
   /** Title of the list */
   title?: string
   /** See All Callback */
   onSeeAllClick?: () => void
+  /** Author Link */
+  AuthorLink?: (props: {
+    children: ReactNode
+    href: string
+    className?: string
+  }) => ReactElement
 }
 
-export function AuthorList({ authors, title, onSeeAllClick }: AuthorListProps) {
+export function AuthorList({
+  authors,
+  title,
+  onSeeAllClick,
+  AuthorLink = (props) => createElement('a', props)
+}: AuthorListProps) {
   const classes = useStyles()
   return (
     <Container maxWidth="xs">
       {title && <ListHeader title={title} onSeeAllClick={onSeeAllClick} />}
       <Grid container className={classes.align} alignItems="center" spacing={4}>
-        {authors.map((author, i) => (
+        {authors.node.map((author, i) => (
           <Grid item key={`${i}-author`}>
-            <AuthorCard {...author} />
+            <AuthorCard {...author} AuthorLink={AuthorLink} />
           </Grid>
         ))}
       </Grid>

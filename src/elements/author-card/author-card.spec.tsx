@@ -6,17 +6,12 @@ describe('author-card', () => {
   it('should render author name', () => {
     const { getByText } = render(
       <AuthorCard
-        author={{
-          node: {
-            name: 'Tez Brooks',
-            slug: 'tez-brooks',
-            avatar: {
-              url: 'https://www.jesusfilm.org/content/dam/jesusfilm/avatars/tezg.jpg'
-            },
-            description:
-              'Award winning author, screenwriter and international speaker'
-          }
+        name="Tez Brooks"
+        slug="tez-brooks"
+        avatar={{
+          url: 'https://www.jesusfilm.org/content/dam/jesusfilm/avatars/tezg.jpg'
         }}
+        description="Award winning author, screenwriter and international speaker"
       />
     )
     expect(getByText('Tez Brooks')).toBeInTheDocument()
@@ -24,17 +19,12 @@ describe('author-card', () => {
   it('should render author link', () => {
     const { getByTestId } = render(
       <AuthorCard
-        author={{
-          node: {
-            name: 'Tez Brooks',
-            slug: 'tez-brooks',
-            avatar: {
-              url: 'https://www.jesusfilm.org/content/dam/jesusfilm/avatars/tezg.jpg'
-            },
-            description:
-              'Award winning author, screenwriter and international speaker'
-          }
+        name="Tez Brooks"
+        slug="tez-brooks"
+        avatar={{
+          url: 'https://www.jesusfilm.org/content/dam/jesusfilm/avatars/tezg.jpg'
         }}
+        description="Award winning author, screenwriter and international speaker"
         AuthorLink={(props) => (
           <a href="tez-brooks" data-testid="author-link" />
         )}

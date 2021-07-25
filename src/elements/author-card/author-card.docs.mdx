@@ -7,23 +7,19 @@ import { AuthorCard } from "./author-card";
 
 ## React component that displays the author card
 
-A component that display a single author with name, description and profile image. 
+A component that displays a single author with a name, description and profile image. 
 
-### Using props to customize the text
+### Using props to customize the author
 
 Modify the props to see it change live
 ```js live
 <AuthorCard
-  author={{
-    node: {
-      name: 'Tez Brooks',
-      slug: 'tez-brooks',
-      avatar: {
-        url: ''
-      },
-      description:
-        'Award winning author, screenwriter and international speaker'
-    }
-  }}
+    name='Tez Brooks'
+    slug='tez-brooks'
+    avatar= {{
+      url: 'https://www.jesusfilm.org/content/dam/jesusfilm/avatars/tezg.jpg'
+    }}
+    description=
+      'Award winning author, screenwriter and international speaker'
 />
 ```
