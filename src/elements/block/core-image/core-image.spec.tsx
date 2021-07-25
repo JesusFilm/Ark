@@ -19,3 +19,10 @@ it('should render with the correct text', () => {
     'http://54.204.85.23/wp-content/uploads/2020/12/1614778286060.jpg'
   )
 })
+
+it('should render null', () => {
+  const { container } = render(
+    <CoreImage __typename="CoreImageBlock" attributes={{}} />
+  )
+  expect(container).toBeEmptyDOMElement()
+})

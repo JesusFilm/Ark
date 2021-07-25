@@ -35,7 +35,7 @@ type AuthorAvatar = {
   url: string
 }
 
-type Author = {
+export type Author = {
   /** author name */
   name: string
   /** author bio */
@@ -43,17 +43,12 @@ type Author = {
   /** author slug */
   slug: string
   /** Background image source url */
-  avatar: AuthorAvatar
+  avatar?: AuthorAvatar
   /** Author Link */
 }
 
-type AuthorNode = {
-  node: Author
-}
-
-export type AuthorCardProps = {
+export type AuthorCardProps = Author & {
   /** Author */
-  author: AuthorNode
   AuthorLink?: (props: {
     children: ReactNode
     href: string
@@ -62,11 +57,14 @@ export type AuthorCardProps = {
 }
 
 export function AuthorCard({
-  author,
+  name,
+  description,
+  slug,
+  avatar,
   AuthorLink = (props) => createElement('a', props)
 }: AuthorCardProps) {
   const classes = useStyles()
-  const initials = author.node.name
+  const initials = name
     .split(' ')
     .map((n) => n[0])
     .join('')
@@ -81,10 +79,7 @@ export function AuthorCard({
         className={classes.wrap}
         spacing={2}>
         <Grid item>
-          <Avatar
-            alt={author.node.name}
-            src={author.node.avatar.url}
-            className={classes.image}>
+          <Avatar alt={name} src={avatar.url} className={classes.image}>
             {initials}
           </Avatar>
         </Grid>
@@ -92,15 +87,13 @@ export function AuthorCard({
           <Typography variant="h6" gutterBottom className={classes.name}>
             <Link
               component={AuthorLink}
-              href={author.node.slug}
+              href={slug}
               color="textSecondary"
               underline="none">
-              {author.node.name}
+              {name}
             </Link>
           </Typography>
-          <Typography className={classes.description}>
-            {author.node.description}
-          </Typography>
+          <Typography className={classes.description}>{description}</Typography>
         </Grid>
       </Grid>
     </Container>

@@ -34,3 +34,10 @@ it('should render the citation', () => {
 
   expect(getByText('Citation for this quote goes here')).toBeInTheDocument()
 })
+
+it('should render null', () => {
+  const { container } = render(
+    <CoreQuote __typename="CoreQuoteBlock" attributes={{}} />
+  )
+  expect(container).toBeEmptyDOMElement()
+})

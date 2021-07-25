@@ -1,12 +1,13 @@
 import React from 'react'
 import {
-  Box,
+  Button,
+  Container,
   Typography,
   Grid,
   Divider,
-  makeStyles,
-  Container
+  makeStyles
 } from '@material-ui/core'
+import { useTranslation } from 'react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   divider: {
@@ -14,12 +15,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(5)
   },
   text: {
-    color: '#EE3441',
-    fontWeight: 700
-  },
-  seeAll: {
-    marginTop: theme.spacing(2),
-    cursor: 'pointer',
+    color: theme.palette.primary.main,
     fontWeight: 700
   }
 }))
@@ -34,24 +30,21 @@ export type ListHeaderProps = {
 }
 
 export function ListHeader({ title, onSeeAllClick }: ListHeaderProps) {
+  const { t } = useTranslation('list-header')
   const classes = useStyles()
   return (
     <Container maxWidth="sm">
-      <Grid container spacing={4}>
-        <Grid item xs={9}>
+      <Grid container justify="space-between" alignItems="flex-end">
+        <Grid item>
           <Typography className={classes.text} variant="h4">
             {title}
           </Typography>
         </Grid>
-        <Grid item xs={3}>
-          {onSeeAllClick && (
-            <Box onClick={() => onSeeAllClick?.()}>
-              <Typography variant="body2" className={classes.seeAll}>
-                SEE ALL
-              </Typography>
-            </Box>
-          )}
-        </Grid>
+        {onSeeAllClick && (
+          <Grid item>
+            <Button onClick={onSeeAllClick}>{t('SEE ALL')}</Button>
+          </Grid>
+        )}
       </Grid>
       <Divider className={classes.divider} />
     </Container>

@@ -6,16 +6,58 @@ import { CoreHeading, CoreHeadingProps } from './core-heading'
 import { CoreGallery, CoreGalleryProps } from './core-gallery'
 import { CoreEmbed, CoreEmbedProps } from './core-embed'
 import { CoreQuote, CoreQuoteProps } from './core-quote'
+import { CoreArclight, CoreArclightProps } from './lazyblock-arclight'
 import { Card, CardContent, Container, Typography } from '@material-ui/core'
 
 export type BlockProps =
-  | CoreParagraphProps
   | CoreImageProps
+  | CoreParagraphProps
   | CoreHeadingProps
   | CoreListProps
   | CoreGalleryProps
   | CoreEmbedProps
   | CoreQuoteProps
+  | CoreArclightProps
+  | {
+      __typename:
+        | 'LazyblockCoreFreeBlock'
+        | 'CoreShortcodeBlock'
+        | 'CoreArchivesBlock'
+        | 'CoreAudioBlock'
+        | 'CoreButtonBlock'
+        | 'CoreButtonsBlock'
+        | 'CoreCalendarBlock'
+        | 'CoreCategoriesBlock'
+        | 'CoreCodeBlock'
+        | 'CoreColumnsBlock'
+        | 'CoreColumnBlock'
+        | 'CoreCoverBlock'
+        | 'CoreFileBlock'
+        | 'CoreGroupBlock'
+        | 'CoreFreeformBlock'
+        | 'CoreHtmlBlock'
+        | 'CoreMediaTextBlock'
+        | 'CoreLatestCommentsBlock'
+        | 'CoreLatestPostsBlock'
+        | 'CoreMissingBlock'
+        | 'CoreMoreBlock'
+        | 'CoreNextpageBlock'
+        | 'CorePreformattedBlock'
+        | 'CorePullquoteBlock'
+        | 'CoreRssBlock'
+        | 'CoreSearchBlock'
+        | 'CoreSeparatorBlock'
+        | 'CoreBlock'
+        | 'CoreSocialLinksBlock'
+        | 'CoreSocialLinkBlock'
+        | 'CoreSpacerBlock'
+        | 'CoreSubheadBlock'
+        | 'CoreTableBlock'
+        | 'CoreTagCloudBlock'
+        | 'CoreTextColumnsBlock'
+        | 'CoreVerseBlock'
+        | 'CoreVideoBlock'
+    }
 
 export function Block(BlockProps: BlockProps) {
   switch (BlockProps.__typename) {
@@ -33,6 +75,8 @@ export function Block(BlockProps: BlockProps) {
       return <CoreEmbed {...BlockProps} />
     case 'CoreQuoteBlock':
       return <CoreQuote {...BlockProps} />
+    case 'LazyblockArclightBlock':
+      return <CoreArclight {...BlockProps} />
     default:
       return (
         <Container maxWidth="sm">

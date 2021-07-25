@@ -5,6 +5,7 @@ const postQuery = {
     post: {
       author: {
         node: {
+          slug: 'user',
           avatar: {
             url: 'http://2.gravatar.com/avatar/b58996c504c5638798eb6b511e6f49af?s=96&d=mm&r=g'
           },
@@ -495,6 +496,12 @@ const postQuery = {
               'For a closer look at this parable, check out the post “<a href="https://www.jesusfilm.org/blog-and-stories/parable-unmerciful-servant.html">What Is the Meaning of the Parable about the Unmerciful Servant?</a>"'
           },
           __typename: 'CoreParagraphBlock'
+        },
+        {
+          __typename: 'LazyblockArclightBlock',
+          attributes: {
+            refId: '1_1106-mld-0-0'
+          }
         },
         {
           __typename: 'CoreHeadingBlock',
