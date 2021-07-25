@@ -3,7 +3,7 @@
 {
     "compounds/core": {
         "scope": "jesus-film.ark",
-        "version": "0.0.1",
+        "version": "0.0.3",
         "mainFile": "index.ts",
         "rootDir": "src/compounds/core",
         "nextVersion": {
@@ -15,7 +15,7 @@
     },
     "compounds/post-list": {
         "scope": "jesus-film.ark",
-        "version": "0.0.1",
+        "version": "0.0.3",
         "mainFile": "index.ts",
         "rootDir": "src/compounds/post-list",
         "nextVersion": {
@@ -51,13 +51,13 @@
     },
     "elements/block": {
         "scope": "jesus-film.ark",
-        "version": "0.0.5",
+        "version": "0.0.7",
         "mainFile": "index.ts",
         "rootDir": "src/elements/block"
     },
     "elements/core": {
         "scope": "jesus-film.ark",
-        "version": "0.0.8",
+        "version": "0.0.10",
         "mainFile": "index.ts",
         "rootDir": "src/elements/core",
         "nextVersion": {
@@ -121,6 +121,12 @@
         "mainFile": "index.ts",
         "rootDir": "src/elements/menu"
     },
+    "elements/mission": {
+        "scope": "jesus-film.ark",
+        "version": "0.0.2",
+        "mainFile": "index.ts",
+        "rootDir": "src/elements/mission"
+    },
     "elements/navigation": {
         "scope": "jesus-film.ark",
         "version": "0.0.2",
@@ -129,7 +135,7 @@
     },
     "elements/post": {
         "scope": "jesus-film.ark",
-        "version": "0.0.6",
+        "version": "0.0.8",
         "mainFile": "index.ts",
         "rootDir": "src/elements/post",
         "nextVersion": {
@@ -141,7 +147,7 @@
     },
     "elements/post-card": {
         "scope": "jesus-film.ark",
-        "version": "0.0.3",
+        "version": "0.0.4",
         "mainFile": "index.ts",
         "rootDir": "src/elements/post-card"
     },

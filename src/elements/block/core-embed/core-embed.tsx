@@ -5,9 +5,9 @@ import { Vimeo } from './embed/vimeo'
 import { Iframe } from './embed/iframe'
 
 type Attributes = {
-  url: string
-  providerNameSlug: string
-  align: string
+  url?: string
+  providerNameSlug?: string
+  align?: string
 }
 
 export type CoreEmbedProps = {
@@ -18,20 +18,28 @@ export type CoreEmbedProps = {
   __typename: 'CoreEmbedBlock'
 }
 
-export function CoreEmbed({ attributes }: CoreEmbedProps) {
-  switch (attributes.providerNameSlug) {
-    case 'embed-handler':
-      return <Iframe attributes={attributes} />
-    case 'youtube':
-      return <Youtube attributes={attributes} />
-    case 'vimeo':
-      return <Vimeo attributes={attributes} />
-    default:
-      return (
-        <Error
-          title="This type of embed is currently unsupported"
-          subtitle={attributes.providerNameSlug}
-        />
-      )
+export function CoreEmbed(props: CoreEmbedProps) {
+  if (
+    props.attributes.url ||
+    props.attributes.providerNameSlug ||
+    props.attributes.align
+  ) {
+    switch (props.attributes.providerNameSlug) {
+      case 'embed-handler':
+        return <Iframe {...props} />
+      case 'youtube':
+        return <Youtube {...props} />
+      case 'vimeo':
+        return <Vimeo {...props} />
+      default:
+        return (
+          <Error
+            title="This type of embed is currently unsupported"
+            subtitle={props.attributes.providerNameSlug}
+          />
+        )
+    }
+  } else {
+    return null
   }
 }
