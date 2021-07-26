@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   name: {
-    textTransform: 'uppercase',
     [theme.breakpoints.down('xs')]: {
       textAlign: 'center'
     }
@@ -45,7 +44,6 @@ export type Author = {
   slug: string
   /** Background image source url */
   avatar?: AuthorAvatar
-  /** Author Link */
 }
 
 export type AuthorCardProps = Author & {

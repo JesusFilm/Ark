@@ -4,17 +4,17 @@ import { Block, BlockProps } from '@jesus-film/ark.elements.block'
 import { PostHeader, PostHeaderProps } from './header'
 import { Grid } from '@material-ui/core'
 
-type Avatar = {
+type AuthorAvatar = {
   url: string
 }
 
 type Author = {
-  /** Avatar */
-  avatar?: Avatar
   /** Author name */
   name: string
   /** Author Slug */
   slug: string
+  /** Avatar */
+  avatar?: AuthorAvatar
 }
 
 type AuthorNode = {
@@ -44,7 +44,11 @@ export function Post(props: PostProps) {
           </Grid>
         </Grid>
       ))}
-      <AuthorCard name={props.author.node.name} slug={props.author.node.slug} />
+      <AuthorCard
+        name={props.author.node.name}
+        slug={props.author.node.slug}
+        avatar={props.author.node.avatar.url}
+      />
     </>
   )
 }
