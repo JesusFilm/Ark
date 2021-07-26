@@ -243,7 +243,67 @@ export const ItemPosts = () => (
           }
         ]
       }}
+    />
+  </JesusFilmThemeProvider>
+)
+
+export const ItemPostsListHeader = () => (
+  <JesusFilmThemeProvider>
+    <PostList
+      PostLink={({ children, href, className }) =>
+        createElement('a', { children, className, href: `/posts/${href}` })
+      }
+      variant="item"
+      posts={{
+        nodes: [
+          {
+            slug: '10-bible-verses-about-faith-and-doubt',
+            title: '10 Bible Verses about Faith and Doubt'
+          },
+          {
+            author: {
+              node: {
+                name: 'Josh McDowell',
+                slug: 'josh'
+              }
+            },
+            slug: '4-tips-for-when-you-feel-directionless',
+            title: '4 Tips for When You Feel Directionless'
+          },
+          {
+            slug: 'what-to-do-when-you-feel-alone',
+            title: 'What To Do When You Feel Alone'
+          },
+          {
+            featuredImage: {
+              node: {
+                sourceUrl:
+                  'https://source.unsplash.com/1920x1080/daily?friendship'
+              }
+            },
+            author: {
+              node: {
+                name: 'Roger Smith',
+                slug: 'roger'
+              }
+            },
+            slug: 'Why-You-Should-Know-Your-Neighbors-Better-and-How-to-Do-it',
+            title: 'Why You Should Know Your Neighbors Better, and How to Do it'
+          },
+          {
+            author: {
+              node: {
+                name: 'Mike Smith',
+                slug: 'mike'
+              }
+            },
+            slug: '15-Bible-Verses-about-Friends-and-Friendship',
+            title: '15 Bible Verses about Friends and Friendship'
+          }
+        ]
+      }}
       headerTitle="Latest"
+      onSeeAllClick={() => alert('Loading latets post...')}
     />
   </JesusFilmThemeProvider>
 )

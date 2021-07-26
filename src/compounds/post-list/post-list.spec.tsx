@@ -379,6 +379,57 @@ describe('PostList', () => {
     expect(getAllByTestId('divider').length).toEqual(2)
   })
 
+  it('should render item list header title', () => {
+    const { getByText } = render(
+      <I18nProvider>
+        <PostList
+          PostLink={({ children, href, className }) => (
+            <a
+              data-testid={`post-${href}`}
+              className={className}
+              href={`/posts/${href}`}>
+              {children}
+            </a>
+          )}
+          AuthorLink={({ children, href, className }) => (
+            <a
+              data-testid={`author-${href}`}
+              className={className}
+              href={`/posts/${href}`}>
+              {children}
+            </a>
+          )}
+          posts={{
+            nodes: [
+              {
+                slug: '10-bible-verses-about-faith-and-doubt',
+                title: '10 Bible Verses about Faith and Doubt',
+                author: {
+                  node: {
+                    slug: 'john-doe',
+                    name: 'John Doe'
+                  }
+                }
+              },
+              {
+                slug: '4-tips-for-when-you-feel-directionless',
+                title: '4 Tips for When You Feel Directionless'
+              },
+              {
+                slug: 'what-to-do-when-you-feel-alone',
+                title: 'What To Do When You Feel Alone'
+              }
+            ]
+          }}
+          variant="item"
+          headerTitle="Latest"
+          onSeeAllClick={() => alert('Loading latest posts...')}
+        />
+      </I18nProvider>
+    )
+    expect(getByText('Latest')).toBeInTheDocument()
+  })
+
   it('should render default post list', () => {
     const { getByTestId } = render(
       <I18nProvider>

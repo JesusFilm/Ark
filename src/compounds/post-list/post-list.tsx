@@ -47,6 +47,10 @@ type ItemPostListProps = {
    */
   headerTitle?: string
   /**
+   * List-Header see all callback
+   */
+  onSeeAllClick?: () => void
+  /**
    * Component to render post link
    */
   PostLink?: (props: {
@@ -159,7 +163,12 @@ export function PostList(props: PostListProps) {
     case 'item':
       return (
         <Container>
-          {props.headerTitle && <ListHeader title={props.headerTitle} />}
+          {props.headerTitle && (
+            <ListHeader
+              title={props.headerTitle}
+              onSeeAllClick={props.onSeeAllClick}
+            />
+          )}
           <Grid container spacing={2}>
             {props.posts.nodes.map((post, i) => (
               <Grid item key={i} xs={12}>
