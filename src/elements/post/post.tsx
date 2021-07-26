@@ -47,7 +47,7 @@ export function Post(props: PostProps) {
       <AuthorCard
         name={props.author.node.name}
         slug={props.author.node.slug}
-        avatar={props.author.node.avatar.url}
+        avatar={props.author.node.avatar}
       />
     </>
   )
