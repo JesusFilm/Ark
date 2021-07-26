@@ -1,7 +1,6 @@
 import React from 'react'
 import {
   Button,
-  Container,
   Typography,
   Grid,
   Divider,
@@ -33,7 +32,7 @@ export function ListHeader({ title, onSeeAllClick }: ListHeaderProps) {
   const { t } = useTranslation('list-header')
   const classes = useStyles()
   return (
-    <Container maxWidth="sm">
+    <>
       <Grid container justify="space-between" alignItems="flex-end">
         <Grid item>
           <Typography className={classes.text} variant="h4">
@@ -47,6 +46,6 @@ export function ListHeader({ title, onSeeAllClick }: ListHeaderProps) {
         )}
       </Grid>
       <Divider className={classes.divider} />
-    </Container>
+    </>
   )
 }
