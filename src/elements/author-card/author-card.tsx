@@ -44,7 +44,6 @@ export type Author = {
   slug: string
   /** Background image source url */
   avatar?: AuthorAvatar
-  /** Author Link */
 }
 
 export type AuthorCardProps = Author & {
