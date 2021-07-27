@@ -1,51 +1,53 @@
 import React from 'react'
-import { AuthorCard } from '@jesus-film/ark.elements.author-card'
 import { Block, BlockProps } from '@jesus-film/ark.elements.block'
-import { PostHeader, PostHeaderProps } from './header'
+import { PostHeader } from './header'
+import { PostFooter } from './footer'
 import { Grid } from '@material-ui/core'
+import { DefaultPost } from '@jesus-film/ark.elements.post-card'
 
-type Avatar = {
-  url: string
-}
-
-type Author = {
-  /** Avatar */
-  avatar: Avatar
-  /** Author name */
+type Category = {
   name: string
 }
 
-type AuthorNode = {
-  /** Avatar */
-  node: Author
+type CategoryNode = {
+  nodes: Category[]
 }
 
-export type PostProps = PostHeaderProps & {
-  /**
-   * Post author
-   */
-  author: AuthorNode
-  /**
-   * Main body of post
-   */
-  blocks: BlockProps[]
+export type PostProps = {
+  post: {
+    author: {
+      node: {
+        slug: string
+        avatar: {
+          url: string
+        }
+        name: string
+        description: string
+      }
+    }
+    blocks: BlockProps[]
+    categories?: CategoryNode
+    date?: string
+    title: string
+    excerpt: string
+  }
+  posts: {
+    nodes: DefaultPost[]
+  }
 }
 
-export function Post(props: PostProps) {
+export function Post({ post, posts }: PostProps) {
   return (
     <>
-      <PostHeader {...props} />
-      {props.blocks.map((block, i) => (
+      <PostHeader {...post} />
+      {post.blocks.map((block, i) => (
         <Grid container spacing={5} key={`${i}-block`}>
           <Grid item xs={12}>
             <Block {...block} key={`${i}-block`} />
           </Grid>
         </Grid>
       ))}
-      <AuthorCard
-        name={props.author.node.name}
-        src={props.author.node.avatar.url}
-      />
+      <PostFooter {...post} posts={posts} />
     </>
   )
 }
