@@ -1,0 +1,38 @@
+---
+labels: ["React", "Typescript", "Author-List"]
+description: "A list of authors."
+---
+
+import { AuthorList } from "./author-list";
+
+## React component that displays a list of authors
+
+A component that display a list of authors with names, description, and images
+
+### Using props to customize the text
+
+```js live
+<AuthorList
+  authors={{ 
+    node: [
+    {
+      name: 'Tez Brooks',
+      slug: 'tez-brooks',
+      avatar: {
+        url: 'https://www.jesusfilm.org/content/dam/jesusfilm/avatars/tezg.jpg'
+      },
+      description:
+        'Award winning author, screenwriter and international speaker'
+    },
+    {
+      name: 'Raeli Miller',
+      slug: 'raeli-miller',
+      avatar: {
+        url: 'https://www.jesusfilm.org/content/dam/jesusfilm/avatars/rs.jpg'
+      },
+      description:
+        'Raeli Miller is the Community and Content Digital Strategist for Jesus Film Project.'
+    }
+  ]}}
+/>
+```
