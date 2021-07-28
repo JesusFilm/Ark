@@ -59,7 +59,7 @@ describe('author-list', () => {
             }
           ]
         }}
-        AuthorLink={({ children, href, className }) => (
+        AuthorLink={({ href, className }) => (
           <a href={href} data-testid="author-link" className={className} />
         )}
       />
