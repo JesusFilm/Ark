@@ -1,5 +1,13 @@
 import React, { ReactElement, ReactNode } from 'react'
-import { Hidden, Grid, makeStyles, Box, Divider } from '@material-ui/core'
+import {
+  Hidden,
+  Grid,
+  makeStyles,
+  Box,
+  Divider,
+  Container
+} from '@material-ui/core'
+import { ListHeader } from '@jesus-film/ark.elements.list-header'
 import { PostCard } from '@jesus-film/ark.elements.core'
 import { chunk } from 'lodash/fp'
 import {
@@ -34,6 +42,14 @@ type ItemPostListProps = {
   posts: {
     nodes: ItemPost[]
   }
+  /**
+   * List-Header Title
+   */
+  title?: string
+  /**
+   * List-Header see all callback
+   */
+  onSeeAllClick?: () => void
   /**
    * Component to render post link
    */
@@ -146,19 +162,27 @@ export function PostList(props: PostListProps) {
       )
     case 'item':
       return (
-        <Grid container spacing={2}>
-          {props.posts.nodes.map((post, i) => (
-            <Grid item key={i} xs={12}>
-              <PostCard
-                {...post}
-                variant="item"
-                PostLink={props.PostLink}
-                AuthorLink={props.AuthorLink}
-                divider={i + 1 < props.posts.nodes.length}
-              />
-            </Grid>
-          ))}
-        </Grid>
+        <Container>
+          {props.title && (
+            <ListHeader
+              title={props.title}
+              onSeeAllClick={props.onSeeAllClick}
+            />
+          )}
+          <Grid container spacing={2}>
+            {props.posts.nodes.map((post, i) => (
+              <Grid item key={i} xs={12}>
+                <PostCard
+                  {...post}
+                  variant="item"
+                  PostLink={props.PostLink}
+                  AuthorLink={props.AuthorLink}
+                  divider={i + 1 < props.posts.nodes.length}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
       )
     case 'default':
       return (

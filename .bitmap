@@ -5,13 +5,25 @@
         "scope": "jesus-film.ark",
         "version": "0.0.5",
         "mainFile": "index.ts",
-        "rootDir": "src/compounds/core"
+        "rootDir": "src/compounds/core",
+        "nextVersion": {
+            "version": "patch",
+            "message": " (bump dependencies versions)",
+            "username": "John Geronimo",
+            "email": "johnageronimo1@gmail.com"
+        }
     },
     "compounds/post-list": {
         "scope": "jesus-film.ark",
         "version": "0.0.5",
         "mainFile": "index.ts",
-        "rootDir": "src/compounds/post-list"
+        "rootDir": "src/compounds/post-list",
+        "nextVersion": {
+            "version": "patch",
+            "message": "",
+            "username": "John Geronimo",
+            "email": "johnageronimo1@gmail.com"
+        }
     },
     "elements/author-card": {
         "scope": "jesus-film.ark",
@@ -35,7 +47,13 @@
         "scope": "jesus-film.ark",
         "version": "0.0.12",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/core"
+        "rootDir": "src/elements/core",
+        "nextVersion": {
+            "version": "patch",
+            "message": " (bump dependencies versions)",
+            "username": "John Geronimo",
+            "email": "johnageronimo1@gmail.com"
+        }
     },
     "elements/donate": {
         "scope": "jesus-film.ark",
@@ -101,7 +119,13 @@
         "scope": "jesus-film.ark",
         "version": "0.0.10",
         "mainFile": "index.ts",
-        "rootDir": "src/elements/post"
+        "rootDir": "src/elements/post",
+        "nextVersion": {
+            "version": "patch",
+            "message": " (bump dependencies versions)",
+            "username": "John Geronimo",
+            "email": "johnageronimo1@gmail.com"
+        }
     },
     "elements/post-card": {
         "scope": "jesus-film.ark",
