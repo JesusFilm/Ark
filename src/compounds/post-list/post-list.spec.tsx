@@ -422,7 +422,7 @@ describe('PostList', () => {
             ]
           }}
           variant="item"
-          headerTitle="Latest"
+          title="Latest"
           onSeeAllClick={() => alert('Loading latest posts...')}
         />
       </I18nProvider>

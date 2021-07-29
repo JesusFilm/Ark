@@ -302,7 +302,7 @@ export const ItemPostsListHeader = () => (
           }
         ]
       }}
-      headerTitle="Latest"
+      title="Latest"
       onSeeAllClick={() => alert('Loading latets post...')}
     />
   </JesusFilmThemeProvider>

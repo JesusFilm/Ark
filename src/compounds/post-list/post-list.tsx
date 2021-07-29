@@ -45,7 +45,7 @@ type ItemPostListProps = {
   /**
    * List-Header Title
    */
-  headerTitle?: string
+  title?: string
   /**
    * List-Header see all callback
    */
@@ -163,9 +163,9 @@ export function PostList(props: PostListProps) {
     case 'item':
       return (
         <Container>
-          {props.headerTitle && (
+          {props.title && (
             <ListHeader
-              title={props.headerTitle}
+              title={props.title}
               onSeeAllClick={props.onSeeAllClick}
             />
           )}
